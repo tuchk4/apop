@@ -1,0 +1,16 @@
+{
+  "name": "@rmk/clear",
+  "version": "1.0.0",
+  "scripts": {
+    "prepublish": "babel -d ./ ./lib",
+    "dev": "babel -d ./ ./lib --watch",
+    "test": "jest --coverage",
+    "test-dev": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuchk4/rmk.git"
+  },
+  "license": "ISC",
+  "main": "index.js"
+}
