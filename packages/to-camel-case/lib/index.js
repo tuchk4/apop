@@ -1,13 +1,8 @@
 import camelCase from 'lodash/camelCase';
+import mapKeys from 'lodash/mapKeys';
 
-const toCamelCase = state => {
-  return Object.keys(state)
-    .reduce((obj, key) => {
-      const renamed = camelCase(key);
-      obj[renamed] = result[key];
-
-      return obj;
-    }, {});
+const toCamelCase = (config = {}) => object => {
+  return mapKeys(object, (value, key) => camelCase(key));
 };
 
-export default toCamelCase;
+module.exports =  toCamelCase;

@@ -7,6 +7,10 @@
     "test": "jest --coverage",
     "test-dev": "jest --watch"
   },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "@rmk/rmk": "=1.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuchk4/rmk.git"

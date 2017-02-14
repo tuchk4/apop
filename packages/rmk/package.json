@@ -11,8 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/tuchk4/rmk.git"
   },
+  "devDependencies": {
+    "babel-cli": "^6.23.0"
+  },
   "dependencies": {
-    "@rmk/clear": "=1.0.0"
   },
   "license": "ISC",
   "main": "index.js"

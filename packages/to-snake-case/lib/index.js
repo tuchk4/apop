@@ -1,13 +1,8 @@
 import snakeCase from 'lodash/snakeCase';
+import mapKeys from 'lodash/mapKeys';
 
-const toSnakeCase = state => {
-  return Object.keys(state)
-    .reduce((obj, key) => {
-      const renamed = snakeCase(key);
-      obj[renamed] = result[key];
-
-      return obj;
-    }, {});
+const toSnakeCase = (config = {}) => object => {
+  return mapKeys(object, (value, key) => snakeCase(key));
 };
 
-export default toSnakeCase;
+module.exports = toSnakeCase;

@@ -6,3 +6,4 @@ npm-debug.log
 /packages/rmk/index.js
 /packages/to-camel-case/index.js
 /packages/to-snake-case/index.js
+.idea

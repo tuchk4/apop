@@ -1,28 +1,26 @@
-const reduceObject = (origin, remakers) => {
-  return remakers.reduce((state, remake) => {
-    return remake(state);
-  }, origin);
+import isArray from 'lodash/isArray';
+import isObject from 'lodash/isObject';
+import flow from 'lodash/flow';
+
+const parseObject = (origin, actions) => {
+  return flow(actions)(origin);
 };
 
-const reduceArray = (origin, remakers) => {
-  return origin.reduce((state, element) => {
-    state.push(reduceObject(element, remakers));
-    return state;
-  }, []);
+const parseArray = (origin, actions) => {
+  return origin.map(element => parseObject(element, actions));
 };
 
-const reduce = (origin, reamakers) => {
+const reduce = (origin, actions) => {
   if (isArray(origin)) {
-    return reduceArray(origin, mutators);
+    return parseArray(origin, actions);
   } else if (isObject(origin)) {
-    return reduceObject(origin, reamakers);
+    return parseObject(origin, actions);
   } else {
     throw new Error('Wrong input arguments');
   }
 };
 
-const rmk = (...reamakers) => {
-  return origin => reduce(origin, reamakers);
+const rmk = (...actions) => {
+  return origin => reduce(origin, actions);
 };
-
-export default rmk;
+module.exports = rmk;
