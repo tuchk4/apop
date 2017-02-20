@@ -1,4 +1,7 @@
 # RMK
+**See**: [actions](actions)
+**See**: [shortcuts](shortcuts)
+**See**: [utils](utils)
 
 Object transformation without mutations.
 
