@@ -3,8 +3,13 @@
     "allowUnknownTags": true,
     "dictionaries": ["jsdoc"]
   },
+  "categoryfile" : "categories.json",
   "source": {
-    "include": ["lib", "package.json", "README.md"],
+    "include":
+    [
+      "lib",
+      "package.json",
+      "README.md"],
     "includePattern": ".js$",
     "excludePattern": "(node_modules/|docs)"
   },

@@ -1,4 +1,4 @@
-import shortcuts from '../../lib/shortcuts/index';
+import shortcuts from '~/shortcuts';
 
 let dataBeforeClean = {
   "id": 1,

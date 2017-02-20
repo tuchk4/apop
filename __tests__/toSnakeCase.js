@@ -1,5 +1,5 @@
-import rmk from '../lib/';
-import rmkActions from '../lib/actions';
+import rmk from '~';
+import rmkActions from '~/actions';
 
 let dataBeforeClean = {
   "id": 1,
