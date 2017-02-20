@@ -1,5 +1,4 @@
-const rmk = require('@rmk/rmk');
-const toCamelCase = require('../index');
+import shortcuts from '../../lib/shortcuts/index';
 
 let dataBeforeClean = {
   "id": 1,
@@ -13,8 +12,7 @@ let dataAfterClean = {
 };
 describe('toCamelCase', () => {
   it('transform to camelCase', () => {
-    let formula = rmk(toCamelCase());
-    let result = formula(dataBeforeClean);
+    let result = shortcuts.toCamelCase(dataBeforeClean);
     expect(result).toEqual(dataAfterClean);
   });
 })

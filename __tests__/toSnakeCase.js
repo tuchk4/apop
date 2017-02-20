@@ -1,5 +1,5 @@
-const rmk = require('@rmk/rmk');
-const toSnakeCase = require('../index');
+import rmk from '../lib/';
+import rmkActions from '../lib/actions';
 
 let dataBeforeClean = {
   "id": 1,
@@ -13,7 +13,7 @@ let dataAfterClean = {
 };
 describe('toSnakeCase', () => {
   it('Transform to snake_case', () => {
-    let formula = rmk(toSnakeCase());
+    let formula = rmk(rmkActions.toSnakeCase());
     let result = formula(dataBeforeClean);
     expect(result).toEqual(dataAfterClean);
   });

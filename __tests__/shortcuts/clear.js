@@ -1,5 +1,4 @@
-const rmk = require('@rmk/rmk');
-const clear = require('../index');
+import shortcuts from '../../lib/shortcuts/index';
 
 let dataBeforeClean = {
   "id": 1,
@@ -31,10 +30,10 @@ let dataAfterClean = {
   "1": 1,
   "-1": -1
 };
-describe('Clean', () => {
-  it('Clean remove undefined and null values', () => {
-    let formula = rmk(clear());
-    let result = formula(dataBeforeClean);
+describe('Clear', () => {
+  it('Clear remove undefined and null values', () => {
+
+    let result = shortcuts.clear(dataBeforeClean);
     expect(result).toEqual(dataAfterClean);
   });
 })
