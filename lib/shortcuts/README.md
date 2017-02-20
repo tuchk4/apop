@@ -15,7 +15,6 @@ Shortcut for clear object
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
 **Returns**: <code>function</code> - Returns transformed object with snake_case keys  
-**See**: [actions.clear](actions.clear) Original method  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -36,7 +35,6 @@ Function of converts object keys to camelCase.
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
 **Returns**: <code>function</code> - Returns transformed object with snake_case keys  
-**See**: [actions.toCamelCase](actions.toCamelCase) Original method  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -57,7 +55,6 @@ Function of converts object keys to snake_case.
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
 **Returns**: <code>function</code> - Returns transformed object with snake_case keys  
-**See**: [actions.toSnakeCase](actions.toSnakeCase) Original method  
 
 | Param | Type | Description |
 | --- | --- | --- |

@@ -15,7 +15,6 @@ Function of clear object keys from null and undefined values
 
 **Kind**: static method of <code>[actions](#actions)</code>  
 **Returns**: <code>function</code> - Returns function clear object from undefined and null values  
-**See**: [shortcuts.clear](shortcuts.clear) Shortcut method  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -49,7 +48,6 @@ Function of converts object keys to camelCase.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
 **Returns**: <code>function</code> - Returns function mutation object keys to camelCase  
-**See**: [shortcuts.camelCase](shortcuts.camelCase) Shortcut method  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -71,7 +69,6 @@ Function of converts object keys to snake_case.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
 **Returns**: <code>function</code> - Returns function mutation object keys to snake_case  
-**See**: [shortcuts.toSnakeCase](shortcuts.toSnakeCase) Shortcut method  
 
 | Param | Type | Description |
 | --- | --- | --- |

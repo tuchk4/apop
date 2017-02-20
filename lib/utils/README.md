@@ -15,7 +15,6 @@ Parse array elements
 
 **Kind**: static method of <code>[utils](#utils)</code>  
 **Returns**: <code>Array</code> - Transformed array of object by actions  
-**See**: [actions](actions)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -29,7 +28,6 @@ Parse object fields
 
 **Kind**: static method of <code>[utils](#utils)</code>  
 **Returns**: <code>Object</code> - Transformed object by actions  
-**See**: [actions](actions)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -43,7 +41,6 @@ Parse object or array
 
 **Kind**: static method of <code>[utils](#utils)</code>  
 **Returns**: <code>Object</code> &#124; <code>Array</code> - Transformed object or array by actions  
-**See**: [actions](actions)  
 
 | Param | Type | Description |
 | --- | --- | --- |
