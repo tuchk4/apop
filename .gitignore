@@ -1,9 +1,5 @@
 node_modules
-/coverage
-lerna-debug.log
+coverage
 npm-debug.log
-/packages/clear/index.js
-/packages/rmk/index.js
-/packages/to-camel-case/index.js
-/packages/to-snake-case/index.js
+dist
 .idea

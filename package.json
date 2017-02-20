@@ -1,6 +1,10 @@
 {
+  "name": "@rmk/rmk",
+  "version": "1.0.0",
   "scripts": {
-    "create": "node scripts/create",
+    "prepublish": "npm run build",
+    "build": "babel -d ./dist ./lib",
+    "dev": "babel -d ./dist ./lib --watch",
     "test": "jest --coverage",
     "test-dev": "jest --coverage --watch"
   },
