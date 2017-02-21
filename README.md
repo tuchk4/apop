@@ -1,12 +1,10 @@
-# RMK
+# Remake JS - Object transformation without mutations.
 
 [Actions docs](lib/actions)
 
 [Shortcuts  docs](lib/shortcuts)
 
 [Utils  docs](lib/utils)
-
-###Object transformation without mutations.###
 
 ##Example 1. Clear data.##
 **Transform Object:**
