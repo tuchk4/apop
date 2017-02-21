@@ -8,12 +8,6 @@
 
 ###Object transformation without mutations.###
 
-```
-REMAKE = Function(data): newData
-Formula = Function(REMAKE_1 ... REMAKE_n): Function(data): newData
-```
-
-
 ##Example 1. Clear data.##
 **Transform Object:**
 ```js
@@ -33,7 +27,7 @@ import rmkClearAction from 'rmk/actions/clear';
 let data = [{one: "", two: null, a: 1}, {three: undefined, four: {}, five: [], b:2}]
 const formula = rmk(rmkClearAction());
 const result = formula(data)
-// =>  [{a:1}, {b:2}]
+// =>  [ {a:1}, {b:2} ]
 ```
 **Shortcut:**
 ```js
@@ -41,7 +35,7 @@ import rmkClear from 'rmk/shortcuts/clear';
 
 let data = {one: "", two: null, three: undefined, four: {}, five: []}
 const result = rmkClear(data)
-// =>  {birthDate: new Date(1975, 4,3), year: 1975}
+// =>  { birthDate: new Date(1975, 4,3), year: 1975 }
 ```
 
 
@@ -54,7 +48,7 @@ import rmkToSnakeCaseAction from 'rmk/actions/toSnakeCase';
 let data = {fooBar: 1, foo: 2, BAR: 3}
 const formula = rmk(rmkToSnakeCaseAction());
 const result = formula(data)
-// =>  {foo_bar: 1, foo: 2, bar: 3}}
+// =>  { foo_bar: 1, foo: 2, bar: 3 }
 ```
 **Transform array:**
 ```js
@@ -64,7 +58,7 @@ import rmkToSnakeCaseAction from 'rmk/actions/toSnakeCase';
 let data = [{fooBar: 1}, {barBaz: 2}]
 const formula = rmk(rmkToSnakeCaseAction());
 const result = formula(data)
-// =>  [{foo_bar: 1}, {bar_baz: 2}]
+// =>  [ {foo_bar: 1}, {bar_baz: 2} ]
 ```
 **Shortcut:**
 ```js
@@ -72,7 +66,7 @@ import rmkToSnakeCase from 'rmk/shortcuts/toSnakeCase';
 
 let data = {fooBar: 1, foo: 2, BAR: 3}
 const result = rmkToSnakeCase(data)
-// =>  {foo_bar: 1, foo: 2, bar: 3}}
+// =>  { foo_bar: 1, foo: 2, bar: 3 }
 ```
 
 
@@ -85,7 +79,7 @@ import rmkToCamelCaseAction from 'rmk/actions/toCamelCase';
 let data = {foo_bar: 1, foo: 2, BAR: 3}
 const formula = rmk(rmkToCamelCaseAction());
 const result = formula(data)
-// =>  {{fooBar: 1, foo: 2, bar: 3}}
+// =>  { fooBar: 1, foo: 2, bar: 3 }
 ```
 **Transform array:**
 ```js
@@ -95,7 +89,7 @@ import rmkToCamelCaseAction from 'rmk/actions/toCamelCase';
 let data = [{foo_Bar: 1}, {bar_baz: 2}]
 const formula = rmk(rmkToCamelCaseAction());
 const result = formula(data)
-// =>  [{fooBar: 1}, {barBaz: 2}]
+// =>  [ {fooBar: 1}, {barBaz: 2} ]
 ```
 **Shortcut:**
 ```js
@@ -103,7 +97,7 @@ import rmkToCamelCase from 'rmk/shortcuts/toCamelCase';
 
 let data = {foo_bar: 1, foo: 2, BAR: 3}
 const result = rmkToCamelCase(data)
-// =>  {fooBar: 1, foo: 2, bar: 3}}
+// =>  { fooBar: 1, foo: 2, bar: 3 }
 ```
 
 
@@ -118,7 +112,7 @@ const formula = rmk(rmkUpdate({
     baz:3
 }));
 const result = formula(data)
-// =>  {foo: 1, bar: 2, baz:3}
+// =>  { foo: 1, bar: 2, baz:3 }
 ```
 **Transform array:**
 ```js
@@ -130,7 +124,7 @@ const formula = rmk(rmkUpdate({
     baz: (localState) => foo + 1
 }));
 const result = formula(data)
-// =>  [{foo: 1, baz:2},  {foo: 4, baz:5}]
+// =>  [ {foo: 1, baz:2},  {foo: 4, baz:5} ]
 ```
 **Shortcut:**
 ```js
@@ -145,7 +139,7 @@ const result = rmkUpdate(data, {
 
 
 
-Complex Example 1:
+##Example 5. Complex transform array:##
 ```js
 import rmk from 'rmk';
 import rmkToCamelCaseAction from 'rmk/actions/toCamelCase';
@@ -164,14 +158,11 @@ const formula = rmk(
   rmkClearAction()
 );
 const result = formula(data);
-// =>  [
-          {birthDate: new Date(1975, 4,3), year: 1975, user: 1}, 
-          {birthDate: new Date(1982, 4,3), year: 1982}
-      ]
+// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1},  {birthDate: new Date(1982, 4,3), year: 1982} ]
 
 ```
 
-Complex Example 2:
+##Example 5. Complex transform array. Import all actions:##
 ```js
 import rmk from 'rmk';
 import rmkActions from 'rmk/actions';
@@ -188,9 +179,26 @@ const formula = rmk(
   rmkActions.clear()
 );
 const result = formula(data);
-// =>  [
-          {birthDate: new Date(1975, 4,3), year: 1975, user: 1}, 
-          {birthDate: new Date(1982, 4,3), year: 1982}
-      ]
+// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1}, {birthDate: new Date(1982, 4,3), year: 1982} ]
 
 ```
+
+
+##Example 6. Complex transform array. Import all shortcuts:##
+```js
+import rmk from 'rmk';
+import rmkShortcuts from 'rmk/shortcuts';
+
+let data = [
+    {birth_date: new Date(1975, 4,3), user: 1}, 
+    {birth_date: new Date(1975, 4,3), user: undefined}
+]
+const step1 = rmkShortcuts.toCamelCase(data);
+const step2 = rmkShortcuts.update(step1, {
+ year: localState => localState.birthDate.getFullYear()
+});
+const result = rmkShortcuts.clear(step2);
+// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1},  {birthDate: new Date(1982, 4,3), year: 1982} ]
+
+```
+
