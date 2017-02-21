@@ -16,7 +16,7 @@ Shortcut for clear object
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
 **Returns**: <code>function</code> - Returns transformed object with snake_case keys  
-**See**: [../lib/action#actions.clear](../lib/action#actions.clear) Original method  
+**See**: [../action#actions.clear](../action#actions.clear) Original method  
 
 | Param | Type | Description |
 | --- | --- | --- |
