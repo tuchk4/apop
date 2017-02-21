@@ -54,10 +54,27 @@ const keysDataBeforeArray = [{...keysDataBefore}, {...keysDataBefore}];
 const keysCamelCaseDataAfterArray = [{...keysCamelCaseDataAfter}, {...keysCamelCaseDataAfter}];
 const keysSnakeCaseDataAfterArray = [{...keysSnakeCaseDataAfter}, {...keysSnakeCaseDataAfter}];
 
+const updateDataBefore = {
+  "date": new Date(2001,11,3),
+};
+const updateDataAfter = {
+  "date": new Date(2001,11,3),
+  "year": 2001,
+  "month": 11,
+  "day": 3
+};
+const updateDataBeforeArray = [{...updateDataAfter,  "date": new Date(2000,1,3)}, {...updateDataAfter, "date": new Date(2002,4,5)}];
+const updateDataAfterArray = [
+  {...updateDataAfter, "date": new Date(2000,1,3), year: 2000, month:1, day:3},
+  {...updateDataAfter, "date": new Date(2002,4,5), year: 2002, month:4, day:5},
+];
 export default {
   clearDataBefore, clearDataAfter,
   clearDataBeforeArray, clearDataAfterArray,
 
   keysDataBefore, keysCamelCaseDataAfter, keysSnakeCaseDataAfter,
-  keysDataBeforeArray, keysCamelCaseDataAfterArray, keysSnakeCaseDataAfterArray
+  keysDataBeforeArray, keysCamelCaseDataAfterArray, keysSnakeCaseDataAfterArray,
+
+  updateDataBefore, updateDataAfter,
+  updateDataBeforeArray, updateDataAfterArray
 };
