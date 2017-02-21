@@ -1,10 +1,10 @@
 # RMK
 
-**See action**: [lib/actions](actions)
+[Actions docs](lib/actions)
 
-**See shortcuts**: [lib/shortcuts](shortcuts)
+[Shortcuts  docs](lib/shortcuts)
 
-**See utils**: [lib/utils](utils)
+[Utils  docs](lib/utils)
 
 ###Object transformation without mutations.###
 
