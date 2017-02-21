@@ -7,6 +7,7 @@
     * [.clear(config)](#actions.clear) ⇒ <code>function</code>
     * [.toCamelCase(config)](#actions.toCamelCase) ⇒ <code>function</code>
     * [.toSnakeCase(config)](#actions.toSnakeCase) ⇒ <code>function</code>
+    * [.update(config)](#actions.update) ⇒ <code>function</code>
 
 <a name="actions.clear"></a>
 
@@ -82,4 +83,43 @@ let formula = rmk(toSnakeCase())
 let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
 formula(data)
 // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
+```
+<a name="actions.update"></a>
+
+### actions.update(config) ⇒ <code>function</code>
+Update state by config
+
+**Kind**: static method of <code>[actions](#actions)</code>  
+**Returns**: <code>function</code> - Returns function add new field to object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>Object</code> | {field: fn(state)} or {field: value} |
+
+**Example**  
+```js
+import update from 'rmk/actions/update';
+
+let formula = rmk(update({
+   bar: 3
+}))
+let data = {foo:1}
+formula(data)
+// => {foo:1, bar:3}
+
+let data = [{foo:1}, {foo:2}]
+formula(data)
+// =>  [{foo:1, bar:3}, {foo:2, bar:3}]
+
+let formula = rmk(update({
+    year: (state) => {
+      return state.date.getFullYear()
+    }
+}))
+let data = {date: new Date(2001)}
+formula(data)
+// => {date: new Date(2001), year: 2001}
+
+let data = [{date: new Date(2001)}, {date: new Date(2002)}]
+// => [{date: new Date(2001), year: 2001}, {date: new Date(2002), year: 2002}]
 ```
