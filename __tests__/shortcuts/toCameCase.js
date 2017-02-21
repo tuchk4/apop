@@ -1,18 +1,14 @@
 import shortcuts from '~/shortcuts';
+import mock from '../../__mock__';
 
-let dataBeforeClean = {
-  "id": 1,
-  "first_name": "Stephen",
-  "last_name": "Nelson"
-};
-let dataAfterClean = {
-  "id": 1,
-  "firstName": "Stephen",
-  "lastName": "Nelson"
-};
 describe('toCamelCase', () => {
   it('transform to camelCase', () => {
-    let result = shortcuts.toCamelCase(dataBeforeClean);
-    expect(result).toEqual(dataAfterClean);
+    let result = shortcuts.toCamelCase(mock.keysDataBefore);
+    expect(result).toEqual(mock.keysCamelCaseDataAfter);
+  });
+
+  it('Transform array of objects to snake_case', () => {
+    let result = shortcuts.toCamelCase(mock.keysDataBeforeArray);
+    expect(result).toEqual(mock.keysCamelCaseDataAfterArray);
   });
 })

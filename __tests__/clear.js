@@ -1,40 +1,18 @@
 import rmk from '~';
 import rmkActions from '~/actions';
+import mock from '../__mock__';
 
-let dataBeforeClean = {
-  "id": 1,
-  "first_name": "Stephen",
-  "last_name": "Nelson",
-  "email": "snelson0@yellowbook.com",
-  "gender": "Male",
-  "ip_address": "74.191.108.58",
-  "city": "Kapotnya",
-  "phrase": "Universal 6th generation portal",
-  "null": null,
-  "undefined": undefined,
-  "date": new Date(2001),
-  "0": 0,
-  "1": 1,
-  "-1": -1
-};
-let dataAfterClean = {
-  "id": 1,
-  "first_name": "Stephen",
-  "last_name": "Nelson",
-  "email": "snelson0@yellowbook.com",
-  "gender": "Male",
-  "ip_address": "74.191.108.58",
-  "city": "Kapotnya",
-  "phrase": "Universal 6th generation portal",
-  "date": new Date(2001),
-  "0": 0,
-  "1": 1,
-  "-1": -1
-};
 describe('Clear', () => {
-  it('Clear remove undefined and null values', () => {
+  it('Clear object', () => {
     let formula = rmk(rmkActions.clear());
-    let result = formula(dataBeforeClean);
-    expect(result).toEqual(dataAfterClean);
+    let result = formula(mock.clearDataBefore);
+    expect(result).toEqual(mock.clearDataAfter);
+  });
+
+
+  it('Clear array of objects', () => {
+    let formula = rmk(rmkActions.clear());
+    let result = formula(mock.clearDataBeforeArray);
+    expect(result).toEqual(mock.clearDataAfterArray);
   });
 })

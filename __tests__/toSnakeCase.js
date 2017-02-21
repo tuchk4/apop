@@ -1,20 +1,17 @@
 import rmk from '~';
 import rmkActions from '~/actions';
+import mock from '../__mock__';
 
-let dataBeforeClean = {
-  "id": 1,
-  "firstName": "Stephen",
-  "lastName": "Nelson"
-};
-let dataAfterClean = {
-  "id": 1,
-  "first_name": "Stephen",
-  "last_name": "Nelson"
-};
 describe('toSnakeCase', () => {
-  it('Transform to snake_case', () => {
+  it('Transform object to snake_case', () => {
     let formula = rmk(rmkActions.toSnakeCase());
-    let result = formula(dataBeforeClean);
-    expect(result).toEqual(dataAfterClean);
+    let result = formula(mock.keysDataBefore);
+    expect(result).toEqual(mock.keysSnakeCaseDataAfter);
+  });
+
+  it('Transform array of objects to snake_case', () => {
+    let formula = rmk(rmkActions.toSnakeCase());
+    let result = formula(mock.keysDataBeforeArray);
+    expect(result).toEqual(mock.keysSnakeCaseDataAfterArray);
   });
 });
