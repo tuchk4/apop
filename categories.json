@@ -1,0 +1,11 @@
+{
+  "actions" : {
+    "displayName" : "Actions"
+  },
+  "shortcuts" : {
+    "displayName" : "Shortcuts"
+  },
+  "waterfall" : {
+    "displayName" : "Waterfall"
+  }
+}
