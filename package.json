@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "babel -d ./dist ./lib",
+    "build": "babel -d ./ ./lib",
     "dev": "babel -d ./dist ./lib --watch",
     "test": "jest --coverage",
     "test-dev": "jest --coverage --watch",
