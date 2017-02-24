@@ -4,14 +4,15 @@
 **Kind**: global namespace  
 
 * [actions](#actions) : <code>object</code>
-    * [.clear(config)](#actions.clear) ⇒ <code>function</code>
-    * [.toCamelCase(config)](#actions.toCamelCase) ⇒ <code>function</code>
-    * [.toSnakeCase(config)](#actions.toSnakeCase) ⇒ <code>function</code>
+    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
+    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
+    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
+    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
     * [.update(config)](#actions.update) ⇒ <code>function</code>
 
-<a name="actions.clear"></a>
+<a name="actions.module.exports"></a>
 
-### actions.clear(config) ⇒ <code>function</code>
+### actions.module.exports(config) ⇒ <code>function</code>
 Function of clear object keys from null and undefined values
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -43,9 +44,49 @@ formula(data)
 formula(data)
  // => foo: true, bar: false, baz: 1 }
 ```
-<a name="actions.toCamelCase"></a>
+<a name="actions.module.exports"></a>
 
-### actions.toCamelCase(config) ⇒ <code>function</code>
+### actions.module.exports(config) ⇒ <code>function</code>
+Rename state by config
+
+**Kind**: static method of <code>[actions](#actions)</code>  
+**Returns**: <code>function</code> - Returns function add new field to object  
+**See**: [Shortcut method](../shortcuts#shortcuts.rename)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>Object</code> | {field: fn(state)} or {field: value} |
+
+**Example**  
+```js
+import update from 'rmk/actions/update';
+
+let formula = rmk(rename({
+   bar: 'baz'
+}))
+let data = {foo:1, bar:2}
+formula(data)
+// => {foo:1, baz:2}
+
+let data = [{bar:1}, {bar:2}]
+formula(data)
+// =>  [{baz:1}, {baz:2}]
+
+let formula = rmk(rename({
+    year: (localState) => {
+     return (localState.hasOwnProperty('customField') ? 'birthYear' : 'deathYear'
+    }
+}))
+let data = {year: 2001, customField: true}
+formula(data)
+// => {birthYear: 2001}
+let data = {year: 2001, customField: false}
+formula(data)
+// => {deathYear: 2001}
+```
+<a name="actions.module.exports"></a>
+
+### actions.module.exports(config) ⇒ <code>function</code>
 Function of converts object keys to camelCase.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -65,9 +106,9 @@ let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
 formula(data)
 // => {fooBar:1, fooBar:2, bar:3, foo:4}
 ```
-<a name="actions.toSnakeCase"></a>
+<a name="actions.module.exports"></a>
 
-### actions.toSnakeCase(config) ⇒ <code>function</code>
+### actions.module.exports(config) ⇒ <code>function</code>
 Function of converts object keys to snake_case.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
