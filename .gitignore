@@ -1,5 +1,8 @@
-node_modules
-coverage
 npm-debug.log
-dist
-.idea
+/node_modules/
+/coverage/
+/.idea/
+/actions/
+/shortcuts/
+/utils/
+/index.js

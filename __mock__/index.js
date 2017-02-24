@@ -68,6 +68,19 @@ const updateDataAfterArray = [
   {...updateDataAfter, "date": new Date(2000,1,3), year: 2000, month:1, day:3},
   {...updateDataAfter, "date": new Date(2002,4,5), year: 2002, month:4, day:5},
 ];
+
+
+const renameDataBefore = {
+  "year": 2001
+};
+const renameDataAfter = {
+  "fullYear": 2001
+};
+const renameDataBeforeArray = [{ "year":2001}, {"year": 2001}];
+const renameDataAfterArray = [
+  {"fullYear": 2001},
+  {"fullYear": 2001}
+];
 export default {
   clearDataBefore, clearDataAfter,
   clearDataBeforeArray, clearDataAfterArray,
@@ -76,5 +89,8 @@ export default {
   keysDataBeforeArray, keysCamelCaseDataAfterArray, keysSnakeCaseDataAfterArray,
 
   updateDataBefore, updateDataAfter,
-  updateDataBeforeArray, updateDataAfterArray
+  updateDataBeforeArray, updateDataAfterArray,
+
+  renameDataBefore, renameDataAfter,
+  renameDataBeforeArray, renameDataAfterArray
 };
