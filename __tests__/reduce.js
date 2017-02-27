@@ -14,9 +14,4 @@ describe('Reduce', () => {
     expect(result).toEqual(mock.clearDataAfterArray);
   });
 
-  it('Wrong input arguments', () => {
-    expect(function() {
-      reduce(undefined, [rmkActions.clear()])
-    }).toThrow(new Error("Wrong input arguments"));
-  });
 });
