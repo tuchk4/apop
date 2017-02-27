@@ -1,8 +1,8 @@
-node_modules
-/coverage
-lerna-debug.log
 npm-debug.log
-/packages/clear/index.js
-/packages/rmk/index.js
-/packages/to-camel-case/index.js
-/packages/to-snake-case/index.js
+/node_modules/
+/coverage/
+/.idea/
+/actions/
+/shortcuts/
+/utils/
+/index.js
