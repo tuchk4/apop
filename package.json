@@ -34,5 +34,8 @@
     "minami": "^1.1.1",
     "mkdirp": "^0.5.1",
     "yargs": "^6.6.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }
