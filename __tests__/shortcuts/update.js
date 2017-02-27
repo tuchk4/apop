@@ -1,4 +1,4 @@
-import shortcuts from 'rmk/shortcuts';
+import shortcuts from '../../lib/shortcuts';
 import mock from '../../__mock__';
 
 describe('update', () => {

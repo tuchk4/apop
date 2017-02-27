@@ -1,5 +1,5 @@
-import rmkActions from 'rmk/actions';
-import reduce from 'rmk/utils/reduce';
+import rmkActions from '../lib/actions';
+import reduce from '../lib/utils/reduce';
 import mock from '../__mock__';
 
 describe('Reduce', () => {

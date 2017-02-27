@@ -1,5 +1,5 @@
-import rmk from 'rmk';
-import rmkActions from 'rmk/actions';
+import rmk from '../lib';
+import rmkActions from '../lib/actions';
 import mock from '../__mock__';
 
 describe('toSnakeCase', () => {
