@@ -14,8 +14,8 @@
     "jsdoc2md:utils": "jsdoc2md lib/utils/*.js  lib/utils/**/*.js > lib/utils/README.md",
     "jsdoc2md": "npm run jsdoc2md:actions && npm run jsdoc2md:shortcuts && npm run jsdoc2md:utils",
     "github": "npm run jsdoc2md && git commit -a -m \"generate docs\" && git push",
-    "eslint": "eslint ./lib",
-    "eslint:fix": "eslint ./lib --fix"
+    "eslint": "eslint ./lib ./__tests__",
+    "eslint:fix": "eslint ./lib ./__tests__ --fix"
   },
   "engines": {
     "node": ">=4.0.0"

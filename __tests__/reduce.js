@@ -4,14 +4,13 @@ import mock from '../__mock__';
 
 describe('Reduce', () => {
   it('Object argument', () => {
-    let result = reduce(mock.clearDataBefore, [rmkActions.clear()]);
+    const result = reduce(mock.clearDataBefore, [rmkActions.clear()]);
     expect(result).toEqual(mock.clearDataAfter);
   });
 
 
   it('Array argument', () => {
-    let result = reduce(mock.clearDataBeforeArray, [rmkActions.clear()]);
+    const result = reduce(mock.clearDataBeforeArray, [rmkActions.clear()]);
     expect(result).toEqual(mock.clearDataAfterArray);
   });
-
 });
