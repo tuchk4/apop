@@ -1,8 +1,6 @@
 {
-  "presets": ["es2015", "stage-0"],
-  "plugins": [
-    ["babel-plugin-root-import", {
-      "rootPathSuffix": "lib"
-    }]
+  "presets": [
+    "es2015",
+    "stage-0"
   ]
 }

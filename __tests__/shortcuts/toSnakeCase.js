@@ -1,4 +1,4 @@
-import shortcuts from '~/shortcuts';
+import shortcuts from 'rmk/shortcuts';
 import mock from '../../__mock__';
 
 describe('toSnakeCase', () => {

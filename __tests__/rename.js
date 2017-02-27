@@ -1,5 +1,5 @@
-import rmk from '~/';
-import rmkActions from '~/actions';
+import rmk from 'rmk';
+import rmkActions from 'rmk/actions';
 import mock from '../__mock__';
 
 describe('rename', () => {
