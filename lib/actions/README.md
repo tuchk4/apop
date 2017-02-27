@@ -1,28 +1,38 @@
+## Objects
+
+<dl>
+<dt><a href="#actions">actions</a> : <code>object</code></dt>
+<dd></dd>
+</dl>
+
+## Functions
+
+<dl>
+<dt><a href="#recursive">recursive(actions, deepLimit)</a> ⇒ <code>*</code></dt>
+<dd><p>Recursive parse data by actions</p>
+</dd>
+</dl>
+
 <a name="actions"></a>
 
 ## actions : <code>object</code>
 **Kind**: global namespace  
 
 * [actions](#actions) : <code>object</code>
+    * [.module.exports()](#actions.module.exports) ⇒ <code>Object</code>
     * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
-    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
-    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
-    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
+    * [.module.exports()](#actions.module.exports) ⇒ <code>function</code>
+    * [.module.exports()](#actions.module.exports) ⇒ <code>function</code>
     * [.update(config)](#actions.update) ⇒ <code>function</code>
 
 <a name="actions.module.exports"></a>
 
-### actions.module.exports(config) ⇒ <code>function</code>
+### actions.module.exports() ⇒ <code>Object</code>
 Function of clear object keys from null and undefined values
 
 **Kind**: static method of <code>[actions](#actions)</code>  
-**Returns**: <code>function</code> - Returns function clear object from undefined and null values  
+**Returns**: <code>Object</code> - Returns function clear object from undefined and null values  
 **See**: [Shortcut method](../shortcuts#shortcuts.clear)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| config | <code>Object</code> | Default empty. No used in action. |
-
 **Example**  
 ```js
 import clear from 'rmk/actions/clear';
@@ -86,17 +96,12 @@ formula(data)
 ```
 <a name="actions.module.exports"></a>
 
-### actions.module.exports(config) ⇒ <code>function</code>
+### actions.module.exports() ⇒ <code>function</code>
 Function of converts object keys to camelCase.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
 **Returns**: <code>function</code> - Returns function mutation object keys to camelCase  
 **See**: [Shortcut method](../shortcuts#shortcuts.toCamelCase)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| config | <code>Object</code> | Default empty. No used in action. |
-
 **Example**  
 ```js
 import toCamelCase from 'rmk/actions/toCamelCase';
@@ -108,17 +113,12 @@ formula(data)
 ```
 <a name="actions.module.exports"></a>
 
-### actions.module.exports(config) ⇒ <code>function</code>
+### actions.module.exports() ⇒ <code>function</code>
 Function of converts object keys to snake_case.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
 **Returns**: <code>function</code> - Returns function mutation object keys to snake_case  
 **See**: [Shortcut method](../shortcuts#shortcuts.toSnakeCase)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| config | <code>Object</code> | Default empty. No used in action. |
-
 **Example**  
 ```js
 import toSnakeCase from 'rmk/actions/toSnakeCase';
@@ -168,3 +168,15 @@ formula(data)
 let data = [{date: new Date(2001)}, {date: new Date(2002)}]
 // => [{date: new Date(2001), year: 2001}, {date: new Date(2002), year: 2002}]
 ```
+<a name="recursive"></a>
+
+## recursive(actions, deepLimit) ⇒ <code>\*</code>
+Recursive parse data by actions
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| actions | <code>Array</code> | array of actions |
+| deepLimit |  | Deep limit. Default 5. |
+
