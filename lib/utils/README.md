@@ -4,13 +4,13 @@
 **Kind**: global namespace  
 
 * [utils](#utils) : <code>object</code>
-    * [.module.exports(origin, actions)](#utils.module.exports) ⇒ <code>Array</code>
-    * [.module.exports(origin, actions)](#utils.module.exports) ⇒ <code>Object</code>
-    * [.module.exports(origin, actions)](#utils.module.exports) ⇒ <code>Object</code> &#124; <code>Array</code>
+    * [.parseArray(origin, actions)](#utils.parseArray) ⇒ <code>Array</code>
+    * [.parseObject(origin, actions)](#utils.parseObject) ⇒ <code>Object</code>
+    * [.reduce(origin, actions)](#utils.reduce) ⇒ <code>Object</code> &#124; <code>Array</code>
 
-<a name="utils.module.exports"></a>
+<a name="utils.parseArray"></a>
 
-### utils.module.exports(origin, actions) ⇒ <code>Array</code>
+### utils.parseArray(origin, actions) ⇒ <code>Array</code>
 Parse array elements
 
 **Kind**: static method of <code>[utils](#utils)</code>  
@@ -21,9 +21,9 @@ Parse array elements
 | origin | <code>Object</code> | Origin array |
 | actions | <code>Array</code> | Array of transform actions |
 
-<a name="utils.module.exports"></a>
+<a name="utils.parseObject"></a>
 
-### utils.module.exports(origin, actions) ⇒ <code>Object</code>
+### utils.parseObject(origin, actions) ⇒ <code>Object</code>
 Parse object fields
 
 **Kind**: static method of <code>[utils](#utils)</code>  
@@ -34,9 +34,9 @@ Parse object fields
 | origin | <code>Object</code> | Origin object |
 | actions | <code>Array</code> | Array of transform actions |
 
-<a name="utils.module.exports"></a>
+<a name="utils.reduce"></a>
 
-### utils.module.exports(origin, actions) ⇒ <code>Object</code> &#124; <code>Array</code>
+### utils.reduce(origin, actions) ⇒ <code>Object</code> &#124; <code>Array</code>
 Parse object or array
 
 **Kind**: static method of <code>[utils](#utils)</code>  

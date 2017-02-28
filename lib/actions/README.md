@@ -1,33 +1,19 @@
-## Objects
-
-<dl>
-<dt><a href="#actions">actions</a> : <code>object</code></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#recursive">recursive(actions, deepLimit)</a> ⇒ <code>*</code></dt>
-<dd><p>Recursive parse data by actions</p>
-</dd>
-</dl>
-
 <a name="actions"></a>
 
 ## actions : <code>object</code>
 **Kind**: global namespace  
 
 * [actions](#actions) : <code>object</code>
-    * [.module.exports()](#actions.module.exports) ⇒ <code>Object</code>
-    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
-    * [.module.exports()](#actions.module.exports) ⇒ <code>function</code>
-    * [.module.exports()](#actions.module.exports) ⇒ <code>function</code>
+    * [.clear()](#actions.clear) ⇒ <code>Object</code>
+    * [.recursive(actions, deepLimit)](#actions.recursive) ⇒ <code>Array</code> &#124; <code>Object</code>
+    * [.rename(config)](#actions.rename) ⇒ <code>function</code>
+    * [.toCamelCase()](#actions.toCamelCase) ⇒ <code>function</code>
+    * [.toSnakeCase()](#actions.toSnakeCase) ⇒ <code>function</code>
     * [.update(config)](#actions.update) ⇒ <code>function</code>
 
-<a name="actions.module.exports"></a>
+<a name="actions.clear"></a>
 
-### actions.module.exports() ⇒ <code>Object</code>
+### actions.clear() ⇒ <code>Object</code>
 Function of clear object keys from null and undefined values
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -52,11 +38,58 @@ formula(data)
 
  let data = {foo: true, bar: false, baz: 1 }
 formula(data)
- // => foo: true, bar: false, baz: 1 }
+ // => { foo: true, bar: false, baz: 1 }
 ```
-<a name="actions.module.exports"></a>
+<a name="actions.recursive"></a>
 
-### actions.module.exports(config) ⇒ <code>function</code>
+### actions.recursive(actions, deepLimit) ⇒ <code>Array</code> &#124; <code>Object</code>
+Recursive parse data by actions
+
+**Kind**: static method of <code>[actions](#actions)</code>  
+**Returns**: <code>Array</code> &#124; <code>Object</code> - Recursive parsed Data by actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| actions | <code>Array</code> | array of actions |
+| deepLimit | <code>Number</code> | Deep limit. Default 5. |
+
+**Example**  
+```js
+let recursiveData = {
+ foo_bar: 0,
+ remove_baz: null,
+ array_key: [1, 2, 3],
+ array_objects: [
+  {a_b: 'a', b_c: 'b'}
+ ]
+};
+recursiveData.deep_obj = recursiveData;
+
+ const formula = rmk(
+   rmkActions.recursive(
+     [
+       rmkActions.toCamelCase(),
+       rmkActions.update({
+           arrayKeyStr: localState =>
+             ((isArray(localState.arrayKey)) ? localState.arrayKey.join(',') : null),
+        }),
+       rmkActions.rename({
+           arrayKeyStr: 'renamedStr',
+         }),
+       rmkActions.clear(),
+     ]
+   )
+);
+formula(recursiveData);
+// => { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}], "deepObj":
+// { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
+// "deepObj": { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
+// "deepObj": { "deepObj": {"fooBar": 0}, "fooBar": 0 }, "fooBar": 0, "renamedStr": "1,2,3" },
+// "fooBar": 0, "renamedStr": "1,2,3" }, "fooBar": 0, "renamedStr": "1,2,3" };
+```
+<a name="actions.rename"></a>
+
+### actions.rename(config) ⇒ <code>function</code>
 Rename state by config
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -94,9 +127,9 @@ let data = {year: 2001, customField: false}
 formula(data)
 // => {deathYear: 2001}
 ```
-<a name="actions.module.exports"></a>
+<a name="actions.toCamelCase"></a>
 
-### actions.module.exports() ⇒ <code>function</code>
+### actions.toCamelCase() ⇒ <code>function</code>
 Function of converts object keys to camelCase.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -111,9 +144,9 @@ let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
 formula(data)
 // => {fooBar:1, fooBar:2, bar:3, foo:4}
 ```
-<a name="actions.module.exports"></a>
+<a name="actions.toSnakeCase"></a>
 
-### actions.module.exports() ⇒ <code>function</code>
+### actions.toSnakeCase() ⇒ <code>function</code>
 Function of converts object keys to snake_case.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -168,15 +201,3 @@ formula(data)
 let data = [{date: new Date(2001)}, {date: new Date(2002)}]
 // => [{date: new Date(2001), year: 2001}, {date: new Date(2002), year: 2002}]
 ```
-<a name="recursive"></a>
-
-## recursive(actions, deepLimit) ⇒ <code>\*</code>
-Recursive parse data by actions
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| actions | <code>Array</code> | array of actions |
-| deepLimit |  | Deep limit. Default 5. |
-
