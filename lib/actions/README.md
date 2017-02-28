@@ -82,10 +82,10 @@ recursiveData.deep_obj = recursiveData;
 );
 formula(recursiveData);
 // => { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}], "deepObj":
-{ "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
-"deepObj": { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
-"deepObj": { "deepObj": {"fooBar": 0}, "fooBar": 0 }, "fooBar": 0, "renamedStr": "1,2,3" },
-"fooBar": 0, "renamedStr": "1,2,3" }, "fooBar": 0, "renamedStr": "1,2,3" };
+// { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
+// "deepObj": { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
+// "deepObj": { "deepObj": {"fooBar": 0}, "fooBar": 0 }, "fooBar": 0, "renamedStr": "1,2,3" },
+// "fooBar": 0, "renamedStr": "1,2,3" }, "fooBar": 0, "renamedStr": "1,2,3" };
 ```
 <a name="actions.rename"></a>
 
