@@ -5,7 +5,7 @@
 
 * [actions](#actions) : <code>object</code>
     * [.clear()](#actions.clear) ⇒ <code>Object</code>
-    * [.recursive(actions, deepLimit)](#actions.recursive) ⇒ <code>\*</code>
+    * [.recursive(actions, deepLimit)](#actions.recursive) ⇒ <code>Array</code> &#124; <code>Object</code>
     * [.rename(config)](#actions.rename) ⇒ <code>function</code>
     * [.toCamelCase()](#actions.toCamelCase) ⇒ <code>function</code>
     * [.toSnakeCase()](#actions.toSnakeCase) ⇒ <code>function</code>
@@ -42,11 +42,20 @@ formula(data)
 ```
 <a name="actions.recursive"></a>
 
-### actions.recursive(actions, deepLimit) ⇒ <code>\*</code>
+### actions.recursive(actions, deepLimit) ⇒ <code>Array</code> &#124; <code>Object</code>
 Recursive parse data by actions
 
 **Kind**: static method of <code>[actions](#actions)</code>  
-**Returns**: <code>\*</code> - let recursiveData = {
+**Returns**: <code>Array</code> &#124; <code>Object</code> - Recursive parsed Data by actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| actions | <code>Array</code> | array of actions |
+| deepLimit | <code>Number</code> | Deep limit. Default 5. |
+
+**Example**  
+```js
+let recursiveData = {
  foo_bar: 0,
  remove_baz: null,
  array_key: [1, 2, 3],
@@ -76,13 +85,8 @@ formula(recursiveData);
 { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
 "deepObj": { "arrayKey": [1, 2, 3], "arrayObjects": [{"aB": "a", "bC": "b"}],
 "deepObj": { "deepObj": {"fooBar": 0}, "fooBar": 0 }, "fooBar": 0, "renamedStr": "1,2,3" },
-"fooBar": 0, "renamedStr": "1,2,3" }, "fooBar": 0, "renamedStr": "1,2,3" };  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| actions | <code>Array</code> | array of actions |
-| deepLimit |  | Deep limit. Default 5. |
-
+"fooBar": 0, "renamedStr": "1,2,3" }, "fooBar": 0, "renamedStr": "1,2,3" };
+```
 <a name="actions.rename"></a>
 
 ### actions.rename(config) ⇒ <code>function</code>
