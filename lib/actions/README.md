@@ -19,15 +19,15 @@
 **Kind**: global namespace  
 
 * [actions](#actions) : <code>object</code>
-    * [.module.exports()](#actions.module.exports) ⇒ <code>Object</code>
-    * [.module.exports(config)](#actions.module.exports) ⇒ <code>function</code>
-    * [.module.exports()](#actions.module.exports) ⇒ <code>function</code>
-    * [.module.exports()](#actions.module.exports) ⇒ <code>function</code>
+    * [.clear()](#actions.clear) ⇒ <code>Object</code>
+    * [.rename(config)](#actions.rename) ⇒ <code>function</code>
+    * [.toCamelCase()](#actions.toCamelCase) ⇒ <code>function</code>
+    * [.toSnakeCase()](#actions.toSnakeCase) ⇒ <code>function</code>
     * [.update(config)](#actions.update) ⇒ <code>function</code>
 
-<a name="actions.module.exports"></a>
+<a name="actions.clear"></a>
 
-### actions.module.exports() ⇒ <code>Object</code>
+### actions.clear() ⇒ <code>Object</code>
 Function of clear object keys from null and undefined values
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -54,9 +54,9 @@ formula(data)
 formula(data)
  // => foo: true, bar: false, baz: 1 }
 ```
-<a name="actions.module.exports"></a>
+<a name="actions.rename"></a>
 
-### actions.module.exports(config) ⇒ <code>function</code>
+### actions.rename(config) ⇒ <code>function</code>
 Rename state by config
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -94,9 +94,9 @@ let data = {year: 2001, customField: false}
 formula(data)
 // => {deathYear: 2001}
 ```
-<a name="actions.module.exports"></a>
+<a name="actions.toCamelCase"></a>
 
-### actions.module.exports() ⇒ <code>function</code>
+### actions.toCamelCase() ⇒ <code>function</code>
 Function of converts object keys to camelCase.
 
 **Kind**: static method of <code>[actions](#actions)</code>  
@@ -111,9 +111,9 @@ let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
 formula(data)
 // => {fooBar:1, fooBar:2, bar:3, foo:4}
 ```
-<a name="actions.module.exports"></a>
+<a name="actions.toSnakeCase"></a>
 
-### actions.module.exports() ⇒ <code>function</code>
+### actions.toSnakeCase() ⇒ <code>function</code>
 Function of converts object keys to snake_case.
 
 **Kind**: static method of <code>[actions](#actions)</code>  

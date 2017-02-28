@@ -4,15 +4,15 @@
 **Kind**: global namespace  
 
 * [shortcuts](#shortcuts) : <code>object</code>
-    * [.module.exports(origin)](#shortcuts.module.exports) ⇒ <code>function</code>
-    * [.module.exports(origin, config)](#shortcuts.module.exports) ⇒ <code>function</code>
-    * [.module.exports(origin)](#shortcuts.module.exports) ⇒ <code>function</code>
-    * [.module.exports(origin)](#shortcuts.module.exports) ⇒ <code>function</code>
-    * [.module.exports(origin, config)](#shortcuts.module.exports) ⇒ <code>function</code>
+    * [.clear(origin)](#shortcuts.clear) ⇒ <code>function</code>
+    * [.rename(origin, config)](#shortcuts.rename) ⇒ <code>function</code>
+    * [.toCamelCase(origin)](#shortcuts.toCamelCase) ⇒ <code>function</code>
+    * [.toSnakeCase(origin)](#shortcuts.toSnakeCase) ⇒ <code>function</code>
+    * [.update(origin, config)](#shortcuts.update) ⇒ <code>function</code>
 
-<a name="shortcuts.module.exports"></a>
+<a name="shortcuts.clear"></a>
 
-### shortcuts.module.exports(origin) ⇒ <code>function</code>
+### shortcuts.clear(origin) ⇒ <code>function</code>
 Shortcut for clear object
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
@@ -31,9 +31,9 @@ let data = {foo:null, bar: 0, baz:null}
 clear(data)
 // => {bar:0}
 ```
-<a name="shortcuts.module.exports"></a>
+<a name="shortcuts.rename"></a>
 
-### shortcuts.module.exports(origin, config) ⇒ <code>function</code>
+### shortcuts.rename(origin, config) ⇒ <code>function</code>
 Rename state by config
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
@@ -65,7 +65,7 @@ update(data, {
 let data = {year: 2001}
 rename(data, {
     year: (state) => {
-      return (state.year.toString().lentgth == 4) ? 'fullYear' : 'year';
+      return (state.year.toString().lentgth === 4) ? 'fullYear' : 'year';
     }
 })
 // => {fullYear: 2001}
@@ -73,14 +73,14 @@ rename(data, {
 let data = [{year: 2001}, {year: 2002}]
 rename(data, {
     year: (state) => {
-      return (state.year.toString().lentgth == 4) ? 'fullYear' : 'year';
+      return (state.year.toString().lentgth === 4) ? 'fullYear' : 'year';
     }
 })
 // => [{fullYear: 2001}, {fullYear: 2002}]
 ```
-<a name="shortcuts.module.exports"></a>
+<a name="shortcuts.toCamelCase"></a>
 
-### shortcuts.module.exports(origin) ⇒ <code>function</code>
+### shortcuts.toCamelCase(origin) ⇒ <code>function</code>
 Function of converts object keys to camelCase.
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
@@ -99,9 +99,9 @@ let data = {FooBar:1, foo_baz:2, bar:3, baz:4}
 toCamelCase(data)
 // => {fooBar:1, fooBaz:2, bar:3, baz:4}
 ```
-<a name="shortcuts.module.exports"></a>
+<a name="shortcuts.toSnakeCase"></a>
 
-### shortcuts.module.exports(origin) ⇒ <code>function</code>
+### shortcuts.toSnakeCase(origin) ⇒ <code>function</code>
 Function of converts object keys to snake_case.
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
@@ -120,9 +120,9 @@ let data = {fooBar:1, foo_baz:2, bar:3, Baz:4}
 toSnakeCase(data)
 // => {foo_bar:1, foo_baz:2, bar:3, baz:4}
 ```
-<a name="shortcuts.module.exports"></a>
+<a name="shortcuts.update"></a>
 
-### shortcuts.module.exports(origin, config) ⇒ <code>function</code>
+### shortcuts.update(origin, config) ⇒ <code>function</code>
 Update state by config
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
