@@ -2,8 +2,8 @@ import rmk from '../lib';
 import rmkActions from '../lib/actions';
 import mock from '../__mock__';
 
-describe('update', () => {
-  it('field function object', () => {
+describe('Update action', () => {
+  it('Field function object', () => {
     const formula = rmk(rmkActions.update({
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
@@ -13,7 +13,7 @@ describe('update', () => {
     expect(result).toEqual(mock.updateDataAfter);
   });
 
-  it('field static object', () => {
+  it('Field static object', () => {
     const formula = rmk(rmkActions.update({
       year: mock.updateDataAfter.year,
       month: mock.updateDataAfter.month,
@@ -23,7 +23,7 @@ describe('update', () => {
     expect(result).toEqual(mock.updateDataAfter);
   });
 
-  it('field function array', () => {
+  it('Field function array', () => {
     const formula = rmk(rmkActions.update({
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
@@ -33,7 +33,7 @@ describe('update', () => {
     expect(result).toEqual(mock.updateDataAfterArray);
   });
 
-  it('field static array', () => {
+  it('Field static array', () => {
     const additionalFields = {
       year: 2000,
       month: 1,

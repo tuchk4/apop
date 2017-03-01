@@ -2,7 +2,7 @@ import rmkActions from '../lib/actions';
 import reduce from '../lib/utils/reduce';
 import mock from '../__mock__';
 
-describe('Reduce', () => {
+describe('Reduce util', () => {
   it('Object argument', () => {
     const result = reduce(mock.clearDataBefore, [rmkActions.clear()]);
     expect(result).toEqual(mock.clearDataAfter);

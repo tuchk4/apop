@@ -1,8 +1,8 @@
 import shortcuts from '../../lib/shortcuts';
 import mock from '../../__mock__';
 
-describe('update', () => {
-  it('field function object', () => {
+describe('Update shortcut', () => {
+  it('Field function object', () => {
     const result = shortcuts.update(mock.updateDataBefore, {
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
@@ -11,7 +11,7 @@ describe('update', () => {
     expect(result).toEqual(mock.updateDataAfter);
   });
 
-  it('field static object', () => {
+  it('Field static object', () => {
     const result = shortcuts.update(mock.updateDataBefore, {
       year: mock.updateDataAfter.year,
       month: mock.updateDataAfter.month,
@@ -20,7 +20,7 @@ describe('update', () => {
     expect(result).toEqual(mock.updateDataAfter);
   });
 
-  it('field function array', () => {
+  it('Field function array', () => {
     const result = shortcuts.update(mock.updateDataBeforeArray, {
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
@@ -29,7 +29,7 @@ describe('update', () => {
     expect(result).toEqual(mock.updateDataAfterArray);
   });
 
-  it('field static array', () => {
+  it('Field static array', () => {
     const additionalFields = {
       year: 2000,
       month: 1,

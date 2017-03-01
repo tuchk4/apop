@@ -2,7 +2,7 @@ import rmk from '../lib';
 import rmkActions from '../lib/actions';
 import mock from '../__mock__';
 
-describe('toSnakeCase', () => {
+describe('toSnakeCase action', () => {
   it('Transform object to snake_case', () => {
     const formula = rmk(rmkActions.toSnakeCase());
     const result = formula(mock.keysDataBefore);
