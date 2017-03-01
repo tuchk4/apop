@@ -2,8 +2,8 @@ import rmk from '../lib';
 import rmkActions from '../lib/actions';
 import mock from '../__mock__';
 
-describe('toCamelCase', () => {
-  it('transform object to camelCase', () => {
+describe('toCamelCase action', () => {
+  it('Transform object to camelCase', () => {
     const formula = rmk(rmkActions.toCamelCase());
     const result = formula(mock.keysDataBefore);
     expect(result).toEqual(mock.keysCamelCaseDataAfter);

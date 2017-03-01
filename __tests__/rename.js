@@ -2,8 +2,8 @@ import rmk from '../lib';
 import rmkActions from '../lib/actions';
 import mock from '../__mock__';
 
-describe('rename', () => {
-  it('field function object', () => {
+describe('Rename Action', () => {
+  it('Field function object', () => {
     const formula = rmk(rmkActions.rename({
       year: localState => (((localState.year.toString().length === 4) ? 'fullYear' : 'year')),
     }));
@@ -11,7 +11,7 @@ describe('rename', () => {
     expect(result).toEqual(mock.renameDataAfter);
   });
 
-  it('field static object', () => {
+  it('Field static object', () => {
     const formula = rmk(rmkActions.rename({
       year: 'fullYear',
     }));
@@ -19,7 +19,7 @@ describe('rename', () => {
     expect(result).toEqual(mock.renameDataAfter);
   });
 
-  it('field function array', () => {
+  it('Field function array', () => {
     const formula = rmk(rmkActions.rename({
       year: localState => (((localState.year.toString().length === 4) ? 'fullYear' : 'year')),
     }));
@@ -27,7 +27,7 @@ describe('rename', () => {
     expect(result).toEqual(mock.renameDataAfterArray);
   });
 
-  it('field static array', () => {
+  it('Field static array', () => {
     const formula = rmk(rmkActions.rename({
       year: 'fullYear',
     }));

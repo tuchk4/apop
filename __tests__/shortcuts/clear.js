@@ -1,7 +1,7 @@
 import shortcuts from '../../lib/shortcuts';
 import mock from '../../__mock__';
 
-describe('Clear', () => {
+describe('Clear shortcut', () => {
   it('Clear remove undefined and null values', () => {
     const result = shortcuts.clear(mock.clearDataBefore);
     expect(result).toEqual(mock.clearDataAfter);

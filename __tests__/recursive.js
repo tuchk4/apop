@@ -6,8 +6,8 @@ import mock from '../__mock__/recusrive';
 
 /* eslint no-confusing-arrow: "error"*/
 /* eslint-env es6*/
-describe('recursive', () => {
-  it('object recursive', () => {
+describe('Recursive action', () => {
+  it('Object recursive', () => {
     const formula = rmk(
       rmkActions.recursive(
         [
