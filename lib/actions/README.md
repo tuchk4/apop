@@ -71,7 +71,7 @@ let data = [
 formula(data)
  // => [{id:1, name: "abc"}, {id:2, name: "bca"}]
 
- let data = {id:1, value: "abc", birthDate: "01.01.1970", "isActive": false}
+ let data = {id:1, value: "abc", createDate: "01.01.1970", "isActive": false}
  let formula = rmk(pick({
    id: 'id',
    name:'value',
