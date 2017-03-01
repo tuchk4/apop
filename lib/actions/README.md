@@ -5,6 +5,7 @@
 
 * [actions](#actions) : <code>object</code>
     * [.clear()](#actions.clear) ⇒ <code>Object</code>
+    * [.pick(config)](#actions.pick) ⇒ <code>Object</code>
     * [.recursive(actions, deepLimit)](#actions.recursive) ⇒ <code>Array</code> &#124; <code>Object</code>
     * [.rename(config)](#actions.rename) ⇒ <code>function</code>
     * [.toCamelCase()](#actions.toCamelCase) ⇒ <code>function</code>
@@ -39,6 +40,55 @@ formula(data)
  let data = {foo: true, bar: false, baz: 1 }
 formula(data)
  // => { foo: true, bar: false, baz: 1 }
+```
+<a name="actions.pick"></a>
+
+### actions.pick(config) ⇒ <code>Object</code>
+Function of pick object keys and calculate other keys
+
+**Kind**: static method of <code>[actions](#actions)</code>  
+**Returns**: <code>Object</code> - Returns function for picking keys  
+**See**: [Shortcut method](../shortcuts#shortcuts.pick)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>Array</code> &#124; <code>Object</code> | Keys |
+
+**Example**  
+```js
+import rmk from 'rmk';
+import pick from 'rmk/actions/pick';
+
+let formula = rmk(pick(['id', 'name'))
+let data = {id:1, name: "abc", createDate: "01.01.1970", "isActive": false}
+formula(data)
+// => {id:1, name: "abc"}
+
+let data = [
+ {id:1, name: "abc", createDate: "01.01.1970", "isActive": false},
+ {id:2, name: "bca", createDate: "01.02.1971", "isActive": true}
+ ]
+formula(data)
+ // => [{id:1, name: "abc"}, {id:2, name: "bca"}]
+
+ let data = {id:1, value: "abc", birthDate: "01.01.1970", "isActive": false}
+ let formula = rmk(pick({
+   id: 'id',
+   name:'value',
+   date: (localState) => new Date(localState.createDate)
+ })
+formula(data)
+ // => {id: 1, name: "abc", date: new Date("01.01.1970")}
+
+ let data = [
+   {id:1, value: "abc", birthDate: "01.01.1970", "isActive": false}
+   {id:2, value: "bca", birthDate: "01.01.1971", "isActive": true}
+ ]
+formula(data)
+ // => [
+ //  {id: 1, name: "abc", date: new Date("01.01.1970")},
+ //  {id: 2, name: "bca", date: new Date("01.01.1970")}
+ // ]
 ```
 <a name="actions.recursive"></a>
 
