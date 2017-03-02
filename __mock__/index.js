@@ -81,6 +81,40 @@ const renameDataAfterArray = [
   {"fullYear": 2001},
   {"fullYear": 2001}
 ];
+
+const pickDataBefore1 = {id:1, name: "abc", createDate: "01.01.1970", "isActive": false};
+const pickDataAfter1 = {id:1, name: "abc"};
+
+const pickDataBeforeArray1 = [
+  {id:1, name: "abc", createDate: "01.01.1970", "isActive": false},
+  {id:2, name: "bca", createDate: "01.01.1971", "isActive": true}
+  ];
+const pickDataAfterArray1 = [
+  {id:1, name: "abc"},
+  {id:2, name: "bca"}
+];
+const pickDataBefore2 = {key:"bbb", value: "abc", createDate: "01.01.1970", "isActive": false};
+const pickDataAfter2 = {id:"bbb", name: "abc"};
+
+const pickDataBeforeArray2 = [
+  {key:1, value: "abc", createDate: "01.01.1970", "isActive": false},
+  {key:2, value: "bca", createDate: "01.01.1971", "isActive": true}
+];
+const pickDataAfterArray2 = [
+  {id:1, name: "abc"},
+  {id:2, name: "bca"}
+];
+const pickDataBefore3 = {key:"bbb", value: "abc", createDate: "01.01.1970", "isActive": false};
+const pickDataAfter3 = {id:"bbb", name: "abc", isEmptyDate: false};
+
+const pickDataBeforeArray3 = [
+  {key: "bbb", value: "abc", createDate: "01.01.1970", "isActive": false},
+  {key: "ccc", value: "bca", "isActive": true}
+];
+const pickDataAfterArray3 = [
+  {id: "bbb", name: "abc", "isEmptyDate": false},
+  {id: "ccc", name: "bca", "isEmptyDate": true}
+];
 export default {
   clearDataBefore, clearDataAfter,
   clearDataBeforeArray, clearDataAfterArray,
@@ -92,5 +126,12 @@ export default {
   updateDataBeforeArray, updateDataAfterArray,
 
   renameDataBefore, renameDataAfter,
-  renameDataBeforeArray, renameDataAfterArray
+  renameDataBeforeArray, renameDataAfterArray,
+
+  pickDataBefore1, pickDataAfter1,
+  pickDataBeforeArray1, pickDataAfterArray1,
+  pickDataBefore2, pickDataAfter2,
+  pickDataBeforeArray2, pickDataAfterArray2,
+  pickDataBefore3, pickDataAfter3,
+  pickDataBeforeArray3, pickDataAfterArray3
 };
