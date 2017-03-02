@@ -2,7 +2,7 @@ import rmk from '../lib';
 import rmkActions from '../lib/actions';
 import mock from '../__mock__';
 
-describe('Clear', () => {
+describe('Clear action', () => {
   it('Clear object', () => {
     const formula = rmk(rmkActions.clear());
     const result = formula(mock.clearDataBefore);

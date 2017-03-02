@@ -1,8 +1,8 @@
 import shortcuts from '../../lib/shortcuts';
 import mock from '../../__mock__';
 
-describe('toCamelCase', () => {
-  it('transform to camelCase', () => {
+describe('toCamelCase shortcut', () => {
+  it('Transform to camelCase', () => {
     const result = shortcuts.toCamelCase(mock.keysDataBefore);
     expect(result).toEqual(mock.keysCamelCaseDataAfter);
   });
