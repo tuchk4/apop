@@ -1,5 +1,5 @@
 import shortcuts from '../../lib/shortcuts';
-import {before, after} from '../update';
+import { before, after } from '../update';
 
 describe('Update shortcut', () => {
   it('Field function object', () => {
@@ -35,13 +35,8 @@ describe('Update shortcut', () => {
       month: 1,
       day: 1,
     };
-    const result = shortcuts.update(
-      [before],
-      additionalFields
-    );
-    const trueResult = [
-      { ...after, ...additionalFields },
-    ];
+    const result = shortcuts.update([before], additionalFields);
+    const trueResult = [{ ...after, ...additionalFields }];
     expect(result).toEqual(trueResult);
   });
 });

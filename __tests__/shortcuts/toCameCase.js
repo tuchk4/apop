@@ -1,5 +1,5 @@
 import shortcuts from '../../lib/shortcuts';
-import {before, after} from '../toCameCase';
+import { before, after } from '../toCameCase';
 
 describe('toCamelCase shortcut', () => {
   it('Transform to camelCase', () => {

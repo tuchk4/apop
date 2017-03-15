@@ -1,13 +1,12 @@
 import rmk from '../lib';
 import rmkActions from '../lib/actions';
 
-
 export const before = {
-  "year": 2001
+  year: 2001,
 };
 
 export const after = {
-  "fullYear": 2001
+  fullYear: 2001,
 };
 
 describe('Rename Action', () => {

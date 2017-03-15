@@ -3,126 +3,128 @@ import isArray from 'lodash/isArray';
 import rmk from '../lib';
 import rmkActions from '../lib/actions';
 
-let before1 = {
+const before1 = {
   foo_bar: 0,
   remove_baz: null,
   array_key: [1, 2, 3],
-  array_objects: [
-    {a_b: 'a', b_c: 'b'}
-  ]
+  array_objects: [{ a_b: 'a', b_c: 'b' }],
 };
 before1.deep_obj = before1;
-let after1 = {
+const after1 = {
   fooBar: 0,
   arrayKey: [1, 2, 3],
-  arrayObjects: [{aB: 'a', bC: 'b'}],
+  arrayObjects: [{ aB: 'a', bC: 'b' }],
   deepObj: {
     fooBar: 0,
     arrayKey: [1, 2, 3],
     arrayObjects: [null],
-    deepObj: {fooBar: 0},
-    renamedStr: '1,2,3'
+    deepObj: { fooBar: 0 },
+    renamedStr: '1,2,3',
   },
-  renamedStr: '1,2,3'
+  renamedStr: '1,2,3',
 };
-
 
 const before2 = [
   {
-    "children": [],
-    "name": "1",
-    "url": "/1",
+    children: [],
+    name: '1',
+    url: '/1',
   },
   {
-    "children": [],
-    "name": "2",
-    "url": "/v2/2",
+    children: [],
+    name: '2',
+    url: '/v2/2',
   },
   {
-    "children": [
+    children: [
       {
-        "children": [],
-        "name": "3",
-        "url": "/v2/3",
+        children: [],
+        name: '3',
+        url: '/v2/3',
       },
       {
-        "children": [
+        children: [
           {
-            "children": [],
-            "name": "3",
-            "url": "/3"
+            children: [],
+            name: '3',
+            url: '/3',
           },
           {
-            "children": [],
-            "name": "4",
-            "url": "/v2/4"
+            children: [],
+            name: '4',
+            url: '/v2/4',
           },
           {
-            "children": [],
-            "name": "5",
-            "url": "/v2/5"
+            children: [],
+            name: '5',
+            url: '/v2/5',
           },
         ],
-        "name": "6"
-      }
-    ]
+        name: '6',
+      },
+    ],
   },
 ];
 
 const after2 = [
   {
-    "name": "1 old",
-    "url": "/1",
-    "isCategory": false,
-    "isLink": true,
-    "version": "v1"
+    name: '1 old',
+    url: '/1',
+    isCategory: false,
+    isLink: true,
+    version: 'v1',
   },
   {
-    "name": "2",
-    "url": "/2",
-    "isCategory": false,
-    "isLink": true,
-    "version": "v2"
-  }, {
-    "nodes": [{
-      "name": "3",
-      "url": "/3",
-      "isCategory": false,
-      "isLink": true,
-      "version": "v2"
-    },
+    name: '2',
+    url: '/2',
+    isCategory: false,
+    isLink: true,
+    version: 'v2',
+  },
+  {
+    nodes: [
       {
-        "nodes": [
+        name: '3',
+        url: '/3',
+        isCategory: false,
+        isLink: true,
+        version: 'v2',
+      },
+      {
+        nodes: [
           {
-            "name": "3 old",
-            "url": "/3",
-            "isCategory": false,
-            "isLink": true,
-            "version": "v1"
+            name: '3 old',
+            url: '/3',
+            isCategory: false,
+            isLink: true,
+            version: 'v1',
           },
           {
-            "name": "4",
-            "url": "/4",
-            "isCategory": false,
-            "isLink": true,
-            "version": "v2"
+            name: '4',
+            url: '/4',
+            isCategory: false,
+            isLink: true,
+            version: 'v2',
           },
           {
-            "name": "5",
-            "url": "/5",
-            "isCategory": false,
-            "isLink": true,
-            "version": "v2"
-          }
+            name: '5',
+            url: '/5',
+            isCategory: false,
+            isLink: true,
+            version: 'v2',
+          },
         ],
-        "name": "6",
-        "isCategory": true,
-        "isLink": false,
-        "isOpen": false
-      }], "isCategory": true, "isLink": false, "isOpen": false
-  }
+        name: '6',
+        isCategory: true,
+        isLink: false,
+        isOpen: false,
+      },
+    ],
+    isCategory: true,
+    isLink: false,
+    isOpen: false,
+  },
 ];
-
 
 const VERSIONS = {
   V1: 'v1',

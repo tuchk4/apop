@@ -1,15 +1,14 @@
 import rmk from '../lib';
 import rmkActions from '../lib/actions';
 
-
 export const before = {
-  "date": new Date(2001,11,3),
+  date: new Date(2001, 11, 3),
 };
 export const after = {
-  "date": new Date(2001,11,3),
-  "year": 2001,
-  "month": 11,
-  "day": 3
+  date: new Date(2001, 11, 3),
+  year: 2001,
+  month: 11,
+  day: 3,
 };
 
 describe('Update action', () => {

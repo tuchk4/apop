@@ -1,6 +1,6 @@
 import shortcuts from '../../lib/shortcuts';
 
-import {before, after} from '../rename';
+import { before, after } from '../rename';
 
 describe('Rename shortcut', () => {
   it('Field function object', () => {

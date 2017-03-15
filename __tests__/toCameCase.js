@@ -2,14 +2,14 @@ import rmk from '../lib';
 import rmkActions from '../lib/actions';
 
 export const before = {
-  "id": 1,
-  "firstName": "Stephen",
-  "last_name": "Nelson"
+  id: 1,
+  firstName: 'Stephen',
+  last_name: 'Nelson',
 };
 export const after = {
-  "id": 1,
-  "firstName": "Stephen",
-  "lastName": "Nelson"
+  id: 1,
+  firstName: 'Stephen',
+  lastName: 'Nelson',
 };
 
 describe('toCamelCase action', () => {

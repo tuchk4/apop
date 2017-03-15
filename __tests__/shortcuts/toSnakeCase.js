@@ -1,5 +1,5 @@
 import shortcuts from '../../lib/shortcuts';
-import {before, after} from '../toSnakeCase';
+import { before, after } from '../toSnakeCase';
 
 describe('toSnakeCase shortcut', () => {
   it('Transform to snake_case', () => {

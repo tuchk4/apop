@@ -1,38 +1,47 @@
 import rmk from '../lib';
 import rmkActions from '../lib/actions';
 
-export const before1 = {id:1, name: "abc", createDate: "01.01.1970", "isActive": false};
-export const after1 = {id:1, name: "abc"};
+export const before1 = {
+  id: 1,
+  name: 'abc',
+  createDate: '01.01.1970',
+  isActive: false,
+};
+export const after1 = { id: 1, name: 'abc' };
 
 export const beforeArray1 = [
-  {id:1, name: "abc", createDate: "01.01.1970", "isActive": false},
-  {id:2, name: "bca", createDate: "01.01.1971", "isActive": true}
+  { id: 1, name: 'abc', createDate: '01.01.1970', isActive: false },
+  { id: 2, name: 'bca', createDate: '01.01.1971', isActive: true },
 ];
-export const afterArray1 = [
-  {id:1, name: "abc"},
-  {id:2, name: "bca"}
-];
-export const before2 = {key:"bbb", value: "abc", createDate: "01.01.1970", "isActive": false};
-export const after2 = {id:"bbb", name: "abc"};
+export const afterArray1 = [{ id: 1, name: 'abc' }, { id: 2, name: 'bca' }];
+export const before2 = {
+  key: 'bbb',
+  value: 'abc',
+  createDate: '01.01.1970',
+  isActive: false,
+};
+export const after2 = { id: 'bbb', name: 'abc' };
 
 export const beforeArray2 = [
-  {key:1, value: "abc", createDate: "01.01.1970", "isActive": false},
-  {key:2, value: "bca", createDate: "01.01.1971", "isActive": true}
+  { key: 1, value: 'abc', createDate: '01.01.1970', isActive: false },
+  { key: 2, value: 'bca', createDate: '01.01.1971', isActive: true },
 ];
-export const afterArray2 = [
-  {id:1, name: "abc"},
-  {id:2, name: "bca"}
-];
-export const before3 = {key:"bbb", value: "abc", createDate: "01.01.1970", "isActive": false};
-export const after3 = {id:"bbb", name: "abc", isEmptyDate: false};
+export const afterArray2 = [{ id: 1, name: 'abc' }, { id: 2, name: 'bca' }];
+export const before3 = {
+  key: 'bbb',
+  value: 'abc',
+  createDate: '01.01.1970',
+  isActive: false,
+};
+export const after3 = { id: 'bbb', name: 'abc', isEmptyDate: false };
 
 export const beforeArray3 = [
-  {key: "bbb", value: "abc", createDate: "01.01.1970", "isActive": false},
-  {key: "ccc", value: "bca", "isActive": true}
+  { key: 'bbb', value: 'abc', createDate: '01.01.1970', isActive: false },
+  { key: 'ccc', value: 'bca', isActive: true },
 ];
 export const afterArray3 = [
-  {id: "bbb", name: "abc", "isEmptyDate": false},
-  {id: "ccc", name: "bca", "isEmptyDate": true}
+  { id: 'bbb', name: 'abc', isEmptyDate: false },
+  { id: 'ccc', name: 'bca', isEmptyDate: true },
 ];
 
 describe('Pick action', () => {

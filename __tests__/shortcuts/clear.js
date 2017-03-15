@@ -1,5 +1,5 @@
 import shortcuts from '../../lib/shortcuts';
-import {before, after} from '../clear';
+import { before, after } from '../clear';
 
 describe('Clear shortcut', () => {
   it('Clear remove undefined and null values', () => {
