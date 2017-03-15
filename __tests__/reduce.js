@@ -8,7 +8,6 @@ describe('Reduce util', () => {
     expect(result).toEqual(mock.clearDataAfter);
   });
 
-
   it('Array argument', () => {
     const result = reduce(mock.clearDataBeforeArray, [rmkActions.clear()]);
     expect(result).toEqual(mock.clearDataAfterArray);

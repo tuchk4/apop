@@ -4,7 +4,8 @@ import mock from '../../__mock__';
 describe('Rename shortcut', () => {
   it('Field function object', () => {
     const result = shortcuts.rename(mock.renameDataBefore, {
-      year: localState => ((localState.year.toString().length === 4) ? 'fullYear' : 'year'),
+      year: localState =>
+        localState.year.toString().length === 4 ? 'fullYear' : 'year',
     });
     expect(result).toEqual(mock.renameDataAfter);
   });
@@ -18,7 +19,8 @@ describe('Rename shortcut', () => {
 
   it('Field function array', () => {
     const result = shortcuts.rename(mock.renameDataBeforeArray, {
-      year: localState => ((localState.year.toString().length === 4) ? 'fullYear' : 'year'),
+      year: localState =>
+        localState.year.toString().length === 4 ? 'fullYear' : 'year',
     });
     expect(result).toEqual(mock.renameDataAfterArray);
   });

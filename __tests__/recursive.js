@@ -18,10 +18,10 @@ function versionLinkFn(url, isLink) {
 }
 
 function normalizeUrl(url, version) {
-  return (version === VERSIONS.V2) ? url.replace(`/${VERSIONS.V2}`, '') : url;
+  return version === VERSIONS.V2 ? url.replace(`/${VERSIONS.V2}`, '') : url;
 }
 function normalizeName(name, version) {
-  return (version === VERSIONS.V1) ? `${name} old` : name;
+  return version === VERSIONS.V1 ? `${name} old` : name;
 }
 
 /* eslint no-confusing-arrow: "error"*/
@@ -33,14 +33,18 @@ describe('Recursive action', () => {
         [
           rmkActions.toCamelCase(),
           rmkActions.update({
-            arrayKeyStr: localState => ((isArray(localState.arrayKey)) ? localState.arrayKey.join(',') : null),
+            arrayKeyStr: localState =>
+              isArray(localState.arrayKey)
+                ? localState.arrayKey.join(',')
+                : null,
           }),
           rmkActions.rename({
             arrayKeyStr: 'renamedStr',
           }),
           rmkActions.clear(),
-        ], 3,
-      ),
+        ],
+        3
+      )
     );
     const result = formula(mock.recursiveBefore);
 
@@ -49,38 +53,54 @@ describe('Recursive action', () => {
 
   it('Menu', () => {
     const transformMainMenu = rmk(
-      rmkActions.recursive([
-        rmkActions.clear(),
-        rmkActions.toCamelCase(),
-        rmkActions.rename({
-          children: 'nodes',
-        }),
-      ], 8),
-      rmkActions.recursive([
-        rmkActions.update({
-          isCategory: localState => Object.prototype.hasOwnProperty.call(localState, 'nodes'),
-          isLink: localState => !Object.prototype.hasOwnProperty.call(localState, 'nodes'),
-        }),
-      ], 8),
-      rmkActions.recursive([
-        rmkActions.update({
-          version: localState => versionLinkFn(localState.url, localState.isLink),
-        }),
-      ], 8),
-      rmkActions.recursive([
-        rmkActions.update({
-          url: localState => normalizeUrl(localState.url, localState.version),
-          name: localState => normalizeName(localState.name, localState.version),
-          isOpen: (localState) => {
-            let isOpen = null;
-            if (localState.isCategory) {
-              isOpen = false;
-            }
-            return isOpen;
-          },
-        }),
-        rmkActions.clear(),
-      ], 8),
+      rmkActions.recursive(
+        [
+          rmkActions.clear(),
+          rmkActions.toCamelCase(),
+          rmkActions.rename({
+            children: 'nodes',
+          }),
+        ],
+        8
+      ),
+      rmkActions.recursive(
+        [
+          rmkActions.update({
+            isCategory: localState =>
+              Object.prototype.hasOwnProperty.call(localState, 'nodes'),
+            isLink: localState =>
+              !Object.prototype.hasOwnProperty.call(localState, 'nodes'),
+          }),
+        ],
+        8
+      ),
+      rmkActions.recursive(
+        [
+          rmkActions.update({
+            version: localState =>
+              versionLinkFn(localState.url, localState.isLink),
+          }),
+        ],
+        8
+      ),
+      rmkActions.recursive(
+        [
+          rmkActions.update({
+            url: localState => normalizeUrl(localState.url, localState.version),
+            name: localState =>
+              normalizeName(localState.name, localState.version),
+            isOpen: localState => {
+              let isOpen = null;
+              if (localState.isCategory) {
+                isOpen = false;
+              }
+              return isOpen;
+            },
+          }),
+          rmkActions.clear(),
+        ],
+        8
+      )
     );
     const result = transformMainMenu(mock.recursiveMenuBefore);
 

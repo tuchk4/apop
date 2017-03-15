@@ -4,31 +4,37 @@ import mock from '../__mock__';
 
 describe('Update action', () => {
   it('Field function object', () => {
-    const formula = rmk(rmkActions.update({
-      year: localState => localState.date.getFullYear(),
-      month: localState => localState.date.getMonth(),
-      day: localState => localState.date.getDate(),
-    }));
+    const formula = rmk(
+      rmkActions.update({
+        year: localState => localState.date.getFullYear(),
+        month: localState => localState.date.getMonth(),
+        day: localState => localState.date.getDate(),
+      })
+    );
     const result = formula(mock.updateDataBefore);
     expect(result).toEqual(mock.updateDataAfter);
   });
 
   it('Field static object', () => {
-    const formula = rmk(rmkActions.update({
-      year: mock.updateDataAfter.year,
-      month: mock.updateDataAfter.month,
-      day: mock.updateDataAfter.day,
-    }));
+    const formula = rmk(
+      rmkActions.update({
+        year: mock.updateDataAfter.year,
+        month: mock.updateDataAfter.month,
+        day: mock.updateDataAfter.day,
+      })
+    );
     const result = formula(mock.updateDataBefore);
     expect(result).toEqual(mock.updateDataAfter);
   });
 
   it('Field function array', () => {
-    const formula = rmk(rmkActions.update({
-      year: localState => localState.date.getFullYear(),
-      month: localState => localState.date.getMonth(),
-      day: localState => localState.date.getDate(),
-    }));
+    const formula = rmk(
+      rmkActions.update({
+        year: localState => localState.date.getFullYear(),
+        month: localState => localState.date.getMonth(),
+        day: localState => localState.date.getDate(),
+      })
+    );
     const result = formula(mock.updateDataBeforeArray);
     expect(result).toEqual(mock.updateDataAfterArray);
   });

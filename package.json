@@ -16,7 +16,7 @@
     "github": "npm run jsdoc2md && git commit -a -m \"generate docs\" && git push",
     "eslint": "eslint ./lib ./__tests__",
     "eslint:fix": "eslint ./lib ./__tests__ --fix",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'lib/*/*.js'",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'lib/**/*.js' '__tests__/**/*.js'",
     "pref": "babel-node tasks/bestResults.js"
   },
   "engines": {

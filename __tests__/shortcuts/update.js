@@ -35,7 +35,10 @@ describe('Update shortcut', () => {
       month: 1,
       day: 1,
     };
-    const result = shortcuts.update(mock.updateDataBeforeArray, additionalFields);
+    const result = shortcuts.update(
+      mock.updateDataBeforeArray,
+      additionalFields
+    );
     const trueResult = [
       { ...mock.updateDataAfterArray[0], ...additionalFields },
       { ...mock.updateDataAfterArray[1], ...additionalFields },
