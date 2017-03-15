@@ -8,8 +8,8 @@
 
 [Utils  docs](lib/utils)
 
-##Example 1. Clear data.##
-**Transform Object:**
+## Example 1. Clear data. ##
+ ** Transform Object: ** 
 ```js
 import rmk from 'rmk';
 import rmkClearAction from 'rmk/actions/clear';
@@ -19,7 +19,7 @@ const formula = rmk(rmkClearAction());
 const result = formula(data)
 // =>  {}
 ```
-**Transform array:**
+ ** Transform array: ** 
 ```js
 import rmk from 'rmk';
 import rmkClearAction from 'rmk/actions/clear';
@@ -29,7 +29,7 @@ const formula = rmk(rmkClearAction());
 const result = formula(data)
 // =>  [ {a:1}, {b:2} ]
 ```
-**Shortcut:**
+ ** Shortcut: ** 
 ```js
 import rmkClear from 'rmk/shortcuts/clear';
 
@@ -39,8 +39,8 @@ const result = rmkClear(data)
 ```
 
 
-##Example 2. To snake case.##
-**Transform Object:**
+## Example 2. To snake case. ##
+ ** Transform Object: ** 
 ```js
 import rmk from 'rmk';
 import rmkToSnakeCaseAction from 'rmk/actions/toSnakeCase';
@@ -50,7 +50,7 @@ const formula = rmk(rmkToSnakeCaseAction());
 const result = formula(data)
 // =>  { foo_bar: 1, foo: 2, bar: 3 }
 ```
-**Transform array:**
+ ** Transform array: ** 
 ```js
 import rmk from 'rmk';
 import rmkToSnakeCaseAction from 'rmk/actions/toSnakeCase';
@@ -60,7 +60,7 @@ const formula = rmk(rmkToSnakeCaseAction());
 const result = formula(data)
 // =>  [ {foo_bar: 1}, {bar_baz: 2} ]
 ```
-**Shortcut:**
+ ** Shortcut: ** 
 ```js
 import rmkToSnakeCase from 'rmk/shortcuts/toSnakeCase';
 
@@ -70,8 +70,8 @@ const result = rmkToSnakeCase(data)
 ```
 
 
-##Example 3. To camel case.##
-**Transform Object:**
+## Example 3. To camel case. ##
+ ** Transform Object: ** 
 ```js
 import rmk from 'rmk';
 import rmkToCamelCaseAction from 'rmk/actions/toCamelCase';
@@ -81,7 +81,7 @@ const formula = rmk(rmkToCamelCaseAction());
 const result = formula(data)
 // =>  { fooBar: 1, foo: 2, bar: 3 }
 ```
-**Transform array:**
+ ** Transform array: ** 
 ```js
 import rmk from 'rmk';
 import rmkToCamelCaseAction from 'rmk/actions/toCamelCase';
@@ -91,7 +91,7 @@ const formula = rmk(rmkToCamelCaseAction());
 const result = formula(data)
 // =>  [ {fooBar: 1}, {barBaz: 2} ]
 ```
-**Shortcut:**
+ ** Shortcut: ** 
 ```js
 import rmkToCamelCase from 'rmk/shortcuts/toCamelCase';
 
@@ -101,8 +101,8 @@ const result = rmkToCamelCase(data)
 ```
 
 
-##Example 4. Add static field.##
-**Transform Object:**
+## Example 4. Add static field. ##
+ ** Transform Object: ** 
 ```js
 import rmk from 'rmk';
 import rmkUpdate from 'rmk/actions/update';
@@ -114,7 +114,7 @@ const formula = rmk(rmkUpdate({
 const result = formula(data)
 // =>  { foo: 1, bar: 2, baz:3 }
 ```
-**Transform array:**
+ ** Transform array: ** 
 ```js
 import rmk from 'rmk';
 import rmkUpdate from 'rmk/actions/update';
@@ -126,7 +126,7 @@ const formula = rmk(rmkUpdate({
 const result = formula(data)
 // =>  [ {foo: 1, baz:2},  {foo: 4, baz:5} ]
 ```
-**Shortcut:**
+ ** Shortcut: ** 
 ```js
 import rmkUpdate from 'rmk/shortcuts/update';
 
@@ -139,7 +139,7 @@ const result = rmkUpdate(data, {
 
 
 
-##Example 5. Complex transform array:##
+## Example 5. Complex transform array: ##
 ```js
 import rmk from 'rmk';
 import rmkToCamelCaseAction from 'rmk/actions/toCamelCase';
@@ -162,7 +162,7 @@ const result = formula(data);
 
 ```
 
-##Example 5. Complex transform array. Import all actions:##
+## Example 5. Complex transform array. Import all actions: ##
 ```js
 import rmk from 'rmk';
 import rmkActions from 'rmk/actions';
@@ -184,7 +184,7 @@ const result = formula(data);
 ```
 
 
-##Example 6. Complex transform array. Import all shortcuts:##
+## Example 6. Complex transform array. Import all shortcuts: ##
 ```js
 import rmk from 'rmk';
 import rmkShortcuts from 'rmk/shortcuts';
