@@ -222,7 +222,7 @@ Update state by config
 
 | Param | Type | Description |
 | --- | --- | --- |
-| config | <code>Object</code> | {field: fn(state)} or {field: value} |
+| config | <code>Object</code> &#124; <code>function</code> | {field: fn(state)} or {field: value} |
 
 **Example**  
 ```js

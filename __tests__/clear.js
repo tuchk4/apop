@@ -10,10 +10,10 @@ export const before = {
   city: 'Kapotnya',
   phrase: 'Universal 6th generation portal',
   null: null,
-  undefined: undefined,
+  undefined,
   date: new Date(2001),
-  '0': 0,
-  '1': 1,
+  0: 0,
+  1: 1,
   '-1': -1,
   emptyStr: '',
 };
@@ -28,8 +28,8 @@ export const after = {
   city: 'Kapotnya',
   phrase: 'Universal 6th generation portal',
   date: new Date(2001),
-  '0': 0,
-  '1': 1,
+  0: 0,
+  1: 1,
   '-1': -1,
 };
 

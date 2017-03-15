@@ -1,32 +1,32 @@
 import shortcuts from '../../lib/shortcuts';
-import mock from '../../__mock__';
+import { before, after } from '../update';
 
 describe('Update shortcut', () => {
   it('Field function object', () => {
-    const result = shortcuts.update(mock.updateDataBefore, {
+    const result = shortcuts.update(before, {
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
       day: localState => localState.date.getDate(),
     });
-    expect(result).toEqual(mock.updateDataAfter);
+    expect(result).toEqual(after);
   });
 
   it('Field static object', () => {
-    const result = shortcuts.update(mock.updateDataBefore, {
-      year: mock.updateDataAfter.year,
-      month: mock.updateDataAfter.month,
-      day: mock.updateDataAfter.day,
+    const result = shortcuts.update(before, {
+      year: after.year,
+      month: after.month,
+      day: after.day,
     });
-    expect(result).toEqual(mock.updateDataAfter);
+    expect(result).toEqual(after);
   });
 
   it('Field function array', () => {
-    const result = shortcuts.update(mock.updateDataBeforeArray, {
+    const result = shortcuts.update([before], {
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
       day: localState => localState.date.getDate(),
     });
-    expect(result).toEqual(mock.updateDataAfterArray);
+    expect(result).toEqual([after]);
   });
 
   it('Field static array', () => {
@@ -35,14 +35,8 @@ describe('Update shortcut', () => {
       month: 1,
       day: 1,
     };
-    const result = shortcuts.update(
-      mock.updateDataBeforeArray,
-      additionalFields
-    );
-    const trueResult = [
-      { ...mock.updateDataAfterArray[0], ...additionalFields },
-      { ...mock.updateDataAfterArray[1], ...additionalFields },
-    ];
+    const result = shortcuts.update([before], additionalFields);
+    const trueResult = [{ ...after, ...additionalFields }];
     expect(result).toEqual(trueResult);
   });
 });
