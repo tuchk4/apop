@@ -1,6 +1,15 @@
 import rmk from '../lib';
 import rmkActions from '../lib/actions';
-import mock from '../__mock__';
+
+export const before = {
+  date: new Date(2001, 11, 3),
+};
+export const after = {
+  date: new Date(2001, 11, 3),
+  year: 2001,
+  month: 11,
+  day: 3,
+};
 
 describe('Update action', () => {
   it('Field function object', () => {
@@ -11,20 +20,20 @@ describe('Update action', () => {
         day: localState => localState.date.getDate(),
       })
     );
-    const result = formula(mock.updateDataBefore);
-    expect(result).toEqual(mock.updateDataAfter);
+    const result = formula(before);
+    expect(result).toEqual(after);
   });
 
   it('Field static object', () => {
     const formula = rmk(
       rmkActions.update({
-        year: mock.updateDataAfter.year,
-        month: mock.updateDataAfter.month,
-        day: mock.updateDataAfter.day,
+        year: after.year,
+        month: after.month,
+        day: after.day,
       })
     );
-    const result = formula(mock.updateDataBefore);
-    expect(result).toEqual(mock.updateDataAfter);
+    const result = formula(before);
+    expect(result).toEqual(after);
   });
 
   it('Field function array', () => {
@@ -35,8 +44,8 @@ describe('Update action', () => {
         day: localState => localState.date.getDate(),
       })
     );
-    const result = formula(mock.updateDataBeforeArray);
-    expect(result).toEqual(mock.updateDataAfterArray);
+    const result = formula([before]);
+    expect(result).toEqual([after]);
   });
 
   it('Field static array', () => {
@@ -46,11 +55,8 @@ describe('Update action', () => {
       day: 1,
     };
     const formula = rmk(rmkActions.update(additionalFields));
-    const result = formula(mock.updateDataBeforeArray);
-    const trueResult = [
-      { ...mock.updateDataAfterArray[0], ...additionalFields },
-      { ...mock.updateDataAfterArray[1], ...additionalFields },
-    ];
+    const result = formula([before]);
+    const trueResult = [{ ...after, ...additionalFields }];
     expect(result).toEqual(trueResult);
   });
 });
