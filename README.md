@@ -1,5 +1,7 @@
 # Remake JS - Object transformation without mutations.
 
+[![build status](https://img.shields.io/travis/tuchk4/rmk/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/rmk)
+
 [Actions docs](lib/actions)
 
 [Shortcuts  docs](lib/shortcuts)
@@ -145,7 +147,7 @@ import rmkClearAction from 'rmk/actions/clear';
 import rmkUpdateAction from 'rmk/actions/update';
 
 let data = [
-    {birth_date: new Date(1975, 4,3), user: 1}, 
+    {birth_date: new Date(1975, 4,3), user: 1},
     {birth_date: new Date(1975, 4,3), user: undefined}
 ]
 const formula = rmk(
@@ -166,7 +168,7 @@ import rmk from 'rmk';
 import rmkActions from 'rmk/actions';
 
 let data = [
-    {birth_date: new Date(1975, 4,3), user: 1}, 
+    {birth_date: new Date(1975, 4,3), user: 1},
     {birth_date: new Date(1975, 4,3), user: undefined}
 ]
 const formula = rmk(
@@ -188,7 +190,7 @@ import rmk from 'rmk';
 import rmkShortcuts from 'rmk/shortcuts';
 
 let data = [
-    {birth_date: new Date(1975, 4,3), user: 1}, 
+    {birth_date: new Date(1975, 4,3), user: 1},
     {birth_date: new Date(1975, 4,3), user: undefined}
 ]
 const step1 = rmkShortcuts.toCamelCase(data);
@@ -199,4 +201,3 @@ const result = rmkShortcuts.clear(step2);
 // =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1},  {birthDate: new Date(1982, 4,3), year: 1982} ]
 
 ```
-
