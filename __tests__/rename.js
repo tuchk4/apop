@@ -1,6 +1,14 @@
 import rmk from '../lib';
 import rmkActions from '../lib/actions';
-import mock from '../__mock__';
+
+
+export const before = {
+  "year": 2001
+};
+
+export const after = {
+  "fullYear": 2001
+};
 
 describe('Rename Action', () => {
   it('Field function object', () => {
@@ -10,8 +18,8 @@ describe('Rename Action', () => {
           localState.year.toString().length === 4 ? 'fullYear' : 'year',
       })
     );
-    const result = formula(mock.renameDataBefore);
-    expect(result).toEqual(mock.renameDataAfter);
+    const result = formula(before);
+    expect(result).toEqual(after);
   });
 
   it('Field static object', () => {
@@ -20,8 +28,8 @@ describe('Rename Action', () => {
         year: 'fullYear',
       })
     );
-    const result = formula(mock.renameDataBefore);
-    expect(result).toEqual(mock.renameDataAfter);
+    const result = formula(before);
+    expect(result).toEqual(after);
   });
 
   it('Field function array', () => {
@@ -31,8 +39,8 @@ describe('Rename Action', () => {
           localState.year.toString().length === 4 ? 'fullYear' : 'year',
       })
     );
-    const result = formula(mock.renameDataBeforeArray);
-    expect(result).toEqual(mock.renameDataAfterArray);
+    const result = formula([before]);
+    expect(result).toEqual([after]);
   });
 
   it('Field static array', () => {
@@ -41,7 +49,7 @@ describe('Rename Action', () => {
         year: 'fullYear',
       })
     );
-    const result = formula(mock.renameDataBeforeArray);
-    expect(result).toEqual(mock.renameDataAfterArray);
+    const result = formula([before]);
+    expect(result).toEqual([after]);
   });
 });

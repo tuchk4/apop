@@ -1,14 +1,14 @@
 import shortcuts from '../../lib/shortcuts';
-import mock from '../../__mock__';
+import {before, after} from '../clear';
 
 describe('Clear shortcut', () => {
   it('Clear remove undefined and null values', () => {
-    const result = shortcuts.clear(mock.clearDataBefore);
-    expect(result).toEqual(mock.clearDataAfter);
+    const result = shortcuts.clear(before);
+    expect(result).toEqual(after);
   });
 
   it('Clear array of objects', () => {
-    const result = shortcuts.clear(mock.clearDataBeforeArray);
-    expect(result).toEqual(mock.clearDataAfterArray);
+    const result = shortcuts.clear([before]);
+    expect(result).toEqual([after]);
   });
 });
