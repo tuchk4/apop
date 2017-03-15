@@ -15,14 +15,14 @@
     "jsdoc2md": "npm run jsdoc2md:actions && npm run jsdoc2md:shortcuts && npm run jsdoc2md:utils",
     "github": "npm run jsdoc2md && git commit -a -m \"generate docs\" && git push",
     "eslint": "eslint ./lib ./__tests__",
-    "eslint:fix": "eslint ./lib ./__tests__ --fix"
+    "eslint:fix": "eslint ./lib ./__tests__ --fix",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'lib/*/*.js'"
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.23.0",
+    "babel-cli": "^6.24.0",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^18.0.0",
     "babel-preset-es2015": "^6.3.13",
@@ -34,7 +34,8 @@
     "eslint-plugin-react": "^6.10.0",
     "jest": "^18.1.0",
     "jsdoc": "^3.4.3",
-    "jsdoc-to-markdown": "^3.0.0"
+    "jsdoc-to-markdown": "^3.0.0",
+    "prettier": "^0.22.0"
   },
   "dependencies": {
     "lodash": "^4.17.4"
