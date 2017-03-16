@@ -1,14 +1,11 @@
-# Remake JS - Object transformation without mutations.
+## Remake JS - Object transformation without mutations.
 
 [![build status](https://img.shields.io/travis/tuchk4/rmk/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/rmk)
 
-[Actions docs](lib/actions)
+Docs:
+[Actions](lib/actions) | [Shortcuts](lib/shortcuts) |  [Utils ](lib/utils)
 
-[Shortcuts  docs](lib/shortcuts)
-
-[Utils  docs](lib/utils)
-
-##Example 1. Clear data.##
+#### Example 1. Clear data.
 **Transform Object:**
 ```js
 import rmk from 'rmk';
@@ -37,7 +34,7 @@ const result = clear(data)
 ```
 
 
-##Example 2. To snake case.##
+#### Example 2. To snake case.
 **Transform Object:**
 ```js
 import rmk from 'rmk';
@@ -68,7 +65,7 @@ const result = toSnakeCase(data)
 ```
 
 
-##Example 3. To camel case.##
+#### Example 3. To camel case.
 **Transform Object:**
 ```js
 import rmk from 'rmk';
@@ -97,7 +94,7 @@ const result = toCamelCase(data)
 ```
 
 
-##Example 4. Add static field.##
+#### Example 4. Add static field.
 **Transform Object:**
 ```js
 import rmk from 'rmk';
@@ -133,7 +130,8 @@ const result = update(data, {
 
 
 
-##Example 5. Complex transform array:##
+#### Example 5. Complex transform array:
+
 ```js
 import rmk from 'rmk';
 
@@ -153,7 +151,7 @@ const result = formula(data);
 
 ```
 
-##Example 5. Complex transform array. Import all actions:##
+#### Example 5. Complex transform array. Import all actions:
 ```js
 import rmk from 'rmk';
 
@@ -174,7 +172,7 @@ const result = formula(data);
 ```
 
 
-##Example 6. Complex transform array. Import all shortcuts:##
+#### Example 6. Complex transform array. Import all shortcuts:
 ```js
 import rmk from 'rmk';
 import shortcuts from 'rmk/shortcuts';
