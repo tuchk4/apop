@@ -1,5 +1,4 @@
 import rmk from '../lib';
-import rmkActions from '../lib/actions';
 
 export const before1 = {
   id: 1,
@@ -46,20 +45,20 @@ export const afterArray3 = [
 
 describe('Pick action', () => {
   it('Data as object, config as array', () => {
-    const formula = rmk(rmkActions.pick(['id', 'name']));
+    const formula = rmk(rmk.pick(['id', 'name']));
     const result = formula(before1);
     expect(result).toEqual(after1);
   });
 
   it('Data as array,  config as array', () => {
-    const formula = rmk(rmkActions.pick(['id', 'name']));
+    const formula = rmk(rmk.pick(['id', 'name']));
     const result = formula(beforeArray1);
     expect(result).toEqual(afterArray1);
   });
 
   it('Data as object, config as object', () => {
     const formula = rmk(
-      rmkActions.pick({
+      rmk.pick({
         id: 'key',
         name: 'value',
       })
@@ -70,7 +69,7 @@ describe('Pick action', () => {
 
   it('Data as array, config as object', () => {
     const formula = rmk(
-      rmkActions.pick({
+      rmk.pick({
         id: 'key',
         name: 'value',
       })
@@ -81,7 +80,7 @@ describe('Pick action', () => {
 
   it('Data as object, config as object with calculate', () => {
     const formula = rmk(
-      rmkActions.pick({
+      rmk.pick({
         id: 'key',
         name: 'value',
         isEmptyDate: localState => localState.createDate.length === 0,
@@ -93,7 +92,7 @@ describe('Pick action', () => {
 
   it('Data as array, config as object with calculate', () => {
     const formula = rmk(
-      rmkActions.pick({
+      rmk.pick({
         id: 'key',
         name: 'value',
         isEmptyDate: localState => !localState.createDate,

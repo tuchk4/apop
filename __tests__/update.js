@@ -1,5 +1,4 @@
 import rmk from '../lib';
-import rmkActions from '../lib/actions';
 
 export const before = {
   date: new Date(2001, 11, 3),
@@ -14,7 +13,7 @@ export const after = {
 describe('Update action', () => {
   it('Field function object', () => {
     const formula = rmk(
-      rmkActions.update({
+      rmk.update({
         year: localState => localState.date.getFullYear(),
         month: localState => localState.date.getMonth(),
         day: localState => localState.date.getDate(),
@@ -26,7 +25,7 @@ describe('Update action', () => {
 
   it('Field static object', () => {
     const formula = rmk(
-      rmkActions.update({
+      rmk.update({
         year: after.year,
         month: after.month,
         day: after.day,
@@ -38,7 +37,7 @@ describe('Update action', () => {
 
   it('Field function array', () => {
     const formula = rmk(
-      rmkActions.update({
+      rmk.update({
         year: localState => localState.date.getFullYear(),
         month: localState => localState.date.getMonth(),
         day: localState => localState.date.getDate(),
@@ -54,7 +53,7 @@ describe('Update action', () => {
       month: 1,
       day: 1,
     };
-    const formula = rmk(rmkActions.update(additionalFields));
+    const formula = rmk(rmk.update(additionalFields));
     const result = formula([before]);
     const trueResult = [{ ...after, ...additionalFields }];
     expect(result).toEqual(trueResult);

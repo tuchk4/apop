@@ -1,5 +1,4 @@
 import rmk from '../lib';
-import rmkActions from '../lib/actions';
 
 export const before = {
   id: 1,
@@ -14,13 +13,13 @@ export const after = {
 
 describe('toSnakeCase action', () => {
   it('Transform object to snake_case', () => {
-    const formula = rmk(rmkActions.toSnakeCase());
+    const formula = rmk(rmk.toSnakeCase());
     const result = formula(before);
     expect(result).toEqual(after);
   });
 
   it('Transform array of objects to snake_case', () => {
-    const formula = rmk(rmkActions.toSnakeCase());
+    const formula = rmk(rmk.toSnakeCase());
     const result = formula([before]);
     expect(result).toEqual([after]);
   });

@@ -1,4 +1,3 @@
-import rmkActions from '../lib/actions';
 import reduce from '../lib/utils/reduce';
 
 export const before = {
@@ -36,12 +35,12 @@ export const after = {
 
 describe('Reduce util', () => {
   it('Object argument', () => {
-    const result = reduce(before, [rmkActions.clear()]);
+    const result = reduce(before, [rmk.clear()]);
     expect(result).toEqual(after);
   });
 
   it('Array argument', () => {
-    const result = reduce([before], [rmkActions.clear()]);
+    const result = reduce([before], [rmk.clear()]);
     expect(result).toEqual([after]);
   });
 });

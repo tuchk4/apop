@@ -1,5 +1,4 @@
 import rmk from '../lib';
-import rmkActions from '../lib/actions';
 
 export const before = {
   year: 2001,
@@ -12,7 +11,7 @@ export const after = {
 describe('Rename Action', () => {
   it('Field function object', () => {
     const formula = rmk(
-      rmkActions.rename({
+      rmk.rename({
         year: localState =>
           localState.year.toString().length === 4 ? 'fullYear' : 'year',
       })
@@ -23,7 +22,7 @@ describe('Rename Action', () => {
 
   it('Field static object', () => {
     const formula = rmk(
-      rmkActions.rename({
+      rmk.rename({
         year: 'fullYear',
       })
     );
@@ -33,7 +32,7 @@ describe('Rename Action', () => {
 
   it('Field function array', () => {
     const formula = rmk(
-      rmkActions.rename({
+      rmk.rename({
         year: localState =>
           localState.year.toString().length === 4 ? 'fullYear' : 'year',
       })
@@ -44,7 +43,7 @@ describe('Rename Action', () => {
 
   it('Field static array', () => {
     const formula = rmk(
-      rmkActions.rename({
+      rmk.rename({
         year: 'fullYear',
       })
     );

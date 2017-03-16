@@ -116,17 +116,17 @@ let recursiveData = {
 recursiveData.deep_obj = recursiveData;
 
  const formula = rmk(
-   rmkActions.recursive(
+   rmk.recursive(
      [
-       rmkActions.toCamelCase(),
-       rmkActions.update({
+       rmk.toCamelCase(),
+       rmk.update({
            arrayKeyStr: localState =>
              ((isArray(localState.arrayKey)) ? localState.arrayKey.join(',') : null),
         }),
-       rmkActions.rename({
+       rmk.rename({
            arrayKeyStr: 'renamedStr',
          }),
-       rmkActions.clear(),
+       rmk.clear(),
      ]
    )
 );

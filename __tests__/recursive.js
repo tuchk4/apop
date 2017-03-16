@@ -1,7 +1,6 @@
 import isArray from 'lodash/isArray';
 
 import rmk from '../lib';
-import rmkActions from '../lib/actions';
 
 const before1 = {
   foo_bar: 0,
@@ -151,19 +150,19 @@ function normalizeName(name, version) {
 describe('Recursive action', () => {
   it('Object recursive', () => {
     const formula = rmk(
-      rmkActions.recursive(
+      rmk.recursive(
         [
-          rmkActions.toCamelCase(),
-          rmkActions.update({
+          rmk.toCamelCase(),
+          rmk.update({
             arrayKeyStr: localState =>
               isArray(localState.arrayKey)
                 ? localState.arrayKey.join(',')
                 : null,
           }),
-          rmkActions.rename({
+          rmk.rename({
             arrayKeyStr: 'renamedStr',
           }),
-          rmkActions.clear(),
+          rmk.clear(),
         ],
         3
       )
@@ -175,19 +174,19 @@ describe('Recursive action', () => {
 
   it('Menu', () => {
     const transformMainMenu = rmk(
-      rmkActions.recursive(
+      rmk.recursive(
         [
-          rmkActions.clear(),
-          rmkActions.toCamelCase(),
-          rmkActions.rename({
+          rmk.clear(),
+          rmk.toCamelCase(),
+          rmk.rename({
             children: 'nodes',
           }),
         ],
         8
       ),
-      rmkActions.recursive(
+      rmk.recursive(
         [
-          rmkActions.update({
+          rmk.update({
             isCategory: localState =>
               Object.prototype.hasOwnProperty.call(localState, 'nodes'),
             isLink: localState =>
@@ -196,18 +195,18 @@ describe('Recursive action', () => {
         ],
         8
       ),
-      rmkActions.recursive(
+      rmk.recursive(
         [
-          rmkActions.update({
+          rmk.update({
             version: localState =>
               versionLinkFn(localState.url, localState.isLink),
           }),
         ],
         8
       ),
-      rmkActions.recursive(
+      rmk.recursive(
         [
-          rmkActions.update({
+          rmk.update({
             url: localState => normalizeUrl(localState.url, localState.version),
             name: localState =>
               normalizeName(localState.name, localState.version),
@@ -219,7 +218,7 @@ describe('Recursive action', () => {
               return isOpen;
             },
           }),
-          rmkActions.clear(),
+          rmk.clear(),
         ],
         8
       )
