@@ -2,13 +2,13 @@ import rmk from '../lib';
 import shortcuts from '../lib/shortcuts';
 
 const data = {
-  'asObject': {
+  asObject: {
     id: 1,
     name: 'abc',
     createDate: '01.01.1970',
     isActive: false,
   },
-  'asObjectWithoutCreateDate': {
+  asObjectWithoutCreateDate: {
     id: 1,
     name: 'abc',
     isActive: false,
@@ -24,7 +24,7 @@ test('Data as object, config as array', () => {
 
 test('Data as array,  config as array', () => {
   const formula = rmk(rmk.pick(['id', 'name']));
-  const result = formula([ data.asObject, data.asObject ]);
+  const result = formula([data.asObject, data.asObject]);
 
   expect(result).toMatchSnapshot();
 });
@@ -50,7 +50,7 @@ test('Data as array, config as object', () => {
     })
   );
 
-  const result = formula([ data.asObject, data.asObject ]);
+  const result = formula([data.asObject, data.asObject]);
 
   expect(result).toMatchSnapshot();
 });
@@ -78,7 +78,7 @@ test('Data as array, config as object with calculate', () => {
     })
   );
 
-  const result = formula([ data.asObject, data.asObjectWithoutCreateDate ]);
+  const result = formula([data.asObject, data.asObjectWithoutCreateDate]);
 
   expect(result).toMatchSnapshot();
 });
@@ -89,7 +89,7 @@ test('Pick shorcut: Data as object, config as array', () => {
 });
 
 test('Pick shorcut: Data as array,  config as array', () => {
-  const result = shortcuts.pick([ data.asObject ], ['id', 'name']);
+  const result = shortcuts.pick([data.asObject], ['id', 'name']);
   expect(result).toMatchSnapshot();
 });
 
@@ -103,7 +103,7 @@ test('Data as object, config as object', () => {
 });
 
 test('Pick shorcut: Data as array, config as object', () => {
-  const result = shortcuts.pick([ data.asObject ], {
+  const result = shortcuts.pick([data.asObject], {
     id: 'key',
     name: 'value',
   });
@@ -121,7 +121,7 @@ test('Pick shorcut: Data as object, config as object with calculate', () => {
 });
 
 test('Pick shorcut: Data as array, config as object with calculate', () => {
-  const result = shortcuts.pick([ data.asObject ], {
+  const result = shortcuts.pick([data.asObject], {
     id: 'key',
     name: 'value',
     isEmptyDate: localState => !localState.createDate,

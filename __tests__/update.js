@@ -8,7 +8,7 @@ const before = {
 const misc = {
   year: 2001,
   month: 11,
-  day: 3
+  day: 3,
 };
 
 it('Field function object', () => {

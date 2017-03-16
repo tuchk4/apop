@@ -12,7 +12,7 @@ const sample = {
 const data = {
   asObject: {
     ...sample,
-    deep_obj: sample
+    deep_obj: sample,
   },
   asArray: [
     {
@@ -54,8 +54,8 @@ const data = {
         },
       ],
     },
-  ]
-}
+  ],
+};
 
 const VERSIONS = {
   V1: 'v1',
@@ -71,8 +71,10 @@ const versionLinkFn = (url, isLink) => {
   return version;
 };
 
-const normalizeUrl = (url, version) => version === VERSIONS.V2 ? url.replace(`/${VERSIONS.V2}`, '') : url;
-const normalizeName = (name, version) => version === VERSIONS.V1 ? `${name} old` : name;
+const normalizeUrl = (url, version) =>
+  version === VERSIONS.V2 ? url.replace(`/${VERSIONS.V2}`, '') : url;
+const normalizeName = (name, version) =>
+  version === VERSIONS.V1 ? `${name} old` : name;
 
 test('Object recursive', () => {
   const formula = rmk(
@@ -81,9 +83,7 @@ test('Object recursive', () => {
         rmk.toCamelCase(),
         rmk.update({
           arrayKeyStr: localState =>
-            isArray(localState.arrayKey)
-              ? localState.arrayKey.join(',')
-              : null,
+            isArray(localState.arrayKey) ? localState.arrayKey.join(',') : null,
         }),
         rmk.rename({
           arrayKeyStr: 'renamedStr',
@@ -135,7 +135,8 @@ test('Array recursive', () => {
       [
         rmk.update({
           url: localState => normalizeUrl(localState.url, localState.version),
-          name: localState => normalizeName(localState.name, localState.version),
+          name: localState =>
+            normalizeName(localState.name, localState.version),
           isOpen: localState => {
             let isOpen = null;
             if (localState.isCategory) {

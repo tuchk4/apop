@@ -20,9 +20,9 @@ const before = {
 };
 
 test('Object argument', () => {
-    const result = reduce(before, [rmk.clear()]);
-    expect(result).toMatchSnapshot();
-  });
+  const result = reduce(before, [rmk.clear()]);
+  expect(result).toMatchSnapshot();
+});
 
 test('Array argument', () => {
   const result = reduce([before], [rmk.clear()]);
