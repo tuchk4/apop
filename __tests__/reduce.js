@@ -1,4 +1,5 @@
 import reduce from '../lib/utils/reduce';
+import rmk from '../lib';
 
 export const before = {
   id: 1,
