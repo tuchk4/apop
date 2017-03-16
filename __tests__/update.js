@@ -2,7 +2,7 @@ import rmk from '../lib';
 import shortcuts from '../lib/shortcuts';
 
 const before = {
-  date: new Date(2001, 11, 3),
+  date: new Date(Date.UTC(2001, 11, 3)),
 };
 
 const misc = {

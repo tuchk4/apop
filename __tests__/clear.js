@@ -12,7 +12,7 @@ const before = {
   phrase: 'Universal 6th generation portal',
   null: null,
   undefined,
-  date: new Date(2001),
+  date: new Date(Date.UTC(2001, 1, 1)),
   0: 0,
   1: 1,
   '-1': -1,
