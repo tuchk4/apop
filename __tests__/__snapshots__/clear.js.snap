@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clear array of objects 1`] = `
+Array [
+  Object {
+    "-1": -1,
+    "0": 0,
+    "1": 1,
+    "city": "Kapotnya",
+    "date": 1970-01-01T00:00:02.001Z,
+    "email": "snelson0@yellowbook.com",
+    "first_name": "Stephen",
+    "gender": "Male",
+    "id": 1,
+    "ip_address": "74.191.108.58",
+    "last_name": "Nelson",
+    "phrase": "Universal 6th generation portal",
+  },
+]
+`;
+
+exports[`Clear array of objects 2`] = `
+Array [
+  Object {
+    "-1": -1,
+    "0": 0,
+    "1": 1,
+    "city": "Kapotnya",
+    "date": 1970-01-01T00:00:02.001Z,
+    "email": "snelson0@yellowbook.com",
+    "first_name": "Stephen",
+    "gender": "Male",
+    "id": 1,
+    "ip_address": "74.191.108.58",
+    "last_name": "Nelson",
+    "phrase": "Universal 6th generation portal",
+  },
+]
+`;
+
+exports[`Clear object 1`] = `
+Object {
+  "-1": -1,
+  "0": 0,
+  "1": 1,
+  "city": "Kapotnya",
+  "date": 1970-01-01T00:00:02.001Z,
+  "email": "snelson0@yellowbook.com",
+  "first_name": "Stephen",
+  "gender": "Male",
+  "id": 1,
+  "ip_address": "74.191.108.58",
+  "last_name": "Nelson",
+  "phrase": "Universal 6th generation portal",
+}
+`;
+
+exports[`Clear remove undefined and null values 1`] = `
+Object {
+  "-1": -1,
+  "0": 0,
+  "1": 1,
+  "city": "Kapotnya",
+  "date": 1970-01-01T00:00:02.001Z,
+  "email": "snelson0@yellowbook.com",
+  "first_name": "Stephen",
+  "gender": "Male",
+  "id": 1,
+  "ip_address": "74.191.108.58",
+  "last_name": "Nelson",
+  "phrase": "Universal 6th generation portal",
+}
+`;

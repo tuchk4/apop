@@ -1,6 +1,7 @@
 import rmk from '../lib';
+import shortcuts from '../lib/shortcuts';
 
-export const before = {
+const before = {
   id: 1,
   first_name: 'Stephen',
   last_name: 'Nelson',
@@ -18,33 +19,28 @@ export const before = {
   emptyStr: '',
 };
 
-export const after = {
-  id: 1,
-  first_name: 'Stephen',
-  last_name: 'Nelson',
-  email: 'snelson0@yellowbook.com',
-  gender: 'Male',
-  ip_address: '74.191.108.58',
-  city: 'Kapotnya',
-  phrase: 'Universal 6th generation portal',
-  date: new Date(2001),
-  0: 0,
-  1: 1,
-  '-1': -1,
-};
+test('Clear object', () => {
+  const formula = rmk(rmk.clear());
 
-describe('Clear action', () => {
-  it('Clear object', () => {
-    const formula = rmk(rmk.clear());
+  const result = formula(before);
+  expect(result).toMatchSnapshot();
+});
 
-    const result = formula(before);
-    expect(result).toEqual(after);
-  });
+test('Clear array of objects', () => {
+  const formula = rmk(rmk.clear());
 
-  it('Clear array of objects', () => {
-    const formula = rmk(rmk.clear());
+  const result = formula([before]);
+  expect(result).toMatchSnapshot();
+});
 
-    const result = formula([before]);
-    expect(result).toEqual([after]);
-  });
+// ---
+
+test('Clear remove undefined and null values', () => {
+  const result = shortcuts.clear(before);
+  expect(result).toMatchSnapshot();
+});
+
+test('Clear array of objects', () => {
+  const result = shortcuts.clear([before]);
+  expect(result).toMatchSnapshot();
 });

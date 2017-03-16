@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field function array 1`] = `
+Array [
+  Object {
+    "date": 2001-12-02T22:00:00.000Z,
+    "day": 3,
+    "month": 11,
+    "year": 2001,
+  },
+]
+`;
+
+exports[`Field function object 1`] = `
+Object {
+  "date": 2001-12-02T22:00:00.000Z,
+  "day": 3,
+  "month": 11,
+  "year": 2001,
+}
+`;
+
+exports[`Field static array 1`] = `
+Array [
+  Object {
+    "date": 2001-12-02T22:00:00.000Z,
+    "day": 1,
+    "month": 1,
+    "year": 2000,
+  },
+]
+`;
+
+exports[`Field static object 1`] = `
+Object {
+  "date": 2001-12-02T22:00:00.000Z,
+  "day": 3,
+  "month": 11,
+  "year": 2001,
+}
+`;
+
+exports[`Update shorcut: Field function array 1`] = `
+Array [
+  Object {
+    "date": 2001-12-02T22:00:00.000Z,
+    "day": 3,
+    "month": 11,
+    "year": 2001,
+  },
+]
+`;
+
+exports[`Update shorcut: Field function object 1`] = `
+Object {
+  "date": 2001-12-02T22:00:00.000Z,
+  "day": 3,
+  "month": 11,
+  "year": 2001,
+}
+`;
+
+exports[`Update shorcut: Field static array 1`] = `
+Array [
+  Object {
+    "date": 2001-12-02T22:00:00.000Z,
+    "day": 1,
+    "month": 1,
+    "year": 2000,
+  },
+]
+`;
+
+exports[`Update shorcut: Field static object 1`] = `
+Object {
+  "date": 2001-12-02T22:00:00.000Z,
+  "day": 3,
+  "month": 11,
+  "year": 2001,
+}
+`;

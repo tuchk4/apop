@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Array recursive 1`] = `
+Array [
+  Object {
+    "isCategory": false,
+    "isLink": true,
+    "name": "1 old",
+    "url": "/1",
+    "version": "v1",
+  },
+  Object {
+    "isCategory": false,
+    "isLink": true,
+    "name": "2",
+    "url": "/2",
+    "version": "v2",
+  },
+  Object {
+    "isCategory": true,
+    "isLink": false,
+    "isOpen": false,
+    "nodes": Array [
+      Object {
+        "isCategory": false,
+        "isLink": true,
+        "name": "3",
+        "url": "/3",
+        "version": "v2",
+      },
+      Object {
+        "isCategory": true,
+        "isLink": false,
+        "isOpen": false,
+        "name": "6",
+        "nodes": Array [
+          Object {
+            "isCategory": false,
+            "isLink": true,
+            "name": "3 old",
+            "url": "/3",
+            "version": "v1",
+          },
+          Object {
+            "isCategory": false,
+            "isLink": true,
+            "name": "4",
+            "url": "/4",
+            "version": "v2",
+          },
+          Object {
+            "isCategory": false,
+            "isLink": true,
+            "name": "5",
+            "url": "/5",
+            "version": "v2",
+          },
+        ],
+      },
+    ],
+  },
+]
+`;
+
+exports[`Object recursive 1`] = `
+Object {
+  "arrayKey": Array [
+    1,
+    2,
+    3,
+  ],
+  "arrayObjects": Array [
+    Object {
+      "aB": "a",
+      "bC": "b",
+    },
+  ],
+  "deepObj": Object {
+    "arrayKey": Array [
+      1,
+      2,
+      3,
+    ],
+    "arrayObjects": Array [
+      null,
+    ],
+    "fooBar": 0,
+    "renamedStr": "1,2,3",
+  },
+  "fooBar": 0,
+  "renamedStr": "1,2,3",
+}
+`;

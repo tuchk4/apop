@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform array of objects to snake_case 1`] = `
+Array [
+  Object {
+    "first_name": "Stephen",
+    "id": 1,
+    "last_name": "Nelson",
+  },
+]
+`;
+
+exports[`Transform object to snake_case 1`] = `
+Object {
+  "first_name": "Stephen",
+  "id": 1,
+  "last_name": "Nelson",
+}
+`;
+
+exports[`toSnakeCase shorcut: Transform array of objects to snake_case 1`] = `
+Array [
+  Object {
+    "first_name": "Stephen",
+    "id": 1,
+    "last_name": "Nelson",
+  },
+]
+`;
+
+exports[`toSnakeCase shorcut: Transform to snake_case 1`] = `
+Object {
+  "first_name": "Stephen",
+  "id": 1,
+  "last_name": "Nelson",
+}
+`;

@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Data as array,  config as array 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "name": "abc",
+  },
+  Object {
+    "id": 1,
+    "name": "abc",
+  },
+]
+`;
+
+exports[`Data as array, config as object 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "name": "abc",
+  },
+  Object {
+    "id": 1,
+    "name": "abc",
+  },
+]
+`;
+
+exports[`Data as array, config as object with calculate 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "isEmptyDate": false,
+    "name": "abc",
+  },
+  Object {
+    "id": 1,
+    "isEmptyDate": true,
+    "name": "abc",
+  },
+]
+`;
+
+exports[`Data as object, config as array 1`] = `
+Object {
+  "id": 1,
+  "name": "abc",
+}
+`;
+
+exports[`Data as object, config as object 1`] = `
+Object {
+  "id": 1,
+  "name": "abc",
+}
+`;
+
+exports[`Data as object, config as object 2`] = `
+Object {
+  "id": 1,
+  "name": "abc",
+}
+`;
+
+exports[`Data as object, config as object with calculate 1`] = `
+Object {
+  "id": 1,
+  "isEmptyDate": false,
+  "name": "abc",
+}
+`;
+
+exports[`Pick shorcut: Data as array,  config as array 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "name": "abc",
+  },
+]
+`;
+
+exports[`Pick shorcut: Data as array, config as object 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "name": "abc",
+  },
+]
+`;
+
+exports[`Pick shorcut: Data as array, config as object with calculate 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "isEmptyDate": false,
+    "name": "abc",
+  },
+]
+`;
+
+exports[`Pick shorcut: Data as object, config as array 1`] = `
+Object {
+  "id": 1,
+  "name": "abc",
+}
+`;
+
+exports[`Pick shorcut: Data as object, config as object with calculate 1`] = `
+Object {
+  "id": 1,
+  "isEmptyDate": false,
+  "name": "abc",
+}
+`;

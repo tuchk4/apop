@@ -1,53 +1,88 @@
 import rmk from '../lib';
+import shortcuts from '../lib/shortcuts';
 
-export const before = {
+const before = {
   year: 2001,
 };
 
-export const after = {
-  fullYear: 2001,
-};
+test('Field function object', () => {
+  const formula = rmk(
+    rmk.rename({
+      year: localState =>
+        localState.year.toString().length === 4 ? 'fullYear' : 'year',
+    })
+  );
 
-describe('Rename Action', () => {
-  it('Field function object', () => {
-    const formula = rmk(
-      rmk.rename({
-        year: localState =>
-          localState.year.toString().length === 4 ? 'fullYear' : 'year',
-      })
-    );
-    const result = formula(before);
-    expect(result).toEqual(after);
+  const result = formula(before);
+  expect(result).toMatchSnapshot();
+});
+
+test('Field static object', () => {
+  const formula = rmk(
+    rmk.rename({
+      year: 'fullYear',
+    })
+  );
+
+  const result = formula(before);
+  expect(result).toMatchSnapshot();
+});
+
+test('Field function array', () => {
+  const formula = rmk(
+    rmk.rename({
+      year: localState =>
+        localState.year.toString().length === 4 ? 'fullYear' : 'year',
+    })
+  );
+
+  const result = formula([before]);
+  expect(result).toMatchSnapshot();
+});
+
+test('Field static array', () => {
+  const formula = rmk(
+    rmk.rename({
+      year: 'fullYear',
+    })
+  );
+
+  const result = formula([before]);
+  expect(result).toMatchSnapshot();
+});
+
+// ---
+
+test('Rename shorctu: Field function object', () => {
+  const result = shortcuts.rename(before, {
+    year: localState =>
+      localState.year.toString().length === 4 ? 'fullYear' : 'year',
   });
 
-  it('Field static object', () => {
-    const formula = rmk(
-      rmk.rename({
-        year: 'fullYear',
-      })
-    );
-    const result = formula(before);
-    expect(result).toEqual(after);
+  expect(result).toMatchSnapshot();
+});
+
+test('Rename shorctu: Field static object', () => {
+  const result = shortcuts.rename(before, {
+    year: 'fullYear',
   });
 
-  it('Field function array', () => {
-    const formula = rmk(
-      rmk.rename({
-        year: localState =>
-          localState.year.toString().length === 4 ? 'fullYear' : 'year',
-      })
-    );
-    const result = formula([before]);
-    expect(result).toEqual([after]);
+  expect(result).toMatchSnapshot();
+});
+
+test('Rename shorctu: Field function array', () => {
+  const result = shortcuts.rename([before], {
+    year: localState =>
+      localState.year.toString().length === 4 ? 'fullYear' : 'year',
   });
 
-  it('Field static array', () => {
-    const formula = rmk(
-      rmk.rename({
-        year: 'fullYear',
-      })
-    );
-    const result = formula([before]);
-    expect(result).toEqual([after]);
+  expect(result).toMatchSnapshot();
+});
+
+test('Rename shorctu: Field static array', () => {
+  const result = shortcuts.rename([before], {
+    year: 'fullYear',
   });
+
+  expect(result).toMatchSnapshot();
 });
