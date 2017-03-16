@@ -38,20 +38,20 @@ const result = clear(data)
 **Transform Object:**
 ```js
 import rmk from 'rmk';
-import toSnakeCaseAction from 'rmk/actions/toSnakeCase';
+import toSnakeCase from 'rmk/actions/toSnakeCase';
 
 let data = {fooBar: 1, foo: 2, BAR: 3}
-const formula = rmk(toSnakeCaseAction());
+const formula = rmk(toSnakeCase());
 const result = formula(data)
 // =>  { foo_bar: 1, foo: 2, bar: 3 }
 ```
 **Transform array:**
 ```js
 import rmk from 'rmk';
-import toSnakeCaseAction from 'rmk/actions/toSnakeCase';
+import toSnakeCase from 'rmk/actions/toSnakeCase';
 
 let data = [{fooBar: 1}, {barBaz: 2}]
-const formula = rmk(toSnakeCaseAction());
+const formula = rmk(toSnakeCase());
 const result = formula(data)
 // =>  [ {foo_bar: 1}, {bar_baz: 2} ]
 ```
