@@ -4,8 +4,8 @@
     "rmk(<Array>)": 0.125
   },
   "1000": {
-    "rmk(<Object>)": 0.028,
-    "rmk(<Array>)": 0.489
+    "rmk(<Object>)": 0.017,
+    "rmk(<Array>)": 0.436
   },
   "4000": {
     "rmk(<Object>)": 0.167,

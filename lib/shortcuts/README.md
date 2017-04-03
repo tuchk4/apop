@@ -4,7 +4,7 @@
 **Kind**: global namespace  
 
 * [shortcuts](#shortcuts) : <code>object</code>
-    * [.clear(origin)](#shortcuts.clear) ⇒ <code>function</code>
+    * [.clear(origin, config)](#shortcuts.clear) ⇒ <code>function</code>
     * [.rename(origin, config)](#shortcuts.rename) ⇒ <code>function</code>
     * [.toCamelCase(origin)](#shortcuts.toCamelCase) ⇒ <code>function</code>
     * [.toSnakeCase(origin)](#shortcuts.toSnakeCase) ⇒ <code>function</code>
@@ -12,7 +12,7 @@
 
 <a name="shortcuts.clear"></a>
 
-### shortcuts.clear(origin) ⇒ <code>function</code>
+### shortcuts.clear(origin, config) ⇒ <code>function</code>
 Shortcut for clear object
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
@@ -22,6 +22,7 @@ Shortcut for clear object
 | Param | Type | Description |
 | --- | --- | --- |
 | origin | <code>Object</code> | Origin object |
+| config | <code>Object</code> | = {   emptyArray: true,   emptyObject: true,   emptyString: true,   nullValue: true,   undefinedValue: true }; |
 
 **Example**  
 ```js
