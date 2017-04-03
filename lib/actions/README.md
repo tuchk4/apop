@@ -4,22 +4,29 @@
 **Kind**: global namespace  
 
 * [actions](#actions) : <code>object</code>
-    * [.clear()](#actions.clear) ⇒ <code>Object</code>
+    * [.clear(config)](#actions.clear) ⇒ <code>Object</code>
     * [.pick(config)](#actions.pick) ⇒ <code>Object</code>
     * [.recursive(actions, deepLimit)](#actions.recursive) ⇒ <code>Array</code> &#124; <code>Object</code>
     * [.rename(config)](#actions.rename) ⇒ <code>function</code>
+    * [.replace()](#actions.replace) ⇒ <code>Object</code>
+    * [.swap()](#actions.swap) ⇒ <code>Object</code>
     * [.toCamelCase()](#actions.toCamelCase) ⇒ <code>function</code>
     * [.toSnakeCase()](#actions.toSnakeCase) ⇒ <code>function</code>
     * [.update(config)](#actions.update) ⇒ <code>function</code>
 
 <a name="actions.clear"></a>
 
-### actions.clear() ⇒ <code>Object</code>
+### actions.clear(config) ⇒ <code>Object</code>
 Function of clear object keys from null and undefined values
 
 **Kind**: static method of <code>[actions](#actions)</code>  
 **Returns**: <code>Object</code> - Returns function clear object from undefined and null values  
 **See**: [Shortcut method](../shortcuts#shortcuts.clear)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>Object</code> | = {   emptyArray: true,   emptyObject: true,   emptyString: true,   nullValue: true,   undefinedValue: true }; |
+
 **Example**  
 ```js
 import clear from 'rmk/actions/clear';
@@ -176,6 +183,40 @@ formula(data)
 let data = {year: 2001, customField: false}
 formula(data)
 // => {deathYear: 2001}
+```
+<a name="actions.replace"></a>
+
+### actions.replace() ⇒ <code>Object</code>
+Function to replace item in array by index
+
+**Kind**: static method of <code>[actions](#actions)</code>  
+**Returns**: <code>Object</code> - Returns function to replace item in array by index  
+**See**: [Shortcut method](../shortcuts#shortcuts.replace)  
+**Example**  
+```js
+import replace from 'rmk/actions/replace';
+
+let formula = rmk(replace(1, 'baz' ))
+let data = ['foo', 'bar']
+formula(data)
+// => ['foo', 'baz']
+```
+<a name="actions.swap"></a>
+
+### actions.swap() ⇒ <code>Object</code>
+Function to swap items in array by indexes
+
+**Kind**: static method of <code>[actions](#actions)</code>  
+**Returns**: <code>Object</code> - Returns function to swap items in array by indexes  
+**See**: [Shortcut method](../shortcuts#shortcuts.index)  
+**Example**  
+```js
+import swap from 'rmk/actions/swap';
+
+let formula = rmk(swap(1, 2))
+let data = ['foo', 'bar', 'baz']
+formula(data)
+// => ['foo', 'baz', 'bar']
 ```
 <a name="actions.toCamelCase"></a>
 

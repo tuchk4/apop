@@ -18,6 +18,34 @@ const before = {
   '-1': -1,
   emptyStr: '',
 };
+test('Clear object with config 1', () => {
+  const config = {};
+  const formula = rmk(rmk.clear(config));
+
+  const result = formula(before);
+  expect(result).toMatchSnapshot();
+});
+test('Clear object with config 2', () => {
+  const config = {
+    nullValue: true,
+    undefinedValue: true,
+  };
+  const formula = rmk(rmk.clear(config));
+
+  const result = formula(before);
+  expect(result).toMatchSnapshot();
+});
+test('Clear object with config 3', () => {
+  const config = {
+    emptyArray: true,
+    emptyObject: true,
+    emptyString: true,
+  };
+  const formula = rmk(rmk.clear(config));
+
+  const result = formula(before);
+  expect(result).toMatchSnapshot();
+});
 
 test('Clear object', () => {
   const formula = rmk(rmk.clear());
