@@ -10,14 +10,17 @@ const before = {
   ip_address: '74.191.108.58',
   city: 'Kapotnya',
   phrase: 'Universal 6th generation portal',
-  null: null,
-  undefined,
   date: new Date(Date.UTC(2001, 1, 1)),
   0: 0,
   1: 1,
   '-1': -1,
   emptyStr: '',
+  null: null,
+  undefined: undefined,
+  nullArray: [null],
+  undefinedArray: [undefined]
 };
+
 test('Clear object with config 1', () => {
   const config = {};
   const formula = rmk(rmk.clear(config));

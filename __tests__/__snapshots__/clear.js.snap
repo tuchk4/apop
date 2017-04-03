@@ -70,8 +70,14 @@ Object {
   "ip_address": "74.191.108.58",
   "last_name": "Nelson",
   "null": null,
+  "nullArray": Array [
+    null,
+  ],
   "phrase": "Universal 6th generation portal",
   "undefined": undefined,
+  "undefinedArray": Array [
+    undefined,
+  ],
 }
 `;
 
@@ -89,7 +95,13 @@ Object {
   "id": 1,
   "ip_address": "74.191.108.58",
   "last_name": "Nelson",
+  "nullArray": Array [
+    null,
+  ],
   "phrase": "Universal 6th generation portal",
+  "undefinedArray": Array [
+    undefined,
+  ],
 }
 `;
 
@@ -107,8 +119,14 @@ Object {
   "ip_address": "74.191.108.58",
   "last_name": "Nelson",
   "null": null,
+  "nullArray": Array [
+    null,
+  ],
   "phrase": "Universal 6th generation portal",
   "undefined": undefined,
+  "undefinedArray": Array [
+    undefined,
+  ],
 }
 `;
 
