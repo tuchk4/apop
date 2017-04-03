@@ -81,9 +81,6 @@ Object {
       2,
       3,
     ],
-    "arrayObjects": Array [
-      null,
-    ],
     "fooBar": 0,
     "renamedStr": "1,2,3",
   },
