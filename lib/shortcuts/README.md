@@ -4,7 +4,7 @@
 **Kind**: global namespace  
 
 * [shortcuts](#shortcuts) : <code>object</code>
-    * [.clear(origin, config)](#shortcuts.clear) ⇒ <code>function</code>
+    * [.clear(origin, [config])](#shortcuts.clear) ⇒ <code>function</code>
     * [.rename(origin, config)](#shortcuts.rename) ⇒ <code>function</code>
     * [.toCamelCase(origin)](#shortcuts.toCamelCase) ⇒ <code>function</code>
     * [.toSnakeCase(origin)](#shortcuts.toSnakeCase) ⇒ <code>function</code>
@@ -12,17 +12,17 @@
 
 <a name="shortcuts.clear"></a>
 
-### shortcuts.clear(origin, config) ⇒ <code>function</code>
+### shortcuts.clear(origin, [config]) ⇒ <code>function</code>
 Shortcut for clear object
 
 **Kind**: static method of <code>[shortcuts](#shortcuts)</code>  
 **Returns**: <code>function</code> - Returns transformed object with snake_case keys  
 **See**: [Original method](../actions#actions.clear)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| origin | <code>Object</code> | Origin object |
-| config | <code>Object</code> | = {   emptyArray: true,   emptyObject: true,   emptyString: true,   nullValue: true,   undefinedValue: true }; |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| origin | <code>Object</code> |  | Origin object |
+| [config] | <code>Object</code> | <code>{emptyArray: true, emptyObject: true,  emptyString: true,  nullValue: true,  undefinedValue: true }</code> |  |
 
 **Example**  
 ```js

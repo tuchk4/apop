@@ -4,7 +4,7 @@
 **Kind**: global namespace  
 
 * [actions](#actions) : <code>object</code>
-    * [.clear(config)](#actions.clear) ⇒ <code>Object</code>
+    * [.clear([config])](#actions.clear) ⇒ <code>Object</code>
     * [.pick(config)](#actions.pick) ⇒ <code>Object</code>
     * [.recursive(actions, deepLimit)](#actions.recursive) ⇒ <code>Array</code> &#124; <code>Object</code>
     * [.rename(config)](#actions.rename) ⇒ <code>function</code>
@@ -16,16 +16,16 @@
 
 <a name="actions.clear"></a>
 
-### actions.clear(config) ⇒ <code>Object</code>
+### actions.clear([config]) ⇒ <code>Object</code>
 Function of clear object keys from null and undefined values
 
 **Kind**: static method of <code>[actions](#actions)</code>  
 **Returns**: <code>Object</code> - Returns function clear object from undefined and null values  
 **See**: [Shortcut method](../shortcuts#shortcuts.clear)  
 
-| Param | Type | Description |
+| Param | Type | Default |
 | --- | --- | --- |
-| config | <code>Object</code> | = {   emptyArray: true,   emptyObject: true,   emptyString: true,   nullValue: true,   undefinedValue: true }; |
+| [config] | <code>Object</code> | <code>{emptyArray: true, emptyObject: true,  emptyString: true,  nullValue: true,  undefinedValue: true }</code> | 
 
 **Example**  
 ```js
