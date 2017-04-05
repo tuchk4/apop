@@ -1,6 +1,6 @@
 import isArray from 'lodash/isArray';
-
 import rmk from '../lib';
+import * as mapUtils from '../lib/utils/map';
 
 const sample = {
   foo_bar: 0,
@@ -152,5 +152,20 @@ test('Array recursive', () => {
   );
   const result = transformMainMenu(data.asArray);
 
+  expect(result).toMatchSnapshot();
+});
+
+test('Array recursive with map', () => {
+  const data = new Set();
+
+  data.add(new Map([['x', '0'], ['y', null]]));
+  data.add(new Map([['x', '1'], ['y', '1']]));
+  data.add(new Map([['x', null], ['y', '2']]));
+  data.add(new Map([['x', '3'], ['y', '3']]));
+  data.add(new Map([['x', '4'], ['y', '4']]));
+  data.add(new Map([['deep', data]]));
+
+  const formula = rmk(rmk.recursive([rmk.clear()], 6));
+  const result = formula(data);
   expect(result).toMatchSnapshot();
 });

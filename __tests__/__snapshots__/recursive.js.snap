@@ -62,6 +62,83 @@ Array [
 ]
 `;
 
+exports[`Array recursive with map 1`] = `
+Array [
+  Object {
+    "x": "0",
+  },
+  Object {
+    "x": "1",
+    "y": "1",
+  },
+  Object {
+    "y": "2",
+  },
+  Object {
+    "x": "3",
+    "y": "3",
+  },
+  Object {
+    "x": "4",
+    "y": "4",
+  },
+  Object {
+    "deep": Array [
+      Object {
+        "x": "0",
+      },
+      Object {
+        "x": "1",
+        "y": "1",
+      },
+      Object {
+        "y": "2",
+      },
+      Object {
+        "x": "3",
+        "y": "3",
+      },
+      Object {
+        "x": "4",
+        "y": "4",
+      },
+      Object {
+        "deep": Array [
+          Object {
+            "x": "0",
+          },
+          Object {
+            "x": "1",
+            "y": "1",
+          },
+          Object {
+            "y": "2",
+          },
+          Object {
+            "x": "3",
+            "y": "3",
+          },
+          Object {
+            "x": "4",
+            "y": "4",
+          },
+          Object {
+            "deep": Array [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]
+`;
+
 exports[`Object recursive 1`] = `
 Object {
   "arrayKey": Array [
