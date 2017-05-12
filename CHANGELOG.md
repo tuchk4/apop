@@ -3,7 +3,7 @@
 ## 2.1.0 (May 12, 2017)
 
 * Actions
-    * Deprecated `pick` action
+    * Deprecate `pick` action
     ```js
       rmk.pick(config)(data)
       rmk.shortcuts.pick(config)(data)
