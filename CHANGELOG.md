@@ -1,4 +1,4 @@
-# Change Log
+# CHANGELOG
 
 ## 2.1.0 (May 12, 2017)
 
