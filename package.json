@@ -1,21 +1,18 @@
 {
   "name": "rmk",
-  "version": "1.1.0",
+  "version": "2.1.0",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "babel -d ./ ./lib",
+    "build": "babel -d ./ ./lib --comments=false --compact=true --minified",
     "dev": "babel -d ./dist ./lib --watch",
     "test": "jest",
     "test-dev": "jest --coverage --watch",
     "doc": "jsdoc --configure .jsdoc.json",
     "style": "jscs lib/*.js lib/**/*.js",
-    "jsdoc2md:actions": "jsdoc2md lib/actions/*.js  lib/actions/**/*.js > lib/actions/README.md",
-    "jsdoc2md:shortcuts": "jsdoc2md lib/shortcuts/*.js  lib/shortcuts/**/*.js > lib/shortcuts/README.md",
-    "jsdoc2md:utils": "jsdoc2md lib/utils/*.js  lib/utils/**/*.js > lib/utils/README.md",
-    "jsdoc2md": "npm run jsdoc2md:actions && npm run jsdoc2md:shortcuts && npm run jsdoc2md:utils",
+    "jsdoc2md:actions": "jsdoc2md lib/actions/*.js  lib/actions/**/*.js > docs/ACTIONS.md",
+    "jsdoc2md:rmk": "jsdoc2md lib/index.js > docs/README.md",
+    "jsdoc2md": "npm run jsdoc2md:actions",
     "github": "npm run jsdoc2md && git commit -a -m \"generate docs\" && git push",
-    "eslint": "eslint ./lib ./__tests__",
-    "eslint:fix": "eslint ./lib ./__tests__ --fix",
     "format": "prettier --trailing-comma es5 --single-quote --write 'lib/**/*.js' '__tests__/**/*.js'",
     "pref": "babel-node tasks/bestResults.js"
   },
@@ -30,18 +27,11 @@
     "babel-preset-stage-0": "^6.22.0",
     "chalk": "^1.1.3",
     "cross-spawn": "^5.1.0",
-    "eslint": "^3.16.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
     "jest": "^19.0.2",
     "jsdoc": "^3.4.3",
     "jsdoc-to-markdown": "^3.0.0",
     "prettier": "^0.22.0",
     "yargs": "^7.0.2"
   },
-  "dependencies": {
-    "lodash": "^4.17.4"
-  }
+  "dependencies": {}
 }

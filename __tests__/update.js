@@ -1,9 +1,8 @@
 import rmk from '../lib';
-import shortcuts from '../lib/shortcuts';
 
-const before = {
+const before = Object.seal({
   date: new Date(Date.UTC(2001, 11, 3)),
-};
+});
 
 const misc = {
   year: 2001,
@@ -68,43 +67,43 @@ test('Field static array', () => {
 
 // --
 
-test('Update shorcut: Field function object', () => {
-  const result = shortcuts.update(before, {
+test('Update shortcut: Field function object', () => {
+  const result = rmk.update({
     year: localState => localState.date.getFullYear(),
     month: localState => localState.date.getMonth(),
     day: localState => localState.date.getDate(),
-  });
+  })(before);
 
   expect(result).toMatchSnapshot();
 });
 
-test('Update shorcut: Field static object', () => {
-  const result = shortcuts.update(before, {
+test('Update shortcut: Field static object', () => {
+  const result = rmk.update({
     year: misc.year,
     month: misc.month,
     day: misc.day,
-  });
+  })(before);
 
   expect(result).toMatchSnapshot();
 });
 
-test('Update shorcut: Field function array', () => {
-  const result = shortcuts.update([before], {
+test('Update shortcut: Field function array', () => {
+  const result = rmk.update({
     year: localState => localState.date.getFullYear(),
     month: localState => localState.date.getMonth(),
     day: localState => localState.date.getDate(),
-  });
+  })([before]);
 
   expect(result).toMatchSnapshot();
 });
 
-test('Update shorcut: Field static array', () => {
+test('Update shortcut: Field static array', () => {
   const additionalFields = {
     year: 2000,
     month: 1,
     day: 1,
   };
-  const result = shortcuts.update([before], additionalFields);
+  const result = rmk.update(additionalFields)([before]);
 
   expect(result).toMatchSnapshot();
 });

@@ -1,11 +1,10 @@
 import rmk from '../lib';
-import shortcuts from '../lib/shortcuts';
 
-export const before = {
+const before = Object.seal({
   id: 1,
   firstName: 'Stephen',
   last_name: 'Nelson',
-};
+});
 
 test('Transform object to snake_case', () => {
   const formula = rmk(rmk.toSnakeCase());
@@ -21,12 +20,12 @@ test('Transform array of objects to snake_case', () => {
   expect(result).toMatchSnapshot();
 });
 
-test('toSnakeCase shorcut: Transform to snake_case', () => {
-  const result = shortcuts.toSnakeCase(before);
+test('toSnakeCase shortcut: Transform to snake_case', () => {
+  const result = rmk.toSnakeCase()(before);
   expect(result).toMatchSnapshot();
 });
 
-test('toSnakeCase shorcut: Transform array of objects to snake_case', () => {
-  const result = shortcuts.toSnakeCase([before]);
+test('toSnakeCase shortcut: Transform array of objects to snake_case', () => {
+  const result = rmk.toSnakeCase()([before]);
   expect(result).toMatchSnapshot();
 });

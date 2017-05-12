@@ -1,9 +1,8 @@
 import rmk from '../lib';
-import shortcuts from '../lib/shortcuts';
 
-const before = {
+const before = Object.seal({
   year: 2001,
-};
+});
 
 test('Field function object', () => {
   const formula = rmk(
@@ -54,35 +53,35 @@ test('Field static array', () => {
 // ---
 
 test('Rename shorctu: Field function object', () => {
-  const result = shortcuts.rename(before, {
+  const result = rmk.rename({
     year: localState =>
       localState.year.toString().length === 4 ? 'fullYear' : 'year',
-  });
+  })(before);
 
   expect(result).toMatchSnapshot();
 });
 
 test('Rename shorctu: Field static object', () => {
-  const result = shortcuts.rename(before, {
+  const result = rmk.rename({
     year: 'fullYear',
-  });
+  })(before);
 
   expect(result).toMatchSnapshot();
 });
 
 test('Rename shorctu: Field function array', () => {
-  const result = shortcuts.rename([before], {
+  const result = rmk.rename({
     year: localState =>
       localState.year.toString().length === 4 ? 'fullYear' : 'year',
-  });
+  })([before]);
 
   expect(result).toMatchSnapshot();
 });
 
 test('Rename shorctu: Field static array', () => {
-  const result = shortcuts.rename([before], {
+  const result = rmk.rename({
     year: 'fullYear',
-  });
+  })([before]);
 
   expect(result).toMatchSnapshot();
 });

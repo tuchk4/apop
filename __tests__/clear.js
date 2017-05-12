@@ -1,7 +1,6 @@
 import rmk from '../lib';
-import shortcuts from '../lib/shortcuts';
 
-const before = {
+const before = Object.seal({
   id: 1,
   first_name: 'Stephen',
   last_name: 'Nelson',
@@ -16,14 +15,21 @@ const before = {
   '-1': -1,
   emptyStr: '',
   null: null,
-  undefined: undefined,
+  undefined,
   nullArray: [null],
-  undefinedArray: [undefined]
-};
+  undefinedArray: [undefined],
+});
 
 test('Clear object with config 1', () => {
-  const config = {};
-  const formula = rmk(rmk.clear(config));
+  const formula = rmk(
+    rmk.clear({
+      nullValue: false,
+      undefinedValue: false,
+      emptyArray: false,
+      emptyObject: false,
+      emptyString: false,
+    })
+  );
 
   const result = formula(before);
   expect(result).toMatchSnapshot();
@@ -38,6 +44,7 @@ test('Clear object with config 2', () => {
   const result = formula(before);
   expect(result).toMatchSnapshot();
 });
+
 test('Clear object with config 3', () => {
   const config = {
     emptyArray: true,
@@ -52,7 +59,6 @@ test('Clear object with config 3', () => {
 
 test('Clear object', () => {
   const formula = rmk(rmk.clear());
-
   const result = formula(before);
   expect(result).toMatchSnapshot();
 });
@@ -67,11 +73,6 @@ test('Clear array of objects', () => {
 // ---
 
 test('Clear remove undefined and null values', () => {
-  const result = shortcuts.clear(before);
-  expect(result).toMatchSnapshot();
-});
-
-test('Clear array of objects', () => {
-  const result = shortcuts.clear([before]);
+  const result = rmk.clear()(before);
   expect(result).toMatchSnapshot();
 });
