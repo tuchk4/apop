@@ -1,191 +1,126 @@
-## Remake JS - Object transformation without mutations.
+# [rmk](http://tuchk4.github.io/rmk/)
 
 [![build status](https://img.shields.io/travis/tuchk4/rmk/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/rmk)
+[![rmk version](https://img.shields.io/npm/v/rmk.svg?style=flat-square)](https://www.npmjs.com/package/rmk)
+## rmk
+The main idea of rmk is flow transformation data. 
 
-Docs:
-[Actions](lib/actions) | [Shortcuts](lib/shortcuts) |  [Utils ](lib/utils)
-
-#### Example 1. Clear data.
-**Transform Object:**
-```js
-import rmk from 'rmk';
-
-let data = {one: "", two: null, three: undefined, four: {}, five: []}
-const formula = rmk(rmk.clear());
-const result = formula(data)
-// =>  {}
+## Installation
 ```
-**Transform array:**
-```js
-import rmk from 'rmk';
-
-let data = [{one: "", two: null, a: 1}, {three: undefined, four: {}, five: [], b:2}]
-const formula = rmk(rmk.clear());
-const result = formula(data)
-// =>  [ {a:1}, {b:2} ]
-```
-**Shortcut:**
-```js
-import clear from 'rmk/shortcuts/clear';
-
-let data = {one: "", two: null, three: undefined, four: {}, five: []}
-const result = clear(data)
-// =>  { birthDate: new Date(1975, 4,3), year: 1975 }
+npm install --save rmk
 ```
 
 
-#### Example 2. To snake case.
-**Transform Object:**
+## Actions
+* [clear](docs/ACTIONS.md#rmk.clear) Clear object fields from: null, undefined, empty array, empty string, empty object
+* [rename](docs/ACTIONS.md#rmk.rename) Rename keys in object by config.
+* [update](docs/ACTIONS.md#rmk.update) Update keys in object by config.
+* [toCamelCase](docs/ACTIONS.md#rmk.toCamelCase) Rename all keys camelCase.
+* [toSnakeCase](docs/ACTIONS.md#rmk.toSnakeCase) Rename all keys snake_case.
+
+Actions: clear, toSnakeCase, toCamelCase use without config
+
+## Custom actions 
+You can use custom actions:
 ```js
-import rmk from 'rmk';
-import toSnakeCase from 'rmk/actions/toSnakeCase';
-
-let data = {fooBar: 1, foo: 2, BAR: 3}
-const formula = rmk(toSnakeCase());
-const result = formula(data)
-// =>  { foo_bar: 1, foo: 2, bar: 3 }
-```
-**Transform array:**
-```js
-import rmk from 'rmk';
-import toSnakeCase from 'rmk/actions/toSnakeCase';
-
-let data = [{fooBar: 1}, {barBaz: 2}]
-const formula = rmk(toSnakeCase());
-const result = formula(data)
-// =>  [ {foo_bar: 1}, {bar_baz: 2} ]
-```
-**Shortcut:**
-```js
-import toSnakeCase from 'rmk/shortcuts/toSnakeCase';
-
-let data = {fooBar: 1, foo: 2, BAR: 3}
-const result = toSnakeCase(data)
-// =>  { foo_bar: 1, foo: 2, bar: 3 }
-```
-
-
-#### Example 3. To camel case.
-**Transform Object:**
-```js
-import rmk from 'rmk';
-
-let data = {foo_bar: 1, foo: 2, BAR: 3}
-const formula = rmk(rmk.toCamelCase());
-const result = formula(data)
-// =>  { fooBar: 1, foo: 2, bar: 3 }
-```
-**Transform array:**
-```js
-import rmk from 'rmk';
-
-let data = [{foo_Bar: 1}, {bar_baz: 2}]
-const formula = rmk(rmk.toCamelCase());
-const result = formula(data)
-// =>  [ {fooBar: 1}, {barBaz: 2} ]
-```
-**Shortcut:**
-```js
-import toCamelCase from 'rmk/shortcuts/toCamelCase';
-
-let data = {foo_bar: 1, foo: 2, BAR: 3}
-const result = toCamelCase(data)
-// =>  { fooBar: 1, foo: 2, bar: 3 }
-```
-
-
-#### Example 4. Add static field.
-**Transform Object:**
-```js
-import rmk from 'rmk';
-
-let data = {foo: 1, bar: 2}
-const formula = rmk(rmk.update({
-    baz:3
-}));
-const result = formula(data)
-// =>  { foo: 1, bar: 2, baz:3 }
-```
-**Transform array:**
-```js
-import rmk from 'rmk';
-
-let data = [{foo: 1}, {foo: 4}]
-const formula = rmk(rmk.update({
-    baz: (localState) => foo + 1
-}));
-const result = formula(data)
-// =>  [ {foo: 1, baz:2},  {foo: 4, baz:5} ]
-```
-**Shortcut:**
-```js
-import update from 'rmk/shortcuts/update';
-
-let data = {foo: 1, bar: 2}
-const result = update(data, {
-  baz:3
-});
-// =>  {foo: 1, bar: 2, baz:3}
-```
-
-
-
-#### Example 5. Complex transform array:
-
-```js
-import rmk from 'rmk';
-
-let data = [
-    {birth_date: new Date(1975, 4,3), user: 1},
-    {birth_date: new Date(1975, 4,3), user: undefined}
-]
-const formula = rmk(
-  rmk.toCamelCase(),
-  rmk.update({
-    year: localState => localState.birthDate.getFullYear()
-  }),
-  rmk.clear()
+let data = {num: 1};
+let formula = rmk(
+    (state) => {
+        state.num++;
+        return state;
+    },
+    (state) => {
+        state.num *= 3;
+        return state;
+    }
 );
-const result = formula(data);
-// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1},  {birthDate: new Date(1982, 4,3), year: 1982} ]
-
+formula(data);
+// => {num: 6}
 ```
 
-#### Example 5. Complex transform array. Import all actions:
+## Single flow
+Single parse  object or array of objects:
+```js
+rmk(    
+    rmk.update(config),
+    rmk(config),
+    rmk.clear(),
+    rmk.toSnakeCase(),
+    rmk.toCamelCase()
+)(data)
+```
+  
+## Shortcuts
+Use single shortcuts: 
+```js
+  rmk.update(config)(params);
+  rmk.rename(config)(params);
+  rmk.clear()(params);
+  rmk.toSnakeCase()(params);
+  rmk.toCamelCase()(params); 
+``` 
+  
+## Recursive flow
+Recursive parse objects:
+```js 
+rmk.recursive(
+    rmk.update(config),
+    rmk(config),
+    rmk.clear(),
+    rmk.toSnakeCase(),
+    rmk.toCamelCase()
+)(data)
+```
+
+## Recursive shortcuts
+Use recursive shortcuts: 
+```js
+  rmk.recursive.update(config)(params);
+  rmk.recursive.rename(config)(params);
+  rmk.recursive.clear()(params);
+  rmk.recursive.toSnakeCase()(params);
+  rmk.recursive.toCamelCase()(params);
+``` 
+
+## The gist
+Convert array of objects to snake_case and remove fields with undefined and null.
+
 ```js
 import rmk from 'rmk';
-
-let data = [
-    {birth_date: new Date(1975, 4,3), user: 1},
-    {birth_date: new Date(1975, 4,3), user: undefined}
-]
-const formula = rmk(
-  rmk.toCamelCase(),
-  rmk.update({
-    year: localState => localState.birthDate.getFullYear()
-  }),
-  rmk.clear()
-);
-const result = formula(data);
-// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1}, {birthDate: new Date(1982, 4,3), year: 1982} ]
-
+let params = [{ 
+    id:1, 
+    firstName:'Billy',
+    year: undefined,
+    deepKey: {
+      id:2,
+      firstName: 'John',
+      deepYear: null
+    }
+}];
+  
+// Use single flow.
+rmk(rmk.toSnakeCase(), rmk.clear())(params);
+// => {id:1, first_name:'Billy', deep_key: { id:2, firstName: 'John', deepYear: null }
+  
+// Use single shortcut.
+let singleStep1 = rmk.toSnakeCase()(params);
+let singleStep2 = rmk.clear()(singleStep1);
+//  => {id:1, first_name:'Billy', deep_key: { id:2, firstName: 'John', deepYear: null }
+  
+// Use recursive flow
+rmk.recursive(rmk.toSnakeCase(), rmk.clear())(params);
+//  => {id:1, first_name:'Billy', deep_key: { id:2, first_name: 'John' }
+  
+// Use recursive shortcut.
+let recusriveStep1 = rmk.recursive.toSnakeCase()(params);
+let recusriveStep2 = rmk.recursive.clear()(recusriveStep1);
+//  => {id:1, first_name:'Billy', deep_key: { id:2, first_name: 'John' }
 ```
 
-
-#### Example 6. Complex transform array. Import all shortcuts:
-```js
-import rmk from 'rmk';
-import shortcuts from 'rmk/shortcuts';
-
-let data = [
-    {birth_date: new Date(1975, 4,3), user: 1},
-    {birth_date: new Date(1975, 4,3), user: undefined}
-]
-const step1 = shortcuts.toCamelCase(data);
-const step2 = shortcuts.update(step1, {
- year: localState => localState.birthDate.getFullYear()
-});
-const result = rmkShortcuts.clear(step2);
-// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1},  {birthDate: new Date(1982, 4,3), year: 1982} ]
-
-```
+### [Contributing](docs/CONTRIBUTING.md)
+Project is open for new ideas and features:
+- New actions
+- New experiments
+- Support Map, Set
+- Support async usage
+- Support Immutable.js

@@ -5,14 +5,14 @@ Array [
   Object {
     "isCategory": false,
     "isLink": true,
-    "name": "1 old",
+    "name": "!1",
     "url": "/1",
     "version": "v1",
   },
   Object {
     "isCategory": false,
     "isLink": true,
-    "name": "2",
+    "name": "!2",
     "url": "/2",
     "version": "v2",
   },
@@ -20,11 +20,12 @@ Array [
     "isCategory": true,
     "isLink": false,
     "isOpen": false,
+    "name": "!8",
     "nodes": Array [
       Object {
         "isCategory": false,
         "isLink": true,
-        "name": "3",
+        "name": "!3",
         "url": "/3",
         "version": "v2",
       },
@@ -32,32 +33,34 @@ Array [
         "isCategory": true,
         "isLink": false,
         "isOpen": false,
-        "name": "6",
+        "name": "!7",
         "nodes": Array [
           Object {
             "isCategory": false,
             "isLink": true,
-            "name": "3 old",
-            "url": "/3",
+            "name": "!4",
+            "url": "/4",
             "version": "v1",
           },
           Object {
             "isCategory": false,
             "isLink": true,
-            "name": "4",
-            "url": "/4",
+            "name": "!5",
+            "url": "/5",
             "version": "v2",
           },
           Object {
             "isCategory": false,
             "isLink": true,
-            "name": "5",
-            "url": "/5",
+            "name": "!6",
+            "url": "/6",
             "version": "v2",
           },
         ],
+        "url": "/7",
       },
     ],
+    "url": "/8",
   },
 ]
 `;
@@ -81,6 +84,12 @@ Object {
       2,
       3,
     ],
+    "arrayObjects": Array [
+      Object {
+        "aB": "a",
+        "bC": "b",
+      },
+    ],
     "fooBar": 0,
     "renamedStr": "1,2,3",
   },
@@ -88,3 +97,52 @@ Object {
   "renamedStr": "1,2,3",
 }
 `;
+
+exports[`recursive shortcut rename 1`] = `
+Array [
+  Object {
+    "children": Array [],
+    "test": "1",
+    "url": "/1",
+  },
+  Object {
+    "children": Array [],
+    "test": "2",
+    "url": "/v2/2",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [],
+        "test": "3",
+        "url": "/v2/3",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [],
+            "test": "4",
+            "url": "/4",
+          },
+          Object {
+            "children": Array [],
+            "test": "5",
+            "url": "/v2/5",
+          },
+          Object {
+            "children": Array [],
+            "test": "6",
+            "url": "/v2/6",
+          },
+        ],
+        "test": "7",
+        "url": "/7",
+      },
+    ],
+    "test": "8",
+    "url": "/8",
+  },
+]
+`;
+
+exports[`recursive shortcut toCamelCase 1`] = `[Function]`;

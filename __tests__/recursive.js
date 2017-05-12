@@ -1,15 +1,13 @@
-import isArray from 'lodash/isArray';
-
 import rmk from '../lib';
 
-const sample = {
+const sample = Object.seal({
   foo_bar: 0,
   remove_baz: null,
   array_key: [1, 2, 3],
   array_objects: [{ a_b: 'a', b_c: 'b' }],
-};
+});
 
-const data = {
+const data = Object.seal({
   asObject: {
     ...sample,
     deep_obj: sample,
@@ -36,31 +34,34 @@ const data = {
           children: [
             {
               children: [],
-              name: '3',
-              url: '/3',
-            },
-            {
-              children: [],
               name: '4',
-              url: '/v2/4',
+              url: '/4',
             },
             {
               children: [],
               name: '5',
               url: '/v2/5',
             },
+            {
+              children: [],
+              name: '6',
+              url: '/v2/6',
+            },
           ],
-          name: '6',
+          name: '7',
+          url: '/7',
         },
       ],
+      name: '8',
+      url: '/8',
     },
   ],
-};
+});
 
-const VERSIONS = {
+const VERSIONS = Object.seal({
   V1: 'v1',
   V2: 'v2',
-};
+});
 
 const versionLinkFn = (url, isLink) => {
   let version;
@@ -77,80 +78,69 @@ const normalizeName = (name, version) =>
   version === VERSIONS.V1 ? `${name} old` : name;
 
 test('Object recursive', () => {
-  const formula = rmk(
-    rmk.recursive(
-      [
-        rmk.toCamelCase(),
-        rmk.update({
-          arrayKeyStr: localState =>
-            isArray(localState.arrayKey) ? localState.arrayKey.join(',') : null,
-        }),
-        rmk.rename({
-          arrayKeyStr: 'renamedStr',
-        }),
-        rmk.clear(),
-      ],
-      3
-    )
+  const formula = rmk.recursive(
+    rmk.toCamelCase(),
+    rmk.update({
+      arrayKeyStr: localState =>
+        Array.isArray(localState.arrayKey)
+          ? localState.arrayKey.join(',')
+          : null,
+    }),
+    rmk.rename({
+      arrayKeyStr: 'renamedStr',
+    }),
+    rmk.clear()
   );
 
   const result = formula(data.asObject);
 
   expect(result).toMatchSnapshot();
 });
-
+let sum = '';
 test('Array recursive', () => {
-  const transformMainMenu = rmk(
-    rmk.recursive(
-      [
-        rmk.clear(),
-        rmk.toCamelCase(),
-        rmk.rename({
-          children: 'nodes',
-        }),
-      ],
-      8
-    ),
-    rmk.recursive(
-      [
-        rmk.update({
-          isCategory: localState =>
-            Object.prototype.hasOwnProperty.call(localState, 'nodes'),
-          isLink: localState =>
-            !Object.prototype.hasOwnProperty.call(localState, 'nodes'),
-        }),
-      ],
-      8
-    ),
-    rmk.recursive(
-      [
-        rmk.update({
-          version: localState =>
-            versionLinkFn(localState.url, localState.isLink),
-        }),
-      ],
-      8
-    ),
-    rmk.recursive(
-      [
-        rmk.update({
-          url: localState => normalizeUrl(localState.url, localState.version),
-          name: localState =>
-            normalizeName(localState.name, localState.version),
-          isOpen: localState => {
-            let isOpen = null;
-            if (localState.isCategory) {
-              isOpen = false;
-            }
-            return isOpen;
-          },
-        }),
-        rmk.clear(),
-      ],
-      8
-    )
+  const transformMainMenu = rmk.recursive(
+    rmk.clear(),
+    rmk.toCamelCase(),
+    rmk.rename({
+      children: 'nodes',
+    }),
+    rmk.update({
+      isCategory: localState =>
+        Object.prototype.hasOwnProperty.call(localState, 'nodes'),
+      isLink: localState =>
+        !Object.prototype.hasOwnProperty.call(localState, 'nodes'),
+    }),
+    rmk.update({
+      version: localState => versionLinkFn(localState.url, localState.isLink),
+    }),
+    rmk.update({
+      url: localState => normalizeUrl(localState.url, localState.version),
+      name: localState => {
+        sum += `->${localState.name}`;
+        return `!${localState.name}`;
+      },
+      isOpen: localState => {
+        let isOpen = null;
+        if (localState.isCategory) {
+          isOpen = false;
+        }
+        return isOpen;
+      },
+    }),
+    rmk.clear()
   );
   const result = transformMainMenu(data.asArray);
 
+  expect(result).toMatchSnapshot();
+  expect(sum).toEqual('->1->2->3->4->5->6->7->8');
+});
+
+it('recursive shortcut rename', () => {
+  const result = rmk.recursive.rename({ name: 'test' })(data.asArray);
+  expect(result).toMatchSnapshot();
+});
+
+it('recursive shortcut toCamelCase', () => {
+  const result = rmk.recursive.toCamelCase(sample);
   expect(result).toMatchSnapshot();
 });

@@ -18,7 +18,7 @@ Object {
 }
 `;
 
-exports[`toCamelCase shorcut:  Transform array of objects to snake_case 1`] = `
+exports[`toCamelCase shortcut:  Transform array of objects to snake_case 1`] = `
 Array [
   Object {
     "firstName": "Stephen",
@@ -28,7 +28,7 @@ Array [
 ]
 `;
 
-exports[`toCamelCase shorcut: Transform to camelCase 1`] = `
+exports[`toCamelCase shortcut: Transform to camelCase 1`] = `
 Object {
   "firstName": "Stephen",
   "id": 1,

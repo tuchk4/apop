@@ -19,25 +19,6 @@ Array [
 ]
 `;
 
-exports[`Clear array of objects 2`] = `
-Array [
-  Object {
-    "-1": -1,
-    "0": 0,
-    "1": 1,
-    "city": "Kapotnya",
-    "date": 2001-02-01T00:00:00.000Z,
-    "email": "snelson0@yellowbook.com",
-    "first_name": "Stephen",
-    "gender": "Male",
-    "id": 1,
-    "ip_address": "74.191.108.58",
-    "last_name": "Nelson",
-    "phrase": "Universal 6th generation portal",
-  },
-]
-`;
-
 exports[`Clear object 1`] = `
 Object {
   "-1": -1,

@@ -18,7 +18,7 @@ Object {
 }
 `;
 
-exports[`toSnakeCase shorcut: Transform array of objects to snake_case 1`] = `
+exports[`toSnakeCase shortcut: Transform array of objects to snake_case 1`] = `
 Array [
   Object {
     "first_name": "Stephen",
@@ -28,7 +28,7 @@ Array [
 ]
 `;
 
-exports[`toSnakeCase shorcut: Transform to snake_case 1`] = `
+exports[`toSnakeCase shortcut: Transform to snake_case 1`] = `
 Object {
   "first_name": "Stephen",
   "id": 1,

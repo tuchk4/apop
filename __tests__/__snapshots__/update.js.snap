@@ -40,7 +40,7 @@ Object {
 }
 `;
 
-exports[`Update shorcut: Field function array 1`] = `
+exports[`Update shortcut: Field function array 1`] = `
 Array [
   Object {
     "date": 2001-12-03T00:00:00.000Z,
@@ -51,7 +51,7 @@ Array [
 ]
 `;
 
-exports[`Update shorcut: Field function object 1`] = `
+exports[`Update shortcut: Field function object 1`] = `
 Object {
   "date": 2001-12-03T00:00:00.000Z,
   "day": 3,
@@ -60,7 +60,7 @@ Object {
 }
 `;
 
-exports[`Update shorcut: Field static array 1`] = `
+exports[`Update shortcut: Field static array 1`] = `
 Array [
   Object {
     "date": 2001-12-03T00:00:00.000Z,
@@ -71,7 +71,7 @@ Array [
 ]
 `;
 
-exports[`Update shorcut: Field static object 1`] = `
+exports[`Update shortcut: Field static object 1`] = `
 Object {
   "date": 2001-12-03T00:00:00.000Z,
   "day": 3,
