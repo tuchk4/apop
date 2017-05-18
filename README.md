@@ -13,12 +13,13 @@ npm install --save rmk
 
 ## Actions
 * [clear](docs/ACTIONS.md#rmk.clear) Clear object fields from: null, undefined, empty array, empty string, empty object
+* [each](docs/ACTIONS.md#rmk.each) Parse each fields in callback.
 * [rename](docs/ACTIONS.md#rmk.rename) Rename keys in object by config.
 * [update](docs/ACTIONS.md#rmk.update) Update keys in object by config.
 * [toCamelCase](docs/ACTIONS.md#rmk.toCamelCase) Rename all keys camelCase.
 * [toSnakeCase](docs/ACTIONS.md#rmk.toSnakeCase) Rename all keys snake_case.
 
-Actions: clear, toSnakeCase, toCamelCase use without config
+Actions: clear, toSnakeCase, toCamelCase use without config, each use with callback.
 
 ## Custom actions 
 You can use custom actions:
