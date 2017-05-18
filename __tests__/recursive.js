@@ -8,7 +8,7 @@ const sample = Object.seal({
 });
 
 const data = Object.seal({
-  asObject: Object.assign({deep_obj: sample }, sample),
+  asObject: Object.assign({ deep_obj: sample }, sample),
   asArray: [
     {
       children: [],
