@@ -47,7 +47,8 @@ rmk(
     rmk(config),
     rmk.clear(),
     rmk.toSnakeCase(),
-    rmk.toCamelCase()
+    rmk.toCamelCase(),
+    rmk.each(callback)
 )(data)
 ```
   
@@ -59,6 +60,7 @@ Use single shortcuts:
   rmk.clear()(params);
   rmk.toSnakeCase()(params);
   rmk.toCamelCase()(params); 
+  rmk.each(callback)(params);
 ``` 
   
 ## Recursive flow
@@ -69,7 +71,8 @@ rmk.recursive(
     rmk(config),
     rmk.clear(),
     rmk.toSnakeCase(),
-    rmk.toCamelCase()
+    rmk.toCamelCase(),
+    rmk.each(callback)
 )(data)
 ```
 
@@ -81,6 +84,7 @@ Use recursive shortcuts:
   rmk.recursive.clear()(params);
   rmk.recursive.toSnakeCase()(params);
   rmk.recursive.toCamelCase()(params);
+  rmk.recursive.each(callback)(params);
 ``` 
 
 ## The gist
