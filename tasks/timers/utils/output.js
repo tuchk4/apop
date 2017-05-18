@@ -73,10 +73,9 @@ const output = (id, size, time) => {
     });
   }
 
-  fs.writeFileSync(bestResultsPath, JSON.stringify({
-    ...bestResults,
+  fs.writeFileSync(bestResultsPath, JSON.stringify(Object.assign({
     [size]: bestSizeTimings
-  }, 2, 2));
+  }, bestResults), 2, 2));
 }
 
 export default output;

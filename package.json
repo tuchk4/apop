@@ -1,6 +1,6 @@
 {
   "name": "rmk",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "scripts": {
     "prepublish": "npm run build",
     "build": "babel -d ./ ./lib --comments=false --compact=true --minified",
@@ -14,7 +14,7 @@
     "jsdoc2md": "npm run jsdoc2md:actions",
     "github": "npm run jsdoc2md && git commit -a -m \"generate docs\" && git push",
     "format": "prettier --trailing-comma es5 --single-quote --write 'lib/**/*.js' '__tests__/**/*.js'",
-    "pref": "babel-node tasks/bestResults.js"
+    "pref": "npm run build && babel-node tasks/bestResults.js"
   },
   "engines": {
     "node": ">=4.0.0"

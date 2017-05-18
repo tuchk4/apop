@@ -5,6 +5,7 @@
 
 * [rmk](#rmk) : <code>object</code>
     * [.clear(config)](#rmk.clear) ⇒ <code>function</code>
+    * [.each(callback)](#rmk.each) ⇒ <code>function</code>
     * [.rename(config)](#rmk.rename) ⇒ <code>function</code>
     * [.toCamelCase()](#rmk.toCamelCase) ⇒ <code>function</code>
     * [.toSnakeCase()](#rmk.toSnakeCase) ⇒ <code>function</code>
@@ -40,6 +41,31 @@ formula(data)
 // or
 rmk.clear()(data)
 // => {a:null, b: 0, c: null, f: [1],  g: false, j: new Date(), k: 'test'}
+```
+<a name="rmk.each"></a>
+
+### rmk.each(callback) ⇒ <code>function</code>
+By default action parse object.  For recursive flow use rmk.recursive(rmk.each(callback))(data)
+
+**Kind**: static method of [<code>rmk</code>](#rmk)  
+**Returns**: <code>function</code> - Returns function parse eachKeys  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | Function for parse each field in object (key, value) => ({key: newKey, value: newValue}) |
+
+**Example**  
+```js
+import rmk from 'rmk';
+
+let formula = rmk(rmk.each((key, value) => {
+ return {key: key + '_', value: value * 2}
+})
+let data = {a:1, b: 2, c: 3, d: 4}
+formula(data)
+// or
+rmk.clear()(data)
+// => {a_: 2, b_: 4, c_: 6, d_: 8}
 ```
 <a name="rmk.rename"></a>
 
