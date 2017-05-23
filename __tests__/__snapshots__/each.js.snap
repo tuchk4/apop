@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Each transform flow 1`] = `
+Object {
+  "a_": 2,
+  "b_": 4,
+  "c_": 6,
+  "d_": 8,
+}
+`;
+
+exports[`Each transform shortcut 1`] = `
+Object {
+  "a_": 2,
+  "b_": 4,
+  "c_": 6,
+  "d_": 8,
+}
+`;
+
+exports[`Recursive flow each transform 1`] = `
+Object {
+  "a_": 2,
+  "b_": 4,
+  "c_": 6,
+  "d_": Object {
+    "a_": 2,
+    "b_": 4,
+    "c_": 6,
+    "d_": Object {
+      "a_": 2,
+      "b_": 4,
+      "c_": 6,
+      "d_": 8,
+    },
+  },
+}
+`;
+
+exports[`Recursive shortcut each transform 1`] = `
+Object {
+  "a_": 2,
+  "b_": 4,
+  "c_": 6,
+  "d_": Object {
+    "a_": 2,
+    "b_": 4,
+    "c_": 6,
+    "d_": Object {
+      "a_": 2,
+      "b_": 4,
+      "c_": 6,
+      "d_": 8,
+    },
+  },
+}
+`;

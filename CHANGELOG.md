@@ -1,5 +1,13 @@
 # CHANGELOG
-
+## 2.2.1 (May 18, 2017)
+* Actions
+    * Add each action for parse fields of objects
+    * Add dependency each action to other actions.
+    
+* Flow
+    * Review parse algorithm. Parse from 0 level to deep.
+    * More fast: object + 11%, array of object +33%
+    
 ## 2.1.0 (May 12, 2017)
 
 * Actions

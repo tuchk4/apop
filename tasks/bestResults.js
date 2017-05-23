@@ -9,7 +9,7 @@ const bestResultsPath = path.join(
   'bestResults.json'
 );
 
-const size = argv.size || 1000;
+const size = argv.size || 4000;
 
 const prevBestResults = JSON.parse(fs.readFileSync(bestResultsPath).toString());
 const prevBestSizeTimings = prevBestResults[size];

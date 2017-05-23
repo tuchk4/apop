@@ -8,10 +8,7 @@ const sample = Object.seal({
 });
 
 const data = Object.seal({
-  asObject: {
-    ...sample,
-    deep_obj: sample,
-  },
+  asObject: Object.assign({ deep_obj: sample }, sample),
   asArray: [
     {
       children: [],
@@ -132,7 +129,7 @@ test('Array recursive', () => {
   const result = transformMainMenu(data.asArray);
 
   expect(result).toMatchSnapshot();
-  expect(sum).toEqual('->1->2->3->4->5->6->7->8');
+  expect(sum).toEqual('->1->2->8->3->7->4->5->6');
 });
 
 it('recursive shortcut rename', () => {

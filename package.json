@@ -1,6 +1,6 @@
 {
   "name": "rmk",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "scripts": {
     "prepublish": "npm run build",
     "build": "babel -d ./ ./lib --comments=false --compact=true --minified",
@@ -13,8 +13,15 @@
     "jsdoc2md:rmk": "jsdoc2md lib/index.js > docs/README.md",
     "jsdoc2md": "npm run jsdoc2md:actions",
     "github": "npm run jsdoc2md && git commit -a -m \"generate docs\" && git push",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'lib/**/*.js' '__tests__/**/*.js'",
-    "pref": "babel-node tasks/bestResults.js"
+    "format-backend": "prettier --trailing-comma es5 --single-quote --write 'lib/**/*.js' '__tests__/**/*.js'",
+    "pref": "npm run build && babel-node tasks/bestResults.js",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">=4.0.0"
@@ -30,8 +37,9 @@
     "jest": "^19.0.2",
     "jsdoc": "^3.4.3",
     "jsdoc-to-markdown": "^3.0.0",
-    "prettier": "^0.22.0",
-    "yargs": "^7.0.2"
-  },
-  "dependencies": {}
+    "yargs": "^7.0.2",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.2",
+    "prettier": "^0.22.0"
+  }
 }
