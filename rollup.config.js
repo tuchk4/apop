@@ -1,6 +1,4 @@
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
 import minify from 'rollup-plugin-minify';
 
 const npmConfig = {
@@ -11,14 +9,9 @@ const npmConfig = {
 
 export default {
   entry: 'lib/index.js',
-  format: 'iife',
-  sourceMap: 'inline',
+  format: 'umd',
+  sourceMap: true,
   moduleName: 'rmk',
   dest: 'dist/rmk.js',
-  plugins: [
-    resolve(npmConfig),
-    commonjs(),
-    babel(),
-    minify({ iife: 'dist/rmk.min.js' }),
-  ],
+  plugins: [resolve(npmConfig), minify({ iife: 'dist/rmk.min.js' })],
 };

@@ -1,6 +1,13 @@
 // .babelrc
 {
   "presets": [
-      "es2015"
-  ]
+    ["es2015", {"modules": false}]
+  ],
+  "env":{
+    "test": {
+      "presets": [
+        "es2015"
+      ]
+    }
+  }
 }
