@@ -1,5 +1,4 @@
 import resolve from 'rollup-plugin-node-resolve';
-import minify from 'rollup-plugin-minify';
 
 const npmConfig = {
   jsnext: true,
@@ -13,5 +12,5 @@ export default {
   sourceMap: true,
   moduleName: 'rmk',
   dest: 'dist/rmk.js',
-  plugins: [resolve(npmConfig), minify({ iife: 'dist/rmk.min.js' })],
+  plugins: [resolve(npmConfig)],
 };
