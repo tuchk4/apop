@@ -1,4 +1,4 @@
-import rmk from '../dist/rmk';
+import rmk from '../lib';
 
 const before = Object.seal({
   a: 1,
