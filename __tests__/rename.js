@@ -1,4 +1,4 @@
-import rmk from '../lib';
+import rmk from '../dist/rmk';
 
 const before = Object.seal({
   year: 2001,

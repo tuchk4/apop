@@ -4,9 +4,10 @@
   "main": "dist/rmk.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "rollup -c",
+    "build": "rollup -c rollup.config.js && rollup -c rollup.min.config.js",
     "test": "jest",
     "test-dev": "jest --coverage --watch",
+    "uglify": " uglify -s ~/dist/rmk.js -o ~/dist/rmk.min.js",
     "doc": "jsdoc --configure .jsdoc.json",
     "style": "jscs lib/*.js lib/**/*.js",
     "jsdoc2md:actions": "jsdoc2md lib/actions/*.js  lib/actions/**/*.js > docs/ACTIONS.md",
@@ -41,7 +42,14 @@
     "lint-staged": "^3.4.2",
     "prettier": "^0.22.0",
     "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
+    "uglify": "^0.1.5",
     "yargs": "^7.0.2"
+  },
+  "dependencies": {
+    "rollup-plugin-uglify": "^2.0.1",
+    "uglify-es": "^3.0.18"
   }
 }
