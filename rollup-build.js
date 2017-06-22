@@ -91,4 +91,10 @@ async function make(config) {
     entry: './lib/actions/rename/index.module.js',
     dest: `./rename.js`,
   });
+  await make({
+    ...rollUpConfig,
+    moduleName: 'update ',
+    entry: './lib/actions/update/index.module.js',
+    dest: `./update.js`,
+  });
 })();
