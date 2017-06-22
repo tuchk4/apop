@@ -1,4 +1,37 @@
 # CHANGELOG
+## 2.3.1 (June 22, 2017)
+* More fast
+    * Parse object + 21%
+    * Parse array + 137%
+
+* Build
+    * Make UMD modules
+    * Build via rollup
+    * Import action as module `rmk/${action}`
+    * `dist/rmk.js`
+    * `dist/rmk.min.js`
+    
+* Ways of using
+    * ```js
+        import rmk from 'rmk';
+        rmk.toSnakeCase()(data);
+       ```
+    * ```js
+        import toSnakeCase from 'rmk/toSnakeCase';
+        toSnakeCase()(data);
+       ```
+    * ```js
+        import rmk from 'rmk';
+        import toSnakeCase from 'rmk/toSnakeCase';
+        rmk(toSnakeCase())(data);
+      ```
+    * ```html
+        <script src="rmk/toSnakeCase.js"></script>
+      ```
+    * ```html
+        <script src="rmk/dist/rmk.min.js"></script>
+      ```
+
 ## 2.2.1 (May 18, 2017)
 * Actions
     * Add each action for parse fields of objects
