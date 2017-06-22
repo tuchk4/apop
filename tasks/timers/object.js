@@ -6,7 +6,7 @@ import output from './utils/output';
 import generateData from './utils/generateData';
 import getActions from './utils/getActions';
 
-import rmk from '../../lib';
+import rmk from '../../dist/rmk';
 
 const size = argv.size || 1000;
 

@@ -24,6 +24,8 @@ Actions: clear, toSnakeCase, toCamelCase use without config, each use with callb
 ## Custom actions 
 You can use custom actions:
 ```js
+import rmk from 'rmk';
+
 let data = {num: 1};
 let formula = rmk(
     (state) => {
@@ -42,9 +44,11 @@ formula(data);
 ## Single flow
 Single parse  object or array of objects:
 ```js
+import rmk from 'rmk';
+
 rmk(    
     rmk.update(config),
-    rmk(config),
+    rmk.rename(config),
     rmk.clear(),
     rmk.toSnakeCase(),
     rmk.toCamelCase(),
@@ -55,20 +59,24 @@ rmk(
 ## Shortcuts
 Use single shortcuts: 
 ```js
-  rmk.update(config)(params);
-  rmk.rename(config)(params);
-  rmk.clear()(params);
-  rmk.toSnakeCase()(params);
-  rmk.toCamelCase()(params); 
-  rmk.each(callback)(params);
+import rmk from 'rmk';
+
+rmk.update(config)(params);
+rmk.rename(config)(params);
+rmk.clear()(params);
+rmk.toSnakeCase()(params);
+rmk.toCamelCase()(params); 
+rmk.each(callback)(params);
 ``` 
   
 ## Recursive flow
 Recursive parse objects:
-```js 
+```js
+import rmk from 'rmk';
+
 rmk.recursive(
     rmk.update(config),
-    rmk(config),
+    rmk.rename(config),
     rmk.clear(),
     rmk.toSnakeCase(),
     rmk.toCamelCase(),
@@ -79,12 +87,14 @@ rmk.recursive(
 ## Recursive shortcuts
 Use recursive shortcuts: 
 ```js
-  rmk.recursive.update(config)(params);
-  rmk.recursive.rename(config)(params);
-  rmk.recursive.clear()(params);
-  rmk.recursive.toSnakeCase()(params);
-  rmk.recursive.toCamelCase()(params);
-  rmk.recursive.each(callback)(params);
+import rmk from 'rmk';
+
+rmk.recursive.update(config)(params);
+rmk.recursive.rename(config)(params);
+rmk.recursive.clear()(params);
+rmk.recursive.toSnakeCase()(params);
+rmk.recursive.toCamelCase()(params);
+rmk.recursive.each(callback)(params);
 ``` 
 
 ## The gist
@@ -92,6 +102,7 @@ Convert array of objects to snake_case and remove fields with undefined and null
 
 ```js
 import rmk from 'rmk';
+
 let params = [{ 
     id:1, 
     firstName:'Billy',

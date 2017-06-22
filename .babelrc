@@ -1,6 +1,11 @@
 {
   "presets": [
-    "es2015"
+    "es2015",
+    "stage-0"
   ],
-  "comments": false
+  "plugins": [
+    ["transform-strict-mode", {
+      "strict": false
+    }]
+  ]
 }
