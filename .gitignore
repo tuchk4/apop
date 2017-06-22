@@ -3,3 +3,6 @@ npm-debug.log
 /coverage/
 /.idea/
 /dist/
+/*.js
+/*.js.map
+!/rollup-build.js

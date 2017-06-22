@@ -1,14 +1,11 @@
-// .babelrc
 {
   "presets": [
-    ["es2015", {"modules": false}]
+    "es2015",
+    "stage-0"
   ],
-  "plugins": ["transform-object-rest-spread"],
-  "env":{
-    "test": {
-      "presets": [
-        "es2015"
-      ]
-    }
-  }
+  "plugins": [
+    ["transform-strict-mode", {
+      "strict": false
+    }]
+  ]
 }
