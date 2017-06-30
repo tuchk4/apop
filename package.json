@@ -1,6 +1,6 @@
 {
   "name": "rmk",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "main": "dist/rmk.js",
   "scripts": {
     "prepublish": "npm run build",

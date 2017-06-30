@@ -14,7 +14,7 @@ const babelConfig = {
 
 var rollUpConfig = {
   format: 'umd',
-  sourceMap: true,
+  sourceMap: 'inline',
   plugins: [
     resolve({
       jsnext: true,
@@ -63,7 +63,7 @@ async function make(config) {
   });
   await make({
     ...rollUpConfig,
-    moduleName: 'clear ',
+    moduleName: 'clear',
     entry: './lib/actions/clear/index.module.js',
     dest: `./clear.js`,
   });
@@ -75,25 +75,25 @@ async function make(config) {
   });
   await make({
     ...rollUpConfig,
-    moduleName: 'toCamelCase ',
+    moduleName: 'toCamelCase',
     entry: './lib/actions/toCamelCase/index.module.js',
     dest: `./toCamelCase.js`,
   });
   await make({
     ...rollUpConfig,
-    moduleName: 'toSnakeCase ',
+    moduleName: 'toSnakeCase',
     entry: './lib/actions/toSnakeCase/index.module.js',
     dest: `./toSnakeCase.js`,
   });
   await make({
     ...rollUpConfig,
-    moduleName: 'rename ',
+    moduleName: 'rename',
     entry: './lib/actions/rename/index.module.js',
     dest: `./rename.js`,
   });
   await make({
     ...rollUpConfig,
-    moduleName: 'update ',
+    moduleName: 'update',
     entry: './lib/actions/update/index.module.js',
     dest: `./update.js`,
   });
