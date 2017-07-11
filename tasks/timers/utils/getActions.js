@@ -1,4 +1,4 @@
-import rmk from '../../..';
+import rmk from '../../../packages/rmk/src/rmk';
 
 const getActions = () => {
   return [

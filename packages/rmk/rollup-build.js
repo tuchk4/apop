@@ -56,7 +56,12 @@ async function make(config) {
 
 (async function() {
 
-  const builds = ['rmk', 'clear', 'each', 'toCamelCase', 'toSnakeCase', 'rename', 'update'];
+  const builds = [
+    'rmk', 'clear', 'each', 'toCamelCase', 'toSnakeCase', 'rename', 'update',
+    'recursive/rmk', 'recursive/clear', 'recursive/each',
+    'recursive/toCamelCase', 'recursive/toSnakeCase',
+    'recursive/rename', 'recursive/update'
+  ];
 
   builds.forEach(async moduleName => await make({...rollUpConfig, moduleName}));
 

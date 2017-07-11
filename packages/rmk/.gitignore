@@ -4,6 +4,8 @@
 /npm-debug.log
 /node_modules
 /dist
-/*.js
-/*.map
+*.js
+*.map
+!__tests__
+!src
 !rollup-build.js
