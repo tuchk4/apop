@@ -1,4 +1,4 @@
-import rmk from '../lib';
+import rmk from '../rmk';
 
 const sample = Object.seal({
   foo_bar: 0,

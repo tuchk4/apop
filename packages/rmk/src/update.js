@@ -1,5 +1,5 @@
-import action from './index';
-import rmkParse from '../../utils/parse';
+import action from './actions/update';
+import rmkParse from './utils/parse';
 
 export default config =>
   rmkParse({

@@ -1,0 +1,30 @@
+{
+  "name": "rmk",
+  "version": "2.4.0",
+  "description": "Flow transformation data.",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "babel-node ./rollup-build.js",
+    "jsdoc2md": "npm run jsdoc2md:actions",
+    "jsdoc2md:actions": "jsdoc2md src/actions/*.js  src/actions/**/*.js > docs/ACTIONS.md",
+    "jsdoc2md:rmk": "jsdoc2md src/index.js > docs/README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuchk4/rmk.git"
+  },
+  "author": "marvelsrp <marvelsrp@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tuchk4/rmk/issues"
+  },
+  "jest": {
+    "rootDir": "./packages"
+  },
+  "homepage": "https://github.com/tuchk4/rmk",
+  "dependencies": {
+    "jsdoc": "^3.4.3",
+    "jsdoc-to-markdown": "^3.0.0"
+  }
+}
