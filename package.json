@@ -10,11 +10,12 @@
     "lerna": "lerna clean --yes && lerna bootstrap",
     "test": "jest",
     "test-dev": "jest --coverage --watch",
-    "pref": "npm run build && NODE_ENV=test babel-node ./tasks/bestResults.js",
+    "pref": "yarn run build && NODE_ENV=test babel-node ./tasks/bestResults.js",
     "precommit": "yarn cross-dep && lint-staged",
     "format": "prettier --single-quote --write 'packages/**/*.js'",
     "cross-dep": "babel-node ./tasks/get-cross-dependencies.js",
-    "check-all": "babel-node ./tasks/npm-check-all.js"
+    "check-all": "babel-node ./tasks/npm-check-all.js",
+    "doc": "jsdoc2md packages/rmk/src/actions/*.js packages/rmk/src/actions/**/*.js > docs/ACTIONS.md"
   },
   "lint-staged": {
     "*.js": [

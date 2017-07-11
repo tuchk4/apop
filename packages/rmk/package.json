@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "yarn build",
-    "build": "babel-node ./rollup-build.js",
-    "jsdoc2md": "npm run jsdoc2md:actions",
-    "jsdoc2md:actions": "jsdoc2md src/actions/*.js  src/actions/**/*.js > docs/ACTIONS.md",
-    "jsdoc2md:rmk": "jsdoc2md src/index.js > docs/README.md"
+    "build": "babel-node ./rollup-build.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +20,5 @@
     "rootDir": "./packages"
   },
   "homepage": "https://github.com/tuchk4/rmk",
-  "dependencies": {
-    "jsdoc": "^3.4.3",
-    "jsdoc-to-markdown": "^3.0.0"
-  }
+  "dependencies": {}
 }
