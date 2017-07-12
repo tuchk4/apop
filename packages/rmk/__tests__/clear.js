@@ -1,4 +1,4 @@
-import rmk from '../rmk';
+import rmk from '../src/rmk';
 const before = Object.seal({
   id: 1,
   first_name: 'Stephen',

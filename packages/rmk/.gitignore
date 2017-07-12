@@ -6,8 +6,8 @@
 /dist
 recursive
 *.json
-*.js
-*.map
+/*.js
+/*.map
 !__tests__
 !src
 !rollup-build.js
