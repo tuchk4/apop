@@ -1,19 +1,26 @@
-import rmkActions from './actions';
+import clear from './clear';
+import toSnakeCase from './toSnakeCase';
+import toCamelCase from './toCamelCase';
+import update from './update';
+import rename from './rename';
+import each from './each';
+
 import rmkParse from './utils/parse';
 
+const sourceActions = {clear, toSnakeCase, toCamelCase, update, rename, each};
 const singleActions = {};
 const recursiveActions = {};
 
-Object.keys(rmkActions).forEach(action => {
+Object.keys(sourceActions).forEach(action => {
   singleActions[action] = config =>
     rmkParse({
-      actions: [rmkActions[action](config)],
+      actions: [sourceActions[action](config)],
       isRecursive: false,
     });
 
   recursiveActions[action] = config =>
     rmkParse({
-      actions: [rmkActions[action](config)],
+      actions: [sourceActions[action](config)],
       isRecursive: true,
     });
 });

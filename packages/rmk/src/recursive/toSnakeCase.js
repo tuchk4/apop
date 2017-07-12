@@ -1,4 +1,4 @@
-import action from './../actions/toSnakeCase';
+import action from '../actions/toSnakeCase/toSnakeCase';
 import rmkParse from './../utils/parse';
 
 export default () =>

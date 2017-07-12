@@ -1,4 +1,4 @@
-import action from './actions/each';
+import action from './actions/each/each';
 import rmkParse from './utils/parse';
 
 export default config =>

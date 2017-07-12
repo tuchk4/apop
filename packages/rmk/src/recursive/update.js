@@ -1,4 +1,4 @@
-import action from './../actions/update';
+import action from '../actions/update/update';
 import rmkParse from './../utils/parse';
 
 export default config =>
