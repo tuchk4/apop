@@ -1,7 +1,7 @@
 {
   "name": "rmk",
   "version": "2.4.0",
-  "description": "Flow transformation data.",
+  "description": "Flow transformation objects and array of objects",
   "main": "index.js",
   "scripts": {
     "prepublish": "yarn build",
@@ -15,9 +15,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tuchk4/rmk/issues"
-  },
-  "jest": {
-    "rootDir": "./packages"
   },
   "homepage": "https://github.com/tuchk4/rmk",
   "dependencies": {}

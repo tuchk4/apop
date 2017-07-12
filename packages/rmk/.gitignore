@@ -4,6 +4,8 @@
 /npm-debug.log
 /node_modules
 /dist
+recursive
+*.json
 *.js
 *.map
 !__tests__

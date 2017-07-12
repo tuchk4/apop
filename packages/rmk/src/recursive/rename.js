@@ -1,4 +1,4 @@
-import action from '../actions/rename/rename';
+import action from '../actions/rename';
 import rmkParse from './../utils/parse';
 
 export default config =>

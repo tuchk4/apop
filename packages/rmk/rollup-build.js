@@ -33,36 +33,55 @@ var rollUpConfig = {
 };
 
 async function make(config) {
+  config.entry = config.entry || `./src/${config.moduleName}.js`;
+  config.dest = config.dest || `./${config.moduleName}.js`;
+  config.destMin = config.destMin || `./${config.moduleName}.min.js`;
+
   let bundle = await rollup({
-    entry: `./src/${config.moduleName}.js`,
+    entry: config.entry,
     plugins: config.plugins,
   });
+
+
 
   await bundle.write({
     format: config.format,
     moduleName: config.moduleName,
-    dest: `./${config.moduleName}.js`,
+    dest: config.dest,
     sourceMap: config.sourceMap,
   });
   await bundle.write({
     format: config.format,
     moduleName: config.moduleName,
-    dest: `./${config.moduleName}.min.js`,
+    dest: config.destMin,
     sourceMap: config.sourceMap,
     plugins: [...rollUpConfig.plugins, uglify({}, minify)],
   });
-  console.log(`make ./${config.moduleName}.js and ./${config.moduleName}.min.js`);
+  console.log(`make ${config.dest} and ${config.destMin}`);
 }
 
 (async function() {
 
-  const builds = [
-    'rmk', 'clear', 'each', 'toCamelCase', 'toSnakeCase', 'rename', 'update',
-    'recursive/rmk', 'recursive/clear', 'recursive/each',
+  await make({...rollUpConfig,
+    moduleName: 'rmk',
+    entry: './src/rmk.js',
+    dest: `./index.js`,
+    destMin: `./index.min.js`
+  });
+  await make({...rollUpConfig,
+    moduleName: 'rmkRecursive',
+    entry: './src/recursive/rmk.js',
+    dest: `./recursive/index.js`,
+    destMin: `./recursive/index.min.js`
+  });
+
+  const actionBundles = [
+    'clear', 'each', 'toCamelCase', 'toSnakeCase', 'rename', 'update',
+    'recursive/clear', 'recursive/each',
     'recursive/toCamelCase', 'recursive/toSnakeCase',
     'recursive/rename', 'recursive/update'
   ];
 
-  builds.forEach(async moduleName => await make({...rollUpConfig, moduleName}));
+  actionBundles.forEach(async moduleName => await make({...rollUpConfig, moduleName}));
 
 })();
