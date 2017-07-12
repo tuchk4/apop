@@ -6,13 +6,13 @@ var beforeArray = [];
 for(let i = 15; i < 30; i++){
   beforeArray.push({
     index: i,
-    date: `${new Date(Date.UTC(2001, 11, i))}`
+    date: new Date(Date.UTC(2001, 11, i, 0, 0, 0))
   });
 }
 for(let i = 1; i <= 12; i++){
   beforeArray.push({
     index: i,
-    date: `${new Date(Date.UTC(2001, i, 3))}`
+    date: new Date(Date.UTC(2001, i, 3, 0, 0, 0))
   });
 }
 
