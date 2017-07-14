@@ -1,4 +1,4 @@
-const splice = ([start, deleteCount, items]) =>
+const splice = (start, deleteCount, items) =>
   originArr => {
     originArr.splice(start, deleteCount, items);
     return originArr;

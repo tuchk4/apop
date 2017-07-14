@@ -44,14 +44,12 @@ const emptyConfig = {
  *
  *
  */
-const clear = function(config = {}) {
-  console.log('op.clear init');
+const clear = (config = {}) => {
   config = Object.keys(config).length > 0
     ? Object.assign({}, emptyConfig, config)
     : defaultConfig;
 
-  return function(origin) {
-    console.log('op.clear run');
+  return origin => {
     let valid;
     return eachKeys(origin, (key, value) => {
       valid = true;

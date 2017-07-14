@@ -23,7 +23,7 @@ import eachKeys from '../utils/eachKeys';
  *
  *
  */
-const each = function(callback) {
+const each = callback => {
   return origin => eachKeys(origin, callback);
 };
 export default each;

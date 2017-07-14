@@ -55,7 +55,7 @@ function camelCase(str) {
  * // => {fooBar:1, fooBar:2, bar:3, foo:4}
  *
  */
-const toCamelCase = function() {
+const toCamelCase = () => {
   return origin =>
     eachKeys(origin, (key, value) => ({ key: camelCase(key), value: value }));
 };

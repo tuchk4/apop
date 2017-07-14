@@ -8,30 +8,17 @@ import each from './actions/each';
 import { apply, recursiveApply } from './utils/apply';
 
 const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
+const hackActions = {};
+
 Object.keys(sourceActions).forEach(key => {
-  sourceActions[key].shortcut = true;
-  sourceActions[key].key = key;
-  sourceActions[key].constructor.shortcut = true;
-  sourceActions[key].constructor.key = key;
-  sourceActions[key].prototype.shortcut = true;
-  sourceActions[key].prototype.key = key;
-  Object.assign(sourceActions[key], { shortcut: true, key: key });
-  console.log('sourceActions[key]', sourceActions[key]);
+  hackActions[key] = (...args) =>
+    Object.assign(sourceActions[key](...args), { shortcut: true, key });
 });
 
-const op = Object.assign(
-  function(...args) {
-    console.log('op init');
-    return apply(...args);
-  },
-  sourceActions
-);
+const op = Object.assign((...args) => apply(...args), hackActions);
 const recursive = Object.assign(
-  function(...args) {
-    console.log('op.recursive init');
-    return recursiveApply(...args);
-  },
-  sourceActions
+  (...args) => recursiveApply(...args),
+  hackActions
 );
 
 export default Object.assign(op, { recursive });

@@ -1,4 +1,4 @@
-const sort = ([sortField, dest]) =>
+const sort = (sortField, dest) =>
   originArr => {
     if (typeof sortField === 'function') {
       let conditionFunction = args[0];

@@ -1,7 +1,5 @@
 export const apply = function(...actions) {
-  console.log('op.apply init');
   return function(entity) {
-    console.log('op.apply run');
     const isObject = entity && entity.constructor === Object;
 
     if (isObject) {

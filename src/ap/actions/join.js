@@ -1,5 +1,4 @@
-const join = (...args) => {
-  let separator = args[0] || ', ';
+const join = (separator = ', ') => {
   return originArr => originArr.join(separator);
 };
 

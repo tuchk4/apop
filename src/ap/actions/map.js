@@ -1,7 +1,5 @@
-const map = function(callback) {
-  console.log('ap.map init');
-  return function(originArr) {
-    console.log('ap.map run');
+const map = callback => {
+  return originArr => {
     try {
       return originArr.map(callback);
     } catch (err) {

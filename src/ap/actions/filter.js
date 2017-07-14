@@ -1,6 +1,5 @@
-const filter = (...args) =>
+const filter = condition =>
   originArr => {
-    let condition = args[0];
     return originArr.filter(condition);
   };
 

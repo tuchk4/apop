@@ -41,7 +41,7 @@ const snakeCase = str => {
  * // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
  *
  */
-const toSnakeCase = function() {
+const toSnakeCase = () => {
   return origin =>
     eachKeys(origin, (key, value) => ({ key: snakeCase(key), value: value }));
 };

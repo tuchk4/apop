@@ -41,7 +41,7 @@ import eachKeys from '../utils/eachKeys';
  * ]
  *
  */
-const rename = function(config = {}) {
+const rename = (config = {}) => {
   return origin => {
     let newKey;
     return eachKeys(origin, (key, value) => {

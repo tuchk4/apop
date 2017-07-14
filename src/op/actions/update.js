@@ -24,7 +24,7 @@
  * // => {foo:1, bar:3, date: new Date(2001), year: 2001}
  *
  */
-const update = function(config = {}) {
+const update = (config = {}) => {
   return origin => {
     const changed = {};
     for (let key in config) {

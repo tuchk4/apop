@@ -1,20 +1,12 @@
 export const apply = function(...actions) {
-  console.log('ap.apply init');
   return entity => {
-    console.log('ap.apply run');
     let isArray = entity && entity.constructor === Array;
 
     if (isArray) {
       for (let action of actions) {
         let isArrayOfObject = entity[0].constructor === Object;
         let isObjectAction = action.shortcut;
-        console.log(isArrayOfObject, isObjectAction);
 
-        console.log('prototype', action.prototype.key);
-        console.log('constructor', action.constructor.key);
-        console.log('direct', action.key);
-
-        console.log('action', action);
         if (isArrayOfObject && isObjectAction) {
           entity = entity.map(action);
         } else {
