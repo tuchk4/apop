@@ -1,5 +1,5 @@
 import eachKeys from '../utils/eachKeys';
-
+import wrapper from '../utils/wrapper';
 /**
  * Rename state by config
  *
@@ -58,4 +58,4 @@ const rename = (config = {}) => {
   };
 };
 
-export default rename;
+export default wrapper(rename);

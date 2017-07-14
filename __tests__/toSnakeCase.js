@@ -1,4 +1,5 @@
-import rmk from '../src/rmk';
+import ap from '../src/ap';
+import op from '../src/op';
 
 const before = Object.seal({
   id: 1,
@@ -7,25 +8,25 @@ const before = Object.seal({
 });
 
 test('Transform object to snake_case', () => {
-  const formula = rmk(rmk.toSnakeCase());
+  const formula = op.toSnakeCase();
   const result = formula(before);
 
   expect(result).toMatchSnapshot();
 });
 
 test('Transform array of objects to snake_case', () => {
-  const formula = rmk(rmk.toSnakeCase());
+  const formula = ap(op.toSnakeCase());
   const result = formula([before]);
 
   expect(result).toMatchSnapshot();
 });
 
 test('toSnakeCase shortcut: Transform to snake_case', () => {
-  const result = rmk.toSnakeCase()(before);
+  const result = op.toSnakeCase()(before);
   expect(result).toMatchSnapshot();
 });
 
 test('toSnakeCase shortcut: Transform array of objects to snake_case', () => {
-  const result = rmk.toSnakeCase()([before]);
+  const result = ap(op.toSnakeCase())([before]);
   expect(result).toMatchSnapshot();
 });

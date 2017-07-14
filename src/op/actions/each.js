@@ -1,5 +1,5 @@
 import eachKeys from '../utils/eachKeys';
-
+import wrapper from '../utils/wrapper';
 /**
  * Function parse each fields in Objects.
  *
@@ -26,4 +26,4 @@ import eachKeys from '../utils/eachKeys';
 const each = callback => {
   return origin => eachKeys(origin, callback);
 };
-export default each;
+export default wrapper(each);

@@ -1,5 +1,6 @@
 import eachKeys from '../utils/eachKeys';
 import trasnformKeys from '../utils/trasnformKeys';
+import wrapper from '../utils/wrapper';
 
 function camelCase(str) {
   const separator = 0x5f;
@@ -60,4 +61,4 @@ const toCamelCase = () => {
     eachKeys(origin, (key, value) => ({ key: camelCase(key), value: value }));
 };
 
-export default toCamelCase;
+export default wrapper(toCamelCase);

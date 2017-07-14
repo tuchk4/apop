@@ -1,4 +1,5 @@
-import rmk from '../src/rmk';
+import ap from '../src/ap';
+import op from '../src/op';
 
 const before = Object.seal({
   id: 1,
@@ -7,13 +8,13 @@ const before = Object.seal({
 });
 
 test('Transform object to camelCase', () => {
-  const formula = rmk(rmk.toCamelCase());
+  const formula = op(op.toCamelCase());
   const result = formula(before);
   expect(result).toMatchSnapshot();
 });
 
 test('Transform array of objects to camelCase', () => {
-  const formula = rmk(rmk.toCamelCase());
+  const formula = ap(op.toCamelCase());
   const result = formula([before]);
   expect(result).toMatchSnapshot();
 });
@@ -21,11 +22,11 @@ test('Transform array of objects to camelCase', () => {
 // --
 
 it('toCamelCase shortcut: Transform to camelCase', () => {
-  const result = rmk.toCamelCase()(before);
+  const result = op.toCamelCase()(before);
   expect(result).toMatchSnapshot();
 });
 
 it('toCamelCase shortcut:  Transform array of objects to snake_case', () => {
-  const result = rmk.toCamelCase()([before]);
+  const result = ap(op.toCamelCase())([before]);
   expect(result).toMatchSnapshot();
 });

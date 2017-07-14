@@ -1,4 +1,6 @@
-import rmk from '../src/rmk';
+import ap from '../src/ap';
+import op from '../src/op';
+import apop from '../src/apop';
 
 const sample = Object.seal({
   foo_bar: 0,

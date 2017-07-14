@@ -1,4 +1,5 @@
-import rmk from '../src/rmk';
+import ap from '../src/ap';
+import op from '../src/op';
 
 const before = Object.seal({
   date: new Date(Date.UTC(2001, 11, 3)),
@@ -11,8 +12,8 @@ const misc = {
 };
 
 it('Field function object', () => {
-  const formula = rmk(
-    rmk.update({
+  const formula = op(
+    op.update({
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
       day: localState => localState.date.getDate(),
@@ -25,8 +26,8 @@ it('Field function object', () => {
 });
 
 test('Field static object', () => {
-  const formula = rmk(
-    rmk.update({
+  const formula = op(
+    op.update({
       year: misc.year,
       month: misc.month,
       day: misc.day,
@@ -39,8 +40,8 @@ test('Field static object', () => {
 });
 
 test('Field function array', () => {
-  const formula = rmk(
-    rmk.update({
+  const formula = ap(
+    op.update({
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
       day: localState => localState.date.getDate(),
@@ -59,7 +60,7 @@ test('Field static array', () => {
     day: 1,
   };
 
-  const formula = rmk(rmk.update(additionalFields));
+  const formula = ap(op.update(additionalFields));
   const result = formula([before]);
 
   expect(result).toMatchSnapshot();
@@ -68,7 +69,7 @@ test('Field static array', () => {
 // --
 
 test('Update shortcut: Field function object', () => {
-  const result = rmk.update({
+  const result = op.update({
     year: localState => localState.date.getFullYear(),
     month: localState => localState.date.getMonth(),
     day: localState => localState.date.getDate(),
@@ -78,7 +79,7 @@ test('Update shortcut: Field function object', () => {
 });
 
 test('Update shortcut: Field static object', () => {
-  const result = rmk.update({
+  const result = op.update({
     year: misc.year,
     month: misc.month,
     day: misc.day,
@@ -88,11 +89,13 @@ test('Update shortcut: Field static object', () => {
 });
 
 test('Update shortcut: Field function array', () => {
-  const result = rmk.update({
-    year: localState => localState.date.getFullYear(),
-    month: localState => localState.date.getMonth(),
-    day: localState => localState.date.getDate(),
-  })([before]);
+  const result = ap(
+    op.update({
+      year: localState => localState.date.getFullYear(),
+      month: localState => localState.date.getMonth(),
+      day: localState => localState.date.getDate(),
+    })
+  )([before]);
 
   expect(result).toMatchSnapshot();
 });
@@ -103,7 +106,7 @@ test('Update shortcut: Field static array', () => {
     month: 1,
     day: 1,
   };
-  const result = rmk.update(additionalFields)([before]);
+  const result = ap(op.update(additionalFields))([before]);
 
   expect(result).toMatchSnapshot();
 });

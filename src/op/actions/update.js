@@ -1,3 +1,5 @@
+import wrapper from '../utils/wrapper';
+
 /**
  * Function of update object by config
  *
@@ -41,4 +43,4 @@ const update = (config = {}) => {
   };
 };
 
-export default update;
+export default wrapper(update);

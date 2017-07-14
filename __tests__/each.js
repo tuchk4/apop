@@ -1,4 +1,5 @@
-import rmk from '../src/rmk';
+// import ap from '../src/ap';
+import op from '../src/op';
 
 const before = Object.seal({
   a: 1,
@@ -23,8 +24,9 @@ const beforeDeep = Object.seal({
   },
 });
 test('Each transform flow', () => {
-  const formula = rmk(
-    rmk.each((key, value) => {
+  const formula = op(
+    op.clear(),
+    op.each((key, value) => {
       return { key: key + '_', value: value * 2 };
     })
   );
@@ -33,7 +35,7 @@ test('Each transform flow', () => {
   expect(result).toMatchSnapshot();
 });
 test('Each transform shortcut', () => {
-  const formula = rmk.each((key, value) => {
+  const formula = op.each((key, value) => {
     return { key: key + '_', value: value * 2 };
   });
 
@@ -42,8 +44,9 @@ test('Each transform shortcut', () => {
 });
 
 test('Recursive flow each transform', () => {
-  const formula = rmk.recursive(
-    rmk.each((key, value) => {
+  const formula = op.recursive(
+    op.clear(),
+    op.each((key, value) => {
       if (typeof value == 'number') {
         return { key: key + '_', value: value * 2 };
       } else {
@@ -57,7 +60,7 @@ test('Recursive flow each transform', () => {
 });
 
 test('Recursive shortcut each transform', () => {
-  const formula = rmk.recursive.each((key, value) => {
+  const formula = op.recursive.each((key, value) => {
     if (typeof value == 'number') {
       return { key: key + '_', value: value * 2 };
     } else {

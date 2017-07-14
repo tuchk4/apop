@@ -1,6 +1,6 @@
 import eachKeys from '../utils/eachKeys';
 import trasnformKeys from '../utils/trasnformKeys';
-
+import wrapper from '../utils/wrapper';
 const snakeCase = str => {
   const separator = 0x5f;
   const firstChar = str.charCodeAt(0);
@@ -46,4 +46,4 @@ const toSnakeCase = () => {
     eachKeys(origin, (key, value) => ({ key: snakeCase(key), value: value }));
 };
 
-export default toSnakeCase;
+export default wrapper(toSnakeCase);

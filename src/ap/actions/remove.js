@@ -13,7 +13,7 @@ const removeByIndex = originIndex =>
     return originArr;
   };
 
-const remove = ([indexes]) => {
+const remove = (...indexes) => {
   return originArr => {
     let elements = [];
     for (let index of indexes) {

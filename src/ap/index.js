@@ -10,10 +10,7 @@ import { apply, recursiveApply } from './utils/apply';
 
 const sourceActions = { crop, filter, join, map, remove, sort, swap };
 
-const ap = Object.assign((...args) => apply(...args), sourceActions);
-const recursive = Object.assign(
-  (...args) => recursiveApply(...args),
-  sourceActions
-);
+const ap = Object.assign(apply, sourceActions);
+const recursive = Object.assign(recursiveApply, sourceActions);
 
 export default Object.assign(ap, { recursive });

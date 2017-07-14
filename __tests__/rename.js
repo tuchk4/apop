@@ -1,12 +1,13 @@
-import rmk from '../src/rmk';
+import ap from '../src/ap';
+import op from '../src/op';
 
 const before = Object.seal({
   year: 2001,
 });
 
 test('Field function object', () => {
-  const formula = rmk(
-    rmk.rename({
+  const formula = op(
+    op.rename({
       year: localState =>
         localState.year.toString().length === 4 ? 'fullYear' : 'year',
     })
@@ -17,8 +18,8 @@ test('Field function object', () => {
 });
 
 test('Field static object', () => {
-  const formula = rmk(
-    rmk.rename({
+  const formula = op(
+    op.rename({
       year: 'fullYear',
     })
   );
@@ -28,8 +29,8 @@ test('Field static object', () => {
 });
 
 test('Field function array', () => {
-  const formula = rmk(
-    rmk.rename({
+  const formula = ap(
+    op.rename({
       year: localState =>
         localState.year.toString().length === 4 ? 'fullYear' : 'year',
     })
@@ -40,8 +41,8 @@ test('Field function array', () => {
 });
 
 test('Field static array', () => {
-  const formula = rmk(
-    rmk.rename({
+  const formula = ap(
+    op.rename({
       year: 'fullYear',
     })
   );
@@ -53,7 +54,7 @@ test('Field static array', () => {
 // ---
 
 test('Rename shorctu: Field function object', () => {
-  const result = rmk.rename({
+  const result = op.rename({
     year: localState =>
       localState.year.toString().length === 4 ? 'fullYear' : 'year',
   })(before);
@@ -62,7 +63,7 @@ test('Rename shorctu: Field function object', () => {
 });
 
 test('Rename shorctu: Field static object', () => {
-  const result = rmk.rename({
+  const result = op.rename({
     year: 'fullYear',
   })(before);
 
@@ -70,18 +71,22 @@ test('Rename shorctu: Field static object', () => {
 });
 
 test('Rename shorctu: Field function array', () => {
-  const result = rmk.rename({
-    year: localState =>
-      localState.year.toString().length === 4 ? 'fullYear' : 'year',
-  })([before]);
+  const result = ap(
+    op.rename({
+      year: localState =>
+        localState.year.toString().length === 4 ? 'fullYear' : 'year',
+    })
+  )([before]);
 
   expect(result).toMatchSnapshot();
 });
 
 test('Rename shorctu: Field static array', () => {
-  const result = rmk.rename({
-    year: 'fullYear',
-  })([before]);
+  const result = ap(
+    op.rename({
+      year: 'fullYear',
+    })
+  )([before]);
 
   expect(result).toMatchSnapshot();
 });

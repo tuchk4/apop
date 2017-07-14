@@ -1,4 +1,5 @@
 import eachKeys from '../utils/eachKeys';
+import wrapper from '../utils/wrapper';
 
 const defaultConfig = {
   emptyArray: true,
@@ -84,4 +85,4 @@ const clear = (config = {}) => {
   };
 };
 
-export default clear;
+export default wrapper(clear);
