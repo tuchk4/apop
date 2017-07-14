@@ -3,19 +3,18 @@
   "private": true,
   "license": "ISC",
   "version": "2.4.0",
-  "main": "dist/rmk.js",
+  "main": "dist/apop.js",
   "scripts": {
     "prepublish": "yarn build",
-    "build": "yarn lerna",
-    "lerna": "lerna clean --yes && lerna bootstrap",
+    "build": "babel-node ./rollup-build.js",
     "test": "jest",
     "test-dev": "jest --coverage --watch",
     "pref": "yarn run build && NODE_ENV=test babel-node ./tasks/bestResults.js",
-    "precommit": "yarn cross-dep && lint-staged",
+    "precommit": "lint-staged",
     "format": "prettier --single-quote --write 'packages/**/*.js'",
-    "cross-dep": "babel-node ./tasks/get-cross-dependencies.js",
-    "check-all": "babel-node ./tasks/npm-check-all.js",
-    "doc": "jsdoc2md packages/rmk/src/actions/*.js packages/rmk/src/actions/**/*.js > docs/ACTIONS.md"
+    "doc": "yarn doc:op && yarn dpc:ap",
+    "doc:op": "jsdoc2md op/src/actions/*.js op/src/actions/**/*.js > docs/OBJECT_ACTIONS.md",
+    "doc:ap": "jsdoc2md ap/src/actions/*.js ap/src/actions/**/*.js > docs/ARRAY_ACTIONS.md"
   },
   "lint-staged": {
     "*.js": [
@@ -41,7 +40,6 @@
     "jest-babel": "^1.0.1",
     "jsdoc": "^3.4.3",
     "jsdoc-to-markdown": "^3.0.0",
-    "lerna": "2.0.0-beta.37",
     "lint-staged": "^3.4.2",
     "prettier": "^0.22.0",
     "rollup": "^0.43.0",
