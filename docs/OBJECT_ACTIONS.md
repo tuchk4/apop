@@ -1,22 +1,33 @@
-<a name="ObjectActions"></a>
+## Functions
 
-## ObjectActions : <code>object</code>
-**Kind**: global namespace  
+<dl>
+<dt><a href="#clear">clear(config)</a> ⇒ <code>function</code></dt>
+<dd><p>Clear object</p>
+</dd>
+<dt><a href="#each">each(callback)</a> ⇒ <code>function</code></dt>
+<dd><p>Parse object. Return (new key|new value) for (each key|value).</p>
+</dd>
+<dt><a href="#rename">rename(config)</a> ⇒ <code>function</code></dt>
+<dd><p>By default action parse object.
+For recursive flow use op.recursive(op.rename(config))(data)</p>
+</dd>
+<dt><a href="#toCamelCase">toCamelCase()</a> ⇒ <code>function</code></dt>
+<dd><p>Convert object keys to camelCase.</p>
+</dd>
+<dt><a href="#toSnakeCase">toSnakeCase()</a> ⇒ <code>function</code></dt>
+<dd><p>Convert object keys to snake_case.</p>
+</dd>
+<dt><a href="#update">update(config)</a> ⇒ <code>function</code></dt>
+<dd><p>By default action parse object. For recursive flow use op.recursive(op.update(config))(data)</p>
+</dd>
+</dl>
 
-* [ObjectActions](#ObjectActions) : <code>object</code>
-    * [.clear(config)](#ObjectActions.clear) ⇒ <code>function</code>
-    * [.each(callback)](#ObjectActions.each) ⇒ <code>function</code>
-    * [.rename(config)](#ObjectActions.rename) ⇒ <code>function</code>
-    * [.toCamelCase()](#ObjectActions.toCamelCase) ⇒ <code>function</code>
-    * [.toSnakeCase()](#ObjectActions.toSnakeCase) ⇒ <code>function</code>
-    * [.update(config)](#ObjectActions.update) ⇒ <code>function</code>
+<a name="clear"></a>
 
-<a name="ObjectActions.clear"></a>
-
-### ObjectActions.clear(config) ⇒ <code>function</code>
+## clear(config) ⇒ <code>function</code>
 Clear object
 
-**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
+**Kind**: global function  
 **See**
 
 - [op.clear](OP.md#op.clear)
@@ -39,12 +50,12 @@ import clear from 'op/clear';
 clear()({a:null, b: 0, c: null, d: {}, e: [], f: [1],  g: false, h: '', j: new Date(), k: 'test'})
 // => {a:null, b: 0, c: null, f: [1],  g: false, j: new Date(), k: 'test'}
 ```
-<a name="ObjectActions.each"></a>
+<a name="each"></a>
 
-### ObjectActions.each(callback) ⇒ <code>function</code>
+## each(callback) ⇒ <code>function</code>
 Parse object. Return (new key|new value) for (each key|value).
 
-**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
+**Kind**: global function  
 **See**
 
 - [op.each](OP.md#op.each)
@@ -64,13 +75,13 @@ op.each((key, value) => {
 })({a:1, b: 2, c: 3, d: 4})
 // => {a_: 2, b_: 4, c_: 6, d_: 8}
 ```
-<a name="ObjectActions.rename"></a>
+<a name="rename"></a>
 
-### ObjectActions.rename(config) ⇒ <code>function</code>
+## rename(config) ⇒ <code>function</code>
 By default action parse object.
 For recursive flow use op.recursive(op.rename(config))(data)
 
-**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
+**Kind**: global function  
 **See**
 
 - [op.rename](OP.md#op.rename)
@@ -92,12 +103,12 @@ rename({
    }
 })({oldValue:1, year: 2001, wasBorn: true})
 ```
-<a name="ObjectActions.toCamelCase"></a>
+<a name="toCamelCase"></a>
 
-### ObjectActions.toCamelCase() ⇒ <code>function</code>
+## toCamelCase() ⇒ <code>function</code>
 Convert object keys to camelCase.
 
-**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
+**Kind**: global function  
 **See**
 
 - [op.toCamelCase](OP.md#op.toCamelCase)
@@ -110,12 +121,12 @@ import toCamelCase from 'op/toCamelCase';
 op.toCamelCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 // => {fooBar:1, fooBar:2, bar:3, foo:4}
 ```
-<a name="ObjectActions.toSnakeCase"></a>
+<a name="toSnakeCase"></a>
 
-### ObjectActions.toSnakeCase() ⇒ <code>function</code>
+## toSnakeCase() ⇒ <code>function</code>
 Convert object keys to snake_case.
 
-**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
+**Kind**: global function  
 **See**
 
 - [op.toSnakeCase](OP.md#op.toSnakeCase)
@@ -128,12 +139,12 @@ import toSnakeCase from 'op/toSnakeCase';
 op.toSnakeCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
 ```
-<a name="ObjectActions.update"></a>
+<a name="update"></a>
 
-### ObjectActions.update(config) ⇒ <code>function</code>
+## update(config) ⇒ <code>function</code>
 By default action parse object. For recursive flow use op.recursive(op.update(config))(data)
 
-**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
+**Kind**: global function  
 **See**
 
 - [op.update](OP.md#op.update)

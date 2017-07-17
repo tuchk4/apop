@@ -18,7 +18,6 @@ const emptyConfig = {
 
 /**
  *
- * @memberof ObjectActions
  * @description Clear object
  * @param {Object} config
  * @param {Boolean} [config.emptyArray=true] - Clear []

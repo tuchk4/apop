@@ -1,5 +1,4 @@
 /**
- * @memberof ArrayActions
  * @description Sort Array
  * @param sortField {String|Function} sort field or condition function.
  * @param dest {String} [somebody] if sort field = 'asc' or 'desc'

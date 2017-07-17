@@ -2,7 +2,6 @@ import eachKeys from '../../utils/eachKeys';
 import wrapper from '../../utils/wrapper';
 
 /**
- * @memberof ObjectActions
  * @description By default action parse object.
  * For recursive flow use op.recursive(op.rename(config))(data)
  * @param {Object} config Object with rename params {fromKey: 'toKey', ...}

@@ -14,8 +14,7 @@ const removeByIndex = originIndex =>
   };
 
 /**
- * @memberof ArrayActions
- * @description Test
+ * @description Remove by indexes
  * @param indexes {Number} Remove indexes, separate by comma
  * @return Array
  * @example

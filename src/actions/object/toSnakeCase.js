@@ -24,7 +24,6 @@ const snakeCase = str => {
 };
 
 /**
- * @memberof ObjectActions
  * @description Convert object keys to snake_case.
  * @returns {Function}
  * @see {@link OP.md#op.toSnakeCase|op.toSnakeCase}

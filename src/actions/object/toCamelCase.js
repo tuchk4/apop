@@ -41,7 +41,6 @@ function camelCase(str) {
 /**
  * Converts object keys to camelCase.
  *
- * @memberof ObjectActions
  * @description Convert object keys to camelCase.
  * @returns {Function}
  * @see {@link OP.md#op.toCamelCase|op.toCamelCase}

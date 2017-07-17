@@ -1,6 +1,4 @@
 /**
- * @memberof ArrayActions
- * @alias ap/join
  * @description Join Array
  * @param separator {String} [somebody] Join separator
  * @see {@link https://www.w3schools.com/jsref/jsref_join.asp|w3 schools Array join}

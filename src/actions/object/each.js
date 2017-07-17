@@ -2,7 +2,6 @@ import eachKeys from '../../utils/eachKeys';
 import wrapper from '../../utils/wrapper';
 /**
  *
- * @memberof ObjectActions
  * @description Parse object. Return (new key|new value) for (each key|value).
  * @param {Function} callback (key, value) => ({key: newKey, value: newValue})
  * @returns {Function}

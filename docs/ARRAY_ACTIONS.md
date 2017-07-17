@@ -1,22 +1,32 @@
-<a name="ArrayActions"></a>
+## Functions
 
-## ArrayActions : <code>object</code>
-**Kind**: global namespace  
+<dl>
+<dt><a href="#filter">filter(condition)</a> ⇒</dt>
+<dd><p>Test</p>
+</dd>
+<dt><a href="#join">join(separator)</a> ⇒ <code>String</code></dt>
+<dd><p>Join Array</p>
+</dd>
+<dt><a href="#map">map(callback)</a> ⇒</dt>
+<dd><p>Map Array</p>
+</dd>
+<dt><a href="#remove">remove(indexes)</a> ⇒</dt>
+<dd><p>Remove by indexes</p>
+</dd>
+<dt><a href="#sort">sort(sortField, dest)</a></dt>
+<dd><p>Sort Array</p>
+</dd>
+<dt><a href="#swap">swap(a, b)</a> ⇒</dt>
+<dd><p>Swap array elements a to b, b to a</p>
+</dd>
+</dl>
 
-* [ArrayActions](#ArrayActions) : <code>object</code>
-    * [.filter(condition)](#ArrayActions.filter) ⇒
-    * [.ap/join(separator)](#ArrayActions.ap/join) ⇒ <code>String</code>
-    * [.map(callback)](#ArrayActions.map) ⇒
-    * [.remove(indexes)](#ArrayActions.remove) ⇒
-    * [.sort(sortField, dest)](#ArrayActions.sort)
-    * [.swap(a, b)](#ArrayActions.swap) ⇒
+<a name="filter"></a>
 
-<a name="ArrayActions.filter"></a>
-
-### ArrayActions.filter(condition) ⇒
+## filter(condition) ⇒
 Test
 
-**Kind**: static method of [<code>ArrayActions</code>](#ArrayActions)  
+**Kind**: global function  
 **Returns**: Array  
 **See**: [w3 schools Array filter](https://www.w3schools.com/jsref/jsref_filter.asp)  
 
@@ -31,12 +41,12 @@ import filter from 'ap/filter';
 filter((el) => el > 2)([1, 2, 3, 4, 5])
 // => [3, 4, 5]
 ```
-<a name="ArrayActions.ap/join"></a>
+<a name="join"></a>
 
-### ArrayActions.ap/join(separator) ⇒ <code>String</code>
+## join(separator) ⇒ <code>String</code>
 Join Array
 
-**Kind**: static method of [<code>ArrayActions</code>](#ArrayActions)  
+**Kind**: global function  
 **See**: [w3 schools Array join](https://www.w3schools.com/jsref/jsref_join.asp)  
 
 | Param | Type | Description |
@@ -50,12 +60,12 @@ import join from 'ap/join';
 join('%')([1, 2, 3, 4, 5])
 // => '1%2%3%4%5'
 ```
-<a name="ArrayActions.map"></a>
+<a name="map"></a>
 
-### ArrayActions.map(callback) ⇒
+## map(callback) ⇒
 Map Array
 
-**Kind**: static method of [<code>ArrayActions</code>](#ArrayActions)  
+**Kind**: global function  
 **Returns**: Array  
 **See**: [w3 schools Array map](https://www.w3schools.com/jsref/jsref_map.asp)  
 
@@ -70,12 +80,12 @@ import map from 'ap/map';
 map((el) => el + 1)([1, 2, 3, 4, 5]);
 // => [2, 3, 4, 5, 6]
 ```
-<a name="ArrayActions.remove"></a>
+<a name="remove"></a>
 
-### ArrayActions.remove(indexes) ⇒
-Test
+## remove(indexes) ⇒
+Remove by indexes
 
-**Kind**: static method of [<code>ArrayActions</code>](#ArrayActions)  
+**Kind**: global function  
 **Returns**: Array  
 
 | Param | Type | Description |
@@ -89,12 +99,12 @@ import remove from 'ap/remove';
 remove(1, 3, 5)([1, 2, 3, 4, 5]);
 // => [2, 4]
 ```
-<a name="ArrayActions.sort"></a>
+<a name="sort"></a>
 
-### ArrayActions.sort(sortField, dest)
+## sort(sortField, dest)
 Sort Array
 
-**Kind**: static method of [<code>ArrayActions</code>](#ArrayActions)  
+**Kind**: global function  
 **See**: [w3 schools Array filter](https://www.w3schools.com/jsref/jsref_filter.asp)  
 
 | Param | Type | Description |
@@ -119,12 +129,12 @@ sort((a, b) => {
 })([3, 7, 1])
 // => [1, 3, 7]
 ```
-<a name="ArrayActions.swap"></a>
+<a name="swap"></a>
 
-### ArrayActions.swap(a, b) ⇒
+## swap(a, b) ⇒
 Swap array elements a to b, b to a
 
-**Kind**: static method of [<code>ArrayActions</code>](#ArrayActions)  
+**Kind**: global function  
 **Returns**: Array  
 **See**: [Stackoverflow solution](https://stackoverflow.com/a/25910841)  
 

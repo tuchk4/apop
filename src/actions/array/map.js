@@ -1,5 +1,4 @@
 /**
- * @memberof ArrayActions
  * @description Map Array
  * @param callback {Function} Map function
  * @see {@link https://www.w3schools.com/jsref/jsref_map.asp|w3 schools Array map}

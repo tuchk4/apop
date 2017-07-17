@@ -1,5 +1,4 @@
 /**
- * @memberof ArrayActions
  * @description Swap array elements a to b, b to a
  * @param a
  * @param b
