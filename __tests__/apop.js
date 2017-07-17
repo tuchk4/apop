@@ -28,6 +28,7 @@ for (let i = 1; i <= 12; i++) {
 }
 
 it('Complex Test 1', () => {
+  console.log('ap.splice(1, 2),', ap.splice(2, 1)([1, 2, 3, 4, 5]));
   const objectFormula = op(
     op.rename({ index: 'id' }),
     op.update({
@@ -36,6 +37,7 @@ it('Complex Test 1', () => {
     }),
     op.recursive.toCamelCase()
   );
+
   const arrayFormula = ap(
     ap.swap(3, 4),
     ap.swap(5, 6),

@@ -1,14 +1,21 @@
 /**
  * @memberof ArrayActions
- * @description Test
+ * @description Swap array elements a to b, b to a
  * @param a
  * @param b
+ * @see {@link https://stackoverflow.com/a/25910841|Stackoverflow solution}
+ * @return Array
+ * @example
+ *
+ * import swap from 'ap/swap';
+ *
+ * swap(2,3)([1,2,3,4,5]);
+ * // => [1,2,4,3,5]
+ *
  */
 const swap = (a, b) =>
   originArr => {
-    let tmp = originArr[a];
-    originArr[a] = originArr[b];
-    originArr[b] = tmp;
+    [originArr[a], originArr[b]] = [originArr[b], originArr[a]];
 
     return originArr;
   };

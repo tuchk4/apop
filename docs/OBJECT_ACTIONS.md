@@ -143,8 +143,6 @@ By default action parse object. For recursive flow use op.recursive(op.update(co
 | Param | Type | Description |
 | --- | --- | --- |
 | config | <code>Object</code> | Object with update params {newKey: 'const', newKeyFn: state => state.id, ...} |
-| config.${anykey} | <code>String</code> | Set const value |
-| config.${anykey} | <code>function</code> | Set value by function |
 
 **Example**  
 ```js

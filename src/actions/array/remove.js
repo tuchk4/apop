@@ -12,14 +12,22 @@ const removeByIndex = originIndex =>
 
     return originArr;
   };
+
 /**
  * @memberof ArrayActions
  * @description Test
- * @param indexes
- * @returns {function(*=)}
+ * @param indexes {Number} Remove indexes, separate by comma
+ * @return Array
+ * @example
+ *
+ * import remove from 'ap/remove';
+ *
+ * remove(1, 3, 5)([1, 2, 3, 4, 5]);
+ * // => [2, 4]
+ *
  */
-const remove = (...indexes) => {
-  return originArr => {
+const remove = (...indexes) =>
+  originArr => {
     let elements = [];
     for (let index of indexes) {
       elements.push(originArr[index]);
@@ -33,6 +41,5 @@ const remove = (...indexes) => {
     }
     return originArr;
   };
-};
 
 export default remove;

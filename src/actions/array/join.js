@@ -1,11 +1,16 @@
 /**
  * @memberof ArrayActions
- * @description Test
- * @param separator
- * @returns {function(*): (string|*)}
+ * @alias ArrayActions.Sort
+ * @description Join Array
+ * @param separator {String} [somebody] Join separator
+ * @see {@link https://www.w3schools.com/jsref/jsref_join.asp|w3 schools Array join}
+ * @returns {String}
+ * @example
+ *
+ * import join from 'ap/join';
+ *
+ * join('%')([1, 2, 3, 4, 5])
+ * // => '1%2%3%4%5'
+ *
  */
-const join = (separator = ', ') => {
-  return originArr => originArr.join(separator);
-};
-
-export default join;
+export default (separator = ', ') => originArr => originArr.join(separator);

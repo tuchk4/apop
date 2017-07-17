@@ -1,4 +1,3 @@
-import crop from '../../actions/array/splice';
 import filter from '../../actions/array/filter';
 import join from '../../actions/array/join';
 import map from '../../actions/array/map';
@@ -9,7 +8,7 @@ import swap from '../../actions/array/swap';
 import apply from '../../utils/apply/array';
 import recursiveApply from '../../utils/recursiveApply/array';
 
-const sourceActions = { crop, filter, join, map, remove, sort, swap };
+const sourceActions = { filter, join, map, remove, sort, swap };
 /**
  * @namespace ap
  * @type {Function|Object}

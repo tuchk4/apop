@@ -5,8 +5,6 @@ import wrapper from '../../utils/wrapper';
  * @memberof ObjectActions
  * @description By default action parse object. For recursive flow use op.recursive(op.update(config))(data)
  * @param {Object} config Object with update params {newKey: 'const', newKeyFn: state => state.id, ...}
- * @param {String} config.${anykey} Set const value
- * @param {Function} config.${anykey} Set value by function
  * @returns {Function}
  * @see {@link OP.md#op.update|op.update}
  * @see {@link OP.md#op.recursive.update|op.recursive.update}
