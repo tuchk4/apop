@@ -17,7 +17,7 @@
 Clear object
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**See**: [OP.md#op.recursive.clear](OP.md#op.recursive.clear)  
+**See**: [Recursive](OP.md#op.recursive.clear)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
