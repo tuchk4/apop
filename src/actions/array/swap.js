@@ -1,9 +1,9 @@
 /**
  * @description Swap array elements a to b, b to a
- * @param a
- * @param b
+ * @param a {Number}
+ * @param b {Number}
  * @see {@link https://stackoverflow.com/a/25910841|StackOverflow solution}
- * @return Array
+ * @return {Array}
  * @example
  *
  * import swap from 'ap/swap';

@@ -3,7 +3,7 @@
  * @param sortField {String|Function} sort field or condition function.
  * @param dest {String} [somebody] if sort field = 'asc' or 'desc'
  * @see {@link https://www.w3schools.com/jsref/jsref_filter.asp|w3 schools Array filter}
- *
+ * @return {Array}
  * @example
  *
  * import sort from 'ap/sort';

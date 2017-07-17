@@ -2,7 +2,7 @@
  * @description Filter Array
  * @param condition {Function} Filter condition
  * @see {@link https://www.w3schools.com/jsref/jsref_filter.asp|w3 schools Array filter}
- * @return Array
+ * @return {Array}
  *
  * @example
  *

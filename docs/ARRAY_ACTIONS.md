@@ -1,33 +1,32 @@
 ## Functions
 
 <dl>
-<dt><a href="#filter">filter(condition)</a> ⇒</dt>
+<dt><a href="#filter">filter(condition)</a> ⇒ <code>Array</code></dt>
 <dd><p>Filter Array</p>
 </dd>
 <dt><a href="#join">join(separator)</a> ⇒ <code>String</code></dt>
 <dd><p>Join Array</p>
 </dd>
-<dt><a href="#map">map(callback)</a> ⇒</dt>
+<dt><a href="#map">map(callback)</a> ⇒ <code>Array</code></dt>
 <dd><p>Map Array</p>
 </dd>
-<dt><a href="#remove">remove(...indexes)</a> ⇒</dt>
+<dt><a href="#remove">remove(...indexes)</a> ⇒ <code>Array</code></dt>
 <dd><p>Remove from Array</p>
 </dd>
-<dt><a href="#sort">sort(sortField, dest)</a></dt>
+<dt><a href="#sort">sort(sortField, dest)</a> ⇒ <code>Array</code></dt>
 <dd><p>Sort Array</p>
 </dd>
-<dt><a href="#swap">swap(a, b)</a> ⇒</dt>
+<dt><a href="#swap">swap(a, b)</a> ⇒ <code>Array</code></dt>
 <dd><p>Swap array elements a to b, b to a</p>
 </dd>
 </dl>
 
 <a name="filter"></a>
 
-## filter(condition) ⇒
+## filter(condition) ⇒ <code>Array</code>
 Filter Array
 
 **Kind**: global function  
-**Returns**: Array  
 **See**: [w3 schools Array filter](https://www.w3schools.com/jsref/jsref_filter.asp)  
 
 | Param | Type | Description |
@@ -62,11 +61,10 @@ join('%')([1, 2, 3, 4, 5])
 ```
 <a name="map"></a>
 
-## map(callback) ⇒
+## map(callback) ⇒ <code>Array</code>
 Map Array
 
 **Kind**: global function  
-**Returns**: Array  
 **See**: [w3 schools Array map](https://www.w3schools.com/jsref/jsref_map.asp)  
 
 | Param | Type | Description |
@@ -82,11 +80,10 @@ map((el) => el + 1)([1, 2, 3, 4, 5]);
 ```
 <a name="remove"></a>
 
-## remove(...indexes) ⇒
+## remove(...indexes) ⇒ <code>Array</code>
 Remove from Array
 
 **Kind**: global function  
-**Returns**: Array  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -101,7 +98,7 @@ remove(1, 3, 5)([1, 2, 3, 4, 5]);
 ```
 <a name="sort"></a>
 
-## sort(sortField, dest)
+## sort(sortField, dest) ⇒ <code>Array</code>
 Sort Array
 
 **Kind**: global function  
@@ -131,17 +128,16 @@ sort((a, b) => {
 ```
 <a name="swap"></a>
 
-## swap(a, b) ⇒
+## swap(a, b) ⇒ <code>Array</code>
 Swap array elements a to b, b to a
 
 **Kind**: global function  
-**Returns**: Array  
 **See**: [StackOverflow solution](https://stackoverflow.com/a/25910841)  
 
-| Param |
-| --- |
-| a | 
-| b | 
+| Param | Type |
+| --- | --- |
+| a | <code>Number</code> | 
+| b | <code>Number</code> | 
 
 **Example**  
 ```js
