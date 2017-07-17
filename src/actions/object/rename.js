@@ -7,7 +7,8 @@ import wrapper from '../../utils/wrapper';
  * For recursive flow use op.recursive(op.rename(config))(data)
  * @param {Object} config Object with rename params {fromKey: 'toKey', ...}
  * @returns {Function}
- * @see {@link OP.md#op.recursive.rename}
+ * @see {@link OP.md#op.rename|op.rename}
+ * @see {@link OP.md#op.recursive.rename|op.recursive.rename}
  * @example
  *
  * import rename from 'op/rename';

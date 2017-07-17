@@ -27,7 +27,8 @@ const snakeCase = str => {
  * @memberof ObjectActions
  * @description Convert object keys to snake_case.
  * @returns {Function}
- * @see {@link OP.md#op.recursive.toSnakeCase}
+ * @see {@link OP.md#op.toSnakeCase|op.toSnakeCase}
+ * @see {@link OP.md#op.recursive.toSnakeCase|op.recursive.toSnakeCase}
  * @example
  *
  * import toSnakeCase from 'op/toSnakeCase';

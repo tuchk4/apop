@@ -27,7 +27,8 @@ const emptyConfig = {
  * @param {Boolean} [config.nullValue=true] - Clear null
  * @param {Boolean} [config.undefinedValue=true] - Clear undefined
  * @returns {Function}
- * @see {@link OP.md#op.recursive.clear|Recursive}
+ * @see {@link OP.md#op.clear|op.clear}
+ * @see {@link OP.md#op.recursive.clear|op.recursive.clear}
  * @example
  *
  * import clear from 'op/clear';

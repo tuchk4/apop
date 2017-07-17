@@ -17,7 +17,11 @@
 Clear object
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**See**: [Recursive](OP.md#op.recursive.clear)  
+**See**
+
+- [op.clear](OP.md#op.clear)
+- [op.recursive.clear](OP.md#op.recursive.clear)
+
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -41,7 +45,11 @@ clear()({a:null, b: 0, c: null, d: {}, e: [], f: [1],  g: false, h: '', j: new D
 Parse object. Return (new key|new value) for (each key|value).
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**See**: [OP.md#op.recursive.each](OP.md#op.recursive.each)  
+**See**
+
+- [op.each](OP.md#op.each)
+- [op.recursive.each](OP.md#op.recursive.each)
+
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -63,7 +71,11 @@ By default action parse object.
 For recursive flow use op.recursive(op.rename(config))(data)
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**See**: [OP.md#op.recursive.rename](OP.md#op.recursive.rename)  
+**See**
+
+- [op.rename](OP.md#op.rename)
+- [op.recursive.rename](OP.md#op.recursive.rename)
+
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -86,7 +98,11 @@ rename({
 Convert object keys to camelCase.
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**See**: [OP.md#op.recursive.toCamelCase](OP.md#op.recursive.toCamelCase)  
+**See**
+
+- [op.toCamelCase](OP.md#op.toCamelCase)
+- [op.recursive.toCamelCase](OP.md#op.recursive.toCamelCase)
+
 **Example**  
 ```js
 import toCamelCase from 'op/toCamelCase';
@@ -100,7 +116,11 @@ op.toCamelCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 Convert object keys to snake_case.
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**See**: [OP.md#op.recursive.toSnakeCase](OP.md#op.recursive.toSnakeCase)  
+**See**
+
+- [op.toSnakeCase](OP.md#op.toSnakeCase)
+- [op.recursive.toSnakeCase](OP.md#op.recursive.toSnakeCase)
+
 **Example**  
 ```js
 import toSnakeCase from 'op/toSnakeCase';
@@ -114,7 +134,11 @@ op.toSnakeCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 By default action parse object. For recursive flow use op.recursive(op.update(config))(data)
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**See**: [OP.md#op.recursive.update](OP.md#op.recursive.update)  
+**See**
+
+- [op.update](OP.md#op.update)
+- [op.recursive.update](OP.md#op.recursive.update)
+
 
 | Param | Type | Description |
 | --- | --- | --- |

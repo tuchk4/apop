@@ -8,7 +8,8 @@ import wrapper from '../../utils/wrapper';
  * @param {String} config.${anykey} Set const value
  * @param {Function} config.${anykey} Set value by function
  * @returns {Function}
- * @see {@link OP.md#op.recursive.update}
+ * @see {@link OP.md#op.update|op.update}
+ * @see {@link OP.md#op.recursive.update|op.recursive.update}
  * @example
  *
  * import update from 'op/update';
