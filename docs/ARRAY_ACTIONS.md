@@ -172,7 +172,7 @@ swap(2,3)([1,2,3,4,5]);
 
 ## MiddlewareStringFunction ⇒ <code>String</code>
 **Kind**: global typedef  
-**Returns**: <code>String</code> - Transformed Array  
+**Returns**: <code>String</code> - Transformed String  
 **Properties**
 
 | Name | Type | Description |
@@ -183,10 +183,10 @@ swap(2,3)([1,2,3,4,5]);
 
 ## MiddlewareObjectFunction ⇒ <code>Object</code>
 **Kind**: global typedef  
-**Returns**: <code>Object</code> - Transformed Array  
+**Returns**: <code>Object</code> - Transformed Object  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Original | <code>Object</code> | Array |
+| Original | <code>Object</code> | Object |
 
