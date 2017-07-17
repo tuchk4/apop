@@ -4,7 +4,7 @@ import wrapper from '../../utils/wrapper';
  *
  * @description By default action parse object. For recursive flow use op.recursive(op.update(config))(data)
  * @param {Object} config Object with update params {newKey: 'const', newKeyFn: state => state.id, ...}
- * @returns {Function}
+ * @returns {MiddlewareObjectFunction}
  * @see {@link OP.md#op.update|op.update}
  * @see {@link OP.md#op.recursive.update|op.recursive.update}
  * @example
@@ -21,8 +21,8 @@ import wrapper from '../../utils/wrapper';
  * // => {foo:1, bar:3, date: new Date(2001), year: 2001}
  *
  */
-const update = (config = {}) => {
-  return origin => {
+const update = (config = {}) =>
+  origin => {
     const changed = {};
     for (let key in config) {
       if (config.hasOwnProperty(key)) {
@@ -36,6 +36,5 @@ const update = (config = {}) => {
 
     return { ...origin, ...changed };
   };
-};
 
 export default wrapper(update);

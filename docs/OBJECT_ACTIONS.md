@@ -1,30 +1,41 @@
 ## Functions
 
 <dl>
-<dt><a href="#clear">clear(config)</a> ⇒ <code>function</code></dt>
+<dt><a href="#clear">clear(config)</a> ⇒ <code><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a></code></dt>
 <dd><p>Clear object</p>
 </dd>
-<dt><a href="#each">each(callback)</a> ⇒ <code>function</code></dt>
+<dt><a href="#each">each(callback)</a> ⇒ <code><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a></code></dt>
 <dd><p>Parse object. Return (new key|new value) for (each key|value).</p>
 </dd>
-<dt><a href="#rename">rename(config)</a> ⇒ <code>function</code></dt>
+<dt><a href="#rename">rename(config)</a> ⇒ <code><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a></code></dt>
 <dd><p>By default action parse object.
 For recursive flow use op.recursive(op.rename(config))(data)</p>
 </dd>
-<dt><a href="#toCamelCase">toCamelCase()</a> ⇒ <code>function</code></dt>
+<dt><a href="#toCamelCase">toCamelCase()</a> ⇒ <code><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a></code></dt>
 <dd><p>Convert object keys to camelCase.</p>
 </dd>
-<dt><a href="#toSnakeCase">toSnakeCase()</a> ⇒ <code>function</code></dt>
+<dt><a href="#toSnakeCase">toSnakeCase()</a> ⇒ <code><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a></code></dt>
 <dd><p>Convert object keys to snake_case.</p>
 </dd>
-<dt><a href="#update">update(config)</a> ⇒ <code>function</code></dt>
+<dt><a href="#update">update(config)</a> ⇒ <code><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a></code></dt>
 <dd><p>By default action parse object. For recursive flow use op.recursive(op.update(config))(data)</p>
 </dd>
 </dl>
 
+## Typedefs
+
+<dl>
+<dt><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a> ⇒ <code>Array</code></dt>
+<dd></dd>
+<dt><a href="#MiddlewareStringFunction">MiddlewareStringFunction</a> ⇒ <code>String</code></dt>
+<dd></dd>
+<dt><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a> ⇒ <code>Object</code></dt>
+<dd></dd>
+</dl>
+
 <a name="clear"></a>
 
-## clear(config) ⇒ <code>function</code>
+## clear(config) ⇒ [<code>MiddlewareObjectFunction</code>](#MiddlewareObjectFunction)
 Clear object
 
 **Kind**: global function  
@@ -52,7 +63,7 @@ clear()({a:null, b: 0, c: null, d: {}, e: [], f: [1],  g: false, h: '', j: new D
 ```
 <a name="each"></a>
 
-## each(callback) ⇒ <code>function</code>
+## each(callback) ⇒ [<code>MiddlewareObjectFunction</code>](#MiddlewareObjectFunction)
 Parse object. Return (new key|new value) for (each key|value).
 
 **Kind**: global function  
@@ -77,7 +88,7 @@ op.each((key, value) => {
 ```
 <a name="rename"></a>
 
-## rename(config) ⇒ <code>function</code>
+## rename(config) ⇒ [<code>MiddlewareObjectFunction</code>](#MiddlewareObjectFunction)
 By default action parse object.
 For recursive flow use op.recursive(op.rename(config))(data)
 
@@ -105,7 +116,7 @@ rename({
 ```
 <a name="toCamelCase"></a>
 
-## toCamelCase() ⇒ <code>function</code>
+## toCamelCase() ⇒ [<code>MiddlewareObjectFunction</code>](#MiddlewareObjectFunction)
 Convert object keys to camelCase.
 
 **Kind**: global function  
@@ -123,7 +134,7 @@ op.toCamelCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 ```
 <a name="toSnakeCase"></a>
 
-## toSnakeCase() ⇒ <code>function</code>
+## toSnakeCase() ⇒ [<code>MiddlewareObjectFunction</code>](#MiddlewareObjectFunction)
 Convert object keys to snake_case.
 
 **Kind**: global function  
@@ -141,7 +152,7 @@ op.toSnakeCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 ```
 <a name="update"></a>
 
-## update(config) ⇒ <code>function</code>
+## update(config) ⇒ [<code>MiddlewareObjectFunction</code>](#MiddlewareObjectFunction)
 By default action parse object. For recursive flow use op.recursive(op.update(config))(data)
 
 **Kind**: global function  
@@ -168,3 +179,33 @@ op.update({
 });
 // => {foo:1, bar:3, date: new Date(2001), year: 2001}
 ```
+<a name="MiddlewareArrayFunction"></a>
+
+## MiddlewareArrayFunction ⇒ <code>Array</code>
+**Kind**: global typedef  
+**Properties**
+
+| Type |
+| --- |
+| <code>Array</code> | 
+
+<a name="MiddlewareStringFunction"></a>
+
+## MiddlewareStringFunction ⇒ <code>String</code>
+**Kind**: global typedef  
+**Properties**
+
+| Type |
+| --- |
+| <code>Array</code> | 
+
+<a name="MiddlewareObjectFunction"></a>
+
+## MiddlewareObjectFunction ⇒ <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Type |
+| --- |
+| <code>Object</code> | 
+

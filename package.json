@@ -13,8 +13,8 @@
     "precommit": "lint-staged",
     "format": "prettier --single-quote --write 'packages/**/*.js'",
     "doc": "yarn doc:object && yarn doc:array && yarn doc:op && yarn doc:ap && yarn doc:apop",
-    "doc:array": "jsdoc2md src/actions/array/*.js > docs/ARRAY_ACTIONS.md",
-    "doc:object": "jsdoc2md src/actions/object/*.js > docs/OBJECT_ACTIONS.md",
+    "doc:array": "jsdoc2md src/actions/jsdocTypes.js src/actions/array/*.js > docs/ARRAY_ACTIONS.md",
+    "doc:object": "jsdoc2md src/actions/jsdocTypes.js src/actions/object/*.js > docs/OBJECT_ACTIONS.md",
     "doc:op": "jsdoc2md src/build/op/*.js src/build/op/recursive/*.js > docs/OP.md",
     "doc:ap": "jsdoc2md src/build/ap/*.js src/build/ap/recursive/*.js> docs/AP.md",
     "doc:apop": "jsdoc2md src/build/apop/*.js > docs/APOP.md"

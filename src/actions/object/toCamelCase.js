@@ -42,7 +42,7 @@ function camelCase(str) {
  * Converts object keys to camelCase.
  *
  * @description Convert object keys to camelCase.
- * @returns {Function}
+ * @returns {MiddlewareObjectFunction}
  * @see {@link OP.md#op.toCamelCase|op.toCamelCase}
  * @see {@link OP.md#op.recursive.toCamelCase|op.recursive.toCamelCase}
  * @example
@@ -53,9 +53,8 @@ function camelCase(str) {
  * // => {fooBar:1, fooBar:2, bar:3, foo:4}
  *
  */
-const toCamelCase = () => {
-  return origin =>
+const toCamelCase = () =>
+  origin =>
     eachKeys(origin, (key, value) => ({ key: camelCase(key), value: value }));
-};
 
 export default wrapper(toCamelCase);

@@ -16,7 +16,7 @@ const removeByIndex = originIndex =>
 /**
  * @description Remove from Array
  * @param indexes {...Number} Remove indexes, separate by comma
- * @return {Array}
+ * @return {MiddlewareArrayFunction}
  * @example
  *
  * import remove from 'ap/remove';

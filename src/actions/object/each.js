@@ -1,10 +1,11 @@
 import eachKeys from '../../utils/eachKeys';
 import wrapper from '../../utils/wrapper';
+
 /**
  *
  * @description Parse object. Return (new key|new value) for (each key|value).
  * @param {Function} callback (key, value) => ({key: newKey, value: newValue})
- * @returns {Function}
+ * @returns {MiddlewareObjectFunction}
  * @see {@link OP.md#op.each|op.each}
  * @see {@link OP.md#op.recursive.each|op.recursive.each}
  * @example
@@ -17,7 +18,6 @@ import wrapper from '../../utils/wrapper';
  * // => {a_: 2, b_: 4, c_: 6, d_: 8}
  *
  */
-const each = callback => {
-  return origin => eachKeys(origin, callback);
-};
+const each = callback => origin => eachKeys(origin, callback);
+
 export default wrapper(each);

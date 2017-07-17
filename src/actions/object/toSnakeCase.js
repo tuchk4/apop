@@ -1,6 +1,7 @@
 import eachKeys from '../../utils/eachKeys';
 import trasnformKeys from '../../utils/trasnformKeys';
 import wrapper from '../../utils/wrapper';
+
 const snakeCase = str => {
   const separator = 0x5f;
   const firstChar = str.charCodeAt(0);
@@ -25,7 +26,7 @@ const snakeCase = str => {
 
 /**
  * @description Convert object keys to snake_case.
- * @returns {Function}
+ * @returns {MiddlewareObjectFunction}
  * @see {@link OP.md#op.toSnakeCase|op.toSnakeCase}
  * @see {@link OP.md#op.recursive.toSnakeCase|op.recursive.toSnakeCase}
  * @example
@@ -36,9 +37,8 @@ const snakeCase = str => {
  * // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
  *
  */
-const toSnakeCase = () => {
-  return origin =>
+const toSnakeCase = () =>
+  origin =>
     eachKeys(origin, (key, value) => ({ key: snakeCase(key), value: value }));
-};
 
 export default wrapper(toSnakeCase);

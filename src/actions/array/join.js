@@ -2,7 +2,7 @@
  * @description Join Array
  * @param separator {String} [somebody] Join separator
  * @see {@link https://www.w3schools.com/jsref/jsref_join.asp|w3 schools Array join}
- * @returns {String}
+ * @returns {MiddlewareStringFunction}
  * @example
  *
  * import join from 'ap/join';

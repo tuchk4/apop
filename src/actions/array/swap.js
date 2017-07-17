@@ -3,7 +3,7 @@
  * @param a {Number}
  * @param b {Number}
  * @see {@link https://stackoverflow.com/a/25910841|StackOverflow solution}
- * @return {Array}
+ * @return {MiddlewareArrayFunction}
  * @example
  *
  * import swap from 'ap/swap';

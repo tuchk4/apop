@@ -1,29 +1,40 @@
 ## Functions
 
 <dl>
-<dt><a href="#filter">filter(condition)</a> ⇒ <code>Array</code></dt>
+<dt><a href="#filter">filter(condition)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
 <dd><p>Filter Array</p>
 </dd>
-<dt><a href="#join">join(separator)</a> ⇒ <code>String</code></dt>
+<dt><a href="#join">join(separator)</a> ⇒ <code><a href="#MiddlewareStringFunction">MiddlewareStringFunction</a></code></dt>
 <dd><p>Join Array</p>
 </dd>
-<dt><a href="#map">map(callback)</a> ⇒ <code>Array</code></dt>
+<dt><a href="#map">map(callback)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
 <dd><p>Map Array</p>
 </dd>
-<dt><a href="#remove">remove(...indexes)</a> ⇒ <code>Array</code></dt>
+<dt><a href="#remove">remove(...indexes)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
 <dd><p>Remove from Array</p>
 </dd>
-<dt><a href="#sort">sort(sortField, dest)</a> ⇒ <code>Array</code></dt>
+<dt><a href="#sort">sort(sortField, dest)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
 <dd><p>Sort Array</p>
 </dd>
-<dt><a href="#swap">swap(a, b)</a> ⇒ <code>Array</code></dt>
+<dt><a href="#swap">swap(a, b)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
 <dd><p>Swap array elements a to b, b to a</p>
 </dd>
 </dl>
 
+## Typedefs
+
+<dl>
+<dt><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a> ⇒ <code>Array</code></dt>
+<dd></dd>
+<dt><a href="#MiddlewareStringFunction">MiddlewareStringFunction</a> ⇒ <code>String</code></dt>
+<dd></dd>
+<dt><a href="#MiddlewareObjectFunction">MiddlewareObjectFunction</a> ⇒ <code>Object</code></dt>
+<dd></dd>
+</dl>
+
 <a name="filter"></a>
 
-## filter(condition) ⇒ <code>Array</code>
+## filter(condition) ⇒ [<code>MiddlewareArrayFunction</code>](#MiddlewareArrayFunction)
 Filter Array
 
 **Kind**: global function  
@@ -42,7 +53,7 @@ filter((el) => el > 2)([1, 2, 3, 4, 5])
 ```
 <a name="join"></a>
 
-## join(separator) ⇒ <code>String</code>
+## join(separator) ⇒ [<code>MiddlewareStringFunction</code>](#MiddlewareStringFunction)
 Join Array
 
 **Kind**: global function  
@@ -61,7 +72,7 @@ join('%')([1, 2, 3, 4, 5])
 ```
 <a name="map"></a>
 
-## map(callback) ⇒ <code>Array</code>
+## map(callback) ⇒ [<code>MiddlewareArrayFunction</code>](#MiddlewareArrayFunction)
 Map Array
 
 **Kind**: global function  
@@ -80,7 +91,7 @@ map((el) => el + 1)([1, 2, 3, 4, 5]);
 ```
 <a name="remove"></a>
 
-## remove(...indexes) ⇒ <code>Array</code>
+## remove(...indexes) ⇒ [<code>MiddlewareArrayFunction</code>](#MiddlewareArrayFunction)
 Remove from Array
 
 **Kind**: global function  
@@ -98,7 +109,7 @@ remove(1, 3, 5)([1, 2, 3, 4, 5]);
 ```
 <a name="sort"></a>
 
-## sort(sortField, dest) ⇒ <code>Array</code>
+## sort(sortField, dest) ⇒ [<code>MiddlewareArrayFunction</code>](#MiddlewareArrayFunction)
 Sort Array
 
 **Kind**: global function  
@@ -128,7 +139,7 @@ sort((a, b) => {
 ```
 <a name="swap"></a>
 
-## swap(a, b) ⇒ <code>Array</code>
+## swap(a, b) ⇒ [<code>MiddlewareArrayFunction</code>](#MiddlewareArrayFunction)
 Swap array elements a to b, b to a
 
 **Kind**: global function  
@@ -146,3 +157,33 @@ import swap from 'ap/swap';
 swap(2,3)([1,2,3,4,5]);
 // => [1,2,4,3,5]
 ```
+<a name="MiddlewareArrayFunction"></a>
+
+## MiddlewareArrayFunction ⇒ <code>Array</code>
+**Kind**: global typedef  
+**Properties**
+
+| Type |
+| --- |
+| <code>Array</code> | 
+
+<a name="MiddlewareStringFunction"></a>
+
+## MiddlewareStringFunction ⇒ <code>String</code>
+**Kind**: global typedef  
+**Properties**
+
+| Type |
+| --- |
+| <code>Array</code> | 
+
+<a name="MiddlewareObjectFunction"></a>
+
+## MiddlewareObjectFunction ⇒ <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Type |
+| --- |
+| <code>Object</code> | 
+

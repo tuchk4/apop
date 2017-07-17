@@ -1,8 +1,9 @@
 /**
  * @description Filter Array
+ * @function filter
  * @param condition {Function} Filter condition
  * @see {@link https://www.w3schools.com/jsref/jsref_filter.asp|w3 schools Array filter}
- * @return {Array}
+ * @return {MiddlewareArrayFunction}
  *
  * @example
  *
@@ -12,9 +13,9 @@
  * // => [3, 4, 5]
  *
  */
-const filter = condition =>
+const filterWrapper = condition =>
   originArr => {
     return originArr.filter(condition);
   };
 
-export default filter;
+export default filterWrapper;

@@ -5,7 +5,7 @@ import wrapper from '../../utils/wrapper';
  * @description By default action parse object.
  * For recursive flow use op.recursive(op.rename(config))(data)
  * @param {Object} config Object with rename params {fromKey: 'toKey', ...}
- * @returns {Function}
+ * @returns {MiddlewareObjectFunction}
  * @see {@link OP.md#op.rename|op.rename}
  * @see {@link OP.md#op.recursive.rename|op.recursive.rename}
  * @example
@@ -20,8 +20,8 @@ import wrapper from '../../utils/wrapper';
  * })({oldValue:1, year: 2001, wasBorn: true})
  *
  */
-const rename = (config = {}) => {
-  return origin => {
+const rename = (config = {}) =>
+  origin => {
     let newKey;
     return eachKeys(origin, (key, value) => {
       if (config.hasOwnProperty(key)) {
@@ -35,6 +35,5 @@ const rename = (config = {}) => {
       return { key: newKey, value: value };
     });
   };
-};
 
 export default wrapper(rename);
