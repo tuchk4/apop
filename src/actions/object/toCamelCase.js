@@ -44,7 +44,7 @@ function camelCase(str) {
  * @memberof ObjectActions
  * @description Convert object keys to camelCase.
  * @returns {Function}
- * @see {@link op.recursive#toCamelCase}
+ * @see {@link OP.md#op.recursive.toCamelCase}
  * @example
  *
  * import toCamelCase from 'op/toCamelCase';

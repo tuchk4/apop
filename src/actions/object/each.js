@@ -6,7 +6,7 @@ import wrapper from '../../utils/wrapper';
  * @description Parse object. Return (new key|new value) for (each key|value).
  * @param {Function} callback (key, value) => ({key: newKey, value: newValue})
  * @returns {Function}
- * @see {@link op.recursive#each}
+ * @see {@link OP.md#op.recursive.each}
  * @example
  *
  * import each from 'op/each';
