@@ -5,7 +5,7 @@
 
 * [ArrayActions](#ArrayActions) : <code>object</code>
     * [.filter(condition)](#ArrayActions.filter) ⇒
-    * [.Sort(separator)](#ArrayActions.Sort) ⇒ <code>String</code>
+    * [.ap/join(separator)](#ArrayActions.ap/join) ⇒ <code>String</code>
     * [.map(callback)](#ArrayActions.map) ⇒
     * [.remove(indexes)](#ArrayActions.remove) ⇒
     * [.sort(sortField, dest)](#ArrayActions.sort)
@@ -31,9 +31,9 @@ import filter from 'ap/filter';
 filter((el) => el > 2)([1, 2, 3, 4, 5])
 // => [3, 4, 5]
 ```
-<a name="ArrayActions.Sort"></a>
+<a name="ArrayActions.ap/join"></a>
 
-### ArrayActions.Sort(separator) ⇒ <code>String</code>
+### ArrayActions.ap/join(separator) ⇒ <code>String</code>
 Join Array
 
 **Kind**: static method of [<code>ArrayActions</code>](#ArrayActions)  
