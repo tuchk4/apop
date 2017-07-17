@@ -7,11 +7,11 @@
 /**
  * @typedef {Function} MiddlewareStringFunction
  * @property {Array} Original Array
- * @return {String} Transformed Array
+ * @return {String} Transformed String
  */
 
 /**
  * @typedef {Function} MiddlewareObjectFunction
- * @property {Object} Original Array
- * @return {Object} Transformed Array
+ * @property {Object} Original Object
+ * @return {Object} Transformed Object
  */
