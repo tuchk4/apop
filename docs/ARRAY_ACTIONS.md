@@ -161,29 +161,32 @@ swap(2,3)([1,2,3,4,5]);
 
 ## MiddlewareArrayFunction ⇒ <code>Array</code>
 **Kind**: global typedef  
+**Returns**: <code>Array</code> - Transformed Array  
 **Properties**
 
-| Type |
-| --- |
-| <code>Array</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| Original | <code>Array</code> | Array |
 
 <a name="MiddlewareStringFunction"></a>
 
 ## MiddlewareStringFunction ⇒ <code>String</code>
 **Kind**: global typedef  
+**Returns**: <code>String</code> - Transformed Array  
 **Properties**
 
-| Type |
-| --- |
-| <code>Array</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| Original | <code>Array</code> | Array |
 
 <a name="MiddlewareObjectFunction"></a>
 
 ## MiddlewareObjectFunction ⇒ <code>Object</code>
 **Kind**: global typedef  
+**Returns**: <code>Object</code> - Transformed Array  
 **Properties**
 
-| Type |
-| --- |
-| <code>Object</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| Original | <code>Object</code> | Array |
 
