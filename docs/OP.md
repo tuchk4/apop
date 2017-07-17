@@ -62,24 +62,16 @@ let data = {
      moreDeep: {k: "", m:false}
    }
  };
-```
-**Example**  
-```js
+
 recursiveClear()(data)
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
-```
-**Example**  
-```js
+
 recursive(recursive.clear())(data)
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
-```
-**Example**  
-```js
+
 recursive(op.clear())
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
-```
-**Example**  
-```js
+
 recursive(clear())(data)
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 ```

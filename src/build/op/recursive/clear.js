@@ -28,21 +28,14 @@ import recursiveApply from '../../../utils/recursiveApply/object';
  *    }
  *  };
  *
- * @example
  * recursiveClear()(data)
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
- * @example
  * recursive(recursive.clear())(data)
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
- * @example
- *
  * recursive(op.clear())
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
- *
- *
- * @example
  *
  * recursive(clear())(data)
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
