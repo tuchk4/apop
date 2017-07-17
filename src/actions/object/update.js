@@ -1,28 +1,25 @@
 import wrapper from '../../utils/wrapper';
 
 /**
- * Function of update object by config
  *
  * @memberof ObjectActions
- * @description By default action parse object. For recursive flow use rmk.recursive(rmk.update(config))(data)
+ * @description By default action parse object. For recursive flow use op.recursive(op.update(config))(data)
  * @param {Object} config Object with update params {newKey: 'const', newKeyFn: state => state.id, ...}
- * @param {String} config.anykey Set const value
- * @param {Function} config.anykey Set value by function
- * @returns {Function} Returns function update fields of object
+ * @param {String} config.${anykey} Set const value
+ * @param {Function} config.${anykey} Set value by function
+ * @returns {Function}
+ * @see {@link op.recursive#update}
  * @example
  *
- * import rmk from 'rmk';
+ * import update from 'op/update';
  *
- * let formula = rmk(rmk.update({
- *    bar: 3,
- *    year: (state) => {
- *       return state.date.getFullYear()
- *     }
- * }))
- * let data = {foo:1, date: new Date(2001)}
- * formula(data)
- * // or
- * rmk.update()(data)
+ * op.update({
+ *   bar: 3,
+ *   year: (state) => state.date.getFullYear()
+ * })({
+ *   foo:1,
+ *   date: new Date(2001)
+ * });
  * // => {foo:1, bar:3, date: new Date(2001), year: 2001}
  *
  */

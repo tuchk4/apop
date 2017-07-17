@@ -24,20 +24,15 @@ const snakeCase = str => {
 };
 
 /**
- * Function of converts object keys to snake_case.
- *
  * @memberof ObjectActions
- * @description By default action parse object. For recursive flow use rmk.recursive(rmk.toSnakeCase())(data)
- * @returns {Function} Returns function transform object keys to snake_case
+ * @description Convert object keys to snake_case.
+ * @returns {Function}
+ * @see {@link op.recursive#toSnakeCase}
  * @example
  *
- * import rmk from 'rmk';
+ * import toSnakeCase from 'op/toSnakeCase';
  *
- * let formula = rmk(rmk.toSnakeCase())
- * let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
- * formula(data)
- * // or
- * rmk.toSnakeCase()(data)
+ * op.toSnakeCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
  * // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
  *
  */

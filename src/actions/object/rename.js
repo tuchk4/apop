@@ -1,44 +1,23 @@
 import eachKeys from '../../utils/eachKeys';
 import wrapper from '../../utils/wrapper';
+
 /**
- * Rename state by config
- *
  * @memberof ObjectActions
  * @description By default action parse object.
- * For recursive flow use rmk.recursive(rmk.rename(config))(data)
+ * For recursive flow use op.recursive(op.rename(config))(data)
  * @param {Object} config Object with rename params {fromKey: 'toKey', ...}
- * @param {String} config.anykey Rename to const value
- * @param {Function} config.anykey  Rename to value by function.
- * @returns {Function} Returns function rename fields to object
+ * @returns {Function}
+ * @see {@link op.recursive#rename}
  * @example
  *
- * import rmk from 'rmk';
+ * import rename from 'op/rename';
  *
- * let formula = rmk(rmk.rename({
+ * rename({
  *    oldValue: 'newValue',
  *    year: (localState) => {
  *       return localState.wasBorn ? 'birthYear' : 'deathYear'
  *    }
- * }))
- * let data = [
- *  {oldValue:1, year: 2001, wasBorn: true},
- *  {oldValue:1, year: 2008, wasBorn: false}
- * ]
- * formula(data)
- *
- * // or
- *
- * rmk.rename({
- *    oldValue: 'newValue',
- *    year: (localState) => {
- *       return localState.wasBorn ? 'birthYear' : 'deathYear'
- *    }
- * })(data)
- *
- * // => [
- *  {newValue:1, birthYear: 2001, wasBorn: true},
- *  {newValue:1, deathYear: 2008, wasBorn: false}
- * ]
+ * })({oldValue:1, year: 2001, wasBorn: true})
  *
  */
 const rename = (config = {}) => {

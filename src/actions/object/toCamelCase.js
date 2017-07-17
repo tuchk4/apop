@@ -39,20 +39,17 @@ function camelCase(str) {
 }
 
 /**
- * Function of converts object keys to camelCase.
+ * Converts object keys to camelCase.
  *
  * @memberof ObjectActions
- * @description By default action parse object. For recursive flow use rmk.recursive(rmk.toCamelCase())(data)
- * @returns {Function} Returns function transform object keys to camelCase
+ * @description Convert object keys to camelCase.
+ * @returns {Function}
+ * @see {@link op.recursive#toCamelCase}
  * @example
  *
- * import rmk from 'rmk';
+ * import toCamelCase from 'op/toCamelCase';
  *
- * let formula = rmk(rmk.toCamelCase())
- * let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
- * formula(data)
- * // or
- * rmk.toCamelCase()(data)
+ * op.toCamelCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
  * // => {fooBar:1, fooBar:2, bar:3, foo:4}
  *
  */

@@ -14,10 +14,10 @@
 <a name="ObjectActions.clear"></a>
 
 ### ObjectActions.clear(config) ⇒ <code>function</code>
-By default action parse object.  For recursive flow use rmk.recursive(rmk.clear())(data)
+Clear object
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**Returns**: <code>function</code> - Returns function clear object.  
+**See**: [op.recursive#clear](op.recursive#clear)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -30,151 +30,108 @@ By default action parse object.  For recursive flow use rmk.recursive(rmk.clear(
 
 **Example**  
 ```js
-import rmk from 'rmk';
+import clear from 'op/clear';
 
-let formula = rmk(rmk.clear({ // default all true
- nullValue: false,
- undefinedValue: false
-}))
-let data = {a:null, b: 0, c: null, d: {}, e: [], f: [1],  g: false, h: '', j: new Date(), k: 'test'}
-formula(data)
-// or
-rmk.clear()(data)
+clear()({a:null, b: 0, c: null, d: {}, e: [], f: [1],  g: false, h: '', j: new Date(), k: 'test'})
 // => {a:null, b: 0, c: null, f: [1],  g: false, j: new Date(), k: 'test'}
 ```
 <a name="ObjectActions.each"></a>
 
 ### ObjectActions.each(callback) ⇒ <code>function</code>
-By default action parse object.  For recursive flow use rmk.recursive(rmk.each(callback))(data)
+Parse object. Return (new key|new value) for (each key|value).
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**Returns**: <code>function</code> - Returns function parse eachKeys  
+**See**: [op.recursive#each](op.recursive#each)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callback | <code>function</code> | Function for parse each field in object (key, value) => ({key: newKey, value: newValue}) |
+| callback | <code>function</code> | (key, value) => ({key: newKey, value: newValue}) |
 
 **Example**  
 ```js
-import rmk from 'rmk';
+import each from 'op/each';
 
-let formula = rmk(rmk.each((key, value) => {
+op.each((key, value) => {
  return {key: key + '_', value: value * 2}
-})
-let data = {a:1, b: 2, c: 3, d: 4}
-formula(data)
-// or
-rmk.clear()(data)
+})({a:1, b: 2, c: 3, d: 4})
 // => {a_: 2, b_: 4, c_: 6, d_: 8}
 ```
 <a name="ObjectActions.rename"></a>
 
 ### ObjectActions.rename(config) ⇒ <code>function</code>
 By default action parse object.
-For recursive flow use rmk.recursive(rmk.rename(config))(data)
+For recursive flow use op.recursive(op.rename(config))(data)
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**Returns**: <code>function</code> - Returns function rename fields to object  
+**See**: [op.recursive#rename](op.recursive#rename)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | config | <code>Object</code> | Object with rename params {fromKey: 'toKey', ...} |
-| config.anykey | <code>String</code> | Rename to const value |
-| config.anykey | <code>function</code> | Rename to value by function. |
 
 **Example**  
 ```js
-import rmk from 'rmk';
+import rename from 'op/rename';
 
-let formula = rmk(rmk.rename({
+rename({
    oldValue: 'newValue',
    year: (localState) => {
       return localState.wasBorn ? 'birthYear' : 'deathYear'
    }
-}))
-let data = [
- {oldValue:1, year: 2001, wasBorn: true},
- {oldValue:1, year: 2008, wasBorn: false}
-]
-formula(data)
-
-// or
-
-rmk.rename({
-   oldValue: 'newValue',
-   year: (localState) => {
-      return localState.wasBorn ? 'birthYear' : 'deathYear'
-   }
-})(data)
-
-// => [
- {newValue:1, birthYear: 2001, wasBorn: true},
- {newValue:1, deathYear: 2008, wasBorn: false}
-]
+})({oldValue:1, year: 2001, wasBorn: true})
 ```
 <a name="ObjectActions.toCamelCase"></a>
 
 ### ObjectActions.toCamelCase() ⇒ <code>function</code>
-By default action parse object. For recursive flow use rmk.recursive(rmk.toCamelCase())(data)
+Convert object keys to camelCase.
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**Returns**: <code>function</code> - Returns function transform object keys to camelCase  
+**See**: [op.recursive#toCamelCase](op.recursive#toCamelCase)  
 **Example**  
 ```js
-import rmk from 'rmk';
+import toCamelCase from 'op/toCamelCase';
 
-let formula = rmk(rmk.toCamelCase())
-let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
-formula(data)
-// or
-rmk.toCamelCase()(data)
+op.toCamelCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 // => {fooBar:1, fooBar:2, bar:3, foo:4}
 ```
 <a name="ObjectActions.toSnakeCase"></a>
 
 ### ObjectActions.toSnakeCase() ⇒ <code>function</code>
-By default action parse object. For recursive flow use rmk.recursive(rmk.toSnakeCase())(data)
+Convert object keys to snake_case.
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**Returns**: <code>function</code> - Returns function transform object keys to snake_case  
+**See**: [op.recursive#toSnakeCase](op.recursive#toSnakeCase)  
 **Example**  
 ```js
-import rmk from 'rmk';
+import toSnakeCase from 'op/toSnakeCase';
 
-let formula = rmk(rmk.toSnakeCase())
-let data = {fooBar:1, foo_bar:2, bar:3, Foo:4}
-formula(data)
-// or
-rmk.toSnakeCase()(data)
+op.toSnakeCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
 ```
 <a name="ObjectActions.update"></a>
 
 ### ObjectActions.update(config) ⇒ <code>function</code>
-By default action parse object. For recursive flow use rmk.recursive(rmk.update(config))(data)
+By default action parse object. For recursive flow use op.recursive(op.update(config))(data)
 
 **Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
-**Returns**: <code>function</code> - Returns function update fields of object  
+**See**: [op.recursive#update](op.recursive#update)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | config | <code>Object</code> | Object with update params {newKey: 'const', newKeyFn: state => state.id, ...} |
-| config.anykey | <code>String</code> | Set const value |
-| config.anykey | <code>function</code> | Set value by function |
+| config.${anykey} | <code>String</code> | Set const value |
+| config.${anykey} | <code>function</code> | Set value by function |
 
 **Example**  
 ```js
-import rmk from 'rmk';
+import update from 'op/update';
 
-let formula = rmk(rmk.update({
-   bar: 3,
-   year: (state) => {
-      return state.date.getFullYear()
-    }
-}))
-let data = {foo:1, date: new Date(2001)}
-formula(data)
-// or
-rmk.update()(data)
+op.update({
+  bar: 3,
+  year: (state) => state.date.getFullYear()
+})({
+  foo:1,
+  date: new Date(2001)
+});
 // => {foo:1, bar:3, date: new Date(2001), year: 2001}
 ```
