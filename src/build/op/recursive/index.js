@@ -9,6 +9,10 @@ import recursiveApply from './../../../utils/recursiveApply/object';
 
 const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
 
+/**
+ * @namespace op.recursive
+ * @type {Function|Object}
+ */
 const recursive = Object.assign(recursiveApply, sourceActions);
 
 export default recursive;

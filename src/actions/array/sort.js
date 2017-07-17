@@ -1,3 +1,9 @@
+/**
+ * @memberof ArrayActions
+ * @description Test
+ * @param sortField
+ * @param dest
+ */
 const sort = (sortField, dest) =>
   originArr => {
     if (typeof sortField === 'function') {

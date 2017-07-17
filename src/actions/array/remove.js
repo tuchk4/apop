@@ -12,7 +12,12 @@ const removeByIndex = originIndex =>
 
     return originArr;
   };
-
+/**
+ * @memberof ArrayActions
+ * @description Test
+ * @param indexes
+ * @returns {function(*=)}
+ */
 const remove = (...indexes) => {
   return originArr => {
     let elements = [];

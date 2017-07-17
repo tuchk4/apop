@@ -1,4 +1,9 @@
 import action from '../../../actions/object/toSnakeCase';
 import recursiveApply from '../../../utils/recursiveApply/object';
-
-export default (...args) => recursiveApply(action(...args));
+/**
+ * @memberof op.recursive
+ * @description Test
+ * @param args
+ */
+const toSnakeCase = (...args) => recursiveApply(action(...args));
+export default toSnakeCase;

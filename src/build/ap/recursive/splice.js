@@ -1,4 +1,11 @@
 import action from '../../../actions/array/splice';
 import recursiveApply from '../../../utils/recursiveApply/array';
 
-export default (...args) => recursiveApply(action(...args));
+/**
+ * @memberof ap.recursive
+ * @description Test
+ * @param args
+ */
+const splice = (...args) => recursiveApply(action(...args));
+
+export default splice;

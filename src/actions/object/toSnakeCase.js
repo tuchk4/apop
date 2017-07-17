@@ -26,7 +26,7 @@ const snakeCase = str => {
 /**
  * Function of converts object keys to snake_case.
  *
- * @memberof rmk
+ * @memberof ObjectActions
  * @description By default action parse object. For recursive flow use rmk.recursive(rmk.toSnakeCase())(data)
  * @returns {Function} Returns function transform object keys to snake_case
  * @example

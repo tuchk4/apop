@@ -3,7 +3,7 @@ import wrapper from '../../utils/wrapper';
 /**
  * Function of update object by config
  *
- * @memberof rmk
+ * @memberof ObjectActions
  * @description By default action parse object. For recursive flow use rmk.recursive(rmk.update(config))(data)
  * @param {Object} config Object with update params {newKey: 'const', newKeyFn: state => state.id, ...}
  * @param {String} config.anykey Set const value

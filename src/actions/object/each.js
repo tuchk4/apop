@@ -3,7 +3,7 @@ import wrapper from '../../utils/wrapper';
 /**
  * Function parse each fields in Objects.
  *
- * @memberof rmk
+ * @memberof ObjectActions
  * @description By default action parse object.  For recursive flow use rmk.recursive(rmk.each(callback))(data)
  * @param {Function} callback Function for parse each field in object (key, value) => ({key: newKey, value: newValue})
  * @returns {Function} Returns function parse eachKeys

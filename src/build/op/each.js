@@ -1,4 +1,9 @@
 import action from '../../actions/object/each';
 import apply from '../../utils/apply/object';
-
-export default (...args) => apply(action(...args));
+/**
+ * @memberof op
+ * @description Test
+ * @param args
+ */
+const each = (...args) => apply(action(...args));
+export default each;

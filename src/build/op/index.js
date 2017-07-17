@@ -9,7 +9,10 @@ import apply from './../../utils/apply/object';
 import recursiveApply from './../../utils/recursiveApply/object';
 
 const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
-
+/**
+ * @namespace op
+ * @type {Function|Object}
+ */
 const op = Object.assign(apply, sourceActions);
 const recursive = Object.assign(recursiveApply, sourceActions);
 

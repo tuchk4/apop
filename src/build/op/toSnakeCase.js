@@ -1,4 +1,9 @@
 import action from '../../actions/object/toSnakeCase';
 import apply from '../../utils/apply/object';
-
-export default (...args) => apply(action(...args));
+/**
+ * @memberof op
+ * @description Test
+ * @param args
+ */
+const toSnakeCase = (...args) => apply(action(...args));
+export default toSnakeCase;

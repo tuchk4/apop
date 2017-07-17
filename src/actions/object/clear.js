@@ -19,7 +19,7 @@ const emptyConfig = {
 /**
  * Function of clear object from null, undefined, empty string, empty array, empty objects values
  *
- * @memberof rmk
+ * @memberof ObjectActions
  * @description By default action parse object.  For recursive flow use rmk.recursive(rmk.clear())(data)
  * @param {Object} config
  * @param {Boolean} [config.emptyArray=true] - Clear []

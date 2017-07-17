@@ -1,4 +1,9 @@
 import action from '../../../actions/object/rename';
 import recursiveApply from '../../../utils/recursiveApply/object';
-
-export default (...args) => recursiveApply(action(...args));
+/**
+ * @memberof op.recursive
+ * @description Test
+ * @param args
+ */
+const rename = (...args) => recursiveApply(action(...args));
+export default rename;

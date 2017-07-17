@@ -1,4 +1,9 @@
 import action from '../../actions/object/toCamelCase';
 import apply from '../../utils/apply/object';
-
-export default (...args) => apply(action(...args));
+/**
+ * @memberof op
+ * @description Test
+ * @param args
+ */
+const toCamelCase = (...args) => apply(action(...args));
+export default toCamelCase;

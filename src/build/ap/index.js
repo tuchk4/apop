@@ -10,7 +10,10 @@ import apply from '../../utils/apply/array';
 import recursiveApply from '../../utils/recursiveApply/array';
 
 const sourceActions = { crop, filter, join, map, remove, sort, swap };
-
+/**
+ * @namespace ap
+ * @type {Function|Object}
+ */
 const ap = Object.assign(apply, sourceActions);
 const recursive = Object.assign(recursiveApply, sourceActions);
 

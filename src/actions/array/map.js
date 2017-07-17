@@ -1,3 +1,9 @@
+/**
+ * @memberof ArrayActions
+ * @description Test
+ * @param callback
+ * @returns {function(*)}
+ */
 const map = callback => {
   return originArr => {
     try {

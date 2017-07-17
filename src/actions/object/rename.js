@@ -3,7 +3,7 @@ import wrapper from '../../utils/wrapper';
 /**
  * Rename state by config
  *
- * @memberof rmk
+ * @memberof ObjectActions
  * @description By default action parse object.
  * For recursive flow use rmk.recursive(rmk.rename(config))(data)
  * @param {Object} config Object with rename params {fromKey: 'toKey', ...}

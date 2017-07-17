@@ -1,22 +1,22 @@
-<a name="rmk"></a>
+<a name="ObjectActions"></a>
 
-## rmk : <code>object</code>
+## ObjectActions : <code>object</code>
 **Kind**: global namespace  
 
-* [rmk](#rmk) : <code>object</code>
-    * [.clear(config)](#rmk.clear) ⇒ <code>function</code>
-    * [.each(callback)](#rmk.each) ⇒ <code>function</code>
-    * [.rename(config)](#rmk.rename) ⇒ <code>function</code>
-    * [.toCamelCase()](#rmk.toCamelCase) ⇒ <code>function</code>
-    * [.toSnakeCase()](#rmk.toSnakeCase) ⇒ <code>function</code>
-    * [.update(config)](#rmk.update) ⇒ <code>function</code>
+* [ObjectActions](#ObjectActions) : <code>object</code>
+    * [.clear(config)](#ObjectActions.clear) ⇒ <code>function</code>
+    * [.each(callback)](#ObjectActions.each) ⇒ <code>function</code>
+    * [.rename(config)](#ObjectActions.rename) ⇒ <code>function</code>
+    * [.toCamelCase()](#ObjectActions.toCamelCase) ⇒ <code>function</code>
+    * [.toSnakeCase()](#ObjectActions.toSnakeCase) ⇒ <code>function</code>
+    * [.update(config)](#ObjectActions.update) ⇒ <code>function</code>
 
-<a name="rmk.clear"></a>
+<a name="ObjectActions.clear"></a>
 
-### rmk.clear(config) ⇒ <code>function</code>
+### ObjectActions.clear(config) ⇒ <code>function</code>
 By default action parse object.  For recursive flow use rmk.recursive(rmk.clear())(data)
 
-**Kind**: static method of [<code>rmk</code>](#rmk)  
+**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
 **Returns**: <code>function</code> - Returns function clear object.  
 
 | Param | Type | Default | Description |
@@ -42,12 +42,12 @@ formula(data)
 rmk.clear()(data)
 // => {a:null, b: 0, c: null, f: [1],  g: false, j: new Date(), k: 'test'}
 ```
-<a name="rmk.each"></a>
+<a name="ObjectActions.each"></a>
 
-### rmk.each(callback) ⇒ <code>function</code>
+### ObjectActions.each(callback) ⇒ <code>function</code>
 By default action parse object.  For recursive flow use rmk.recursive(rmk.each(callback))(data)
 
-**Kind**: static method of [<code>rmk</code>](#rmk)  
+**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
 **Returns**: <code>function</code> - Returns function parse eachKeys  
 
 | Param | Type | Description |
@@ -67,13 +67,13 @@ formula(data)
 rmk.clear()(data)
 // => {a_: 2, b_: 4, c_: 6, d_: 8}
 ```
-<a name="rmk.rename"></a>
+<a name="ObjectActions.rename"></a>
 
-### rmk.rename(config) ⇒ <code>function</code>
+### ObjectActions.rename(config) ⇒ <code>function</code>
 By default action parse object.
 For recursive flow use rmk.recursive(rmk.rename(config))(data)
 
-**Kind**: static method of [<code>rmk</code>](#rmk)  
+**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
 **Returns**: <code>function</code> - Returns function rename fields to object  
 
 | Param | Type | Description |
@@ -112,12 +112,12 @@ rmk.rename({
  {newValue:1, deathYear: 2008, wasBorn: false}
 ]
 ```
-<a name="rmk.toCamelCase"></a>
+<a name="ObjectActions.toCamelCase"></a>
 
-### rmk.toCamelCase() ⇒ <code>function</code>
+### ObjectActions.toCamelCase() ⇒ <code>function</code>
 By default action parse object. For recursive flow use rmk.recursive(rmk.toCamelCase())(data)
 
-**Kind**: static method of [<code>rmk</code>](#rmk)  
+**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
 **Returns**: <code>function</code> - Returns function transform object keys to camelCase  
 **Example**  
 ```js
@@ -130,12 +130,12 @@ formula(data)
 rmk.toCamelCase()(data)
 // => {fooBar:1, fooBar:2, bar:3, foo:4}
 ```
-<a name="rmk.toSnakeCase"></a>
+<a name="ObjectActions.toSnakeCase"></a>
 
-### rmk.toSnakeCase() ⇒ <code>function</code>
+### ObjectActions.toSnakeCase() ⇒ <code>function</code>
 By default action parse object. For recursive flow use rmk.recursive(rmk.toSnakeCase())(data)
 
-**Kind**: static method of [<code>rmk</code>](#rmk)  
+**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
 **Returns**: <code>function</code> - Returns function transform object keys to snake_case  
 **Example**  
 ```js
@@ -148,12 +148,12 @@ formula(data)
 rmk.toSnakeCase()(data)
 // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
 ```
-<a name="rmk.update"></a>
+<a name="ObjectActions.update"></a>
 
-### rmk.update(config) ⇒ <code>function</code>
+### ObjectActions.update(config) ⇒ <code>function</code>
 By default action parse object. For recursive flow use rmk.recursive(rmk.update(config))(data)
 
-**Kind**: static method of [<code>rmk</code>](#rmk)  
+**Kind**: static method of [<code>ObjectActions</code>](#ObjectActions)  
 **Returns**: <code>function</code> - Returns function update fields of object  
 
 | Param | Type | Description |

@@ -1,4 +1,11 @@
 import action from '../../actions/array/join';
 import apply from '../../utils/apply/array';
 
-export default config => apply(action(config));
+/**
+ * @memberof ap
+ * @description Test
+ * @param args
+ */
+const join = (...args) => apply(action(...args));
+
+export default join;

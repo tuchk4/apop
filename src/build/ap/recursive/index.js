@@ -9,7 +9,10 @@ import swap from '../../../actions/array/swap';
 import recursiveApply from '../../../utils/recursiveApply/array';
 
 const sourceActions = { crop, filter, join, map, remove, sort, swap };
-
+/**
+ * @namespace ap.recursive
+ * @type {Function|Object}
+ */
 const recursive = Object.assign(recursiveApply, sourceActions);
 
 export default recursive;

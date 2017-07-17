@@ -41,7 +41,7 @@ function camelCase(str) {
 /**
  * Function of converts object keys to camelCase.
  *
- * @memberof rmk
+ * @memberof ObjectActions
  * @description By default action parse object. For recursive flow use rmk.recursive(rmk.toCamelCase())(data)
  * @returns {Function} Returns function transform object keys to camelCase
  * @example
