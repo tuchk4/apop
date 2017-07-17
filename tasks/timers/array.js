@@ -6,7 +6,7 @@ import output from './utils/output';
 import generateData from './utils/generateData';
 import getActions from './utils/getActions';
 
-import rmk from '../../packages/rmk/src/rmk';
+import ap from '../../src/build/ap';
 
 const size = argv.size || 1000;
 const data = [];
@@ -27,7 +27,7 @@ for (let i = 0; i < arrSize; i++) {
 }
 
 timer(() => {
-  const formula = rmk(...getActions());
+  const formula = ap(...getActions());
   const generated = formula(data);
 }).then(time => {
   output(ID, size, time);

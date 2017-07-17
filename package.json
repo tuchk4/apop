@@ -9,7 +9,7 @@
     "build": "babel-node ./rollup-build.js",
     "test": "jest",
     "test-dev": "jest --coverage --watch",
-    "pref": "yarn run build && NODE_ENV=test babel-node ./tasks/bestResults.js",
+    "pref": "NODE_ENV=test babel-node ./tasks/bestResults.js",
     "precommit": "lint-staged",
     "format": "prettier --single-quote --write 'packages/**/*.js'",
     "doc": "yarn doc:op && yarn dpc:ap",
