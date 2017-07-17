@@ -5,7 +5,7 @@
 
 * [op](#op) : <code>object</code>
     * [.recursive](#op.recursive) : <code>object</code>
-        * [.clear(args)](#op.recursive.clear)
+        * [.clear(config)](#op.recursive.clear) ⇒ <code>function</code>
         * [.each(args)](#op.recursive.each)
         * [.rename(args)](#op.recursive.rename)
         * [.toCamelCase(args)](#op.recursive.toCamelCase)
@@ -24,7 +24,7 @@
 **Kind**: static namespace of [<code>op</code>](#op)  
 
 * [.recursive](#op.recursive) : <code>object</code>
-    * [.clear(args)](#op.recursive.clear)
+    * [.clear(config)](#op.recursive.clear) ⇒ <code>function</code>
     * [.each(args)](#op.recursive.each)
     * [.rename(args)](#op.recursive.rename)
     * [.toCamelCase(args)](#op.recursive.toCamelCase)
@@ -33,15 +33,56 @@
 
 <a name="op.recursive.clear"></a>
 
-#### recursive.clear(args)
-Test
+#### recursive.clear(config) ⇒ <code>function</code>
+Recursive clear
 
 **Kind**: static method of [<code>recursive</code>](#op.recursive)  
 
 | Param |
 | --- |
-| args | 
+| config | 
 
+**Example**  
+```js
+// Variable to usages:
+
+import recursiveClear from 'op/recursive/clear';
+import recursive from 'op/recursive';
+import clear from 'op/clear';
+import op from 'op';
+
+let data = {
+ a: "",
+ b : 1:
+ c: null,
+ d: undefined,
+   deep: {
+     g: null,
+     h: true,
+     moreDeep: {k: "", m:false}
+   }
+ };
+```
+**Example**  
+```js
+recursiveClear()(data)
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+```
+**Example**  
+```js
+recursive(recursive.clear())(data)
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+```
+**Example**  
+```js
+recursive(op.clear())
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+```
+**Example**  
+```js
+recursive(clear())(data)
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+```
 <a name="op.recursive.each"></a>
 
 #### recursive.each(args)
@@ -108,6 +149,11 @@ Test
 | --- |
 | args | 
 
+**Example**  
+```js
+import op from 'op';
+import clear from 'op/clear';
+```
 <a name="op.each"></a>
 
 ### op.each(args)
