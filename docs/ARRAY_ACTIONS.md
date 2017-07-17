@@ -2,7 +2,7 @@
 
 <dl>
 <dt><a href="#filter">filter(condition)</a> ⇒</dt>
-<dd><p>Test</p>
+<dd><p>Filter Array</p>
 </dd>
 <dt><a href="#join">join(separator)</a> ⇒ <code>String</code></dt>
 <dd><p>Join Array</p>
@@ -10,8 +10,8 @@
 <dt><a href="#map">map(callback)</a> ⇒</dt>
 <dd><p>Map Array</p>
 </dd>
-<dt><a href="#remove">remove(indexes)</a> ⇒</dt>
-<dd><p>Remove by indexes</p>
+<dt><a href="#remove">remove(...indexes)</a> ⇒</dt>
+<dd><p>Remove from Array</p>
 </dd>
 <dt><a href="#sort">sort(sortField, dest)</a></dt>
 <dd><p>Sort Array</p>
@@ -24,7 +24,7 @@
 <a name="filter"></a>
 
 ## filter(condition) ⇒
-Test
+Filter Array
 
 **Kind**: global function  
 **Returns**: Array  
@@ -82,15 +82,15 @@ map((el) => el + 1)([1, 2, 3, 4, 5]);
 ```
 <a name="remove"></a>
 
-## remove(indexes) ⇒
-Remove by indexes
+## remove(...indexes) ⇒
+Remove from Array
 
 **Kind**: global function  
 **Returns**: Array  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| indexes | <code>Number</code> | Remove indexes, separate by comma |
+| ...indexes | <code>Number</code> | Remove indexes, separate by comma |
 
 **Example**  
 ```js
@@ -136,7 +136,7 @@ Swap array elements a to b, b to a
 
 **Kind**: global function  
 **Returns**: Array  
-**See**: [Stackoverflow solution](https://stackoverflow.com/a/25910841)  
+**See**: [StackOverflow solution](https://stackoverflow.com/a/25910841)  
 
 | Param |
 | --- |

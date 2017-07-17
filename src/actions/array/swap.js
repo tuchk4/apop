@@ -2,7 +2,7 @@
  * @description Swap array elements a to b, b to a
  * @param a
  * @param b
- * @see {@link https://stackoverflow.com/a/25910841|Stackoverflow solution}
+ * @see {@link https://stackoverflow.com/a/25910841|StackOverflow solution}
  * @return Array
  * @example
  *
