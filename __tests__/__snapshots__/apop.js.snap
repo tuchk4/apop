@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`First Global Test 1`] = `
+exports[`Complex Test 1 1`] = `
 Array [
   Object {
     "birthDate": 2001-12-23T00:00:00.000Z,
@@ -55,6 +55,196 @@ Array [
     "caseDetect": true,
     "id": 3,
     "sort": 18,
+  },
+]
+`;
+
+exports[`Complex Test 2 1`] = `
+Array [
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-27T00:00:00.000Z,
+    "id": 27,
+    "sort": 162,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-25T00:00:00.000Z,
+    "id": 25,
+    "sort": 150,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-23T00:00:00.000Z,
+    "id": 23,
+    "sort": 138,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-21T00:00:00.000Z,
+    "id": 21,
+    "sort": 126,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-03T00:00:00.000Z,
+    "id": 11,
+    "sort": 66,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-10-03T00:00:00.000Z,
+    "id": 9,
+    "sort": 54,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-08-03T00:00:00.000Z,
+    "id": 7,
+    "sort": 42,
+  },
+]
+`;
+
+exports[`Complex Test 3 1`] = `
+Array [
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-21T00:00:00.000Z,
+    "id": 21,
+    "sort": 126,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-20T00:00:00.000Z,
+    "id": 20,
+    "sort": 120,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-23T00:00:00.000Z,
+    "id": 23,
+    "sort": 138,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-18T00:00:00.000Z,
+    "id": 18,
+    "sort": 108,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-22T00:00:00.000Z,
+    "id": 22,
+    "sort": 132,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-24T00:00:00.000Z,
+    "id": 24,
+    "sort": 144,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-25T00:00:00.000Z,
+    "id": 25,
+    "sort": 150,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-26T00:00:00.000Z,
+    "id": 26,
+    "sort": 156,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-27T00:00:00.000Z,
+    "id": 27,
+    "sort": 162,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-28T00:00:00.000Z,
+    "id": 28,
+    "sort": 168,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-29T00:00:00.000Z,
+    "id": 29,
+    "sort": 174,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-02-03T00:00:00.000Z,
+    "id": 1,
+    "sort": 6,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-03-03T00:00:00.000Z,
+    "id": 2,
+    "sort": 12,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-04-03T00:00:00.000Z,
+    "id": 3,
+    "sort": 18,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-05-03T00:00:00.000Z,
+    "id": 4,
+    "sort": 24,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-06-03T00:00:00.000Z,
+    "id": 5,
+    "sort": 30,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-07-03T00:00:00.000Z,
+    "id": 6,
+    "sort": 36,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-08-03T00:00:00.000Z,
+    "id": 7,
+    "sort": 42,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-09-03T00:00:00.000Z,
+    "id": 8,
+    "sort": 48,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-10-03T00:00:00.000Z,
+    "id": 9,
+    "sort": 54,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-11-03T00:00:00.000Z,
+    "id": 10,
+    "sort": 60,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2001-12-03T00:00:00.000Z,
+    "id": 11,
+    "sort": 66,
+  },
+  Object {
+    "caseDetect": true,
+    "date": 2002-01-03T00:00:00.000Z,
+    "id": 12,
+    "sort": 72,
   },
 ]
 `;

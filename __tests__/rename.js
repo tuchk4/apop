@@ -1,5 +1,5 @@
-import ap from '../src/ap';
-import op from '../src/op';
+import ap from '../src/build/ap';
+import op from '../src/build/op';
 
 const before = Object.seal({
   year: 2001,

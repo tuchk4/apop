@@ -145,4 +145,20 @@ Array [
 ]
 `;
 
-exports[`recursive shortcut toCamelCase 1`] = `[Function]`;
+exports[`recursive shortcut toCamelCase 1`] = `
+Object {
+  "arrayKey": Array [
+    1,
+    2,
+    3,
+  ],
+  "arrayObjects": Array [
+    Object {
+      "aB": "a",
+      "bC": "b",
+    },
+  ],
+  "fooBar": 0,
+  "removeBaz": null,
+}
+`;

@@ -1,5 +1,4 @@
-// import ap from '../src/ap';
-import op from '../src/op';
+import op from '../src/build/op';
 
 const before = Object.seal({
   a: 1,

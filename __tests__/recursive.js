@@ -1,6 +1,6 @@
-import ap from '../src/ap';
-import op from '../src/op';
-import apop from '../src/apop';
+import ap from '../src/build/ap';
+import op from '../src/build/op';
+import apop from '../src/build/apop';
 
 const sample = Object.seal({
   foo_bar: 0,
@@ -73,22 +73,20 @@ const versionLinkFn = (url, isLink) => {
 
 const normalizeUrl = (url, version) =>
   version === VERSIONS.V2 ? url.replace(`/${VERSIONS.V2}`, '') : url;
-const normalizeName = (name, version) =>
-  version === VERSIONS.V1 ? `${name} old` : name;
 
 test('Object recursive', () => {
-  const formula = rmk.recursive(
-    rmk.toCamelCase(),
-    rmk.update({
+  const formula = op.recursive(
+    op.toCamelCase(),
+    op.update({
       arrayKeyStr: localState =>
         Array.isArray(localState.arrayKey)
           ? localState.arrayKey.join(',')
           : null,
     }),
-    rmk.rename({
+    op.rename({
       arrayKeyStr: 'renamedStr',
     }),
-    rmk.clear()
+    op.clear()
   );
 
   const result = formula(data.asObject);
@@ -97,22 +95,22 @@ test('Object recursive', () => {
 });
 let sum = '';
 test('Array recursive', () => {
-  const transformMainMenu = rmk.recursive(
-    rmk.clear(),
-    rmk.toCamelCase(),
-    rmk.rename({
+  const transformMainMenu = op.recursive(
+    op.clear(),
+    op.toCamelCase(),
+    op.rename({
       children: 'nodes',
     }),
-    rmk.update({
+    op.update({
       isCategory: localState =>
         Object.prototype.hasOwnProperty.call(localState, 'nodes'),
       isLink: localState =>
         !Object.prototype.hasOwnProperty.call(localState, 'nodes'),
     }),
-    rmk.update({
+    op.update({
       version: localState => versionLinkFn(localState.url, localState.isLink),
     }),
-    rmk.update({
+    op.update({
       url: localState => normalizeUrl(localState.url, localState.version),
       name: localState => {
         sum += `->${localState.name}`;
@@ -126,7 +124,7 @@ test('Array recursive', () => {
         return isOpen;
       },
     }),
-    rmk.clear()
+    op.clear()
   );
   const result = transformMainMenu(data.asArray);
 
@@ -135,11 +133,11 @@ test('Array recursive', () => {
 });
 
 it('recursive shortcut rename', () => {
-  const result = rmk.recursive.rename({ name: 'test' })(data.asArray);
+  const result = op.recursive(op.rename({ name: 'test' }))(data.asArray);
   expect(result).toMatchSnapshot();
 });
 
 it('recursive shortcut toCamelCase', () => {
-  const result = rmk.recursive.toCamelCase(sample);
+  const result = op.recursive(op.toCamelCase())(sample);
   expect(result).toMatchSnapshot();
 });
