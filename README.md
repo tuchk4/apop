@@ -1,136 +1,197 @@
-# [rmk](http://tuchk4.github.io/rmk/)
+# apop
+For transformation data. Replaces recursive nested constructions to flow functions
 
-[![build status](https://img.shields.io/travis/tuchk4/rmk/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/rmk)
-[![rmk version](https://img.shields.io/npm/v/rmk.svg?style=flat-square)](https://www.npmjs.com/package/rmk)
-## rmk
-The main idea of rmk is flow transformation data. 
+[![build status](https://img.shields.io/travis/tuchk4/op/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/op)
+[![op version](https://img.shields.io/npm/v/op.svg?style=flat-square)](https://www.npmjs.com/package/op)
+
+## The main idea
+* `Array Parse`(**ap**) - apply flow actions to array.
+* `Object Parse`(**op**) - apply flow actions to object.
 
 ## Installation
 ```
-npm install --save rmk
+npm install --save apop
+```
+## Imports
+```
+import ap from 'apop/ap';
+import op from 'apop/op';
 ```
 
+## Object Parse Actions:
+* [clear](docs/OBJECT_ACTION.md#op.clear) Clear object fields from: null, undefined, empty array, empty string, empty object
+    ```js
+        op.clear()({a:1, b: null, c: [], d: undefined, g: ""})
+        // => {a: 1}
+    ```
+* [each](docs/OBJECT_ACTIONS.md#op.each) Parse each fields in callback.
+    ```js
+        op.each((key, value) => {
+          return {key: `_${key}`, value: `#${value}`}
+        })({first_name:"foo"})
+      // => {_first_name: "#foo bar"}
+    ```
+* [rename](docs/OBJECT_ACTIONS.md#op.rename) Rename keys in object by config.
+    ```js
+        op.rename({name: "first_name"})({first_name:"foo"})
+        // => {name: "foo"}
+    ```
+* [update](docs/OBJECT_ACTIONS.md#op.update) Update keys in object by config.
+    ```js
+        op.update({
+           first_name: state => state.first_name + ' bar'
+        })({first_name:"foo"})
+        // => {first_name: "foo bar"
+    ```
+* [toCamelCase](docs/OBJECT_ACTIONS.md#op.toCamelCase) Rename all keys camelCase.
+    ```js
+        op.toCamelCase()({first_name:"foo"})
+      // => {firstName: "foo"}
+    ```
+* [toSnakeCase](docs/OBJECT_ACTIONS.md#op.toSnakeCase) Rename all keys snake_case.
+    ```js
+        op.toSnakeCase()({firstName:"foo"})
+        // => {first_name: "foo"}
+    ```
 
-## Actions
-* [clear](docs/ACTIONS.md#rmk.clear) Clear object fields from: null, undefined, empty array, empty string, empty object
-* [each](docs/ACTIONS.md#rmk.each) Parse each fields in callback.
-* [rename](docs/ACTIONS.md#rmk.rename) Rename keys in object by config.
-* [update](docs/ACTIONS.md#rmk.update) Update keys in object by config.
-* [toCamelCase](docs/ACTIONS.md#rmk.toCamelCase) Rename all keys camelCase.
-* [toSnakeCase](docs/ACTIONS.md#rmk.toSnakeCase) Rename all keys snake_case.
+## Array Parse Actions:
+* [filter](docs/ARRAY_ACTIONS.md#ap.filter) Filter Array
+    ```js
+        ap.filter(i => i > 2)([1, 2, 3, 4, 5])
+        // => [3, 4, 5]
+    ```
+* [join](docs/ARRAY_ACTIONS.md#ap.join) Join Array
+    ```js
+        ap.join('#')([1, 2, 3, 4, 5])
+        // => "3#4#5"
+    ```
+* [map](docs/ARRAY_ACTIONS.md#ap.map) Map Array
+    ```js
+        ap.map((i => i + 1))([1, 2, 3, 4, 5])
+        // => [2, 3, 4, 5, 6]
+    ```
+* [remove](docs/ARRAY_ACTIONS.md#ap.remove) Remove from Array
+    ```js
+        ap.remove(2, 3)([1, 2, 3, 4, 5])
+        // => [1, 2, 5]
+    ```
+* [sort](docs/ARRAY_ACTIONS.md#ap.sort) Sort Array
+    ```js
+        ap.sort((a, b) => a - b)([5, 1, 3, 2, 4])
+        // => [1, 2, 3, 4, 5]
+    ```
+* [swap](docs/ARRAY_ACTIONS.md#ap.swap) Swap array
+    ```js
+        ap.swap(2,3)([1, 2, 3, 4, 5])
+        // => [1, 2, 4, 3, 5]
+    ```
 
-Actions: clear, toSnakeCase, toCamelCase use without config, each use with callback.
 
-## Custom actions 
-You can use custom actions:
+##Don’t repeat yourself
+You can create one transform function for repeat usage. For example for receive data from API.
+
+
+Example:
 ```js
-import rmk from 'rmk';
+import op from 'apop/op';
 
-let data = {num: 1};
-let formula = rmk(
-    (state) => {
-        state.num++;
-        return state;
-    },
-    (state) => {
-        state.num *= 3;
-        return state;
-    }
+let formula = op(
+    op.toCamelCase(),
+    op.update({
+       'createdDate': state => new Date(state.createdDate),
+       'fullName': state => `${state.firstName} ${state.lastName}`
+    }),
 );
-formula(data);
-// => {num: 6}
+
+formula({first_name: "petya", last_name: "ivanov", created_date: '2017-07-20T13:53:24.225Z'});
+//{firstName: "petya", lastName: "ivanov", createdDate: new Date('2017-07-20T13:53:24.225Z', fullName: "petya ivanov")}
+
+formula({first_name: "katya", last_name: "petrova", created_date: '2017-07-21T14:51:23.215Z'});
+//{firstName: "katya", lastName: "petrova", createdDate: new Date('2017-07-21T14:51:23.215Z', fullName: "katya petrova")}
+
+formula({first_name: "kolya", last_name: "sidorov", created_date: '2017-07-22T11:57:14.725Z'});
+//{firstName: "kolya", lastName: "sidorov", createdDate: new Date('2017-07-22T11:57:14.725Z', fullName: "kolya sidorov")}
 ```
 
-## Single flow
-Single parse  object or array of objects:
+
+## Parse Array of Objects with `ap` and `op`
+* `ap` is function for parse array.
+* `op` is function for parse object.
+
+Example:
 ```js
-import rmk from 'rmk';
+import op from 'apop/op';
+import ap from 'apop/ap';
+import moment from 'moment';
 
-rmk(    
-    rmk.update(config),
-    rmk.rename(config),
-    rmk.clear(),
-    rmk.toSnakeCase(),
-    rmk.toCamelCase(),
-    rmk.each(callback)
-)(data)
-```
-  
-## Shortcuts
-Use single shortcuts: 
-```js
-import rmk from 'rmk';
-
-rmk.update(config)(params);
-rmk.rename(config)(params);
-rmk.clear()(params);
-rmk.toSnakeCase()(params);
-rmk.toCamelCase()(params); 
-rmk.each(callback)(params);
-``` 
-  
-## Recursive flow
-Recursive parse objects:
-```js
-import rmk from 'rmk';
-
-rmk.recursive(
-    rmk.update(config),
-    rmk.rename(config),
-    rmk.clear(),
-    rmk.toSnakeCase(),
-    rmk.toCamelCase(),
-    rmk.each(callback)
-)(data)
-```
-
-## Recursive shortcuts
-Use recursive shortcuts: 
-```js
-import rmk from 'rmk';
-
-rmk.recursive.update(config)(params);
-rmk.recursive.rename(config)(params);
-rmk.recursive.clear()(params);
-rmk.recursive.toSnakeCase()(params);
-rmk.recursive.toCamelCase()(params);
-rmk.recursive.each(callback)(params);
-``` 
-
-## The gist
-Convert array of objects to snake_case and remove fields with undefined and null.
-
-```js
-import rmk from 'rmk';
-
-let params = [{ 
-    id:1, 
-    firstName:'Billy',
-    year: undefined,
-    deepKey: {
-      id:2,
-      firstName: 'John',
-      deepYear: null
+const formula = ap(
+  op.toCamelCase(),
+  op.rename({
+    id: 'value',
+    createdDate: state => {
+      if (state.createdDate){
+        return moment(new Date(state.createdDate)).format('yyyy-mm-dd');
+      } else {
+        return 'Unknown';
+      }
     }
-}];
+  })
+);
+
+formula([
+  {value: 1, name: "foo", created_date: '2017-07-20T13:53:24.225Z'},
+  {value: 2, name: "bar", created_date: null},
+  {value: 3, name: "baz", created_date: '2017-07-22T13:53:24.225Z'}
+])
+// => [
+//    {id: 1, name: "foo", createdDate: '2017-07-20'},
+//    {id: 2, name: "bar", createdDate: 'Unknown'},
+//    {id: 3, name: "baz", createdDate: '2017-07-22'}
+//  ]
+```
   
-// Use single flow.
-rmk(rmk.toSnakeCase(), rmk.clear())(params);
-// => {id:1, first_name:'Billy', deep_key: { id:2, firstName: 'John', deepYear: null }
-  
-// Use single shortcut.
-let singleStep1 = rmk.toSnakeCase()(params);
-let singleStep2 = rmk.clear()(singleStep1);
-//  => {id:1, first_name:'Billy', deep_key: { id:2, firstName: 'John', deepYear: null }
-  
-// Use recursive flow
-rmk.recursive(rmk.toSnakeCase(), rmk.clear())(params);
-//  => {id:1, first_name:'Billy', deep_key: { id:2, first_name: 'John' }
-  
-// Use recursive shortcut.
-let recusriveStep1 = rmk.recursive.toSnakeCase()(params);
-let recusriveStep2 = rmk.recursive.clear()(recusriveStep1);
-//  => {id:1, first_name:'Billy', deep_key: { id:2, first_name: 'John' }
+## Parse Deep Objects
+For Parse Deep Objects use `op/recursive` for deep parse objects and `ap/recursive` for deep parse arrays.
+
+Example:
+```js
+import op from 'op';
+
+op.recursive(
+    op.toCamelCase(),
+    op.rename({
+      'id': 'value'
+    })
+)({
+  value: 1,
+  deep_data: {
+    value: 2,
+    more_deep_data: {
+      value: 3
+    }
+  }
+})
+// => {
+//        id: 1,
+//        deepData: {
+//         id: 2,
+//          moreDeepData: {
+//            id: 3
+//          }
+//        }
+//      }
+```
+## Parse Deep Arrays
+Example:
+```js
+import op from 'op';
+
+op.recursive(
+    op.sort(),
+    op.remove(2),
+    op.join('#'),
+)([5, 2, 1, 4, 3, [8, 7, 6, 10, 9, [14, 12, 13, 11, 15]]])
+// => ["1#2#4#5", ["6#7#9#10", ["11#12#14#15"]]]
 ```
 
 ### [Contributing](docs/CONTRIBUTING.md)
