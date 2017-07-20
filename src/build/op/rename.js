@@ -3,8 +3,20 @@ import apply from '../../utils/apply/object';
 
 /**
  * @memberof op
- * @description Test
- * @param args
+ * @description Rename Object Keys
+ * @param config {Object}
+ * @return {Function}
+ * @see {@link OBJECT_ACTIONS.md#rename|Rename action}
+ *
+ *  @example
+ * import rename from 'op/rename';
+ * rename(renameKeys)(simpleData);
+ * // => { "1_object": "", newB: 1, c_d: null, dB:"undefined"}
+ *
+ * @example
+ * op.rename(renameKeys)(simpleData);
+ * // => { "1_object": "", newB: 1, c_d: null, dB:"undefined"}
+ *
  */
-const rename = (...args) => apply(action(...args));
+const rename = config => apply(action(config));
 export default rename;

@@ -126,7 +126,7 @@ build({
   dest: `./recursive/ap.js`,
   destMin: `./recursive/ap.min.js`,
 });
-const apActions = ['filter', 'join', 'map', 'remove', 'sort', 'splice', 'swap'];
+const apActions = ['filter', 'join', 'map', 'remove', 'sort', 'swap'];
 for (let apAction of apActions) {
   build({
     ...rollUpConfig,

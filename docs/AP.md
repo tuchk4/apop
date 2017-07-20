@@ -10,14 +10,12 @@
         * [.map(args)](#ap.recursive.map)
         * [.remove(args)](#ap.recursive.remove)
         * [.sort(args)](#ap.recursive.sort)
-        * [.splice(args)](#ap.recursive.splice)
         * [.swap(args)](#ap.recursive.swap)
     * [.filter(args)](#ap.filter)
     * [.join(args)](#ap.join)
     * [.map(args)](#ap.map)
     * [.remove(args)](#ap.remove)
     * [.sort(args)](#ap.sort)
-    * [.splice(args)](#ap.splice)
     * [.swap(args)](#ap.swap)
 
 <a name="ap.recursive"></a>
@@ -31,7 +29,6 @@
     * [.map(args)](#ap.recursive.map)
     * [.remove(args)](#ap.recursive.remove)
     * [.sort(args)](#ap.recursive.sort)
-    * [.splice(args)](#ap.recursive.splice)
     * [.swap(args)](#ap.recursive.swap)
 
 <a name="ap.recursive.filter"></a>
@@ -81,17 +78,6 @@ Test
 <a name="ap.recursive.sort"></a>
 
 #### recursive.sort(args)
-Test
-
-**Kind**: static method of [<code>recursive</code>](#ap.recursive)  
-
-| Param |
-| --- |
-| args | 
-
-<a name="ap.recursive.splice"></a>
-
-#### recursive.splice(args)
 Test
 
 **Kind**: static method of [<code>recursive</code>](#ap.recursive)  
@@ -158,17 +144,6 @@ Test
 <a name="ap.sort"></a>
 
 ### ap.sort(args)
-Test
-
-**Kind**: static method of [<code>ap</code>](#ap)  
-
-| Param |
-| --- |
-| args | 
-
-<a name="ap.splice"></a>
-
-### ap.splice(args)
 Test
 
 **Kind**: static method of [<code>ap</code>](#ap)  

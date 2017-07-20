@@ -6,38 +6,15 @@ import recursiveApply from '../../../utils/recursiveApply/object';
  * @description Recursive clear
  * @param config
  * @return {Function}
+ * @see {@link OBJECT_ACTIONS.md#clear|Clear action}
  *
- *  @example
- *
- * // Variable to usages:
- *
- * import recursiveClear from 'op/recursive/clear';
- * import recursive from 'op/recursive';
- * import clear from 'op/clear';
- * import op from 'op';
- *
- * let data = {
- *  a: "",
- *  b : 1:
- *  c: null,
- *  d: undefined,
- *    deep: {
- *      g: null,
- *      h: true,
- *      moreDeep: {k: "", m:false}
- *    }
- *  };
- *
- * recursiveClear()(data)
+ * @example
+ * recursive(clear())(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
- * recursive(recursive.clear())(data)
- * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
- *
- * recursive(op.clear())
- * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
- *
- * recursive(clear())(data)
+ * @example
+ * import clear from 'op/recursive/clear';
+ * clear()(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
  */
