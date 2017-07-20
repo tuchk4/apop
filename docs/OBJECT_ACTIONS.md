@@ -190,6 +190,12 @@ op.update({
 | --- | --- | --- |
 | Original | <code>Array</code> | Array |
 
+**Example**  
+```js
+// input data is Array
+(config) => (data) => actionFn(config, data)
+// return Array
+```
 <a name="MiddlewareStringFunction"></a>
 
 ## MiddlewareStringFunction ⇒ <code>String</code>
@@ -201,6 +207,13 @@ op.update({
 | --- | --- | --- |
 | Original | <code>Array</code> | Array |
 
+**Example**  
+```js
+// input data is Object
+(config) => (data) => actionFn(config, data)
+// return String
+// =>
+```
 <a name="MiddlewareObjectFunction"></a>
 
 ## MiddlewareObjectFunction ⇒ <code>Object</code>
@@ -212,3 +225,9 @@ op.update({
 | --- | --- | --- |
 | Original | <code>Object</code> | Object |
 
+**Example**  
+```js
+// input data is Object
+(config) => (data) => actionFn(config, data)
+// return Object
+```

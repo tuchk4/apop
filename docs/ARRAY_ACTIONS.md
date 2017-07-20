@@ -168,6 +168,12 @@ swap(2,3)([1,2,3,4,5]);
 | --- | --- | --- |
 | Original | <code>Array</code> | Array |
 
+**Example**  
+```js
+// input data is Array
+(config) => (data) => actionFn(config, data)
+// return Array
+```
 <a name="MiddlewareStringFunction"></a>
 
 ## MiddlewareStringFunction ⇒ <code>String</code>
@@ -179,6 +185,13 @@ swap(2,3)([1,2,3,4,5]);
 | --- | --- | --- |
 | Original | <code>Array</code> | Array |
 
+**Example**  
+```js
+// input data is Object
+(config) => (data) => actionFn(config, data)
+// return String
+// =>
+```
 <a name="MiddlewareObjectFunction"></a>
 
 ## MiddlewareObjectFunction ⇒ <code>Object</code>
@@ -190,3 +203,9 @@ swap(2,3)([1,2,3,4,5]);
 | --- | --- | --- |
 | Original | <code>Object</code> | Object |
 
+**Example**  
+```js
+// input data is Object
+(config) => (data) => actionFn(config, data)
+// return Object
+```

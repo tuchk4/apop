@@ -6,7 +6,7 @@
 ```js
 // Init for each example:
 
-import recursive from 'op/recursive';
+import opRecursive from 'op/recursive';
 import op from 'op';
 
 let deepData = {
@@ -86,13 +86,26 @@ Recursive clear
 
 **Example**  
 ```js
-recursive(clear())(deepData);
+import clear from 'op/recursive/clear';
+clear()(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 ```
 **Example**  
 ```js
-import clear from 'op/recursive/clear';
-clear()(deepData);
+import clear from 'op/clear';
+opRecursive(clear())(deepData);
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+
+* @example
+op.recursive(op.clear())(deepData);
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+
+ 
+```
+**Example**  
+```js
+import clear from 'op/clear';
+ op.recursive(clear())(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 ```
 <a name="op.recursive.each"></a>
@@ -115,7 +128,7 @@ each(eachRename)(deepData);
 ```
 **Example**  
 ```js
-recursive(op.each(eachRename))(deepData);
+opRecursive(op.each(eachRename))(deepData);
 // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {_g_:null: _h_:true, _moreDeep_: {_kE_: "", _m_r_:false}} }
 ```
 **Example**  
@@ -149,7 +162,7 @@ rename(renameKeys)(deepData);
 ```
 **Example**  
 ```js
-recursive(op.rename(renameKeys))(deepData);
+opRecursive(op.rename(renameKeys))(deepData);
 // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
 ```
 **Example**  
@@ -178,7 +191,7 @@ toCamelCase()(deepData);
 ```
 **Example**  
 ```js
-recursive(op.toCamelCase())(deepData);
+opRecursive(op.toCamelCase())(deepData);
 // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
 ```
 **Example**  
@@ -207,7 +220,7 @@ toSnakeCase()(deepData);
 ```
 **Example**  
 ```js
-recursive(op.toSnakeCase())(deepData);
+opRecursive(op.toSnakeCase())(deepData);
 // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
 ```
 **Example**  
@@ -236,7 +249,7 @@ update(updateKeys)(deepData);
 ```
 **Example**  
 ```js
-recursive(op.update(updateKeys))(deepData);
+opRecursive(op.update(updateKeys))(deepData);
 // => { a: "1_object", b: "newB", c_d: null, dB:"undefined", deep: {g:null: h:"newH", moreDeep: {kE: "", m_r:false}} }
 ```
 **Example**  
