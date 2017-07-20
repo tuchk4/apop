@@ -122,7 +122,7 @@ formula({first_name: "kolya", last_name: "sidorov", created_date: '2017-07-22T11
 ```
 
 
-## Parse Array of Objects with `ap` and `op`
+## Parse Array of Objects
 * `ap` is function for parse array.
 * `op` is function for parse object.
 
@@ -158,10 +158,8 @@ formula([
 //  ]
 ```
   
-## Parse Deep Objects
-For Parse Deep Objects use `op/recursive` for deep parse objects and `ap/recursive` for deep parse arrays.
-
-Example:
+## Parse Deep Array and Objects
+For apply action to Deep Objects use `op/recursive`. Example:
 ```js
 import op from 'op';
 
@@ -189,7 +187,7 @@ op.recursive(
 //        }
 //      }
 ```
-## Parse Deep Arrays
+For apply actions to Deep arrays use `ap/recursive`.
 Example:
 ```js
 import op from 'op';
