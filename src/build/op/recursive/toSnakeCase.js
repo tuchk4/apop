@@ -13,7 +13,7 @@ import recursiveApply from '../../../utils/recursiveApply/object';
  * // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
  *
  * @example
- * recursive(op.toSnakeCase())(deepData);
+ * opRecursive(op.toSnakeCase())(deepData);
  * // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
  *
  * @example

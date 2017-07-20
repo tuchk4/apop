@@ -13,7 +13,7 @@ import recursiveApply from '../../../utils/recursiveApply/object';
  * // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
  *
  * @example
- * recursive(op.toCamelCase())(deepData);
+ * opRecursive(op.toCamelCase())(deepData);
  * // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
  *
  * @example

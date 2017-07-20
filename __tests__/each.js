@@ -1,4 +1,5 @@
 import op from '../src/build/op';
+import recursive from '../src/build/op/recursive';
 
 const before = Object.seal({
   a: 1,
@@ -59,13 +60,15 @@ test('Recursive flow each transform', () => {
 });
 
 test('Recursive shortcut each transform', () => {
-  const formula = op.recursive.each((key, value) => {
-    if (typeof value == 'number') {
-      return { key: key + '_', value: value * 2 };
-    } else {
-      return { key: key + '_', value: value };
-    }
-  });
+  const formula = recursive(
+    op.each((key, value) => {
+      if (typeof value == 'number') {
+        return { key: key + '_', value: value * 2 };
+      } else {
+        return { key: key + '_', value: value };
+      }
+    })
+  );
 
   const result = formula(beforeDeep);
   expect(result).toMatchSnapshot();

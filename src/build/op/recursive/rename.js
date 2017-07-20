@@ -14,7 +14,7 @@ import recursiveApply from '../../../utils/recursiveApply/object';
  * // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
  *
  * @example
- * recursive(op.rename(renameKeys))(deepData);
+ * opRecursive(op.rename(renameKeys))(deepData);
  * // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
  *
  * @example
