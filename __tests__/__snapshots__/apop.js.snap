@@ -62,44 +62,44 @@ Array [
 exports[`Complex Test 2 1`] = `
 Array [
   Object {
+    "birthDate": 2001-12-27T00:00:00.000Z,
     "caseDetect": true,
-    "date": 2001-12-27T00:00:00.000Z,
     "id": 27,
     "sort": 162,
   },
   Object {
+    "birthDate": 2001-12-25T00:00:00.000Z,
     "caseDetect": true,
-    "date": 2001-12-25T00:00:00.000Z,
     "id": 25,
     "sort": 150,
   },
   Object {
+    "birthDate": 2001-12-23T00:00:00.000Z,
     "caseDetect": true,
-    "date": 2001-12-23T00:00:00.000Z,
     "id": 23,
     "sort": 138,
   },
   Object {
+    "birthDate": 2001-12-21T00:00:00.000Z,
     "caseDetect": true,
-    "date": 2001-12-21T00:00:00.000Z,
     "id": 21,
     "sort": 126,
   },
   Object {
+    "birthDate": 2001-12-03T00:00:00.000Z,
     "caseDetect": true,
-    "date": 2001-12-03T00:00:00.000Z,
     "id": 11,
     "sort": 66,
   },
   Object {
+    "birthDate": 2001-10-03T00:00:00.000Z,
     "caseDetect": true,
-    "date": 2001-10-03T00:00:00.000Z,
     "id": 9,
     "sort": 54,
   },
   Object {
+    "birthDate": 2001-08-03T00:00:00.000Z,
     "caseDetect": true,
-    "date": 2001-08-03T00:00:00.000Z,
     "id": 7,
     "sort": 42,
   },

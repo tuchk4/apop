@@ -2,14 +2,16 @@ import isArray from '../isArray';
 import isObject from '../isObject';
 import isFunction from '../isFunction';
 
-export default (entity, actions, recursive) => {
-  let copy = entity.slice(0);
-  let entitySize = copy.length;
+export default (entity, callback) => {
+  let entitySize = entity.length;
+  let copy = [];
+  let hasCallback = isFunction(callback);
   for (let i = 0; i < entitySize; i++) {
-    if ((isArray(entity[i]) || isObject(entity[i])) && isFunction(recursive)) {
-      copy[i] = recursive(copy[i], actions);
+    let isIterable = isArray(entity[i]) || isObject(entity[i]);
+    if (isIterable && hasCallback) {
+      copy.push(callback(entity[i]));
     } else {
-      copy[i] = entity[i];
+      copy.push(entity[i]);
     }
   }
   return copy;

@@ -13,7 +13,7 @@
 <dt><a href="#remove">remove(...indexes)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
 <dd><p>Remove from Array</p>
 </dd>
-<dt><a href="#sort">sort(sortField, dest)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
+<dt><a href="#sort">sort(condition, dest)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
 <dd><p>Sort Array</p>
 </dd>
 <dt><a href="#swap">swap(a, b)</a> ⇒ <code><a href="#MiddlewareArrayFunction">MiddlewareArrayFunction</a></code></dt>
@@ -109,7 +109,7 @@ remove(1, 3, 5)([1, 2, 3, 4, 5]);
 ```
 <a name="sort"></a>
 
-## sort(sortField, dest) ⇒ [<code>MiddlewareArrayFunction</code>](#MiddlewareArrayFunction)
+## sort(condition, dest) ⇒ [<code>MiddlewareArrayFunction</code>](#MiddlewareArrayFunction)
 Sort Array
 
 **Kind**: global function  
@@ -117,7 +117,7 @@ Sort Array
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sortField | <code>String</code> \| <code>function</code> | sort field or condition function. |
+| condition | <code>function</code> | sort field or condition function. |
 | dest | <code>String</code> | [somebody] if sort field = 'asc' or 'desc' |
 
 **Example**  
@@ -190,7 +190,6 @@ swap(2,3)([1,2,3,4,5]);
 // input data is Object
 (config) => (data) => actionFn(config, data)
 // return String
-// =>
 ```
 <a name="MiddlewareObjectFunction"></a>
 

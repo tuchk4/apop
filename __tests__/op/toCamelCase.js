@@ -1,5 +1,5 @@
-import ap from '../src/build/ap';
-import op from '../src/build/op';
+import ap from '../../src/build/ap';
+import op from '../../src/build/op';
 
 const before = Object.seal({
   id: 1,
@@ -26,7 +26,7 @@ it('toCamelCase shortcut: Transform to camelCase', () => {
   expect(result).toMatchSnapshot();
 });
 
-it('toCamelCase shortcut:  Transform array of objects to snake_case', () => {
+it('toCamelCase shortcut:  Transform array of objects to camelCase', () => {
   const result = ap(op.toCamelCase())([before]);
   expect(result).toMatchSnapshot();
 });

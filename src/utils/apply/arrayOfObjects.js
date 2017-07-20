@@ -1,19 +1,18 @@
-import isArray from '../isArray';
 import isObject from '../isObject';
-import runActions from '../runActions';
+import flow from '../flow';
 
-export const apply = (entity, actions) => {
-  if (isArray(entity)) {
-    entity = entity.slice(0);
-    let entitySize = entity.length;
+export const apply = (...actions) =>
+  origin => {
+    let run = flow(actions);
+    let copy = [];
+    let entitySize = origin.length;
 
     for (let i = 0; i < entitySize; i++) {
-      if (isObject(entity[i])) {
-        entity[i] = runActions(entity[i], actions);
+      if (isObject(origin[i])) {
+        copy.push(run(origin[i]));
       }
     }
-  }
-  return entity;
-};
+    return copy;
+  };
 
-export default (...args) => origin => apply(origin, args);
+export default apply;

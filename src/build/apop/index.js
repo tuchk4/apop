@@ -6,6 +6,7 @@ import rename from '../../actions/object/rename';
 import each from '../../actions/object/each';
 
 import apply from './../../utils/apply/arrayOfObjects';
+
 /**
  * Actions
  * @memberof op.clear

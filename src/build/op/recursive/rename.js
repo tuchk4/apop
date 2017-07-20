@@ -1,5 +1,5 @@
 import action from '../../../actions/object/rename';
-import recursiveApply from '../../../utils/recursiveApply/object';
+import recursiveApply from '../../../utils/apply/recursiveObject';
 
 /**
  * @memberof op.recursive

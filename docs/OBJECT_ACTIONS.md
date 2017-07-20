@@ -212,7 +212,6 @@ op.update({
 // input data is Object
 (config) => (data) => actionFn(config, data)
 // return String
-// =>
 ```
 <a name="MiddlewareObjectFunction"></a>
 

@@ -1,11 +1,11 @@
 import action from '../../../actions/array/map';
-import recursiveApply from '../../../utils/recursiveApply/array';
+import recursiveApply from '../../../utils/apply/recursiveArray';
 
 /**
  * @memberof ap.recursive
  * @description Test
- * @param args
+ * @param callback
  */
-const map = (...args) => recursiveApply(action(...args));
+const map = callback => recursiveApply(action(callback));
 
 export default map;

@@ -6,7 +6,7 @@
 ```js
 // Init for each example:
 
-import opRecursive from 'op/recursive';
+import opRecursive from 'op/recursive/op';
 import op from 'op';
 
 let deepData = {

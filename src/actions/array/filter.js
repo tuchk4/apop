@@ -13,9 +13,9 @@
  * // => [3, 4, 5]
  *
  */
-const filterWrapper = condition =>
-  originArr => {
-    return originArr.filter(condition);
-  };
+const filterWrapper = condition => origin => origin.filter(condition);
+// i => {
+//   return (typeof i !== "object") ? condition(i) : true;
+// });
 
 export default filterWrapper;

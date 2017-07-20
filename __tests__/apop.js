@@ -34,7 +34,7 @@ it('Complex Test 1', () => {
       sort: state => state.id * 3 + state.id * 2 + state.id,
       case_detect: true,
     }),
-    op.recursive.toCamelCase()
+    op.recursive(op.toCamelCase())
   );
 
   const arrayFormula = ap(
@@ -46,7 +46,11 @@ it('Complex Test 1', () => {
     ap.remove(4, 5, 6, 7),
     op.rename({ date: 'birth_date' }),
     ap.map(objectFormula),
-    ap.sort('sort', 'desc')
+    ap.sort((a, b) => {
+      if (a.sort < b.sort) return 1;
+      if (a.sort > b.sort) return -1;
+      return 0;
+    })
   );
 
   const result = arrayFormula(beforeArray);
@@ -72,7 +76,11 @@ it('Complex Test 2', () => {
     remove(4, 5, 6, 7),
     rename({ date: 'birth_date' }),
     map(objectFormula),
-    sort('sort', 'desc')
+    sort((a, b) => {
+      if (a.sort < b.sort) return 1;
+      if (a.sort > b.sort) return -1;
+      return 0;
+    })
   );
   const result = arrayFormula(beforeArray);
 

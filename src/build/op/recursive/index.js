@@ -5,7 +5,7 @@ import update from '../../../actions/object/update';
 import rename from '../../../actions/object/rename';
 import each from '../../../actions/object/each';
 
-import recursiveApply from './../../../utils/recursiveApply/object';
+import recursiveApply from '../../../utils/apply/recursiveObject';
 
 const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
 

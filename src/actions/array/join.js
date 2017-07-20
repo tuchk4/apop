@@ -12,4 +12,16 @@
  *
  */
 const join = (separator = ', ') => originArr => originArr.join(separator);
+/**
+ * originArr => {
+  let str = '';
+  for (let item of originArr){
+    if (item)
+    str += item + separator;
+  }
+
+
+  return str.substr(0, str.length - separator.length);
+};
+ */
 export default join;

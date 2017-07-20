@@ -6,7 +6,7 @@ import rename from '../../actions/object/rename';
 import each from '../../actions/object/each';
 
 import apply from './../../utils/apply/object';
-import recursiveApply from './../../utils/recursiveApply/object';
+import recursiveApply from '../../utils/apply/recursiveObject';
 
 const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
 
@@ -17,7 +17,7 @@ const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
  *
  * // Init for each example:
  *
- * import opRecursive from 'op/recursive';
+ * import opRecursive from 'op/recursive/op';
  * import op from 'op';
  *
  * let deepData = {

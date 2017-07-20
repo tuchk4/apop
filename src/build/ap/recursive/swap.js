@@ -1,5 +1,5 @@
 import action from '../../../actions/array/swap';
-import recursiveApply from '../../../utils/recursiveApply/array';
+import recursiveApply from '../../../utils/apply/recursiveArray';
 
 /**
  * @memberof ap.recursive

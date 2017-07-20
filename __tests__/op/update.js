@@ -1,5 +1,5 @@
-import ap from '../src/build/ap';
-import op from '../src/build/op';
+import ap from '../../src/build/ap';
+import op from '../../src/build/op';
 
 const before = Object.seal({
   date: new Date(Date.UTC(2001, 11, 3)),

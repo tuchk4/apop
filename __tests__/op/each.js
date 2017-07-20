@@ -1,5 +1,5 @@
-import op from '../src/build/op';
-import recursive from '../src/build/op/recursive';
+import op from '../../src/build/op';
+import recursive from '../../src/build/op/recursive';
 
 const before = Object.seal({
   a: 1,

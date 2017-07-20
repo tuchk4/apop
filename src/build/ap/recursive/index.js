@@ -5,7 +5,7 @@ import remove from '../../../actions/array/remove';
 import sort from '../../../actions/array/sort';
 import swap from '../../../actions/array/swap';
 
-import recursiveApply from '../../../utils/recursiveApply/array';
+import recursiveApply from '../../../utils/apply/recursiveArray';
 
 const sourceActions = { filter, join, map, remove, sort, swap };
 /**

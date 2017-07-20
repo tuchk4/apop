@@ -2,13 +2,27 @@
 
 ## ap : <code>object</code>
 **Kind**: global namespace  
+**Example**  
+```js
+// Init for each example:
+
+import apRecursive from 'op/apRecursive';
+import ap from 'ap';
+
+let deepData = [1, 2, 3, 4, 5, [6, 7, 8, 9, 10, [11, 12, 13, 14, 15]];
+let simpleData = [1, 2, 3, 4 ,5];
+
+let filterCondition = (num) => {
+   return num > 5 && n < 12;
+ };
+```
 
 * [ap](#ap) : <code>object</code>
     * [.recursive](#ap.recursive) : <code>object</code>
-        * [.filter(args)](#ap.recursive.filter)
+        * [.filter(condition)](#ap.recursive.filter) ⇒ <code>function</code>
         * [.join(args)](#ap.recursive.join)
-        * [.map(args)](#ap.recursive.map)
-        * [.remove(args)](#ap.recursive.remove)
+        * [.map(callback)](#ap.recursive.map)
+        * [.remove(indexes)](#ap.recursive.remove)
         * [.sort(args)](#ap.recursive.sort)
         * [.swap(args)](#ap.recursive.swap)
     * [.filter(args)](#ap.filter)
@@ -24,24 +38,49 @@
 **Kind**: static namespace of [<code>ap</code>](#ap)  
 
 * [.recursive](#ap.recursive) : <code>object</code>
-    * [.filter(args)](#ap.recursive.filter)
+    * [.filter(condition)](#ap.recursive.filter) ⇒ <code>function</code>
     * [.join(args)](#ap.recursive.join)
-    * [.map(args)](#ap.recursive.map)
-    * [.remove(args)](#ap.recursive.remove)
+    * [.map(callback)](#ap.recursive.map)
+    * [.remove(indexes)](#ap.recursive.remove)
     * [.sort(args)](#ap.recursive.sort)
     * [.swap(args)](#ap.recursive.swap)
 
 <a name="ap.recursive.filter"></a>
 
-#### recursive.filter(args)
-Test
+#### recursive.filter(condition) ⇒ <code>function</code>
+Recursive filter arrays
 
 **Kind**: static method of [<code>recursive</code>](#ap.recursive)  
+**See**: [Filter action](ARRAY_ACTIONS.md#filter)  
 
-| Param |
-| --- |
-| args | 
+| Param | Type | Description |
+| --- | --- | --- |
+| condition | <code>function</code> | Filter condition |
 
+**Example**  
+```js
+import filter from 'ap/recursive/filter';
+filter(filterCondition)(deepData);
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+```
+**Example**  
+```js
+import clear from 'op/clear';
+apRecursive(filter(filterCondition))(deepData);
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+
+* @example
+ap.recursive(op.filter(filterCondition))(deepData);
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+
+ 
+```
+**Example**  
+```js
+import clear from 'op/clear';
+ ap.recursive(filter(filterCondition))(deepData);
+// => {b:1, deep: {h:true, moreDeep: {m: false}}}
+```
 <a name="ap.recursive.join"></a>
 
 #### recursive.join(args)
@@ -55,25 +94,25 @@ Test
 
 <a name="ap.recursive.map"></a>
 
-#### recursive.map(args)
+#### recursive.map(callback)
 Test
 
 **Kind**: static method of [<code>recursive</code>](#ap.recursive)  
 
 | Param |
 | --- |
-| args | 
+| callback | 
 
 <a name="ap.recursive.remove"></a>
 
-#### recursive.remove(args)
+#### recursive.remove(indexes)
 Test
 
 **Kind**: static method of [<code>recursive</code>](#ap.recursive)  
 
 | Param |
 | --- |
-| args | 
+| indexes | 
 
 <a name="ap.recursive.sort"></a>
 

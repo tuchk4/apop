@@ -1,6 +1,6 @@
 /**
  * @description Sort Array
- * @param condition {Function} sort field or condition function.
+ * @param sortField {String|Function} sort field or condition function.
  * @param dest {String} [somebody] if sort field = 'asc' or 'desc'
  * @see {@link https://www.w3schools.com/jsref/jsref_filter.asp|w3 schools Array filter}
  * @return {MiddlewareArrayFunction}
@@ -21,6 +21,14 @@
  * })([3, 7, 1])
  * // => [1, 3, 7]
  */
-const sort = condition => originArr => originArr.sort(condition);
+const sort = (sortField, dest) =>
+  originArr =>
+    originArr.sort((a, b) => {
+      if (a[sortField] < b[sortField]) return dest === 'desc' ? 1 : -1;
+
+      if (a[sortField] > b[sortField]) return dest === 'asc' ? 1 : -1;
+
+      return 0;
+    });
 
 export default sort;
