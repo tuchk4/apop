@@ -95,7 +95,7 @@ import op from 'apop/op';
         // => [1, 2, 4, 3, 5]
     ```
 
-##Don’t repeat yourself
+## Don’t repeat yourself
 You can create one transform function for repeat usage. For example for receive data from API.
 
 
