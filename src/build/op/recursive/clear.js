@@ -9,12 +9,12 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * @see {@link OBJECT_ACTIONS.md#clear|Clear action}
  *
  * @example
- * import clear from 'op/recursive/clear';
+ * import clear from 'apop/op/recursive/clear';
  * clear()(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
  * @example
- * import clear from 'op/clear';
+ * import clear from 'apop/op/clear';
  * opRecursive(clear())(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
@@ -23,7 +23,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
  *  @example
- *  import clear from 'op/clear';
+ *  import clear from 'apop/op/clear';
  *  op.recursive(clear())(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *

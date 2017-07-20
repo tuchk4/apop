@@ -47,7 +47,7 @@ function camelCase(str) {
  * @see {@link OP.md#op.recursive.toCamelCase|op.recursive.toCamelCase}
  * @example
  *
- * import toCamelCase from 'op/toCamelCase';
+ * import toCamelCase from 'apop/op/toCamelCase';
  *
  * op.toCamelCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
  * // => {fooBar:1, fooBar:2, bar:3, foo:4}

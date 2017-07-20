@@ -7,7 +7,7 @@
  *
  * @example
  *
- * import filter from 'ap/filter';
+ * import filter from 'apop/ap/filter';
  *
  * filter((el) => el > 2)([1, 2, 3, 4, 5])
  * // => [3, 4, 5]

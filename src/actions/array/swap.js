@@ -6,7 +6,7 @@
  * @return {MiddlewareArrayFunction}
  * @example
  *
- * import swap from 'ap/swap';
+ * import swap from 'apop/ap/swap';
  *
  * swap(2,3)([1,2,3,4,5]);
  * // => [1,2,4,3,5]

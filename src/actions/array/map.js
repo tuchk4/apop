@@ -5,7 +5,7 @@
  * @return {MiddlewareArrayFunction}
  * @example
  *
- * import map from 'ap/map';
+ * import map from 'apop/ap/map';
  *
  * map((el) => el + 1)([1, 2, 3, 4, 5]);
  * // => [2, 3, 4, 5, 6]

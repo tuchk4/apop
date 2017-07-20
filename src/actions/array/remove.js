@@ -19,7 +19,7 @@ const removeByIndex = originIndex =>
  * @return {MiddlewareArrayFunction}
  * @example
  *
- * import remove from 'ap/remove';
+ * import remove from 'apop/ap/remove';
  *
  * remove(1, 3, 5)([1, 2, 3, 4, 5]);
  * // => [2, 4]

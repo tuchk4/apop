@@ -8,7 +8,7 @@ import apply from '../../utils/apply/object';
  * @see {@link OBJECT_ACTIONS.md#update|update action}
  *
  *  @example
- * import update from 'op/update';
+ * import update from 'apop/op/update';
  * update(updateKeys)(simpleData);
  * // => { a: "1_object", b: "newB", c_d: null, dB:"undefined"}
  *

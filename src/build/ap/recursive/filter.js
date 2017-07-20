@@ -9,12 +9,12 @@ import recursiveApply from '../../../utils/apply/recursiveArray';
  * @see {@link ARRAY_ACTIONS.md#filter|Filter action}
  *
  * @example
- * import filter from 'ap/recursive/filter';
+ * import filter from 'apop/ap/recursive/filter';
  * filter(filterCondition)(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
  * @example
- * import clear from 'op/clear';
+ * import clear from 'apop/op/clear';
  * apRecursive(filter(filterCondition))(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
@@ -23,7 +23,7 @@ import recursiveApply from '../../../utils/apply/recursiveArray';
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *
  *  @example
- *  import clear from 'op/clear';
+ *  import clear from 'apop/op/clear';
  *  ap.recursive(filter(filterCondition))(deepData);
  * // => {b:1, deep: {h:true, moreDeep: {m: false}}}
  *

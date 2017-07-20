@@ -6,7 +6,7 @@
 ```js
 // Init for each example:
 
-import opRecursive from 'op/recursive/op';
+import opRecursive from 'apop/op/recursive/op';
 import op from 'op';
 
 let deepData = {
@@ -86,13 +86,13 @@ Recursive clear
 
 **Example**  
 ```js
-import clear from 'op/recursive/clear';
+import clear from 'apop/op/recursive/clear';
 clear()(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 ```
 **Example**  
 ```js
-import clear from 'op/clear';
+import clear from 'apop/op/clear';
 opRecursive(clear())(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 
@@ -104,7 +104,7 @@ op.recursive(op.clear())(deepData);
 ```
 **Example**  
 ```js
-import clear from 'op/clear';
+import clear from 'apop/op/clear';
  op.recursive(clear())(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 ```
@@ -122,7 +122,7 @@ Recursive each key|value.
 
 **Example**  
 ```js
-import each from 'op/recursive/each';
+import each from 'apop/op/recursive/each';
 each(eachRename)(deepData);
 // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {_g_:null: _h_:true, _moreDeep_: {_kE_: "", _m_r_:false}} }
 ```
@@ -138,7 +138,7 @@ op.recursive(op.each(eachRename))(deepData);
 ```
 **Example**  
 ```js
-import each from 'op/each';
+import each from 'apop/op/each';
 op.recursive(each(eachRename))(deepData);
 // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {_g_:null: _h_:true, _moreDeep_: {_kE_: "", _m_r_:false}} }
 ```
@@ -156,7 +156,7 @@ Recursive rename Object Keys
 
 **Example**  
 ```js
-import rename from 'op/recursive/rename';
+import rename from 'apop/op/recursive/rename';
 rename(renameKeys)(deepData);
 // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
 ```
@@ -172,7 +172,7 @@ op.recursive(op.rename(renameKeys))(deepData);
 ```
 **Example**  
 ```js
-import rename from 'op/rename';
+import rename from 'apop/op/rename';
 op.recursive(rename(renameKeys))(deepData);
  // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
 ```
@@ -185,7 +185,7 @@ Recursive toCamelCase
 **See**: [toCamelCase action](OBJECT_ACTIONS.md#toCamelCase)  
 **Example**  
 ```js
-import toCamelCase from 'op/recursive/toCamelCase';
+import toCamelCase from 'apop/op/recursive/toCamelCase';
 toCamelCase()(deepData);
 // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
 ```
@@ -201,7 +201,7 @@ op.recursive(op.toCamelCase())(deepData);
 ```
 **Example**  
 ```js
-import toCamelCase from 'op/toCamelCase';
+import toCamelCase from 'apop/op/toCamelCase';
 op.recursive(toCamelCase())(deepData);
  // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
 ```
@@ -214,7 +214,7 @@ Recursive toSnakeCase
 **See**: [toSnakeCase action](OBJECT_ACTIONS.md#toSnakeCase)  
 **Example**  
 ```js
-import toSnakeCase from 'op/recursive/toSnakeCase';
+import toSnakeCase from 'apop/op/recursive/toSnakeCase';
 toSnakeCase()(deepData);
 // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
 ```
@@ -230,7 +230,7 @@ op.recursive(op.toSnakeCase())(deepData);
 ```
 **Example**  
 ```js
-import toSnakeCase from 'op/toSnakeCase';
+import toSnakeCase from 'apop/op/toSnakeCase';
 op.recursive(toSnakeCase())(deepData);
  // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
 ```
@@ -243,7 +243,7 @@ Recursive update
 **See**: [update action](OBJECT_ACTIONS.md#update)  
 **Example**  
 ```js
-import update from 'op/recursive/update';
+import update from 'apop/op/recursive/update';
 update(updateKeys)(deepData);
 // => { a: "1_object", b: "newB", c_d: null, dB:"undefined", deep: {g:null: h:"newH", moreDeep: {kE: "", m_r:false}} }
 ```
@@ -259,7 +259,7 @@ op.recursive(op.update(updateKeys))(deepData);
 ```
 **Example**  
 ```js
-import update from 'op/update';
+import update from 'apop/op/update';
 op.recursive(update(updateKeys))(deepData);
 // => { a: "1_object", b: "newB", c_d: null, dB:"undefined", deep: {g:null: h:"newH", moreDeep: {kE: "", m_r:false}} }
 ```
@@ -282,7 +282,7 @@ op.clear()(simpleData);
 ```
 **Example**  
 ```js
-import clear from 'op/clear';
+import clear from 'apop/op/clear';
 clear()(simpleData);
 // => {b:1}
 ```
@@ -300,7 +300,7 @@ Modify each key|value.
 
 **Example**  
 ```js
-import each from 'op/each';
+import each from 'apop/op/each';
 each(eachTypeOf)(simpleData);
 // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {g:null: h:true, _moreDeep: {k: "", m:false}} }
 ```
@@ -323,7 +323,7 @@ Rename Object Keys
 
 **Example**  
 ```js
-import rename from 'op/rename';
+import rename from 'apop/op/rename';
 rename(renameKeys)(simpleData);
 // => { "1_object": "", newB: 1, c_d: null, dB:"undefined"}
 ```
@@ -341,7 +341,7 @@ Transform Object Keys to CamelCase
 **See**: [toCamelCase action](OBJECT_ACTIONS.md#toCamelCase)  
 **Example**  
 ```js
-import toCamelCase from 'op/toCamelCase';
+import toCamelCase from 'apop/op/toCamelCase';
 toCamelCase()(simpleData);
 // => { a: "", b: 1, cD: null, dB:"undefined"}
 ```
@@ -359,7 +359,7 @@ Transform Object Keys to snake_case
 **See**: [toSnakeCase action](OBJECT_ACTIONS.md#toSnakeCase)  
 **Example**  
 ```js
-import toSnakeCase from 'op/toSnakeCase';
+import toSnakeCase from 'apop/op/toSnakeCase';
 toSnakeCase()(simpleData);
 // => { a: "", b: 1, c_d: null, d_b:"undefined"}
 ```
@@ -377,7 +377,7 @@ Update Object values
 **See**: [update action](OBJECT_ACTIONS.md#update)  
 **Example**  
 ```js
-import update from 'op/update';
+import update from 'apop/op/update';
 update(updateKeys)(simpleData);
 // => { a: "1_object", b: "newB", c_d: null, dB:"undefined"}
 ```

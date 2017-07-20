@@ -56,7 +56,7 @@ Clear object
 
 **Example**  
 ```js
-import clear from 'op/clear';
+import clear from 'apop/op/clear';
 
 clear()({a:null, b: 0, c: null, d: {}, e: [], f: [1],  g: false, h: '', j: new Date(), k: 'test'})
 // => {a:null, b: 0, c: null, f: [1],  g: false, j: new Date(), k: 'test'}
@@ -79,7 +79,7 @@ Parse object. Return (new key|new value) for (each key|value).
 
 **Example**  
 ```js
-import each from 'op/each';
+import each from 'apop/op/each';
 
 op.each((key, value) => {
  return {key: key + '_', value: value * 2}
@@ -105,7 +105,7 @@ For recursive flow use op.recursive(op.rename(config))(data)
 
 **Example**  
 ```js
-import rename from 'op/rename';
+import rename from 'apop/op/rename';
 
 rename({
    oldValue: 'newValue',
@@ -127,7 +127,7 @@ Convert object keys to camelCase.
 
 **Example**  
 ```js
-import toCamelCase from 'op/toCamelCase';
+import toCamelCase from 'apop/op/toCamelCase';
 
 op.toCamelCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 // => {fooBar:1, fooBar:2, bar:3, foo:4}
@@ -145,7 +145,7 @@ Convert object keys to snake_case.
 
 **Example**  
 ```js
-import toSnakeCase from 'op/toSnakeCase';
+import toSnakeCase from 'apop/op/toSnakeCase';
 
 op.toSnakeCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
 // => {foo_bar:1, foo_bar:2, bar:3, foo:4}
@@ -168,7 +168,7 @@ By default action parse object. For recursive flow use op.recursive(op.update(co
 
 **Example**  
 ```js
-import update from 'op/update';
+import update from 'apop/op/update';
 
 op.update({
   bar: 3,

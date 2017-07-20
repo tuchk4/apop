@@ -7,7 +7,7 @@ import rename from '../object/rename';
  * @see {@link OBJECT_ACTIONS.md#rename| Original rename action}
  * @example
  *
- * import each from 'op/each';
+ * import each from 'apop/op/each';
  *
  * op.each((key, value) => {
  *  return {key: key + '_', value: value * 2}

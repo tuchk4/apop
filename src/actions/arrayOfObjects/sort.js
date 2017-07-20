@@ -6,7 +6,7 @@
  * @return {MiddlewareArrayFunction}
  * @example
  *
- * import sort from 'ap/sort';
+ * import sort from 'apop/ap/sort';
  *
  * sort('id', 'asc')([{id:3}, {id:7}, {id:1}])
  * // => [{id:1}, {id:3}, {id:7}]

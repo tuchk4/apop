@@ -7,7 +7,7 @@ import toSnakeCase from '../object/toSnakeCase';
  * @see {@link OBJECT_ACTIONS.md#toSnakeCase| Original toSnakeCase action}
  * @example
  *
- * import each from 'op/each';
+ * import each from 'apop/op/each';
  *
  * op.each((key, value) => {
  *  return {key: key + '_', value: value * 2}

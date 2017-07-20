@@ -13,7 +13,7 @@ import apply from '../../utils/apply/object';
  * // => {b:1}
  *
  * @example
- * import clear from 'op/clear';
+ * import clear from 'apop/op/clear';
  * clear()(simpleData);
  * // => {b:1}
  *

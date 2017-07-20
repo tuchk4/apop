@@ -9,7 +9,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * @see {@link OBJECT_ACTIONS.md#rename|Rename action}
  *
  *  @example
- * import rename from 'op/recursive/rename';
+ * import rename from 'apop/op/recursive/rename';
  * rename(renameKeys)(deepData);
  * // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
  *
@@ -22,7 +22,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
  *
  * @example
- * import rename from 'op/rename';
+ * import rename from 'apop/op/rename';
  * op.recursive(rename(renameKeys))(deepData);
  *  // => { "1_object": "", newB: 1, c_d: null, dB:"undefined", deep: {g:null: newH:true, moreDeep: {kE: "", m_r:false}} }
  */

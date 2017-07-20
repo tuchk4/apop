@@ -8,7 +8,7 @@ import apply from '../../utils/apply/object';
  * @see {@link OBJECT_ACTIONS.md#toSnakeCase|toSnakeCase action}
  *
  *  @example
- * import toSnakeCase from 'op/toSnakeCase';
+ * import toSnakeCase from 'apop/op/toSnakeCase';
  * toSnakeCase()(simpleData);
  * // => { a: "", b: 1, c_d: null, d_b:"undefined"}
  *

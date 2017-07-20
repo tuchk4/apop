@@ -8,7 +8,7 @@ import apply from '../../utils/apply/object';
  * @see {@link OBJECT_ACTIONS.md#toCamelCase|toCamelCase action}
  *
  *  @example
- * import toCamelCase from 'op/toCamelCase';
+ * import toCamelCase from 'apop/op/toCamelCase';
  * toCamelCase()(simpleData);
  * // => { a: "", b: 1, cD: null, dB:"undefined"}
  *

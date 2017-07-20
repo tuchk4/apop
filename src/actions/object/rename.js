@@ -10,7 +10,7 @@ import wrapper from '../../utils/wrapper';
  * @see {@link OP.md#op.recursive.rename|op.recursive.rename}
  * @example
  *
- * import rename from 'op/rename';
+ * import rename from 'apop/op/rename';
  *
  * rename({
  *    oldValue: 'newValue',

@@ -30,7 +30,7 @@ const emptyConfig = {
  * @see {@link OP.md#op.recursive.clear|op.recursive.clear}
  * @example
  *
- * import clear from 'op/clear';
+ * import clear from 'apop/op/clear';
  *
  * clear()({a:null, b: 0, c: null, d: {}, e: [], f: [1],  g: false, h: '', j: new Date(), k: 'test'})
  * // => {a:null, b: 0, c: null, f: [1],  g: false, j: new Date(), k: 'test'}

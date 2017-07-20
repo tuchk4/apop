@@ -10,7 +10,7 @@ import wrapper from '../../utils/wrapper';
  * @see {@link OP.md#op.recursive.each|op.recursive.each}
  * @example
  *
- * import each from 'op/each';
+ * import each from 'apop/op/each';
  *
  * op.each((key, value) => {
  *  return {key: key + '_', value: value * 2}

@@ -17,7 +17,7 @@ const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
  *
  * // Init for each example:
  *
- * import opRecursive from 'op/recursive/op';
+ * import opRecursive from 'apop/op/recursive/op';
  * import op from 'op';
  *
  * let deepData = {

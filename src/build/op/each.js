@@ -9,7 +9,7 @@ import apply from '../../utils/apply/object';
  * @see {@link OBJECT_ACTIONS.md#each|Each action}
  *
  * @example
- * import each from 'op/each';
+ * import each from 'apop/op/each';
  * each(eachTypeOf)(simpleData);
  * // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {g:null: h:true, _moreDeep: {k: "", m:false}} }
  *

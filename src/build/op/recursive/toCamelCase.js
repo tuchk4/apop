@@ -8,7 +8,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * @see {@link OBJECT_ACTIONS.md#toCamelCase|toCamelCase action}
  *
  *  @example
- * import toCamelCase from 'op/recursive/toCamelCase';
+ * import toCamelCase from 'apop/op/recursive/toCamelCase';
  * toCamelCase()(deepData);
  * // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
  *
@@ -21,7 +21,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
  *
  * @example
- * import toCamelCase from 'op/toCamelCase';
+ * import toCamelCase from 'apop/op/toCamelCase';
  * op.recursive(toCamelCase())(deepData);
  *  // => { a: "", b: 1, cD: null, dB:"undefined", deep: {g:null: h:true, moreDeep: {kE: "", mR:false}} }
  */

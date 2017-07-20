@@ -8,7 +8,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * @see {@link OBJECT_ACTIONS.md#update|update action}
  *
  *  @example
- * import update from 'op/recursive/update';
+ * import update from 'apop/op/recursive/update';
  * update(updateKeys)(deepData);
  * // => { a: "1_object", b: "newB", c_d: null, dB:"undefined", deep: {g:null: h:"newH", moreDeep: {kE: "", m_r:false}} }
  *
@@ -21,7 +21,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * // => { a: "1_object", b: "newB", c_d: null, dB:"undefined", deep: {g:null: h:"newH", moreDeep: {kE: "", m_r:false}} }
  *
  * @example
- * import update from 'op/update';
+ * import update from 'apop/op/update';
  * op.recursive(update(updateKeys))(deepData);
  * // => { a: "1_object", b: "newB", c_d: null, dB:"undefined", deep: {g:null: h:"newH", moreDeep: {kE: "", m_r:false}} }
  */

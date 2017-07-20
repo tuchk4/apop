@@ -31,7 +31,7 @@ const snakeCase = str => {
  * @see {@link OP.md#op.recursive.toSnakeCase|op.recursive.toSnakeCase}
  * @example
  *
- * import toSnakeCase from 'op/toSnakeCase';
+ * import toSnakeCase from 'apop/op/toSnakeCase';
  *
  * op.toSnakeCase()({fooBar:1, foo_bar:2, bar:3, Foo:4})
  * // => {foo_bar:1, foo_bar:2, bar:3, foo:4}

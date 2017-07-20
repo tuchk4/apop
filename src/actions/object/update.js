@@ -9,7 +9,7 @@ import wrapper from '../../utils/wrapper';
  * @see {@link OP.md#op.recursive.update|op.recursive.update}
  * @example
  *
- * import update from 'op/update';
+ * import update from 'apop/op/update';
  *
  * op.update({
  *   bar: 3,

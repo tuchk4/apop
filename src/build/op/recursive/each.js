@@ -9,7 +9,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * @see {@link OBJECT_ACTIONS.md#each|Each action}
  *
  * @example
- * import each from 'op/recursive/each';
+ * import each from 'apop/op/recursive/each';
  * each(eachRename)(deepData);
  * // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {_g_:null: _h_:true, _moreDeep_: {_kE_: "", _m_r_:false}} }
  *
@@ -22,7 +22,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {_g_:null: _h_:true, _moreDeep_: {_kE_: "", _m_r_:false}} }
  *
  * @example
- * import each from 'op/each';
+ * import each from 'apop/op/each';
  * op.recursive(each(eachRename))(deepData);
  * // => { _a_: "", _b_:1, _c_d_: null, _dB_:"undefined", _deep_: {_g_:null: _h_:true, _moreDeep_: {_kE_: "", _m_r_:false}} }
  *

@@ -7,7 +7,7 @@ import toCamelCase from '../object/toCamelCase';
  * @see {@link OBJECT_ACTIONS.md#toCamelCase| Original toCamelCase action}
  * @example
  *
- * import each from 'op/each';
+ * import each from 'apop/op/each';
  *
  * op.each((key, value) => {
  *  return {key: key + '_', value: value * 2}

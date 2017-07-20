@@ -6,7 +6,7 @@
 ```js
 // Init for each example:
 
-import apRecursive from 'op/apRecursive';
+import apRecursive from 'apop/op/apRecursive';
 import ap from 'ap';
 
 let deepData = [1, 2, 3, 4, 5, [6, 7, 8, 9, 10, [11, 12, 13, 14, 15]];
@@ -59,13 +59,13 @@ Recursive filter arrays
 
 **Example**  
 ```js
-import filter from 'ap/recursive/filter';
+import filter from 'apop/ap/recursive/filter';
 filter(filterCondition)(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 ```
 **Example**  
 ```js
-import clear from 'op/clear';
+import clear from 'apop/op/clear';
 apRecursive(filter(filterCondition))(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 
@@ -77,7 +77,7 @@ ap.recursive(op.filter(filterCondition))(deepData);
 ```
 **Example**  
 ```js
-import clear from 'op/clear';
+import clear from 'apop/op/clear';
  ap.recursive(filter(filterCondition))(deepData);
 // => {b:1, deep: {h:true, moreDeep: {m: false}}}
 ```

@@ -8,7 +8,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * @see {@link OBJECT_ACTIONS.md#toSnakeCase|toSnakeCase action}
  *
  *  @example
- * import toSnakeCase from 'op/recursive/toSnakeCase';
+ * import toSnakeCase from 'apop/op/recursive/toSnakeCase';
  * toSnakeCase()(deepData);
  * // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
  *
@@ -21,7 +21,7 @@ import recursiveApply from '../../../utils/apply/recursiveObject';
  * // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
  *
  * @example
- * import toSnakeCase from 'op/toSnakeCase';
+ * import toSnakeCase from 'apop/op/toSnakeCase';
  * op.recursive(toSnakeCase())(deepData);
  *  // => { a: "", b: 1, c_d: null, d_b:"undefined", deep: {g:null: h:true, moreDeep: {k_e: "", m_r:false}} }
  */

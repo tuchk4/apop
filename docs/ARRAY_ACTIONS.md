@@ -46,7 +46,7 @@ Filter Array
 
 **Example**  
 ```js
-import filter from 'ap/filter';
+import filter from 'apop/ap/filter';
 
 filter((el) => el > 2)([1, 2, 3, 4, 5])
 // => [3, 4, 5]
@@ -65,7 +65,7 @@ Join Array
 
 **Example**  
 ```js
-import join from 'ap/join';
+import join from 'apop/ap/join';
 
 join('%')([1, 2, 3, 4, 5])
 // => '1%2%3%4%5'
@@ -84,7 +84,7 @@ Map Array
 
 **Example**  
 ```js
-import map from 'ap/map';
+import map from 'apop/ap/map';
 
 map((el) => el + 1)([1, 2, 3, 4, 5]);
 // => [2, 3, 4, 5, 6]
@@ -102,7 +102,7 @@ Remove from Array
 
 **Example**  
 ```js
-import remove from 'ap/remove';
+import remove from 'apop/ap/remove';
 
 remove(1, 3, 5)([1, 2, 3, 4, 5]);
 // => [2, 4]
@@ -122,7 +122,7 @@ Sort Array
 
 **Example**  
 ```js
-import sort from 'ap/sort';
+import sort from 'apop/ap/sort';
 
 sort('id', 'asc')([{id:3}, {id:7}, {id:1}])
 // => [{id:1}, {id:3}, {id:7}]
@@ -152,7 +152,7 @@ Swap array elements a to b, b to a
 
 **Example**  
 ```js
-import swap from 'ap/swap';
+import swap from 'apop/ap/swap';
 
 swap(2,3)([1,2,3,4,5]);
 // => [1,2,4,3,5]
