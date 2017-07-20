@@ -19,73 +19,81 @@ import op from 'apop/op';
 ```
 
 ## Object Parse Actions:
-* [clear](docs/OBJECT_ACTION.md#op.clear) Clear object fields from: null, undefined, empty array, empty string, empty object
+* [Clear object](docs/OBJECT_ACTION.md#clear)
     ```js
         op.clear()({a:1, b: null, c: [], d: undefined, g: ""})
         // => {a: 1}
     ```
-* [each](docs/OBJECT_ACTIONS.md#op.each) Parse each fields in callback.
-    ```js
-        op.each((key, value) => {
-          return {key: `_${key}`, value: `#${value}`}
-        })({first_name:"foo"})
-      // => {_first_name: "#foo bar"}
-    ```
-* [rename](docs/OBJECT_ACTIONS.md#op.rename) Rename keys in object by config.
+
+* [Rename keys in object by config](docs/OBJECT_ACTIONS.md#rename)
     ```js
         op.rename({name: "first_name"})({first_name:"foo"})
         // => {name: "foo"}
     ```
-* [update](docs/OBJECT_ACTIONS.md#op.update) Update keys in object by config.
+
+* [Update keys in object by config](docs/OBJECT_ACTIONS.md#update)
     ```js
         op.update({
            first_name: state => state.first_name + ' bar'
         })({first_name:"foo"})
         // => {first_name: "foo bar"
     ```
-* [toCamelCase](docs/OBJECT_ACTIONS.md#op.toCamelCase) Rename all keys camelCase.
+
+* [Rename all keys camelCase](docs/OBJECT_ACTIONS.md#toCamelCase)
     ```js
         op.toCamelCase()({first_name:"foo"})
       // => {firstName: "foo"}
     ```
-* [toSnakeCase](docs/OBJECT_ACTIONS.md#op.toSnakeCase) Rename all keys snake_case.
+
+* [Rename all keys snake_case](docs/OBJECT_ACTIONS.md#toSnakeCase)
     ```js
         op.toSnakeCase()({firstName:"foo"})
         // => {first_name: "foo"}
     ```
 
+* [Parse entries](docs/OBJECT_ACTIONS.md#each)
+    ```js
+        op.each((key, value) => {
+          return {key: `_${key}`, value: `#${value}`}
+        })({first_name:"foo"})
+      // => {_first_name: "#foo bar"}
+    ```
+
 ## Array Parse Actions:
-* [filter](docs/ARRAY_ACTIONS.md#ap.filter) Filter Array
+* [Filter Array](docs/ARRAY_ACTIONS.md#filter) 
     ```js
         ap.filter(i => i > 2)([1, 2, 3, 4, 5])
         // => [3, 4, 5]
     ```
-* [join](docs/ARRAY_ACTIONS.md#ap.join) Join Array
+* [Join Array](docs/ARRAY_ACTIONS.md#join) 
     ```js
         ap.join('#')([1, 2, 3, 4, 5])
         // => "3#4#5"
     ```
-* [map](docs/ARRAY_ACTIONS.md#ap.map) Map Array
+
+* [Map Array](docs/ARRAY_ACTIONS.md#map)
     ```js
         ap.map((i => i + 1))([1, 2, 3, 4, 5])
         // => [2, 3, 4, 5, 6]
     ```
-* [remove](docs/ARRAY_ACTIONS.md#ap.remove) Remove from Array
+
+* [Remove from Array](docs/ARRAY_ACTIONS.md#remove)
     ```js
         ap.remove(2, 3)([1, 2, 3, 4, 5])
         // => [1, 2, 5]
     ```
-* [sort](docs/ARRAY_ACTIONS.md#ap.sort) Sort Array
+
+* [Sort Array](docs/ARRAY_ACTIONS.md#sort) 
     ```js
         ap.sort((a, b) => a - b)([5, 1, 3, 2, 4])
         // => [1, 2, 3, 4, 5]
     ```
-* [swap](docs/ARRAY_ACTIONS.md#ap.swap) Swap array
+
+* [Swap array](docs/ARRAY_ACTIONS.md#swap) 
     ```js
         ap.swap(2,3)([1, 2, 3, 4, 5])
         // => [1, 2, 4, 3, 5]
     ```
-
 
 ##Don’t repeat yourself
 You can create one transform function for repeat usage. For example for receive data from API.
