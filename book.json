@@ -1,6 +1,6 @@
 {
     "gitbook": ">=3.0.0",
-    "plugins": [ "theme-api", "js-console" ],
+    "plugins": [ "theme-api", "js-console", "timeline"],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
