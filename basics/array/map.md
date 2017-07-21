@@ -18,7 +18,7 @@ import map from 'apop/ap/map'
 map(conditions)(data)
 ```
 
-### Import for recursive Array pasing
+### Import for recursive Array parsing
 
 Import recursive ap:
 
