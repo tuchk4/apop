@@ -6,8 +6,8 @@
 * [Actions](basics.md)
   * [Array](basics/array.md)
     * [filter](basics/array/filter.md)
-    * join
-    * map
+    * [join](basics/array/join.md)
+    * [map](basics/array/map.md)
     * remove
     * sort
     * swap
