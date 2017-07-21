@@ -60,7 +60,7 @@ formula([1, 2, 3, 4, 5])
 // => [2, 3, 4, 5, 6]
 ```
 
-Filter array of objects
+Map array of objects
 
 ```js
 let formula = ap.map((currentValue, index) => {
