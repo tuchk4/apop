@@ -1,6 +1,6 @@
-# Apply actions to deep Objects
+# Apply actions to Deep Objects
 
-For apply action to Deep Objects use \`op/recursive\`. Example:
+If you work with nested arrays. You can apply `op.recursive` for deep parsing Object.
 
 ```js
 import op from 'op';

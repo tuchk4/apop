@@ -2,8 +2,6 @@
 
 You can create one transform function for repeat usage. For example for receive data from API.
 
-Example:
-
 ```js
 import op from 'apop/op';
 
@@ -38,8 +36,6 @@ formula({first_name: "kolya", last_name: "sidorov", created_date: '2017-07-22T11
 //  createdDate: new Date('2017-07-22T11:57:14.725Z', 
 //  fullName: "kolya sidorov"
 // }
-
-
 ```
 
 
