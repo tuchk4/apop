@@ -4,8 +4,8 @@
 
 * [Instruction](README.md)
 * [Actions](basics.md)
-  * Array
-    * filter
+  * [Array](basics/array.md)
+    * [filter](basics/array/filter.md)
     * join
     * map
     * remove
