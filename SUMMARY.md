@@ -25,6 +25,7 @@
   * [Deep Arrays](recipes/deep-arrays.md)
 * [Testing](testing.md)
 * [Contributions](contributions.md)
+* [Changelog](changelog.md)
 
 ## Methods
 
