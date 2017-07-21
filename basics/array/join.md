@@ -45,24 +45,13 @@ recursive(join(separator))(data)
 
 ## Examples
 
-Equal to array.filter
+Equal to array.join
 
 ```js
-let formula = ap.map(currentValue => currentValue + 1);
+let formula = ap.join('#');
 
 formula([1, 2, 3, 4, 5])
-// => [2, 3, 4, 5, 6]
-```
-
-Filter array of objects
-
-```js
-let formula = ap.map((currentValue, index) => {
-    return currentValue.id + index;
-});
-
-formula([{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}]);
-// => [{id: 3}, {id: 4}, {id: 5}]
+// => "1#2#3#4#5"
 ```
 
 Usage in flow
@@ -70,11 +59,12 @@ Usage in flow
 ```js
 let formula = ap(
     ap.filter(currentValue => currentValue > 2), // => [3, 2, 1]
-    ap.sort((a, b) => a - b) // => [1, 2, 3]
+    ap.sort((a, b) => a - b) // => [1, 2, 3],
+    ap.join('#')
 );
 
 formula([5, 4, 3, 2, 1])
-// => [1, 2, 3]
+// => "1#2#3"
 ```
 
 

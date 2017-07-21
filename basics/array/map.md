@@ -20,6 +20,12 @@ map(conditions)(data)
 
 ### Import for recursive Array pasing
 
+&lt;!-- js-console --&gt;
+
+```js
+1 + 2;
+```
+
 Import recursive ap:
 
 ```js
@@ -45,13 +51,24 @@ recursive(map(conditions))(data)
 
 ## Examples
 
-Equal to array.filter
+Equal to array.map
 
 ```js
-let formula = ap.join('#');
+let formula = ap.map(currentValue => currentValue + 1);
 
 formula([1, 2, 3, 4, 5])
-// => "1#2#3#4#5"
+// => [2, 3, 4, 5, 6]
+```
+
+Filter array of objects
+
+```js
+let formula = ap.map((currentValue, index) => {
+    return {id: currentValue.id + index};
+});
+
+formula([{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}]);
+// => [{id: 1}, {id: 3}, {id: 5}, {id: 7}, {id: 9}]
 ```
 
 Usage in flow
@@ -59,12 +76,11 @@ Usage in flow
 ```js
 let formula = ap(
     ap.filter(currentValue => currentValue > 2), // => [3, 2, 1]
-    ap.sort((a, b) => a - b), // => [1, 2, 3]
-    ap.join('#')
+    ap.sort((a, b) => a - b) // => [1, 2, 3]
 );
 
 formula([5, 4, 3, 2, 1])
-// => "1#2#3"
+// => [1, 2, 3]
 ```
 
 
