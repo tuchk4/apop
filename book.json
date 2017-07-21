@@ -1,5 +1,6 @@
 {
-    "plugins": [ "theme-api" ],
+    "gitbook": ">=3.0.0",
+    "plugins": [ "theme-api", "js-console" ],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
@@ -7,10 +8,6 @@
                     "lang": "js",
                     "name": "JavaScript",
                     "default": true
-                },
-                {
-                    "lang": "go",
-                    "name": "Go"
                 }
             ]
         }
