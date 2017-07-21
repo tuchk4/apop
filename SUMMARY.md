@@ -22,7 +22,7 @@
   * [Shortcuts](recipes/shortcuts.md)
   * [DRY](recipes/dry.md)
   * [Deep Objects](recipes/deep-objects.md)
-  * Deep Arrays
+  * [Deep Arrays](recipes/deep-arrays.md)
 * [Testing](testing.md)
 * [Contributions](contributions.md)
 
