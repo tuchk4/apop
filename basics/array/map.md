@@ -77,6 +77,7 @@ Usage in flow
 let formula = ap(
     ap.filter(currentValue => currentValue > 2), // => [3, 2, 1]
     ap.sort((a, b) => a - b) // => [1, 2, 3]
+    ap.map(currentValue => {id: currentValue})
 );
 
 formula([5, 4, 3, 2, 1])
