@@ -18,7 +18,7 @@ import join from 'apop/ap/join'
 join(separator)(data)
 ```
 
-### Import for recursive Array pasing
+### Import for recursive Array parsing
 
 Import recursive ap:
 

@@ -20,12 +20,6 @@ map(conditions)(data)
 
 ### Import for recursive Array pasing
 
-&lt;!-- js-console --&gt;
-
-```js
-1 + 2;
-```
-
 Import recursive ap:
 
 ```js
@@ -81,7 +75,7 @@ let formula = ap(
 );
 
 formula([5, 4, 3, 2, 1])
-// => [1, 2, 3]
+// => [{id:1}, {id:2}, {id:3}]
 ```
 
 
