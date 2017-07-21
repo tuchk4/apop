@@ -18,7 +18,7 @@ import filter from 'apop/ap/filter'
 filter(conditions)(data)
 ```
 
-### Import for recursive Array pasing
+### Import for recursive Array parsing
 
 Import recursive ap:
 
@@ -76,8 +76,6 @@ let formula = ap(
 formula([5, 4, 3, 2, 1])
 // => [1, 2, 3]
 ```
-
-
 
 
 
