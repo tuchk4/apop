@@ -77,6 +77,7 @@ function build(config) {
   });
 }
 
+
 build({
   ...rollUpConfig,
   moduleName: 'op',
@@ -104,7 +105,7 @@ for (let opAction of opActions) {
     destMin: `./${opAction}.min.js`,
   });
   build({
-    ...rollUpConfig,
+    ...rollUpConfig
     moduleName: opAction,
     banner: `ACTIONS.md#${opAction}`,
     entry: `./src/build/op/recursive/${opAction}.js`,

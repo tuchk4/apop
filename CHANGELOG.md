@@ -1,4 +1,8 @@
 # CHANGELOG
+## 2.3.2 (June 30, 2017)
+* Fix UMD module names
+* Make inline source map
+ 
 ## 2.3.1 (June 22, 2017)
 * More fast
     * Parse object + 21%
