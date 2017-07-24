@@ -2,7 +2,7 @@
  * @description Sort Array
  * @param condition {Function} sort field or condition function.
  * @param dest {String} [somebody] if sort field = 'asc' or 'desc'
- * @see {@link https://www.w3schools.com/jsref/jsref_filter.asp|w3 schools Array filter}
+ * @see {@link https://www.w3schools.com/jsref/jsref_sort.asp|w3 schools Array sort}
  * @return {MiddlewareArrayFunction}
  * @example
  *
