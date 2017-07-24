@@ -1,6 +1,5 @@
 {
   "name": "apop",
-  "private": true,
   "license": "ISC",
   "version": "0.0.1",
   "main": "dist/apop.js",
