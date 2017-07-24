@@ -37,7 +37,7 @@ function build(config) {
   config.dest = config.dest || `./${config.moduleName}.js`;
   config.destMin = config.destMin || `./${config.moduleName}.min.js`;
   config.banner = config.banner
-    ? `// https://github.com/tuchk4/rmk/blob/master/docs/${config.banner}`
+    ? `// https://github.com/tuchk4/apop/blob/master/docs/${config.banner}`
     : '';
 
   rollup({

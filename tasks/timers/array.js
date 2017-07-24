@@ -15,7 +15,7 @@ if (arrSize < 10) {
   arrSize = 10;
 }
 
-const ID = 'rmk(<Array>)';
+const ID = 'apop(<Array>)';
 console.log('');
 console.log(
   `Start ${chalk.green(ID)} measuring with ${chalk.cyan(arrSize)} items of object with ${chalk.cyan(size)} keys`

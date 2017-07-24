@@ -14,7 +14,7 @@ Source code is located in `/lib/` directory. Before publishing to npm code is au
 
 ## Development
 
-Use `npm link` feature in your projects to get up to date local rmk code and `npm run dev` to start watchers for code auto transpiling.
+Use `npm link` feature in your projects to get up to date local apop code and `npm run dev` to start watchers for code auto transpiling.
 
 ## Tests
 

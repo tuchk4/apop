@@ -10,7 +10,7 @@ import op from '../../src/build/op';
 
 const size = argv.size || 1000;
 
-const ID = 'rmk(<Object>)';
+const ID = 'apop(<Object>)';
 
 console.log('');
 console.log(`Start ${chalk.green(ID)} measuring with ${chalk.cyan(size)} keys`);
