@@ -12,7 +12,7 @@
     * Make UMD modules
     * Build via rollup
     * Import action as module `rmk/${action}`
-    * `dist/rmk.js`
+    * `dist/toCamelCase.js`
     * `dist/rmk.min.js`
     
 * Ways of using

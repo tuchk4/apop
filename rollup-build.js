@@ -14,7 +14,6 @@ const babelConfig = {
 
 var rollUpConfig = {
   format: 'umd',
-  sourceMap: 'inline',
   plugins: [
     resolve({
       jsnext: true,
@@ -24,6 +23,7 @@ var rollUpConfig = {
     commonjs(),
     babel(
       babelrc({
+        comments: false,
         addExternalHelpersPlugin: false,
         config: babelConfig,
         exclude: 'node_modules/**',
@@ -32,69 +32,123 @@ var rollUpConfig = {
   ],
 };
 
-async function make(config) {
-  let bundle = await rollup({
+function build(config) {
+  config.entry = config.entry || `./src/${config.moduleName}.js`;
+  config.dest = config.dest || `./${config.moduleName}.js`;
+  config.destMin = config.destMin || `./${config.moduleName}.min.js`;
+  config.banner = config.banner
+    ? `// https://github.com/tuchk4/rmk/blob/master/docs/${config.banner}`
+    : '';
+
+  rollup({
     entry: config.entry,
     plugins: config.plugins,
+  }).then(bundle => {
+    bundle.write({
+      format: config.format,
+      banner: config.banner,
+      moduleName: config.moduleName,
+      dest: config.dest,
+    });
+    console.log(`build ${config.dest}`);
   });
 
-  await bundle.write({
-    format: config.format,
-    moduleName: config.moduleName,
-    dest: config.dest,
-    sourceMap: config.sourceMap,
+  rollup({
+    entry: config.entry,
+    plugins: [
+      ...rollUpConfig.plugins,
+      uglify(
+        {
+          compress: false,
+          mangle: true,
+          sourceMap: { url: 'inline' },
+        },
+        minify
+      ),
+    ],
+  }).then(bundle => {
+    bundle.write({
+      format: config.format,
+      banner: config.banner,
+      moduleName: config.moduleName,
+      dest: config.destMin,
+    });
+    console.log(`build ${config.destMin}`);
   });
-  console.log('make', config.dest);
 }
 
-(async function() {
-  await make({
+
+build({
+  ...rollUpConfig,
+  moduleName: 'op',
+  entry: './src/build/op/index.js',
+  dest: `./op.js`,
+  destMin: `./op.min.js`,
+});
+build({
+  ...rollUpConfig,
+  moduleName: 'op',
+  entry: './src/build/op/recursive/index.js',
+  dest: `./recursive/op.js`,
+  destMin: `./recursive/op.min.js`,
+});
+
+const opActions = ['each', 'toCamelCase', 'toSnakeCase', 'rename', 'update'];
+
+for (let opAction of opActions) {
+  build({
     ...rollUpConfig,
-    moduleName: 'rmk',
-    entry: './lib/index.js',
-    dest: `./dist/rmk.js`,
+    moduleName: opAction,
+    banner: `ACTIONS.md#${opAction}`,
+    entry: `./src/build/op/${opAction}.js`,
+    dest: `./${opAction}.js`,
+    destMin: `./${opAction}.min.js`,
   });
-  await make({
+  build({
+    ...rollUpConfig
+    moduleName: opAction,
+    banner: `ACTIONS.md#${opAction}`,
+    entry: `./src/build/op/recursive/${opAction}.js`,
+    dest: `./recursive/${opAction}.js`,
+    destMin: `./recursive/${opAction}.min.js`,
+  });
+}
+build({
+  ...rollUpConfig,
+  moduleName: 'ap',
+  entry: './src/build/ap/index.js',
+  dest: `./ap.js`,
+  destMin: `./ap.min.js`,
+});
+build({
+  ...rollUpConfig,
+  moduleName: 'ap',
+  entry: './src/build/ap/recursive/index.js',
+  dest: `./recursive/ap.js`,
+  destMin: `./recursive/ap.min.js`,
+});
+const apActions = ['filter', 'join', 'map', 'remove', 'sort', 'swap'];
+for (let apAction of apActions) {
+  build({
     ...rollUpConfig,
-    moduleName: 'rmk',
-    entry: './lib/index.js',
-    dest: `./dist/rmk.min.js`,
-    plugins: [...rollUpConfig.plugins, uglify({}, minify)],
+    moduleName: apAction,
+    entry: `./src/build/ap/${apAction}.js`,
+    dest: `./${apAction}.js`,
+    destMin: `./${apAction}.min.js`,
   });
-  await make({
+  build({
     ...rollUpConfig,
-    moduleName: 'clear',
-    entry: './lib/actions/clear/index.module.js',
-    dest: `./clear.js`,
+    moduleName: apAction,
+    entry: `./src/build/ap/recursive/${apAction}.js`,
+    dest: `./recursive/${apAction}.js`,
+    destMin: `./recursive/${apAction}.min.js`,
   });
-  await make({
-    ...rollUpConfig,
-    moduleName: 'each ',
-    entry: './lib/actions/each/index.module.js',
-    dest: `./each.js`,
-  });
-  await make({
-    ...rollUpConfig,
-    moduleName: 'toCamelCase',
-    entry: './lib/actions/toCamelCase/index.module.js',
-    dest: `./toCamelCase.js`,
-  });
-  await make({
-    ...rollUpConfig,
-    moduleName: 'toSnakeCase',
-    entry: './lib/actions/toSnakeCase/index.module.js',
-    dest: `./toSnakeCase.js`,
-  });
-  await make({
-    ...rollUpConfig,
-    moduleName: 'rename',
-    entry: './lib/actions/rename/index.module.js',
-    dest: `./rename.js`,
-  });
-  await make({
-    ...rollUpConfig,
-    moduleName: 'update',
-    entry: './lib/actions/update/index.module.js',
-    dest: `./update.js`,
-  });
-})();
+}
+
+build({
+  ...rollUpConfig,
+  moduleName: 'apop',
+  entry: './src/build/apop/index.js',
+  dest: `./apop.js`,
+  destMin: `./apop.min.js`,
+});
