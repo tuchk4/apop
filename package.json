@@ -3,6 +3,11 @@
   "license": "ISC",
   "version": "0.0.2",
   "main": "apop.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuchk4/apop.git"
+  },
+  "keywords": [ "rmk", "apop", "recursive", "deep", "parse", "object", "flow" ],
   "scripts": {
     "prepublish": "babel-node ./rollup-build.js",
     "build": "babel-node ./rollup-build.js",
