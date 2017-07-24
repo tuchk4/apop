@@ -17,7 +17,12 @@
     "doc:object": "jsdoc2md src/actions/jsdocTypes.js src/actions/object/*.js > docs/OBJECT_ACTIONS.md",
     "doc:op": "jsdoc2md src/build/op/*.js src/build/op/recursive/*.js > docs/OP.md",
     "doc:ap": "jsdoc2md src/build/ap/*.js src/build/ap/recursive/*.js> docs/AP.md",
-    "doc:apop": "jsdoc2md src/build/apop/*.js > docs/APOP.md"
+    "doc:apop": "jsdoc2md src/build/apop/*.js > docs/APOP.md",
+    "gitbook:clean": "rimraf _book",
+    "gitbook:prepare": "./node_modules/.bin/gitbook install",
+    "gitbook:build": "npm run gitbook:prepare && rm -rf _book && ./node_modules/.bin/gitbook build",
+    "gitbook:watch": "npm run gitbook:prepare && ./node_modules/.bin/gitbook serve",
+    "gitbook:publish": "npm run gitbook:build && cd _book && git init && git commit --allow-empty -m 'Update gitbook' && git checkout -b gh-pages && git add . && git commit -am 'Update gitbook' && git push git@github.com:tuchk4/apop gh-pages --force"
   },
   "lint-staged": {
     "*.js": [
@@ -27,6 +32,16 @@
   },
   "engines": {
     "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "docdown": "^0.7.2",
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-analytics": "^0.2.1",
+    "gitbook-plugin-codepen": "^0.1.2",
+    "gitbook-plugin-codetabs": "^1.0.0",
+    "gitbook-plugin-github": "^3.0.0",
+    "gitbook-plugin-runkit": "0.0.1",
+    "gitbook-plugin-theme-api": "^1.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -38,6 +53,8 @@
     "babelrc-rollup": "^3.0.0",
     "chalk": "^1.1.3",
     "cross-spawn": "^5.1.0",
+    "gitbook-plugin-ga": "^2.0.0",
+    "gitbook-plugin-timeline": "^1.0.12",
     "husky": "^0.13.3",
     "jest": "^19.0.2",
     "jest-babel": "^1.0.1",
@@ -53,6 +70,5 @@
     "uglify": "^0.1.5",
     "uglify-es": "^3.0.18",
     "yargs": "^7.0.2"
-  },
-  "dependencies": {}
+  }
 }

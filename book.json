@@ -1,0 +1,22 @@
+{
+    "gitbook": ">=3.0.0",
+    "plugins": [ "theme-api", "timeline", "analytics", "runkit", "codetabs"],
+    "root": "./gitbook",
+    "pluginsConfig": {
+        "analytics": {
+            "google": "UA-12666422-9"
+        },
+        "github": {
+            "url": "https://github.com/marvelsrp/apop"
+        },
+        "theme-api": {
+            "languages": [
+                {
+                    "lang": "js",
+                    "name": "JavaScript",
+                    "default": true
+                }
+            ]
+        }
+    }
+}
