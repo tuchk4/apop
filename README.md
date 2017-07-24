@@ -1,5 +1,7 @@
 # [rmk](http://tuchk4.github.io/rmk/)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tuchk4/rmk.svg)](https://greenkeeper.io/)
+
 [![build status](https://img.shields.io/travis/tuchk4/rmk/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/rmk)
 [![rmk version](https://img.shields.io/npm/v/rmk.svg?style=flat-square)](https://www.npmjs.com/package/rmk)
 ## rmk
