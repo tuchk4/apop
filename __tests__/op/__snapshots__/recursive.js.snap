@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Array recursive 1`] = `
+Array [
+  Object {
+    "isCategory": false,
+    "isLink": true,
+    "name": "!1",
+    "url": "/1",
+    "version": "v1",
+  },
+  Object {
+    "isCategory": false,
+    "isLink": true,
+    "name": "!2",
+    "url": "/2",
+    "version": "v2",
+  },
+  Object {
+    "isCategory": true,
+    "isLink": false,
+    "isOpen": false,
+    "name": "!8",
+    "nodes": Array [
+      Object {
+        "isCategory": false,
+        "isLink": true,
+        "name": "!3",
+        "url": "/3",
+        "version": "v2",
+      },
+      Object {
+        "isCategory": true,
+        "isLink": false,
+        "isOpen": false,
+        "name": "!7",
+        "nodes": Array [
+          Object {
+            "isCategory": false,
+            "isLink": true,
+            "name": "!4",
+            "url": "/4",
+            "version": "v1",
+          },
+          Object {
+            "isCategory": false,
+            "isLink": true,
+            "name": "!5",
+            "url": "/5",
+            "version": "v2",
+          },
+          Object {
+            "isCategory": false,
+            "isLink": true,
+            "name": "!6",
+            "url": "/6",
+            "version": "v2",
+          },
+        ],
+        "url": "/7",
+      },
+    ],
+    "url": "/8",
+  },
+]
+`;
+
+exports[`Object recursive 1`] = `
+Object {
+  "arrayKey": Array [
+    1,
+    2,
+    3,
+  ],
+  "arrayObjects": Array [
+    Object {
+      "aB": "a",
+      "bC": "b",
+    },
+  ],
+  "deepObj": Object {
+    "arrayKey": Array [
+      1,
+      2,
+      3,
+    ],
+    "arrayObjects": Array [
+      Object {
+        "aB": "a",
+        "bC": "b",
+      },
+    ],
+    "fooBar": 0,
+    "renamedStr": "1,2,3",
+  },
+  "fooBar": 0,
+  "renamedStr": "1,2,3",
+}
+`;
+
+exports[`recursive shortcut rename 1`] = `
+Array [
+  Object {
+    "children": Array [],
+    "test": "1",
+    "url": "/1",
+  },
+  Object {
+    "children": Array [],
+    "test": "2",
+    "url": "/v2/2",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [],
+        "test": "3",
+        "url": "/v2/3",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [],
+            "test": "4",
+            "url": "/4",
+          },
+          Object {
+            "children": Array [],
+            "test": "5",
+            "url": "/v2/5",
+          },
+          Object {
+            "children": Array [],
+            "test": "6",
+            "url": "/v2/6",
+          },
+        ],
+        "test": "7",
+        "url": "/7",
+      },
+    ],
+    "test": "8",
+    "url": "/8",
+  },
+]
+`;
+
+exports[`recursive shortcut toCamelCase 1`] = `
+Object {
+  "arrayKey": Array [
+    1,
+    2,
+    3,
+  ],
+  "arrayObjects": Array [
+    Object {
+      "aB": "a",
+      "bC": "b",
+    },
+  ],
+  "fooBar": 0,
+  "removeBaz": null,
+}
+`;
