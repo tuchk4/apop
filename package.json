@@ -1,47 +1,58 @@
 {
-  "name": "rmk",
-  "version": "1.0.0",
+  "name": "apop",
+  "private": true,
+  "license": "ISC",
+  "version": "0.0.1",
+  "main": "dist/apop.js",
   "scripts": {
-    "prepublish": "npm run build",
-    "build": "babel -d ./ ./lib",
-    "dev": "babel -d ./dist ./lib --watch",
+    "prepublish": "babel-node ./rollup-build.js",
+    "build": "babel-node ./rollup-build.js",
     "test": "jest",
     "test-dev": "jest --coverage --watch",
-    "doc": "jsdoc --configure .jsdoc.json",
-    "style": "jscs lib/*.js lib/**/*.js",
-    "jsdoc2md:actions": "jsdoc2md lib/actions/*.js  lib/actions/**/*.js > lib/actions/README.md",
-    "jsdoc2md:shortcuts": "jsdoc2md lib/shortcuts/*.js  lib/shortcuts/**/*.js > lib/shortcuts/README.md",
-    "jsdoc2md:utils": "jsdoc2md lib/utils/*.js  lib/utils/**/*.js > lib/utils/README.md",
-    "jsdoc2md": "npm run jsdoc2md:actions && npm run jsdoc2md:shortcuts && npm run jsdoc2md:utils",
-    "github": "npm run jsdoc2md && git commit -a -m \"generate docs\" && git push",
-    "eslint": "eslint ./lib ./__tests__",
-    "eslint:fix": "eslint ./lib ./__tests__ --fix",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'lib/**/*.js' '__tests__/**/*.js'",
-    "pref": "babel-node tasks/bestResults.js"
+    "pref": "NODE_ENV=test babel-node ./tasks/bestResults.js",
+    "precommit": "lint-staged",
+    "format": "prettier --single-quote --write 'packages/**/*.js'",
+    "doc": "yarn doc:object && yarn doc:array && yarn doc:op && yarn doc:ap && yarn doc:apop",
+    "doc:array": "jsdoc2md src/actions/jsdocTypes.js src/actions/array/*.js > docs/ARRAY_ACTIONS.md",
+    "doc:object": "jsdoc2md src/actions/jsdocTypes.js src/actions/object/*.js > docs/OBJECT_ACTIONS.md",
+    "doc:op": "jsdoc2md src/build/op/*.js src/build/op/recursive/*.js > docs/OP.md",
+    "doc:ap": "jsdoc2md src/build/ap/*.js src/build/ap/recursive/*.js> docs/AP.md",
+    "doc:apop": "jsdoc2md src/build/apop/*.js > docs/APOP.md"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^19.0.0",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-stage-0": "^6.22.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-strict-mode": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelrc-rollup": "^3.0.0",
     "chalk": "^1.1.3",
     "cross-spawn": "^5.1.0",
-    "eslint": "^3.16.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
+    "husky": "^0.13.3",
     "jest": "^19.0.2",
+    "jest-babel": "^1.0.1",
     "jsdoc": "^3.4.3",
     "jsdoc-to-markdown": "^3.0.0",
+    "lint-staged": "^3.4.2",
     "prettier": "^0.22.0",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "uglify": "^0.1.5",
+    "uglify-es": "^3.0.18",
     "yargs": "^7.0.2"
   },
-  "dependencies": {
-    "lodash": "^4.17.4"
-  }
+  "dependencies": {}
 }

@@ -1,191 +1,33 @@
-## Remake JS - Object transformation without mutations.
+# apop
 
-[![build status](https://img.shields.io/travis/tuchk4/rmk/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/rmk)
+For transformation data. Replaces recursive nested constructions to flow functions
 
-Docs:
-[Actions](lib/actions) | [Shortcuts](lib/shortcuts) |  [Utils ](lib/utils)
+[![](https://camo.githubusercontent.com/157b586ed353291083e5d91d2b37ef3735a7f9db/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f747563686b342f6f702f6d61737465722e7376673f7374796c653d666c61742d737175617265 "build status")](https://travis-ci.org/tuchk4/op)[![](https://camo.githubusercontent.com/4d911e4516874c7dc859899a766e9bdcb7dd9a9a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f6f702e7376673f7374796c653d666c61742d737175617265 "op version")](https://www.npmjs.com/package/op)
 
-#### Example 1. Clear data.
-**Transform Object:**
-```js
-import rmk from 'rmk';
+## The main idea
 
-let data = {one: "", two: null, three: undefined, four: {}, five: []}
-const formula = rmk(rmk.clear());
-const result = formula(data)
-// =>  {}
-```
-**Transform array:**
-```js
-import rmk from 'rmk';
+* `Array Parse`\(**ap**\) - apply flow actions to array.
+* `Object Parse`\(**op**\) - apply flow actions to object.
 
-let data = [{one: "", two: null, a: 1}, {three: undefined, four: {}, five: [], b:2}]
-const formula = rmk(rmk.clear());
-const result = formula(data)
-// =>  [ {a:1}, {b:2} ]
-```
-**Shortcut:**
-```js
-import clear from 'rmk/shortcuts/clear';
-
-let data = {one: "", two: null, three: undefined, four: {}, five: []}
-const result = clear(data)
-// =>  { birthDate: new Date(1975, 4,3), year: 1975 }
-```
-
-
-#### Example 2. To snake case.
-**Transform Object:**
-```js
-import rmk from 'rmk';
-import toSnakeCaseAction from 'rmk/actions/toSnakeCase';
-
-let data = {fooBar: 1, foo: 2, BAR: 3}
-const formula = rmk(toSnakeCaseAction());
-const result = formula(data)
-// =>  { foo_bar: 1, foo: 2, bar: 3 }
-```
-**Transform array:**
-```js
-import rmk from 'rmk';
-import toSnakeCaseAction from 'rmk/actions/toSnakeCase';
-
-let data = [{fooBar: 1}, {barBaz: 2}]
-const formula = rmk(toSnakeCaseAction());
-const result = formula(data)
-// =>  [ {foo_bar: 1}, {bar_baz: 2} ]
-```
-**Shortcut:**
-```js
-import toSnakeCase from 'rmk/shortcuts/toSnakeCase';
-
-let data = {fooBar: 1, foo: 2, BAR: 3}
-const result = toSnakeCase(data)
-// =>  { foo_bar: 1, foo: 2, bar: 3 }
-```
-
-
-#### Example 3. To camel case.
-**Transform Object:**
-```js
-import rmk from 'rmk';
-
-let data = {foo_bar: 1, foo: 2, BAR: 3}
-const formula = rmk(rmk.toCamelCase());
-const result = formula(data)
-// =>  { fooBar: 1, foo: 2, bar: 3 }
-```
-**Transform array:**
-```js
-import rmk from 'rmk';
-
-let data = [{foo_Bar: 1}, {bar_baz: 2}]
-const formula = rmk(rmk.toCamelCase());
-const result = formula(data)
-// =>  [ {fooBar: 1}, {barBaz: 2} ]
-```
-**Shortcut:**
-```js
-import toCamelCase from 'rmk/shortcuts/toCamelCase';
-
-let data = {foo_bar: 1, foo: 2, BAR: 3}
-const result = toCamelCase(data)
-// =>  { fooBar: 1, foo: 2, bar: 3 }
-```
-
-
-#### Example 4. Add static field.
-**Transform Object:**
-```js
-import rmk from 'rmk';
-
-let data = {foo: 1, bar: 2}
-const formula = rmk(rmk.update({
-    baz:3
-}));
-const result = formula(data)
-// =>  { foo: 1, bar: 2, baz:3 }
-```
-**Transform array:**
-```js
-import rmk from 'rmk';
-
-let data = [{foo: 1}, {foo: 4}]
-const formula = rmk(rmk.update({
-    baz: (localState) => foo + 1
-}));
-const result = formula(data)
-// =>  [ {foo: 1, baz:2},  {foo: 4, baz:5} ]
-```
-**Shortcut:**
-```js
-import update from 'rmk/shortcuts/update';
-
-let data = {foo: 1, bar: 2}
-const result = update(data, {
-  baz:3
-});
-// =>  {foo: 1, bar: 2, baz:3}
-```
-
-
-
-#### Example 5. Complex transform array:
-
-```js
-import rmk from 'rmk';
-
-let data = [
-    {birth_date: new Date(1975, 4,3), user: 1},
-    {birth_date: new Date(1975, 4,3), user: undefined}
-]
-const formula = rmk(
-  rmk.toCamelCase(),
-  rmk.update({
-    year: localState => localState.birthDate.getFullYear()
-  }),
-  rmk.clear()
-);
-const result = formula(data);
-// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1},  {birthDate: new Date(1982, 4,3), year: 1982} ]
+## Installation
 
 ```
-
-#### Example 5. Complex transform array. Import all actions:
-```js
-import rmk from 'rmk';
-
-let data = [
-    {birth_date: new Date(1975, 4,3), user: 1},
-    {birth_date: new Date(1975, 4,3), user: undefined}
-]
-const formula = rmk(
-  rmk.toCamelCase(),
-  rmk.update({
-    year: localState => localState.birthDate.getFullYear()
-  }),
-  rmk.clear()
-);
-const result = formula(data);
-// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1}, {birthDate: new Date(1982, 4,3), year: 1982} ]
-
+npm install --save apop
 ```
 
+## Imports
 
-#### Example 6. Complex transform array. Import all shortcuts:
 ```js
-import rmk from 'rmk';
-import shortcuts from 'rmk/shortcuts';
-
-let data = [
-    {birth_date: new Date(1975, 4,3), user: 1},
-    {birth_date: new Date(1975, 4,3), user: undefined}
-]
-const step1 = shortcuts.toCamelCase(data);
-const step2 = shortcuts.update(step1, {
- year: localState => localState.birthDate.getFullYear()
-});
-const result = rmkShortcuts.clear(step2);
-// =>  [ {birthDate: new Date(1975, 4,3), year: 1975, user: 1},  {birthDate: new Date(1982, 4,3), year: 1982} ]
-
+import ap from 'apop/ap';
+import op from 'apop/op';
 ```
+
+## Contributing
+
+Project is open for new ideas and features:
+
+* New actions
+* New experiments
+* Support Map, Set
+* Support async usage
+* Support Immutable.js

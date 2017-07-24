@@ -6,7 +6,7 @@ import output from './utils/output';
 import generateData from './utils/generateData';
 import getActions from './utils/getActions';
 
-import rmk from '../../lib';
+import ap from '../../src/build/ap';
 
 const size = argv.size || 1000;
 const data = [];
@@ -17,7 +17,9 @@ if (arrSize < 10) {
 
 const ID = 'rmk(<Array>)';
 console.log('');
-console.log(`Start ${chalk.green(ID)} measuring with ${chalk.cyan(arrSize)} items of object with ${chalk.cyan(size)} keys`);
+console.log(
+  `Start ${chalk.green(ID)} measuring with ${chalk.cyan(arrSize)} items of object with ${chalk.cyan(size)} keys`
+);
 console.log('');
 
 for (let i = 0; i < arrSize; i++) {
@@ -25,7 +27,7 @@ for (let i = 0; i < arrSize; i++) {
 }
 
 timer(() => {
-  const formula = rmk(...getActions());
+  const formula = ap(...getActions());
   const generated = formula(data);
 }).then(time => {
   output(ID, size, time);

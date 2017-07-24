@@ -1,21 +1,19 @@
-import rmk from '../../../lib';
+import op from '../../../src/build/op';
 
 const getActions = () => {
   return [
-    rmk.clear(),
-    rmk.rename({
+    op.toSnakeCase(),
+    op.clear(),
+    op.rename({
       key1: 'first',
       key2: 'second',
       key3: state => 'key-' + state.foo + state.bar,
     }),
-    rmk.toSnakeCase(),
-    rmk.update(state => {
-      return {
-        ...state,
-        newField: 'newField'
-      }
-    })
-  ]
+    op.toCamelCase(),
+    op.update({
+      newField: 'newField',
+    }),
+  ];
 };
 
 export default getActions;

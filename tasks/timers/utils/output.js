@@ -3,12 +3,7 @@ import path from 'path';
 import chalk from 'chalk';
 import { argv } from 'yargs';
 
-const bestResultsPath = path.join(
-  __dirname,
-  '..',
-  '..',
-  'bestResults.json'
-);
+const bestResultsPath = path.join(__dirname, '..', '..', 'bestResults.json');
 
 const output = (id, size, time) => {
   const bestResults = require(bestResultsPath);
@@ -29,16 +24,14 @@ const output = (id, size, time) => {
 
   if (bestSizeTimings[id]) {
     if (bestSizeTimings[id] > time) {
-
       // const presentage = (100 * (bestSizeTimings[id] - time)) / bestSizeTimings[id];
-      const presentage = Math.abs(100 - (100 * bestSizeTimings[id]) / time);
+      const presentage = Math.abs(100 - 100 * bestSizeTimings[id] / time);
       details = `${chalk.green(`+${Math.round(presentage).toFixed(2)}%`)} ${chalk.grey(`(${bestSizeTimings[id]}sec)`)}`;
 
       bestSizeTimings[id] = time;
     } else {
-
       // const presentage = (100 * (time - bestSizeTimings[id])) / time;
-      const presentage = Math.abs(100 - (100 * time) / bestSizeTimings[id]);
+      const presentage = Math.abs(100 - 100 * time / bestSizeTimings[id]);
       details = `${chalk.red(`-${Math.round(presentage).toFixed(2)}%`)} ${chalk.grey(`(${bestSizeTimings[id]}sec)`)}`;
     }
   } else {
@@ -49,7 +42,6 @@ const output = (id, size, time) => {
   console.log('');
 
   if (!argv.skipSummary) {
-
     console.log('');
     console.log('Best results:');
     console.log('');
@@ -61,22 +53,37 @@ const output = (id, size, time) => {
     bestSorted.forEach((key, i) => {
       let diff = 0;
 
-      if (bestSorted.length === prevBestSorted.length && bestSorted[i] && bestSorted[i] !== key) {
+      if (
+        bestSorted.length === prevBestSorted.length &&
+        bestSorted[i] &&
+        bestSorted[i] !== key
+      ) {
         const delta = bestSorted.indexOf(key) - i;
 
-        diff =  delta > 0
+        diff = delta > 0
           ? chalk.green(`(+${Math.abs(delta)})`)
-          : chalk.red(`(-${Math.abs(delta)})`)
+          : chalk.red(`(-${Math.abs(delta)})`);
       }
 
-      console.log(`   ${chalk.green(i + 1)} ${diff ? diff : ''} ${chalk.cyan(key)} - ${bestSizeTimings[key]}sec`);
+      console.log(
+        `   ${chalk.green(i + 1)} ${diff ? diff : ''} ${chalk.cyan(key)} - ${bestSizeTimings[key]}sec`
+      );
     });
   }
 
-  fs.writeFileSync(bestResultsPath, JSON.stringify({
-    ...bestResults,
-    [size]: bestSizeTimings
-  }, 2, 2));
-}
+  fs.writeFileSync(
+    bestResultsPath,
+    JSON.stringify(
+      Object.assign(
+        {
+          [size]: bestSizeTimings,
+        },
+        bestResults
+      ),
+      2,
+      2
+    )
+  );
+};
 
 export default output;

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field function array 1`] = `
+Array [
+  Object {
+    "fullYear": 2001,
+  },
+]
+`;
+
+exports[`Field function object 1`] = `
+Object {
+  "fullYear": 2001,
+}
+`;
+
+exports[`Field static array 1`] = `
+Array [
+  Object {
+    "fullYear": 2001,
+  },
+]
+`;
+
+exports[`Field static object 1`] = `
+Object {
+  "fullYear": 2001,
+}
+`;
+
+exports[`Rename shorctu: Field function array 1`] = `
+Array [
+  Object {
+    "fullYear": 2001,
+  },
+]
+`;
+
+exports[`Rename shorctu: Field function object 1`] = `
+Object {
+  "fullYear": 2001,
+}
+`;
+
+exports[`Rename shorctu: Field static array 1`] = `
+Array [
+  Object {
+    "fullYear": 2001,
+  },
+]
+`;
+
+exports[`Rename shorctu: Field static object 1`] = `
+Object {
+  "fullYear": 2001,
+}
+`;
