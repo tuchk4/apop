@@ -1,9 +1,8 @@
 {
   "name": "apop",
-  "private": true,
   "license": "ISC",
-  "version": "0.0.1",
-  "main": "dist/apop.js",
+  "version": "0.0.2",
+  "main": "apop.js",
   "scripts": {
     "prepublish": "babel-node ./rollup-build.js",
     "build": "babel-node ./rollup-build.js",

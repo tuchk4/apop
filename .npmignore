@@ -1,11 +1,7 @@
 __tests__
-lib
 tasks
 .babelrc
-.eslintrc.js
 .travis.yml
-CHANGELOG.md
-README.md
 docs
-experiments
-packages
+src
+gitbook
