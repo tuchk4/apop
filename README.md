@@ -1,5 +1,7 @@
 # apop
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tuchk4/apop.svg)](https://greenkeeper.io/)
+
 For transformation data. Replaces recursive nested constructions to flow functions
 
 [![build status](https://img.shields.io/travis/tuchk4/apop/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/apop)
