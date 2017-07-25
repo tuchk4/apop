@@ -42,7 +42,10 @@ const op = require('apop/op');
 {%- language name="Browser", type="html" -%}
 <script src="https://unpkg.com/apop/op"></script>
 <script src="https://unpkg.com/apop/ap"></script>
-// equal to <script src="https://unpkg.com/apop"></script> <script>const {op, ap} = window.apop;</script>
+<!-- equal to 
+<script src="https://unpkg.com/apop"></script> 
+<script>const {op, ap} = window.apop;</script>
+-->
 
 {%- endcodetabs %}
 
