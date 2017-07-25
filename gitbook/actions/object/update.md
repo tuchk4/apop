@@ -1,7 +1,7 @@
-## update 
+## Update 
 [[source]({{book.rep}}/actions/object/update.js)]
 
-> update Object Keys
+> Update Object Keys
 > ### Arguments
 > 
 > config(Object): {key: value}
@@ -13,7 +13,7 @@
 > (Function): Returns Function that return new updated Object.
 
 ### Examples: 
-{% codetabs name="OP", type="js" -%} 
+{% codetabs name="Simple", type="js" -%} 
 let op = require('apop/op');
 op.update({year: 1970})({firstName: 'Alex', child: {firstName: 'John', year: 2002}})
 // => {year: 1970, firstName: 'Alex', child: {firstName: 'John', year: 2002}}
@@ -24,14 +24,10 @@ update({year: 1970})({firstName: 'Alex', child: {firstName: 'John', year: 2002}}
 // => {year: 1970, firstName: 'Alex', child: {firstName: 'John', year: 2002}}
 
 {%- language name="Recursive", type="js" -%}
-let recursive = require('apop/op/recursive');
-recursive.update({year: 1970})({firstName: 'Alex', child: {firstName: 'John', year: 2002}})
+let op = require('apop/op');
+op.recursive(op.update({year: 1970}))({firstName: 'Alex', child: {firstName: 'John', year: 2002}})
 // => {year: 1970, firstName: 'Alex', child: {firstName: 'John', year: 1970}}
 
-{%- language name="Recursive Action", type="js" -%}
-let update = require('apop/op/recursive/update');
-update({year: 1970})({firstName: 'Alex', child: {firstName: 'John', year: 2002}})
-// => {year: 1970, firstName: 'Alex', child: {firstName: 'John', year: 1970}}
 
 {%- endcodetabs %}
 

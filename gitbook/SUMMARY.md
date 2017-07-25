@@ -2,22 +2,22 @@
 
 ## Overview
 
-* [Instruction](README.md)
-* [Actions](./basics.md)
-  * [Array](basics/array.md)
-    * [filter](basics/array/filter.md)
-    * [join](basics/array/join.md)
-    * [map](basics/array/map.md)
-    * [remove](basics/array/remove.md)
-    * [sort](basics/array/sort.md)
-    * [swap](basics/array/swap.md)
-  * Objects
-    * clear
-    * [rename](basics/object/rename.md)
-    * [update](basics/object/update.md)
-    * each
-    * toCamelCase
-    * toSnakeCase
+* [Installation](README.md)
+* [Actions](actions.md)
+  * [Array](actions/array.md)
+    * [filter](actions/array/filter.md)
+    * [join](actions/array/join.md)
+    * [map](actions/array/map.md)
+    * [remove](actions/array/remove.md)
+    * [sort](actions/array/sort.md)
+    * [swap](actions/array/swap.md)
+  * [Objects](actions/object.md)
+    * [clear](actions/object/clear.md)
+    * [rename](actions/object/rename.md)
+    * [update](actions/object/update.md)
+    * [each](actions/object/each.md)
+    * [toCamelCase](actions/object/toCamelCase.md)
+    * [toSnakeCase](actions/object/toSnakeCase.md)
 * [Recipes](recipes.md)
   * [Shortcuts](recipes/shortcuts.md)
   * [DRY](recipes/dry.md)

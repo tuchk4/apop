@@ -1,4 +1,4 @@
-## rename 
+## Rename 
 [[source]({{book.rep}}/actions/object/rename.js)]
 
 > Rename Object Keys
@@ -13,7 +13,7 @@
 > (Function): Returns Function that return new renamed Object.
 
 ### Examples: 
-{% codetabs name="OP", type="js" -%} 
+{% codetabs name="Simple", type="js" -%} 
 let op = require('apop/op');
 op.rename({year: 'fullYear'})({year: 2001, deep: {year: 2002}})
 // => {fullYear: 2001, deep: {year: 2002}}
@@ -24,14 +24,10 @@ rename({year: 'fullYear'})({year: 2001, deep: {year: 2002}})
 // => {fullYear: 2001, deep: {year: 2002}}
 
 {%- language name="Recursive", type="js" -%}
-let recursive = require('apop/op/recursive');
-recursive.rename({year: 'fullYear'})({year: 2001, deep: {year: 2002}})
+let op = require('apop/op');
+op.recursive(op.rename({year: 'fullYear'}))({year: 2001, deep: {year: 2002}})
 // => {fullYear: 2001, deep: {fullYear: 2002}}
 
-{%- language name="Recursive Action", type="js" -%}
-let rename = require('apop/op/recursive/rename');
-rename({year: 'fullYear'})({year: 2001, deep: {year: 2002}})
-// => {fullYear: 2001, deep: {fullYear: 2002}}
 
 {%- endcodetabs %}
 

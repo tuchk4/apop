@@ -12,25 +12,21 @@
 
 
 ### Examples: 
-{% codetabs name="AP", type="js" -%} 
-import ap from 'apop/ap';
+{% codetabs name="Simple", type="js" -%} 
+let ap = require('apop/ap');
 ap.remove(2, 3)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
 // => [1, 2, 5, [6, 7, 8, 9, 10]]
 
 {%- language name="Action", type="js" -%}
-import remove from 'apop/ap/remove'
+let remove = require('apop/ap/remove');
 remove(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
 // => [1, 2, 5, [6, 7, 8, 9, 10]]
 
 {%- language name="Recursive", type="js" -%}
-import recursive from 'apop/ap/recursive'
-recursive.remove(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
+let ap = require('apop/ap');
+ap.recursive(ap.remove(i => i + 1))([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
 // => [1, 2, 5, [6, 7, 10]]
 
-{%- language name="Recursive Action", type="js" -%}
-import remove from 'apop/ap/recursive/remove'
-remove(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
-// => [1, 2, 5, [6, 7, 10]]
 {%- endcodetabs %}
 
 

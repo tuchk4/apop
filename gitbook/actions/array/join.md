@@ -11,25 +11,21 @@
 > (Function): Returns Function that return joined Array.
 
 ### Examples: 
-{% codetabs name="AP", type="js" -%} 
-import ap from 'apop/ap';
+{% codetabs name="Simple", type="js" -%} 
+let ap = require('apop/ap');
 ap.join("#")([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
 // => "1#2#3#4#5#6,7,8,9,10"
 
 {%- language name="Action", type="js" -%}
-import join from 'apop/ap/join'
+let ap = require('apop/ap/join');
 join("#")([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
 // => "1#2#3#4#5#6,7,8,9,10"
 
 {%- language name="Recursive", type="js" -%}
-import recursive from 'apop/ap/recursive'
-recursive.join("#")([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
+let ap = require('apop/ap');
+ap.recursive(ap.join("#"))([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
 // => ["1#2#3#4#5", ["6#7#8#9#10"]]
 
-{%- language name="Recursive Action", type="js" -%}
-import join from 'apop/ap/recursive/join'
-join("#")([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
-// => ["1#2#3#4#5", ["6#7#8#9#10"]]
 
 {%- endcodetabs %}
 

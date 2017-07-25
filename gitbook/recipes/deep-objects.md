@@ -2,8 +2,8 @@
 
 If you work with nested arrays. You can apply `op.recursive` for deep parsing Object.
 
-```js
-import op from 'op';
+{% runkit %}
+let op = require('apop/op');
 
 let formula = op.recursive(
     op.toCamelCase(),
@@ -30,7 +30,7 @@ formula({
 //    }
 //  }
 //}
-```
+{% endrunkit %}
 
 
 

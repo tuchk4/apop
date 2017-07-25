@@ -2,12 +2,20 @@
   "name": "apop",
   "license": "ISC",
   "version": "0.0.2",
-  "main": "apop.js",
+  "main": "apop.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuchk4/apop.git"
   },
-  "keywords": [ "rmk", "apop", "recursive", "deep", "parse", "object", "flow" ],
+  "keywords": [
+    "rmk",
+    "apop",
+    "recursive",
+    "deep",
+    "parse",
+    "object",
+    "flow"
+  ],
   "scripts": {
     "prepublish": "babel-node ./rollup-build.js",
     "build": "babel-node ./rollup-build.js",
@@ -43,6 +51,7 @@
     "gitbook-plugin-analytics": "^0.2.1",
     "gitbook-plugin-codepen": "^0.1.2",
     "gitbook-plugin-codetabs": "^1.0.0",
+    "gitbook-plugin-copy-code-button": "0.0.2",
     "gitbook-plugin-github": "^3.0.0",
     "gitbook-plugin-runkit": "0.0.1",
     "gitbook-plugin-theme-api": "^1.1.2"

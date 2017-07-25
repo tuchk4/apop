@@ -1,9 +1,8 @@
 import ap from '../src/build/ap';
 import op from '../src/build/op';
-import apop from '../src/build/apop';
 import rename from '../src/build/op/rename';
 import update from '../src/build/op/update';
-import toCamelCase from '../src/build/op/recursive/toCamelCase';
+import toCamelCase from '../src/build/op/toCamelCase';
 
 import swap from '../src/build/ap/swap';
 import remove from '../src/build/ap/remove';
@@ -65,7 +64,7 @@ it('Complex Test 2', () => {
       sort: state => state.id * 3 + state.id * 2 + state.id,
       case_detect: true,
     }),
-    toCamelCase()
+    recursive(toCamelCase())
   );
   const arrayFormula = ap(
     swap(3, 4),
@@ -83,21 +82,6 @@ it('Complex Test 2', () => {
     })
   );
   const result = arrayFormula(beforeArray);
-
-  expect(result).toMatchSnapshot();
-});
-
-it('Complex Test 3', () => {
-  const objectFormula = apop(
-    apop.rename({ index: 'id' }),
-    apop.update({
-      sort: state => state.id * 3 + state.id * 2 + state.id,
-      case_detect: true,
-    }),
-    recursive.toCamelCase()
-  );
-
-  const result = objectFormula(beforeArray);
 
   expect(result).toMatchSnapshot();
 });

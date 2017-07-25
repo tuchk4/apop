@@ -8,7 +8,15 @@ import swap from '../../actions/array/swap';
 import apply from '../../utils/apply/array';
 import recursiveApply from '../../utils/apply/recursiveArray';
 
-const sourceActions = { filter, join, map, remove, sort, swap };
+const sourceActions = {
+  filter,
+  join,
+  map,
+  remove,
+  sort,
+  swap,
+  recursive: recursiveApply,
+};
 
 /**
  * @namespace ap
@@ -29,6 +37,5 @@ const sourceActions = { filter, join, map, remove, sort, swap };
  *
  */
 const ap = Object.assign(apply, sourceActions);
-const recursive = Object.assign(recursiveApply, sourceActions);
 
-export default Object.assign(ap, { recursive });
+export default ap;

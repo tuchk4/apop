@@ -1,6 +1,6 @@
 {
     "gitbook": ">=3.0.0",
-    "plugins": [ "theme-api", "timeline", "analytics", "runkit", "codetabs"],
+    "plugins": [ "theme-api", "timeline", "analytics", "runkit", "codetabs", "copy-code-button"],
     "root": "./gitbook",
     "pluginsConfig": {
         "analytics": {

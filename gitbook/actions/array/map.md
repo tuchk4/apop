@@ -12,25 +12,21 @@
 
 
 ### Examples: 
-{% codetabs name="AP", type="js" -%} 
-import ap from 'apop/ap';
-ap.map(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10, [11, 12, 13, 14, 15]]])
-// => [2, 3, 4, 5, 6, "6,7,8,9,10,11,12,13,14,151" ]
+{% codetabs name="Simple", type="js" -%} 
+let ap = require('apop/ap');
+ap.map(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
+// => [2, 3, 4, 5, 6, "6,7,8,9,101" ]
 
 {%- language name="Action", type="js" -%}
-import map from 'apop/ap/map'
-map(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10, [11, 12, 13, 14, 15]]])
-// => [2, 3, 4, 5, 6, "6,7,8,9,10,11,12,13,14,151" ]
+let map = require('apop/ap/map');
+map(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
+// => [2, 3, 4, 5, 6, "6,7,8,9,101" ]
 
 {%- language name="Recursive", type="js" -%}
-import recursive from 'apop/ap/recursive'
-recursive.map(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10, [11, 12, 13, 14, 15]]])
-// => [2, 3, 4, 5, 6, [7, 8, 9, 10, 11, [12, 13, 14, 15, 16]]]
+let ap = require('apop/ap');
+ap.recursive(ap.map(i => i + 1))([1, 2, 3, 4, 5, [6, 7, 8, 9, 10]])
+// => [2, 3, 4, 5, 6, [7, 8, 9, 10, 11]]
 
-{%- language name="Recursive Action", type="js" -%}
-import map from 'apop/ap/recursive/map'
-map(i => i + 1)([1, 2, 3, 4, 5, [6, 7, 8, 9, 10, [11, 12, 13, 14, 15]]])
-// => [2, 3, 4, 5, 6, [7, 8, 9, 10, 11, [12, 13, 14, 15, 16]]]
 {%- endcodetabs %}
 
 
