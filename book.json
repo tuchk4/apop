@@ -6,9 +6,6 @@
         "analytics": {
             "google": "UA-12666422-9"
         },
-        "github": {
-            "url": "https://github.com/marvelsrp/apop"
-        },
         "disqus": {
             "shortName": "apop-1"
         },
