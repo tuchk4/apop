@@ -1,26 +1,43 @@
 # apop
 
-For transformation data. Replaces recursive nested constructions to flow functions
+Apop - god of darkness. We suggest taking it for your own selfish purposes for transformation data.
+Replace recursive nested constructions to flow transformations functions.
 
-[![](https://camo.githubusercontent.com/157b586ed353291083e5d91d2b37ef3735a7f9db/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f747563686b342f6f702f6d61737465722e7376673f7374796c653d666c61742d737175617265 "build status")](https://travis-ci.org/tuchk4/op)[![](https://camo.githubusercontent.com/4d911e4516874c7dc859899a766e9bdcb7dd9a9a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f6f702e7376673f7374796c653d666c61742d737175617265 "op version")](https://www.npmjs.com/package/op)
+![Image of Apop](https://image.ibb.co/mRs5zk/166.jpg)
+
+
+[![build status](https://img.shields.io/travis/tuchk4/apop/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/apop)
+[![apop version](https://img.shields.io/npm/v/apop.svg?style=flat-square)](https://www.npmjs.com/package/apop)
 
 ## The main idea
-
-* `Array Parse`\(**ap**\) - apply flow actions to array.
-* `Object Parse`\(**op**\) - apply flow actions to object.
+Apop construct with ap and op parties.
+* [`ap`](actions/array)\(**Array Parse**\) - apply flow actions to array.
+* [`op`](actions/object)\(**Object Parse**\) - apply flow actions to object.
 
 ## Installation
 
-```
+{% codetabs name="npm", type="Shell" -%} 
 npm install --save apop
-```
+
+{%- language name="yarn", type="Shell" -%}
+yarn add apop
+
+{%- endcodetabs %}
 
 ## Imports
 
-```js
+{% codetabs name="ES6", type="js" -%} 
 import ap from 'apop/ap';
 import op from 'apop/op';
-```
+
+// equal to import {ap, op} from 'apop';
+
+{%- language name="ES5", type="js" -%}
+let ap = require('apop/ap');
+let op = require('apop/op');
+
+// equal to let {ap, op} = require('apop');
+{%- endcodetabs %}
 
 ## Contributing
 

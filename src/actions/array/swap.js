@@ -1,8 +1,7 @@
 /**
- * @description Swap array elements a to b, b to a
+ * @description Swap array by indexes a and b: a to b, b to a. ES6 Destructuring Assignment Array Matching [a, b] = [b, a];
  * @param a {Number}
  * @param b {Number}
- * @see {@link https://stackoverflow.com/a/25910841|StackOverflow solution}
  * @return {MiddlewareArrayFunction}
  * @example
  *

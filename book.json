@@ -1,13 +1,13 @@
 {
     "gitbook": ">=3.0.0",
-    "plugins": [ "theme-api", "timeline", "analytics", "runkit", "codetabs"],
+    "plugins": [ "theme-api", "timeline", "analytics", "runkit", "codetabs", "copy-code-button", "disqus"],
     "root": "./gitbook",
     "pluginsConfig": {
         "analytics": {
             "google": "UA-12666422-9"
         },
-        "github": {
-            "url": "https://github.com/marvelsrp/apop"
+        "disqus": {
+            "shortName": "apop-1"
         },
         "theme-api": {
             "languages": [
@@ -18,5 +18,8 @@
                 }
             ]
         }
+    },
+    "variables": {
+        "rep": "https://github.com/tuchk4/apop/blob/master/src"
     }
 }

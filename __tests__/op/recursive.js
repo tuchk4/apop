@@ -1,6 +1,5 @@
 import ap from '../../src/build/ap';
 import op from '../../src/build/op';
-import apop from '../../src/build/apop';
 
 const sample = Object.seal({
   foo_bar: 0,

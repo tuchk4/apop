@@ -1,6 +1,6 @@
 /**
  * @description Map Array
- * @param callback {Function} Map function
+ * @param callbacks {...Function} Map function
  * @see {@link https://www.w3schools.com/jsref/jsref_map.asp|w3 schools Array map}
  * @return {MiddlewareArrayFunction}
  * @example
@@ -11,13 +11,12 @@
  * // => [2, 3, 4, 5, 6]
  *
  */
-const map = callback =>
+const map = (...callbacks) =>
   originArr => {
-    try {
-      return originArr.map(callback);
-    } catch (err) {
-      console.log('err', err);
+    for (let action of callbacks) {
+      originArr = originArr.map(action);
     }
+    return originArr;
   };
 
 export default map;

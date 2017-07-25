@@ -1,9 +1,12 @@
-# apop
+# apop :snake:
 
 For transformation data. Replaces recursive nested constructions to flow functions
 
 [![build status](https://img.shields.io/travis/tuchk4/apop/master.svg?style=flat-square)](https://travis-ci.org/tuchk4/apop)
 [![apop version](https://img.shields.io/npm/v/apop.svg?style=flat-square)](https://www.npmjs.com/package/apop)
+
+[Full documentation](https://tuchk4.github.io/apop/)
+
 
 ## The main idea
 

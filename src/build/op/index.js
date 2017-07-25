@@ -8,7 +8,15 @@ import each from '../../actions/object/each';
 import apply from './../../utils/apply/object';
 import recursiveApply from '../../utils/apply/recursiveObject';
 
-const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
+const sourceActions = {
+  clear,
+  toSnakeCase,
+  toCamelCase,
+  update,
+  rename,
+  each,
+  recursive: recursiveApply,
+};
 
 /**
  * @namespace op
@@ -55,5 +63,5 @@ const sourceActions = { clear, toSnakeCase, toCamelCase, update, rename, each };
  *  };
  */
 const op = Object.assign(apply, sourceActions);
-const recursive = recursiveApply;
-export default Object.assign(op, { recursive });
+
+export default op;

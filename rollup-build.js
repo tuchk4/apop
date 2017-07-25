@@ -77,22 +77,15 @@ function build(config) {
   });
 }
 
-build({
-  ...rollUpConfig,
-  moduleName: 'op',
-  entry: './src/build/op/index.js',
-  dest: `./op.js`,
-  destMin: `./op.min.js`,
-});
-build({
-  ...rollUpConfig,
-  moduleName: 'op',
-  entry: './src/build/op/recursive/index.js',
-  dest: `./recursive/op.js`,
-  destMin: `./recursive/op.min.js`,
-});
-
-const opActions = ['each', 'toCamelCase', 'toSnakeCase', 'rename', 'update'];
+const opActions = [
+  'index',
+  'each',
+  'toCamelCase',
+  'toSnakeCase',
+  'rename',
+  'update',
+  'recursive',
+];
 
 for (let opAction of opActions) {
   build({
@@ -100,54 +93,34 @@ for (let opAction of opActions) {
     moduleName: opAction,
     banner: `ACTIONS.md#${opAction}`,
     entry: `./src/build/op/${opAction}.js`,
-    dest: `./${opAction}.js`,
-    destMin: `./${opAction}.min.js`,
-  });
-  build({
-    ...rollUpConfig,
-    moduleName: opAction,
-    banner: `ACTIONS.md#${opAction}`,
-    entry: `./src/build/op/recursive/${opAction}.js`,
-    dest: `./recursive/${opAction}.js`,
-    destMin: `./recursive/${opAction}.min.js`,
+    dest: `./op/${opAction}.js`,
+    destMin: `./op/${opAction}.min.js`,
   });
 }
-build({
-  ...rollUpConfig,
-  moduleName: 'ap',
-  entry: './src/build/ap/index.js',
-  dest: `./ap.js`,
-  destMin: `./ap.min.js`,
-});
-build({
-  ...rollUpConfig,
-  moduleName: 'ap',
-  entry: './src/build/ap/recursive/index.js',
-  dest: `./recursive/ap.js`,
-  destMin: `./recursive/ap.min.js`,
-});
-const apActions = ['filter', 'join', 'map', 'remove', 'sort', 'swap'];
+
+const apActions = [
+  'index',
+  'filter',
+  'join',
+  'map',
+  'remove',
+  'sort',
+  'swap',
+  'recursive',
+];
 for (let apAction of apActions) {
   build({
     ...rollUpConfig,
     moduleName: apAction,
     entry: `./src/build/ap/${apAction}.js`,
-    dest: `./${apAction}.js`,
-    destMin: `./${apAction}.min.js`,
-  });
-  build({
-    ...rollUpConfig,
-    moduleName: apAction,
-    entry: `./src/build/ap/recursive/${apAction}.js`,
-    dest: `./recursive/${apAction}.js`,
-    destMin: `./recursive/${apAction}.min.js`,
+    dest: `./ap/${apAction}.js`,
+    destMin: `./ap/${apAction}.min.js`,
   });
 }
-
 build({
   ...rollUpConfig,
   moduleName: 'apop',
-  entry: './src/build/apop/index.js',
+  entry: './src/build/apop.js',
   dest: `./apop.js`,
   destMin: `./apop.min.js`,
 });
