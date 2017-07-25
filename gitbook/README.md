@@ -33,10 +33,17 @@ import op from 'apop/op';
 // equal to import {ap, op} from 'apop';
 
 {%- language name="ES5", type="js" -%}
-let ap = require('apop/ap');
-let op = require('apop/op');
 
-// equal to let {ap, op} = require('apop');
+const ap = require('apop/ap');
+const op = require('apop/op');
+
+// equal to const {ap, op} = require('apop');
+
+{%- language name="Browser", type="html" -%}
+<script src="https://unpkg.com/apop/op"></script>
+<script src="https://unpkg.com/apop/ap"></script>
+// equal to <script src="https://unpkg.com/apop"></script> <script>const {op, ap} = window.apop;</script>
+
 {%- endcodetabs %}
 
 ## Contributing
