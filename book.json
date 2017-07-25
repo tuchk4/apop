@@ -18,5 +18,8 @@
                 }
             ]
         }
+    },
+    "variables": {
+        "rep": "https://github.com/tuchk4/apop/blob/master/src"
     }
 }

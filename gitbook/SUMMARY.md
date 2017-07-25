@@ -9,12 +9,12 @@
     * [join](basics/array/join.md)
     * [map](basics/array/map.md)
     * [remove](basics/array/remove.md)
-    * sort
-    * swap
+    * [sort](basics/array/sort.md)
+    * [swap](basics/array/swap.md)
   * Objects
     * clear
-    * rename
-    * update
+    * [rename](basics/object/rename.md)
+    * [update](basics/object/update.md)
     * each
     * toCamelCase
     * toSnakeCase

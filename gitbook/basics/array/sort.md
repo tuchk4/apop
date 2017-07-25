@@ -1,10 +1,10 @@
 ## sort 
-[[source](../../../src/actions/array/sort.js)]
+[[source]({{book.rep}}/src/actions/array/sort.js)]
 
 > Adapter native [`Array.sort`](https://www.w3schools.com/jsref/jsref_sort.asp) for apop
 > ### Arguments
 > 
-> condition (Function): function(a, b)
+> condition(Function): function(ElementA, ElementB)
 > 
 > ### Returns
 > 
@@ -39,8 +39,8 @@ sort((a, b) => a - b)([5, 2, 1, 4, 3, [8, 7, 6, 10, 9, [14, 12, 13, 11, 15]]])
 {% runkit %}
 let ap = require('apop/ap');
 let formula = ap(
-    ap.swap(3,4), //[5, 4, 3, 1, 2]
-    ap.swap(1,2), ////[5, 3, 4, 1, 2]
+    ap.swap(3,4), // => [5, 4, 3, 1, 2]
+    ap.swap(1,2), // => [5, 3, 4, 1, 2]
     ap.sort((a, b) => a - b) // => [1, 2, 3, 4, 5]
 );
 

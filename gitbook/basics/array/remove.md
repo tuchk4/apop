@@ -1,10 +1,10 @@
 ## Remove
-[[source](../../../src/actions/array/remove.js)]
+[[source]({{book.rep}}/src/actions/array/remove.js)]
 
 > Remove by indexes from Array
 > ### Arguments
 > 
-> indexes (...Numbers)
+> indexes(...Numbers)
 > 
 > ### Returns
 > 
@@ -41,11 +41,11 @@ let ap = require('apop/ap');
 let formula = ap(
     ap.filter(currentValue => currentValue > 2), // => [5, 4, 3, 6, 7, 8, 9, 10]
     ap.sort((a, b) => a - b), // => [3, 4, 5, 6, 7, 8, 9, 10]
-    ap.remove(2, 3, 4) // => [3, 4, 5, 9, 10]
+    ap.remove(2, 3, 4) // => [3, 4, 8, 9, 10]
 );
 
 formula([5, 4, 3, 2, 1, 6, 7, 8, 9, 10])
-// => [3, 4, 5, 9, 10]
+// => [3, 4, 8, 9, 10]
 {% endrunkit %}
 
 

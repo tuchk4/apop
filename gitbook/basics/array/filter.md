@@ -1,10 +1,10 @@
 ## Filter 
-[[source](../../../src/actions/array/filter.js)]
+[[source]({{book.rep}}/actions/array/filter.js)]
 
 > Adapter native [`Array.filter`](https://www.w3schools.com/jsref/jsref_filter.asp) for apop
 > ### Arguments
 > 
-> condition (Function): function(currentValue, index, arr)
+> condition(Function): function(currentValue:Element, index:Number, arr:Array)
 > 
 > ### Returns
 > 

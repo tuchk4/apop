@@ -1,10 +1,10 @@
 ## Map
-[[source](../../../src/actions/array/map.js)]
+[[source]({{book.rep}}/src/actions/array/map.js)]
 
 > Adapter native [`Array.map`](https://www.w3schools.com/jsref/jsref_map.asp) for apop
 > ### Arguments
 > 
-> condition (Function): function(currentValue, index, arr)
+> condition(Function): function(currentValue:element, index:Number, arr:Array)
 > 
 > ### Returns
 > 
@@ -41,7 +41,7 @@ let ap = require('apop/ap');
 let formula = ap(
     ap.filter(currentValue => currentValue < 4), // => [3, 2, 1]
     ap.sort((a, b) => a - b), // => [1, 2, 3]
-    ap.map(currentValue => {id: currentValue}) // => [{id:1}, {id:2}, {id:3}]
+    ap.map(currentValue => ({id: currentValue})) // => [{id:1}, {id:2}, {id:3}]
 );
 
 formula([5, 4, 3, 2, 1])

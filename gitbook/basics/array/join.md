@@ -1,10 +1,10 @@
 ## Join
-[[source](../../../src/actions/array/join.js)]
+[[source]({{book.rep}}/actions/array/join.js)]
 
 > Adapter native [`Array.join`](https://www.w3schools.com/jsref/jsref_join.asp) for apop
 > ### Arguments
 > 
-> separator (String): ", "
+> separator(String): ", "
 > 
 > ### Returns
 > 
