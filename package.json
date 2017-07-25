@@ -52,6 +52,7 @@
     "gitbook-plugin-codepen": "^0.1.2",
     "gitbook-plugin-codetabs": "^1.0.0",
     "gitbook-plugin-copy-code-button": "0.0.2",
+    "gitbook-plugin-disqus": "^0.1.0",
     "gitbook-plugin-github": "^3.0.0",
     "gitbook-plugin-runkit": "0.0.1",
     "gitbook-plugin-theme-api": "^1.1.2"

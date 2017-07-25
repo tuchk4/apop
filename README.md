@@ -1,4 +1,4 @@
-# apop
+# apop :snake:
 
 For transformation data. Replaces recursive nested constructions to flow functions
 
