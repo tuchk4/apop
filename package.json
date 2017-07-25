@@ -32,7 +32,7 @@
     "doc:apop": "jsdoc2md src/build/apop/*.js > docs/APOP.md",
     "gitbook:clean": "rimraf _book",
     "gitbook:prepare": "./node_modules/.bin/gitbook install",
-    "gitbook:build": "npm run gitbook:prepare && rm -rf _book && ./node_modules/.bin/gitbook build",
+    "gitbook:build": "rm -rf _book && npm run gitbook:prepare && ./node_modules/.bin/gitbook build",
     "gitbook:watch": "npm run gitbook:prepare && ./node_modules/.bin/gitbook serve",
     "gitbook:publish": "npm run gitbook:build && cd _book && git init && git commit --allow-empty -m 'Update gitbook' && git checkout -b gh-pages && git add . && git commit -am 'Update gitbook' && git push git@github.com:tuchk4/apop gh-pages --force"
   },
