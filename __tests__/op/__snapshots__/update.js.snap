@@ -79,3 +79,12 @@ Object {
   "year": 2001,
 }
 `;
+
+exports[`update nested 1`] = `
+Object {
+  "A": 2,
+  "B": Object {
+    "C": 2,
+  },
+}
+`;

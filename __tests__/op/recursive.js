@@ -76,7 +76,7 @@ const normalizeUrl = (url, version) =>
 test('Object recursive', () => {
   const formula = op.recursive(
     op.toCamelCase(),
-    op.update({
+    op.add({
       arrayKeyStr: localState =>
         Array.isArray(localState.arrayKey)
           ? localState.arrayKey.join(',')
@@ -100,27 +100,27 @@ test('Array recursive', () => {
     op.rename({
       children: 'nodes',
     }),
-    op.update({
+    op.add({
       isCategory: localState =>
         Object.prototype.hasOwnProperty.call(localState, 'nodes'),
       isLink: localState =>
         !Object.prototype.hasOwnProperty.call(localState, 'nodes'),
     }),
-    op.update({
+    op.add({
       version: localState => versionLinkFn(localState.url, localState.isLink),
-    }),
-    op.update({
-      url: localState => normalizeUrl(localState.url, localState.version),
-      name: localState => {
-        sum += `->${localState.name}`;
-        return `!${localState.name}`;
-      },
       isOpen: localState => {
         let isOpen = null;
         if (localState.isCategory) {
           isOpen = false;
         }
         return isOpen;
+      },
+    }),
+    op.update({
+      url: (url, localState) => normalizeUrl(url, localState.version),
+      name: name => {
+        sum += `->${name}`;
+        return `!${name}`;
       },
     }),
     op.clear()

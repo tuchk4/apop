@@ -23,10 +23,10 @@ test('ap.map', () => {
 test('ap.map 1', () => {
   const formula = ap(
     op.update({
-      id: state => state.id + 1,
+      id: id => id + 1,
     }),
     op.update({
-      id: state => state.id + 1,
+      id: id => id + 1,
     })
   );
 
@@ -39,10 +39,10 @@ test('ap.map 2', () => {
   const formula = ap(
     ap.map(
       op.update({
-        id: state => state.id + 1,
+        id: id => id + 1,
       }),
       op.update({
-        id: state => state.id + 1,
+        id: id => id + 1,
       })
     )
   );

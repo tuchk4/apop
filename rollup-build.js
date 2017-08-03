@@ -84,6 +84,7 @@ const opActions = [
   'toSnakeCase',
   'rename',
   'update',
+  'add',
   'recursive',
 ];
 

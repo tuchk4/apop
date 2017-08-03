@@ -2,6 +2,7 @@ import ap from '../src/build/ap';
 import op from '../src/build/op';
 import rename from '../src/build/op/rename';
 import update from '../src/build/op/update';
+import add from '../src/build/op/add';
 import toCamelCase from '../src/build/op/toCamelCase';
 
 import swap from '../src/build/ap/swap';
@@ -29,7 +30,7 @@ for (let i = 1; i <= 12; i++) {
 it('Complex Test 1', () => {
   const objectFormula = op(
     op.rename({ index: 'id' }),
-    op.update({
+    op.add({
       sort: state => state.id * 3 + state.id * 2 + state.id,
       case_detect: true,
     }),
@@ -60,7 +61,7 @@ it('Complex Test 1', () => {
 it('Complex Test 2', () => {
   const objectFormula = op(
     rename({ index: 'id' }),
-    update({
+    add({
       sort: state => state.id * 3 + state.id * 2 + state.id,
       case_detect: true,
     }),

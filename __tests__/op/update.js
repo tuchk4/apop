@@ -13,7 +13,7 @@ const misc = {
 
 it('Field function object', () => {
   const formula = op(
-    op.update({
+    op.add({
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
       day: localState => localState.date.getDate(),
@@ -27,7 +27,7 @@ it('Field function object', () => {
 
 test('Field static object', () => {
   const formula = op(
-    op.update({
+    op.add({
       year: misc.year,
       month: misc.month,
       day: misc.day,
@@ -41,7 +41,7 @@ test('Field static object', () => {
 
 test('Field function array', () => {
   const formula = ap(
-    op.update({
+    op.add({
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
       day: localState => localState.date.getDate(),
@@ -69,7 +69,7 @@ test('Field static array', () => {
 // --
 
 test('Update shortcut: Field function object', () => {
-  const result = op.update({
+  const result = op.add({
     year: localState => localState.date.getFullYear(),
     month: localState => localState.date.getMonth(),
     day: localState => localState.date.getDate(),
@@ -79,7 +79,7 @@ test('Update shortcut: Field function object', () => {
 });
 
 test('Update shortcut: Field static object', () => {
-  const result = op.update({
+  const result = op.add({
     year: misc.year,
     month: misc.month,
     day: misc.day,
@@ -90,7 +90,7 @@ test('Update shortcut: Field static object', () => {
 
 test('Update shortcut: Field function array', () => {
   const result = ap(
-    op.update({
+    op.add({
       year: localState => localState.date.getFullYear(),
       month: localState => localState.date.getMonth(),
       day: localState => localState.date.getDate(),
@@ -106,7 +106,31 @@ test('Update shortcut: Field static array', () => {
     month: 1,
     day: 1,
   };
-  const result = ap(op.update(additionalFields))([before]);
+  const result = ap(op.add(additionalFields))([before]);
+
+  expect(result).toMatchSnapshot();
+});
+
+test('update nested', () => {
+  const formula = op(
+    op.rename({
+      a: 'A',
+      b: 'B',
+    }),
+    op.update({
+      A: v => v + 1,
+      B: op.rename({
+        c: 'C',
+      }),
+    })
+  );
+
+  const result = formula({
+    a: 1,
+    b: {
+      c: 2,
+    },
+  });
 
   expect(result).toMatchSnapshot();
 });

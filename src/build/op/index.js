@@ -2,6 +2,7 @@ import clear from '../../actions/object/clear';
 import toSnakeCase from '../../actions/object/toSnakeCase';
 import toCamelCase from '../../actions/object/toCamelCase';
 import update from '../../actions/object/update';
+import add from '../../actions/object/add';
 import rename from '../../actions/object/rename';
 import each from '../../actions/object/each';
 
@@ -13,6 +14,7 @@ const sourceActions = {
   toSnakeCase,
   toCamelCase,
   update,
+  add,
   rename,
   each,
   recursive: recursiveApply,

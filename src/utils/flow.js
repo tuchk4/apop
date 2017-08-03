@@ -1,17 +1,19 @@
 import isArray from './isArray';
 const flow = actions =>
   origin => {
-    if (isArray(origin)) {
+    let data = origin;
+
+    if (isArray(data)) {
       for (let action of actions) {
-        origin = action.shortcut ? origin.map(action) : action(origin);
+        data = action.shortcut ? data.map(action) : action(data);
       }
     } else {
       for (let action of actions) {
-        origin = action(origin);
+        data = action(data);
       }
     }
 
-    return origin;
+    return data;
   };
 
 export default flow;
